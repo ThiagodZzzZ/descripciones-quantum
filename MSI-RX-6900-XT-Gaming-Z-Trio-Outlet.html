@@ -326,10 +326,28 @@
 </div>
 <!-- FIN CONTENIDO EXPANDIBLE -->
 <!-- BOTÓN VOLVER ARRIBA FLOTANTE -->
-<a href="#top-section" id="backToTop" style="display: none; position: fixed; bottom: 30px; right: 30px; background: linear-gradient(135deg, #ff007f, #ff4da6); color: #ffffff; width: 50px; height: 50px; text-align: center; line-height: 50px; border-radius: 50%; font-size: 20px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 15px rgba(255,0,127,0.4); z-index: 1000; transition: all 0.3s ease;">↑</a>
+<a href="javascript:void(0);" onclick="collapseAndGoTop()" id="backToTop" style="display: none; position: fixed; bottom: 30px; right: 30px; background: linear-gradient(135deg, #ff007f, #ff4da6); color: #ffffff; width: 50px; height: 50px; text-align: center; line-height: 50px; border-radius: 50%; font-size: 20px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 15px rgba(255,0,127,0.4); z-index: 1000; transition: all 0.3s ease;">↑</a>
 </div>
 <!-- JAVASCRIPT -->
 <script>
+// Función para contraer y volver arriba
+function collapseAndGoTop() {
+  var content = document.getElementById('detailedContent');
+  var btn = document.getElementById('toggleBtn');
+  var backToTopBtn = document.getElementById('backToTop');
+  
+  // Contraer contenido
+  content.style.display = 'none';
+  btn.innerHTML = '▼ VER ESPECIFICACIONES COMPLETAS';
+  backToTopBtn.style.display = 'none';
+  
+  // Scroll suave hacia arriba
+  document.getElementById('top-section').scrollIntoView({ behavior: 'smooth' });
+  
+  // Notificar al padre (iframe) del cambio de altura
+  notifyHeightChange();
+}
+
 // Función para expandir/contraer contenido
 function toggleDetails() {
   var content = document.getElementById('detailedContent');
@@ -351,7 +369,23 @@ function toggleDetails() {
     // Scroll suave hacia arriba
     document.getElementById('top-section').scrollIntoView({ behavior: 'smooth' });
   }
+  
+  // Notificar al padre (iframe) del cambio de altura
+  notifyHeightChange();
 }
+
+// Función para notificar cambios de altura al iframe padre
+function notifyHeightChange() {
+  setTimeout(function() {
+    var height = document.body.scrollHeight;
+    window.parent.postMessage({ height: height, type: 'resize' }, '*');
+  }, 300);
+}
+
+// Notificar altura inicial al cargar
+window.addEventListener('load', function() {
+  notifyHeightChange();
+});
 
 // Mostrar/ocultar botón de volver arriba según scroll
 window.addEventListener('scroll', function() {
