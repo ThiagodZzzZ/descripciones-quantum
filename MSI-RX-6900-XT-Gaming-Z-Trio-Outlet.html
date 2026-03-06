@@ -341,8 +341,13 @@ function collapseAndGoTop() {
   btn.innerHTML = '▼ VER ESPECIFICACIONES COMPLETAS';
   backToTopBtn.style.display = 'none';
   
-  // Scroll suave hacia arriba
+  // Primero scroll interno al inicio del iframe
   document.getElementById('top-section').scrollIntoView({ behavior: 'smooth' });
+  
+  // Luego enviar mensaje al padre para scroll al precio
+  setTimeout(function() {
+    window.parent.postMessage({ action: 'scrollToTop' }, '*');
+  }, 300);
   
   // Notificar al padre (iframe) del cambio de altura
   notifyHeightChange();
