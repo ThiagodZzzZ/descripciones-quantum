@@ -1,0 +1,2230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PALIT RTX 3060 Ti DUAL - Quantum Hardstore</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Verdana, Geneva, sans-serif;
+            background: #f5f5f5;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 24px 16px;
+        }
+
+        /* HEADER */
+        .header {
+            text-align: center;
+            padding: 28px 10px 22px;
+            border-bottom: 2px solid #ff007f;
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        .header-brand {
+            font-size: 11px;
+            letter-spacing: 6px;
+            color: #ff007f;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .header-manufacturer {
+            font-size: 12px;
+            letter-spacing: 5px;
+            color: #999;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .header-title {
+            font-size: 36px;
+            font-weight: bold;
+            color: #1c1c1c;
+            letter-spacing: 2px;
+            animation: slideDown 1s ease-out;
+        }
+
+        .header-subtitle {
+            font-size: 12px;
+            letter-spacing: 3px;
+            color: #999;
+            margin-top: 10px;
+        }
+
+        /* HIGHLIGHT CENTRAL */
+        .highlight-central {
+            text-align: center;
+            margin: 24px 0 10px;
+            animation: scaleIn 1s ease-out;
+        }
+
+        .highlight-box {
+            display: inline-block;
+            padding: 16px 30px;
+            border: 2px solid #ff007f;
+            border-radius: 8px;
+            background: #ffffff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .highlight-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 0, 127, 0.3);
+        }
+
+        .highlight-label {
+            font-size: 10px;
+            letter-spacing: 5px;
+            color: #ff007f;
+            text-transform: uppercase;
+        }
+
+        .highlight-value {
+            font-size: 40px;
+            font-weight: bold;
+            color: #1c1c1c;
+            margin: 4px 0 2px;
+        }
+
+        .highlight-description {
+            font-size: 11px;
+            color: #aaa;
+            letter-spacing: 3px;
+        }
+
+        /* CARDS */
+        .card {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-top: 3px solid #ff007f;
+            border-radius: 10px;
+            padding: 18px;
+            text-align: center;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-label {
+            font-size: 10px;
+            letter-spacing: 4px;
+            color: #ff007f;
+            text-transform: uppercase;
+        }
+
+        .card-value {
+            font-size: 34px;
+            font-weight: bold;
+            color: #1c1c1c;
+            margin: 6px 0 2px;
+        }
+
+        .card-description {
+            font-size: 12px;
+            color: #999;
+        }
+
+        /* ENGINE CLOCK */
+        .engine-clock {
+            background: #1c1c1c;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 12px 0;
+        }
+
+        .engine-title {
+            font-size: 10px;
+            letter-spacing: 4px;
+            color: #999;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        .clock-item {
+            margin-bottom: 14px;
+        }
+
+        .clock-label {
+            font-size: 11px;
+            font-weight: bold;
+            color: #ff007f;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 6px;
+        }
+
+        .clock-bar-bg {
+            background: #2a2a2a;
+            border-radius: 6px;
+            height: 30px;
+            overflow: hidden;
+        }
+
+        .clock-bar {
+            height: 30px;
+            border-radius: 6px;
+            text-align: right;
+            padding-right: 12px;
+            line-height: 30px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #ffffff;
+            transition: width 1.5s ease-out;
+        }
+
+        .clock-bar-base {
+            background: linear-gradient(90deg, #c0005e, #e0007a);
+        }
+
+        .clock-bar-boost {
+            background: linear-gradient(90deg, #ff007f, #ff4da6);
+        }
+
+        /* SECTION TITLE */
+        .section-title {
+            margin: 28px 0 14px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .section-title span {
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 5px;
+            color: #ff007f;
+            text-transform: uppercase;
+        }
+
+        /* SPEC ITEM */
+        .spec-item {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-left: 3px solid #ff007f;
+            border-radius: 8px;
+            padding: 14px 16px;
+            margin: 8px 0;
+            transition: all 0.3s ease;
+        }
+
+        .spec-item:hover {
+            border-left-width: 5px;
+            padding-left: 14px;
+        }
+
+        .spec-label {
+            font-size: 9px;
+            letter-spacing: 3px;
+            color: #999;
+            text-transform: uppercase;
+        }
+
+        .spec-value {
+            font-size: 16px;
+            font-weight: bold;
+            color: #1c1c1c;
+            margin-top: 4px;
+        }
+
+        /* CONNECTIVITY */
+        .connectivity-item {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 8px 0;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .connectivity-item:hover {
+            background: #f9f9f9;
+            transform: translateX(5px);
+        }
+
+        .connectivity-icon {
+            background: #1c1c1c;
+            border-radius: 8px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 9px;
+            font-weight: bold;
+            color: #ff007f;
+            letter-spacing: 1px;
+            margin-right: 12px;
+        }
+
+        .connectivity-info {
+            flex: 1;
+        }
+
+        .connectivity-title {
+            font-size: 15px;
+            font-weight: bold;
+            color: #1c1c1c;
+        }
+
+        .connectivity-description {
+            font-size: 11px;
+            color: #999;
+        }
+
+        .connectivity-count {
+            font-size: 22px;
+            font-weight: bold;
+            color: #ff007f;
+            margin-left: auto;
+        }
+
+        /* COOLING SYSTEM */
+        .cooling-system {
+            text-align: center;
+            margin: 20px 0;
+            padding: 22px 16px;
+            background: #1c1c1c;
+            border-radius: 10px;
+            border-top: 3px solid #ff007f;
+        }
+
+        .cooling-title {
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 6px;
+            color: #ff007f;
+        }
+
+        .cooling-description {
+            font-size: 12px;
+            color: #cccccc;
+            letter-spacing: 2px;
+            margin-top: 6px;
+        }
+
+        /* DIMENSIONS */
+        .dimensions-box {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 20px 16px;
+            margin: 12px 0;
+        }
+
+        .dimensions-title {
+            font-size: 10px;
+            letter-spacing: 5px;
+            color: #ff007f;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        .dimensions-table {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .dimension-item {
+            text-align: center;
+        }
+
+        .dimension-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1c1c1c;
+        }
+
+        .dimension-label {
+            font-size: 11px;
+            color: #aaa;
+        }
+
+        .dimension-separator {
+            color: #d3d3d3;
+            font-size: 16px;
+        }
+
+        /* POWER */
+        .power-box {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-left: 4px solid #ff007f;
+            border-radius: 10px;
+            padding: 20px 16px;
+            margin: 12px 0;
+        }
+
+        .power-title {
+            font-size: 10px;
+            letter-spacing: 5px;
+            color: #ff007f;
+            text-transform: uppercase;
+        }
+
+        .power-value {
+            font-size: 34px;
+            font-weight: bold;
+            color: #1c1c1c;
+            margin-top: 4px;
+        }
+
+        .power-unit {
+            font-size: 18px;
+            color: #aaa;
+        }
+
+        .power-description {
+            font-size: 13px;
+            color: #999;
+            margin-top: 4px;
+        }
+
+        /* SOFTWARE */
+        .software-box {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 20px 16px;
+            margin: 12px 0;
+        }
+
+        .software-title {
+            font-size: 10px;
+            letter-spacing: 5px;
+            color: #ff007f;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .software-content {
+            font-size: 14px;
+            color: #1c1c1c;
+        }
+
+        .software-note {
+            font-size: 11px;
+            color: #999;
+            margin-top: 6px;
+        }
+
+        /* OUTLET */
+        .outlet-box {
+            margin: 20px 0;
+            padding: 24px 20px;
+            background: #1c1c1c;
+            border-radius: 10px;
+            border-top: 3px solid #ff007f;
+        }
+
+        .outlet-title {
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #ff007f;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .outlet-description {
+            font-size: 13px;
+            color: #cccccc;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .outlet-benefits {
+            display: flex;
+            gap: 12px;
+        }
+
+        .outlet-benefit {
+            flex: 1;
+            background: #2a2a2a;
+            border: 1px solid #ff007f;
+            border-radius: 10px;
+            padding: 16px 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .outlet-benefit:hover {
+            background: #ff007f;
+            transform: scale(1.05);
+        }
+
+        .outlet-benefit:hover .benefit-value {
+            color: #ffffff;
+        }
+
+        .benefit-icon {
+            font-size: 28px;
+            margin-bottom: 6px;
+        }
+
+        .benefit-value {
+            font-size: 22px;
+            font-weight: bold;
+            color: #ff007f;
+            line-height: 1;
+            transition: color 0.3s ease;
+        }
+
+        .benefit-label {
+            font-size: 11px;
+            color: #cccccc;
+            letter-spacing: 2px;
+            margin-top: 4px;
+        }
+
+        /* LOCATION */
+        .location-box {
+            margin: 12px 0;
+            padding: 24px 20px;
+            background: #1c1c1c;
+            border-radius: 10px;
+            border-top: 3px solid #ff007f;
+        }
+
+        .location-title {
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #ff007f;
+            text-align: center;
+            margin-bottom: 14px;
+            text-transform: uppercase;
+        }
+
+        .location-content {
+            background: #2a2a2a;
+            border: 1px solid #ff007f;
+            border-radius: 10px;
+            padding: 20px 16px;
+            text-align: center;
+        }
+
+        .location-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .location-status {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ff007f;
+            line-height: 1.2;
+            letter-spacing: 2px;
+        }
+
+        .location-description {
+            font-size: 12px;
+            color: #cccccc;
+            margin-top: 10px;
+            line-height: 1.7;
+        }
+
+        /* NOTA */
+        .note {
+            margin-top: 20px;
+            padding: 12px 16px;
+            border-left: 3px solid #d3d3d3;
+            font-size: 11px;
+            color: #999;
+            line-height: 1.8;
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* INTERACTIVE TOOLS */
+        .tool-tabs {
+            margin: 30px 0 20px;
+            display: flex;
+            gap: 10px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .tool-tab {
+            flex: 1;
+            padding: 15px 10px;
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-bottom: none;
+            border-radius: 8px 8px 0 0;
+            text-align: center;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #999;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tool-tab:hover {
+            background: #f9f9f9;
+            color: #666;
+        }
+
+        .tool-tab.active {
+            background: #ff007f;
+            color: #ffffff;
+            border-color: #ff007f;
+        }
+
+        .tool-content {
+            display: none;
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 0 0 10px 10px;
+            padding: 25px 20px;
+        }
+
+        .tool-content.active {
+            display: block;
+            animation: fadeInUp 0.5s ease-out;
+        }
+
+        /* BOTTLENECK CALCULATOR */
+        .calculator-section {
+            margin-bottom: 20px;
+        }
+
+        .calculator-label {
+            font-size: 11px;
+            font-weight: bold;
+            color: #1c1c1c;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .calculator-select {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #ff007f;
+            border-radius: 10px;
+            font-size: 14px;
+            font-family: Verdana, Geneva, sans-serif;
+            color: #ffffff;
+            background: linear-gradient(135deg, #1c1c1c 0%, #2a2a2a 100%);
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 4px 15px rgba(255, 0, 127, 0.2);
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .calculator-select:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(255, 0, 127, 0.4);
+            border-color: #ff4da6;
+        }
+
+        .calculator-select:focus {
+            outline: none;
+            border-color: #ff007f;
+            box-shadow: 0 0 0 3px rgba(255, 0, 127, 0.3);
+        }
+
+        .calculator-select option {
+            background: #1c1c1c;
+            color: #ffffff;
+            padding: 10px;
+        }
+
+        .calculator-select optgroup {
+            background: #2a2a2a;
+            color: #ff007f;
+            font-weight: bold;
+            padding: 8px;
+        }
+
+        .calculator-button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #ff007f, #ff4da6);
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #ffffff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .calculator-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(255, 0, 127, 0.4);
+        }
+
+        .calculator-result {
+            margin-top: 20px;
+            padding: 25px;
+            background: linear-gradient(135deg, #1c1c1c 0%, #2a2a2a 100%);
+            border: 2px solid #ff007f;
+            border-radius: 12px;
+            display: none;
+            transform: scale(0.9);
+            opacity: 0;
+            box-shadow: 0 10px 30px rgba(255, 0, 127, 0.3);
+        }
+
+        .calculator-result.show {
+            display: block;
+            animation: zoomIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+        }
+
+        .result-status {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ff007f;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .result-percentage {
+            font-size: 38px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #ff007f 0%, #ff4da6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .result-description {
+            font-size: 14px;
+            color: #cccccc;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        /* GPU COMPARATOR */
+        .comparison-vs {
+            margin-top: 30px;
+            display: none;
+        }
+
+        .comparison-vs.show {
+            display: block;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .vs-container {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .vs-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 25px 20px;
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+
+        .vs-card.animate-left {
+            animation: slideInLeft 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+        }
+
+        .vs-card.animate-right {
+            animation: slideInRight 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+            animation-delay: 0.2s;
+        }
+
+        .vs-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .vs-card-left {
+            border-color: #ff007f;
+            box-shadow: 0 5px 20px rgba(255, 0, 127, 0.2);
+        }
+
+        .vs-card-left:hover {
+            box-shadow: 0 15px 40px rgba(255, 0, 127, 0.4);
+        }
+
+        .vs-card-right {
+            border-color: #00d4ff;
+            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.2);
+        }
+
+        .vs-card-right:hover {
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.4);
+        }
+
+        .vs-card-header {
+            font-size: 9px;
+            letter-spacing: 3px;
+            color: #999;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .vs-card-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #1c1c1c;
+            text-align: center;
+            margin-bottom: 4px;
+            line-height: 1.3;
+        }
+
+        .vs-card-subtitle {
+            font-size: 11px;
+            color: #666;
+            text-align: center;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .vs-specs {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .vs-spec-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            background: #f5f5f5;
+            border-radius: 6px;
+            transition: background 0.3s ease;
+        }
+
+        .vs-spec-item:hover {
+            background: #efefef;
+        }
+
+        .vs-spec-label {
+            font-size: 11px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .vs-spec-value {
+            font-size: 14px;
+            font-weight: bold;
+            color: #1c1c1c;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .vs-spec-value.winner {
+            color: #00ff88;
+        }
+
+        .vs-spec-value.loser {
+            color: #ff4444;
+        }
+
+        .stat-arrow {
+            font-size: 16px;
+            font-weight: bold;
+            animation: bounce 1s infinite;
+        }
+
+        .arrow-up {
+            color: #00ff88;
+        }
+
+        .arrow-down {
+            color: #ff4444;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-3px);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .vs-price {
+            color: #ff007f !important;
+            font-size: 16px !important;
+        }
+
+        .vs-separator {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 10px;
+            opacity: 0;
+        }
+
+        .vs-separator.animate {
+            animation: zoomIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+            animation-delay: 0.4s;
+        }
+
+        .vs-icon {
+            font-size: 48px;
+            margin-bottom: 10px;
+            animation: pulse 2s infinite, rotate 4s infinite;
+            filter: drop-shadow(0 0 15px rgba(255, 0, 127, 0.6));
+        }
+
+        @keyframes rotate {
+            0%, 100% {
+                transform: rotate(-5deg);
+            }
+            50% {
+                transform: rotate(5deg);
+            }
+        }
+
+        .vs-text {
+            font-size: 32px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #ff007f 0%, #00d4ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 6px;
+            filter: drop-shadow(0 2px 10px rgba(255, 0, 127, 0.5));
+        }
+
+        .vs-performance {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        .performance-label {
+            font-size: 10px;
+            letter-spacing: 2px;
+            color: #999;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .performance-bar {
+            background: #e0e0e0;
+            border-radius: 20px;
+            height: 30px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .performance-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ff007f, #ff4da6);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            color: #ffffff;
+            transition: width 1s ease-out;
+        }
+
+        .comparison-winner {
+            background: linear-gradient(135deg, #1c1c1c 0%, #2a2a2a 100%);
+            border: 2px solid #ff007f;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            margin-top: 20px;
+            opacity: 0;
+            box-shadow: 0 10px 30px rgba(255, 0, 127, 0.3);
+        }
+
+        .comparison-winner.animate {
+            animation: slideInUp 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+            animation-delay: 0.6s;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .winner-title {
+            font-size: 14px;
+            letter-spacing: 4px;
+            background: linear-gradient(135deg, #ff007f 0%, #ffd700 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .winner-text {
+            font-size: 15px;
+            color: #ffffff;
+            line-height: 1.8;
+        }
+
+        .winner-text strong {
+            color: #ff007f;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .comparator-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .gpu-card {
+            background: #f9f9f9;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .gpu-card:hover {
+            border-color: #ff007f;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .gpu-card.selected {
+            background: #ff007f;
+            border-color: #ff007f;
+            color: #ffffff;
+        }
+
+        .gpu-card.selected .gpu-name,
+        .gpu-card.selected .gpu-price {
+            color: #ffffff;
+        }
+
+        .gpu-name {
+            font-size: 13px;
+            font-weight: bold;
+            color: #1c1c1c;
+            margin-bottom: 8px;
+        }
+
+        .gpu-price {
+            font-size: 16px;
+            font-weight: bold;
+            color: #ff007f;
+        }
+
+        .comparison-table {
+            margin-top: 25px;
+            overflow-x: auto;
+        }
+
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .comparison-table th {
+            background: #1c1c1c;
+            color: #ff007f;
+            padding: 12px 10px;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .comparison-table td {
+            padding: 12px 10px;
+            border-bottom: 1px solid #e0e0e0;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        .comparison-table tr:hover {
+            background: #f9f9f9;
+        }
+
+        .comparison-highlight {
+            color: #ff007f;
+            font-weight: bold;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .header-title {
+                font-size: 28px;
+            }
+
+            .highlight-value {
+                font-size: 32px;
+            }
+
+            .card-value {
+                font-size: 28px;
+            }
+
+            .outlet-benefits {
+                flex-direction: column;
+            }
+
+            .tool-tabs {
+                flex-direction: column;
+            }
+
+            .tool-tab {
+                border-radius: 8px;
+                border-bottom: 1px solid #e0e0e0;
+            }
+
+            .tool-tab.active {
+                border-bottom: 1px solid #ff007f;
+            }
+
+            .comparator-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .vs-container {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .vs-separator {
+                order: 2;
+                padding: 15px 0;
+            }
+
+            .vs-card-left {
+                order: 1;
+            }
+
+            .vs-card-right {
+                order: 3;
+            }
+
+            .vs-icon {
+                font-size: 24px;
+            }
+
+            .vs-text {
+                font-size: 20px;
+            }
+
+            .vs-card-title {
+                font-size: 16px;
+            }
+
+            .vs-spec-value {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <div class="header-brand">✦ Quantum Hardstore ✦</div>
+            <div class="header-manufacturer">PALIT® GeForce™</div>
+            <div class="header-title">RTX 3060 Ti DUAL</div>
+            <div class="header-subtitle">8GB GDDR6 &nbsp;/&nbsp; PCI-E 4.0 &nbsp;/&nbsp; DUAL FAN &nbsp;/&nbsp; OUTLET</div>
+        </div>
+
+        <!-- HIGHLIGHT CENTRAL -->
+        <div class="highlight-central">
+            <div class="highlight-box">
+                <div class="highlight-label">CUDA Cores</div>
+                <div class="highlight-value">4864</div>
+                <div class="highlight-description">Arquitectura Ampere</div>
+            </div>
+        </div>
+
+        <!-- 3 HIGHLIGHTS -->
+        <div class="card">
+            <div class="card-label">Memoria de Video</div>
+            <div class="card-value">8GB</div>
+            <div class="card-description">GDDR6 — 14 Gbps</div>
+        </div>
+
+        <div class="card">
+            <div class="card-label">CUDA Cores</div>
+            <div class="card-value">4864</div>
+            <div class="card-description">Unidades de Procesamiento</div>
+        </div>
+
+        <div class="card">
+            <div class="card-label">Bus de Memoria</div>
+            <div class="card-value">256-bit</div>
+            <div class="card-description">Interfaz de Memoria</div>
+        </div>
+
+        <!-- ENGINE CLOCK -->
+        <div class="engine-clock">
+            <div class="engine-title">⚡ Velocidad del Motor</div>
+            <div class="clock-item">
+                <div class="clock-label">● Base Clock</div>
+                <div class="clock-bar-bg">
+                    <div class="clock-bar clock-bar-base" id="base-clock" style="width: 0%">1410 MHz</div>
+                </div>
+            </div>
+            <div class="clock-item">
+                <div class="clock-label">● Boost Clock</div>
+                <div class="clock-bar-bg">
+                    <div class="clock-bar clock-bar-boost" id="boost-clock" style="width: 0%">1665 MHz</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SPECS -->
+        <div class="section-title"><span>▎Especificaciones</span></div>
+
+        <div class="spec-item">
+            <div class="spec-label">Motor Gráfico</div>
+            <div class="spec-value">NVIDIA® GeForce™ RTX 3060 Ti</div>
+        </div>
+
+        <div class="spec-item">
+            <div class="spec-label">Arquitectura</div>
+            <div class="spec-value">NVIDIA Ampere (GA104)</div>
+        </div>
+
+        <div class="spec-item">
+            <div class="spec-label">Estándar del Bus</div>
+            <div class="spec-value">PCI Express® 4.0</div>
+        </div>
+
+        <div class="spec-item">
+            <div class="spec-label">OpenGL / DirectX</div>
+            <div class="spec-value">OpenGL® 4.6 &nbsp;/&nbsp; DirectX® 12 Ultimate</div>
+        </div>
+
+        <div class="spec-item">
+            <div class="spec-label">Velocidad de Memoria</div>
+            <div class="spec-value">14 Gbps</div>
+        </div>
+
+        <div class="spec-item">
+            <div class="spec-label">Ancho de Banda de Memoria</div>
+            <div class="spec-value">448 GB/s</div>
+        </div>
+
+        <div class="spec-item">
+            <div class="spec-label">Resolución Máxima Digital</div>
+            <div class="spec-value">7680 × 4320</div>
+            <div class="spec-description">8K Digital</div>
+        </div>
+
+        <div class="spec-item">
+            <div class="spec-label">Resolución Recomendada</div>
+            <div class="spec-value">1440p / 1080p</div>
+        </div>
+
+        <div class="spec-item">
+            <div class="spec-label">Pantallas Simultáneas</div>
+            <div class="spec-value">4</div>
+        </div>
+
+        <div class="spec-item">
+            <div class="spec-label">Ray Tracing / DLSS</div>
+            <div class="spec-value">Sí — Ray Tracing 2.0 / DLSS 2.0</div>
+        </div>
+
+        <div class="spec-item">
+            <div class="spec-label">G-SYNC / VR Ready</div>
+            <div class="spec-value">Sí — G-SYNC® / VR Ready</div>
+        </div>
+
+        <div class="spec-item">
+            <div class="spec-label">Consumo (TDP)</div>
+            <div class="spec-value">200 W</div>
+        </div>
+
+        <div class="spec-item">
+            <div class="spec-label">Palit ThunderMaster</div>
+            <div class="spec-value">Sí — Software de Overclocking</div>
+        </div>
+
+        <!-- CONECTIVIDAD -->
+        <div class="section-title"><span>▎Conectividad</span></div>
+
+        <div class="connectivity-item">
+            <div class="connectivity-icon">HDMI</div>
+            <div class="connectivity-info">
+                <div class="connectivity-title">HDMI™ 2.1 Nativo</div>
+                <div class="connectivity-description">4K@120Hz / 8K@60Hz</div>
+            </div>
+            <div class="connectivity-count">×1</div>
+        </div>
+
+        <div class="connectivity-item">
+            <div class="connectivity-icon">DP</div>
+            <div class="connectivity-info">
+                <div class="connectivity-title">DisplayPort 1.4a Nativo</div>
+                <div class="connectivity-description">4K@240Hz / 8K@60Hz</div>
+            </div>
+            <div class="connectivity-count">×3</div>
+        </div>
+
+        <!-- COOLING SYSTEM -->
+        <div class="cooling-system">
+            <div class="cooling-title">✦ DUAL FAN COOLING ✦</div>
+            <div class="cooling-description">Dual Fan — 0dB Silent Tech — Honeycomb Bracket — RGB Lighting</div>
+        </div>
+
+        <!-- DIMENSIONES -->
+        <div class="dimensions-box">
+            <div class="dimensions-title">📐 Dimensiones</div>
+            <div class="dimensions-table">
+                <div class="dimension-item">
+                    <div class="dimension-value">247</div>
+                    <div class="dimension-label">mm — Largo</div>
+                </div>
+                <div class="dimension-separator">×</div>
+                <div class="dimension-item">
+                    <div class="dimension-value">120</div>
+                    <div class="dimension-label">mm — Alto</div>
+                </div>
+                <div class="dimension-separator">×</div>
+                <div class="dimension-item">
+                    <div class="dimension-value">40</div>
+                    <div class="dimension-label">mm — Ancho</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FUENTE -->
+        <div class="power-box">
+            <div class="power-title">Fuente Recomendada</div>
+            <div class="power-value">⚡ 550<span class="power-unit">W</span></div>
+            <div class="power-description">Conector de alimentación: 1 × 8-pin</div>
+        </div>
+
+        <!-- SOFTWARE -->
+        <div class="software-box">
+            <div class="software-title">💿 Software</div>
+            <div class="software-content">Palit ThunderMaster • NVIDIA GeForce Driver • NVIDIA Studio Driver</div>
+            <div class="software-note">Descargá todo el software desde el sitio de soporte oficial de PALIT.</div>
+        </div>
+
+        <!-- INTERACTIVE TOOLS -->
+        <div class="tool-tabs">
+            <div class="tool-tab active" onclick="switchTab(0)">
+                <span>🔧 Calculadora de Cuello de Botella</span>
+            </div>
+            <div class="tool-tab" onclick="switchTab(1)">
+                <span>⚖️ Comparador de GPUs</span>
+            </div>
+        </div>
+
+        <!-- BOTTLENECK CALCULATOR -->
+        <div class="tool-content active" id="tool-0">
+            <div class="calculator-section">
+                <div class="calculator-label">Seleccioná tu CPU</div>
+                <select class="calculator-select" id="cpu-select">
+                    <option value="">-- Elegí tu procesador --</option>
+                    <optgroup label="Intel - Gama Alta">
+                        <option value="i9-13900K">Intel Core i9-13900K</option>
+                        <option value="i9-12900K">Intel Core i9-12900K</option>
+                        <option value="i7-13700K">Intel Core i7-13700K</option>
+                        <option value="i7-12700K">Intel Core i7-12700K</option>
+                    </optgroup>
+                    <optgroup label="Intel - Gama Media">
+                        <option value="i5-13600K">Intel Core i5-13600K</option>
+                        <option value="i5-12600K">Intel Core i5-12600K</option>
+                        <option value="i5-12400F">Intel Core i5-12400F</option>
+                        <option value="i5-11400F">Intel Core i5-11400F</option>
+                    </optgroup>
+                    <optgroup label="Intel - Gama Baja">
+                        <option value="i3-12100F">Intel Core i3-12100F</option>
+                        <option value="i3-10100F">Intel Core i3-10100F</option>
+                    </optgroup>
+                    <optgroup label="AMD - Gama Alta">
+                        <option value="R9-7950X">AMD Ryzen 9 7950X</option>
+                        <option value="R9-5950X">AMD Ryzen 9 5950X</option>
+                        <option value="R7-7700X">AMD Ryzen 7 7700X</option>
+                        <option value="R7-5800X3D">AMD Ryzen 7 5800X3D</option>
+                        <option value="R7-5700X">AMD Ryzen 7 5700X</option>
+                    </optgroup>
+                    <optgroup label="AMD - Gama Media">
+                        <option value="R5-7600X">AMD Ryzen 5 7600X</option>
+                        <option value="R5-5600X">AMD Ryzen 5 5600X</option>
+                        <option value="R5-5600">AMD Ryzen 5 5600</option>
+                        <option value="R5-3600">AMD Ryzen 5 3600</option>
+                    </optgroup>
+                    <optgroup label="AMD - Gama Baja">
+                        <option value="R3-3300X">AMD Ryzen 3 3300X</option>
+                        <option value="R3-3100">AMD Ryzen 3 3100</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <div class="calculator-section">
+                <div class="calculator-label">Seleccioná tu Resolución</div>
+                <select class="calculator-select" id="resolution-select">
+                    <option value="">-- Elegí tu resolución --</option>
+                    <option value="1080p">1920×1080 (Full HD)</option>
+                    <option value="1440p">2560×1440 (2K / QHD)</option>
+                    <option value="4K">3840×2160 (4K / UHD)</option>
+                </select>
+            </div>
+
+            <div class="calculator-section">
+                <button class="calculator-button" onclick="calculateBottleneck()">Calcular Compatibilidad</button>
+            </div>
+
+            <div class="calculator-result" id="calculator-result">
+                <div class="result-status" id="result-status"></div>
+                <div class="result-percentage" id="result-percentage"></div>
+                <div class="result-description" id="result-description"></div>
+            </div>
+        </div>
+
+        <!-- GPU COMPARATOR -->
+        <div class="tool-content" id="tool-1">
+            <div class="calculator-section">
+                <div class="calculator-label">Seleccioná una GPU para comparar</div>
+                <select class="calculator-select" id="gpu-select" onchange="updateComparison()">
+                    <option value="">-- Elegí una placa de video --</option>
+                    <optgroup label="NVIDIA - Outlet">
+                        <option value="rtx2060s">RTX 2060 Super DUAL (OUTLET)</option>
+                        <option value="gtx1660s-msi">GTX 1660 SUPER Ventus Xs (OUTLET)</option>
+                        <option value="gtx1660s-gigabyte">GTX 1660 Super OC (OUTLET)</option>
+                        <option value="rtx3060ti-fe">RTX 3060Ti Founders Edition (OUTLET)</option>
+                        <option value="rtx3080">RTX 3080 Turbo OC 10GB (OUTLET)</option>
+                    </optgroup>
+                    <optgroup label="AMD - Outlet">
+                        <option value="rx6700xt">RX 6700XT CHALLENGER PRO (OUTLET)</option>
+                        <option value="rx6800xt">RX 6800XT Phantom Gaming (OUTLET)</option>
+                        <option value="rx6900xt">RX 6900XT PHANTOM GAMING (OUTLET)</option>
+                        <option value="rx7700xt">RX 7700XT GAMING OC (OUTLET)</option>
+                    </optgroup>
+                    <optgroup label="NVIDIA - Nuevas RTX 50 Series">
+                        <option value="rtx5050">RTX 5050 WF OC 8GB</option>
+                        <option value="rtx5060ti">RTX 5060Ti GAMING 8GB</option>
+                        <option value="rtx5070">RTX 5070 EAGLE OC 12GB</option>
+                        <option value="rtx5070ti">RTX 5070Ti GAMING OC 16GB</option>
+                    </optgroup>
+                    <optgroup label="AMD - Nuevas RX 9000 Series">
+                        <option value="rx9060xt">RX 9060XT GAMING OC 16GB</option>
+                        <option value="rx9070xt">RX 9070XT GAMING OC 16GB</option>
+                    </optgroup>
+                    <optgroup label="AMD - Nuevas RX 7000 / 6000 Series">
+                        <option value="rx7600">RX 7600 OC 8GB</option>
+                        <option value="rx6700xt-new">RX 6700 XT CHALLENGER 12GB</option>
+                        <option value="rx6800xt-xfx">RX 6800 XT MERCURY 319 16GB</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <div class="comparison-vs" id="comparison-vs" style="display: none;">
+                <div class="vs-container">
+                    <div class="vs-card vs-card-left">
+                        <div class="vs-card-header">TU ELECCIÓN</div>
+                        <div class="vs-card-title">PALIT RTX 3060 Ti DUAL</div>
+                        <div class="vs-card-subtitle">OUTLET</div>
+                        <div class="vs-specs">
+                            <div class="vs-spec-item">
+                                <div class="vs-spec-label">VRAM</div>
+                                <div class="vs-spec-value" id="left-vram">8GB GDDR6</div>
+                            </div>
+                            <div class="vs-spec-item">
+                                <div class="vs-spec-label">CUDA Cores</div>
+                                <div class="vs-spec-value" id="left-cores">4864</div>
+                            </div>
+                            <div class="vs-spec-item">
+                                <div class="vs-spec-label">Base Clock</div>
+                                <div class="vs-spec-value" id="left-base">1410 MHz</div>
+                            </div>
+                            <div class="vs-spec-item">
+                                <div class="vs-spec-label">Boost Clock</div>
+                                <div class="vs-spec-value" id="left-boost">1665 MHz</div>
+                            </div>
+                            <div class="vs-spec-item">
+                                <div class="vs-spec-label">Bus</div>
+                                <div class="vs-spec-value" id="left-bus">256-bit</div>
+                            </div>
+                            <div class="vs-spec-item">
+                                <div class="vs-spec-label">Bandwidth</div>
+                                <div class="vs-spec-value" id="left-bandwidth">448 GB/s</div>
+                            </div>
+                            <div class="vs-spec-item">
+                                <div class="vs-spec-label">TDP</div>
+                                <div class="vs-spec-value" id="left-tdp">200W</div>
+                            </div>
+                            <div class="vs-spec-item">
+                                <div class="vs-spec-label">Precio</div>
+                                <div class="vs-spec-value vs-price" id="left-price">$424.999</div>
+                            </div>
+                        </div>
+                        <div class="vs-performance">
+                            <div class="performance-label">Rendimiento Relativo</div>
+                            <div class="performance-bar">
+                                <div class="performance-fill" id="left-performance" style="width: 100%">100%</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="vs-separator">
+                        <div class="vs-icon">⚔️</div>
+                        <div class="vs-text">VS</div>
+                    </div>
+
+                    <div class="vs-card vs-card-right">
+                        <div class="vs-card-header" id="right-header">COMPARACIÓN</div>
+                        <div class="vs-card-title" id="right-title">-</div>
+                        <div class="vs-card-subtitle" id="right-subtitle">-</div>
+                        <div class="vs-specs">
+                            <div class="vs-spec-item">
+                                <div class="vs-spec-label">VRAM</div>
+                                <div class="vs-spec-value" id="right-vram">-</div>
+                            </div>
+                            <div class="vs-spec-item">
+                                <div class="vs-spec-label">CUDA Cores</div>
+                                <div class="vs-spec-value" id="right-cores">-</div>
+                            </div>
+                            <div class="vs-spec-item">
+                                <div class="vs-spec-label">Base Clock</div>
+                                <div class="vs-spec-value" id="right-base">-</div>
+                            </div>
+                            <div class="vs-spec-item">
+                                <div class="vs-spec-label">Boost Clock</div>
+                                <div class="vs-spec-value" id="right-boost">-</div>
+                            </div>
+                            <div class="vs-spec-item">
+                                <div class="vs-spec-label">Bus</div>
+                                <div class="vs-spec-value" id="right-bus">-</div>
+                            </div>
+                            <div class="vs-spec-item">
+                                <div class="vs-spec-label">Bandwidth</div>
+                                <div class="vs-spec-value" id="right-bandwidth">-</div>
+                            </div>
+                            <div class="vs-spec-item">
+                                <div class="vs-spec-label">TDP</div>
+                                <div class="vs-spec-value" id="right-tdp">-</div>
+                            </div>
+                            <div class="vs-spec-item">
+                                <div class="vs-spec-label">Precio</div>
+                                <div class="vs-spec-value vs-price" id="right-price">-</div>
+                            </div>
+                        </div>
+                        <div class="vs-performance">
+                            <div class="performance-label">Rendimiento Relativo</div>
+                            <div class="performance-bar">
+                                <div class="performance-fill" id="right-performance" style="width: 0%">0%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-winner" id="comparison-winner"></div>
+            </div>
+        </div>
+
+        <!-- OUTLET -->
+        <div class="outlet-box">
+            <div class="outlet-title">🔖 PRODUCTO OUTLET</div>
+            <div class="outlet-description">Producto en excelente estado, revisado y verificado por nuestro equipo técnico. Puede presentar signos mínimos de uso externo.</div>
+            <div class="outlet-benefits">
+                <div class="outlet-benefit">
+                    <div class="benefit-icon">🔄</div>
+                    <div class="benefit-value">30 DÍAS</div>
+                    <div class="benefit-label">DE PRUEBA</div>
+                </div>
+                <div class="outlet-benefit">
+                    <div class="benefit-icon">✅</div>
+                    <div class="benefit-value">1 AÑO</div>
+                    <div class="benefit-label">DE GARANTÍA</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- UBICACIÓN -->
+        <div class="location-box">
+            <div class="location-title">✅ Disponible — En caso de retirar en el local</div>
+            <div class="location-content">
+                <div class="location-icon">🏪</div>
+                <div class="location-status">DISPONIBLE EN LOCAL</div>
+                <div class="location-description">El producto se encuentra disponible para retiro inmediato.<br>Pase directamente por el local una vez abonado su pedido.</div>
+            </div>
+        </div>
+
+        <!-- NOTA -->
+        <div class="note">* La recomendación de watts está basada en un sistema con GPU y CPU en carga total. Para una sugerencia más precisa, consultá con nuestro equipo de soporte.</div>
+    </div>
+
+    <script>
+        // Animate clock bars on load
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('base-clock').style.width = '70%';
+                document.getElementById('boost-clock').style.width = '83%';
+            }, 500);
+        });
+
+        // Tab switching
+        function switchTab(index) {
+            const tabs = document.querySelectorAll('.tool-tab');
+            const contents = document.querySelectorAll('.tool-content');
+            
+            tabs.forEach((tab, i) => {
+                if (i === index) {
+                    tab.classList.add('active');
+                } else {
+                    tab.classList.remove('active');
+                }
+            });
+            
+            contents.forEach((content, i) => {
+                if (i === index) {
+                    content.classList.add('active');
+                } else {
+                    content.classList.remove('active');
+                }
+            });
+        }
+
+        // Bottleneck Calculator Data
+        const cpuPerformance = {
+            // Intel High-end
+            'i9-13900K': 100,
+            'i9-12900K': 95,
+            'i7-13700K': 90,
+            'i7-12700K': 85,
+            // Intel Mid-range
+            'i5-13600K': 80,
+            'i5-12600K': 75,
+            'i5-12400F': 70,
+            'i5-11400F': 65,
+            // Intel Low-end
+            'i3-12100F': 55,
+            'i3-10100F': 50,
+            // AMD High-end
+            'R9-7950X': 100,
+            'R9-5950X': 95,
+            'R7-7700X': 90,
+            'R7-5800X3D': 92,
+            'R7-5700X': 85,
+            // AMD Mid-range
+            'R5-7600X': 80,
+            'R5-5600X': 75,
+            'R5-5600': 72,
+            'R5-3600': 65,
+            // AMD Low-end
+            'R3-3300X': 55,
+            'R3-3100': 50
+        };
+
+        const gpuPerformance = 80; // RTX 3060 Ti baseline
+
+        function calculateBottleneck() {
+            const cpu = document.getElementById('cpu-select').value;
+            const resolution = document.getElementById('resolution-select').value;
+            const resultDiv = document.getElementById('calculator-result');
+            const statusDiv = document.getElementById('result-status');
+            const percentageDiv = document.getElementById('result-percentage');
+            const descriptionDiv = document.getElementById('result-description');
+
+            if (!cpu || !resolution) {
+                alert('Por favor seleccioná tanto el CPU como la resolución');
+                return;
+            }
+
+            const cpuScore = cpuPerformance[cpu];
+            let bottleneck = 0;
+            let status = '';
+            let description = '';
+
+            // Calculate bottleneck based on resolution
+            if (resolution === '1080p') {
+                bottleneck = Math.abs(cpuScore - gpuPerformance);
+                if (bottleneck < 10) {
+                    status = '✅ Equilibrio Perfecto';
+                    description = 'Tu sistema está perfectamente balanceado en 1080p. Vas a obtener el máximo rendimiento sin limitaciones significativas.';
+                } else if (bottleneck < 20) {
+                    status = '👌 Muy Buena Combinación';
+                    description = cpuScore > gpuPerformance 
+                        ? 'Tu CPU es ligeramente más potente que tu GPU en 1080p. Excelente para streaming y multitarea.'
+                        : 'Tu GPU es ligeramente más potente que tu CPU en 1080p. Considerá actualizar el procesador para aprovechar al máximo la gráfica.';
+                } else {
+                    status = '⚠️ Cuello de Botella Detectado';
+                    description = cpuScore > gpuPerformance
+                        ? 'Tu CPU es significativamente más potente que esta GPU. Podrías considerar una GPU más potente para balancear el sistema.'
+                        : 'Tu CPU puede limitar el rendimiento de la RTX 3060 Ti en 1080p. Considerá actualizar el procesador.';
+                }
+            } else if (resolution === '1440p') {
+                bottleneck = Math.abs(cpuScore - gpuPerformance) * 0.7;
+                status = '✅ Buena Combinación';
+                description = 'En 1440p, la RTX 3060 Ti trabaja excelente con tu CPU. La carga se distribuye mejor a esta resolución.';
+            } else if (resolution === '4K') {
+                bottleneck = Math.abs(cpuScore - gpuPerformance) * 0.4;
+                status = '✅ Óptimo para 4K';
+                description = 'En 4K, el cuello de botella del CPU es mínimo. La GPU es el factor limitante principal, lo cual es ideal para gaming en alta resolución.';
+            }
+
+            percentageDiv.textContent = Math.round(bottleneck) + '% de diferencia';
+            statusDiv.textContent = status;
+            descriptionDiv.textContent = description;
+            resultDiv.classList.add('show');
+        }
+
+        // GPU Comparison Data - Base de datos completa de Quantum Hardstore
+        const gpuDatabase = {
+            // RTX 3060 Ti (La GPU base - siempre a la izquierda)
+            'base': {
+                name: 'PALIT RTX 3060 Ti DUAL',
+                manufacturer: 'PALIT',
+                model: 'RTX 3060 Ti',
+                status: 'OUTLET',
+                price: '$424.999',
+                vram: '8GB GDDR6',
+                cores: 4864,
+                baseClock: 1410,
+                boostClock: 1665,
+                bus: '256-bit',
+                bandwidth: 448,
+                tdp: 200,
+                performance: 100 // Base de comparación
+            },
+            
+            // NVIDIA - OUTLET
+            'rtx2060s': {
+                name: 'PALIT RTX 2060 Super DUAL',
+                manufacturer: 'PALIT',
+                model: 'RTX 2060 Super',
+                status: 'OUTLET',
+                price: '$345.000',
+                vram: '8GB GDDR6',
+                cores: 2176,
+                baseClock: 1470,
+                boostClock: 1650,
+                bus: '256-bit',
+                bandwidth: 448,
+                tdp: 175,
+                performance: 75
+            },
+            'gtx1660s-msi': {
+                name: 'MSI GTX 1660 SUPER Ventus Xs',
+                manufacturer: 'MSI',
+                model: 'GTX 1660 SUPER',
+                status: 'OUTLET',
+                price: '$255.000',
+                vram: '6GB GDDR6',
+                cores: 1408,
+                baseClock: 1530,
+                boostClock: 1785,
+                bus: '192-bit',
+                bandwidth: 336,
+                tdp: 125,
+                performance: 52
+            },
+            'gtx1660s-gigabyte': {
+                name: 'GIGABYTE GTX 1660 Super OC',
+                manufacturer: 'GIGABYTE',
+                model: 'GTX 1660 SUPER',
+                status: 'OUTLET',
+                price: '$255.000',
+                vram: '6GB GDDR6',
+                cores: 1408,
+                baseClock: 1530,
+                boostClock: 1860,
+                bus: '192-bit',
+                bandwidth: 336,
+                tdp: 125,
+                performance: 52
+            },
+            'rtx3060ti-fe': {
+                name: 'NVIDIA RTX 3060Ti Founders Edition',
+                manufacturer: 'NVIDIA',
+                model: 'RTX 3060 Ti FE',
+                status: 'OUTLET',
+                price: '$539.444',
+                vram: '8GB GDDR6',
+                cores: 4864,
+                baseClock: 1410,
+                boostClock: 1665,
+                bus: '256-bit',
+                bandwidth: 448,
+                tdp: 200,
+                performance: 100
+            },
+            'rtx3080': {
+                name: 'GIGABYTE RTX 3080 Turbo OC',
+                manufacturer: 'GIGABYTE',
+                model: 'RTX 3080',
+                status: 'OUTLET',
+                price: '$588.000',
+                vram: '10GB GDDR6X',
+                cores: 8704,
+                baseClock: 1440,
+                boostClock: 1710,
+                bus: '320-bit',
+                bandwidth: 760,
+                tdp: 320,
+                performance: 145
+            },
+
+            // AMD - OUTLET
+            'rx6700xt': {
+                name: 'ASROCK RX 6700XT CHALLENGER PRO',
+                manufacturer: 'ASROCK',
+                model: 'RX 6700 XT',
+                status: 'OUTLET',
+                price: '$444.000',
+                vram: '12GB GDDR6',
+                cores: 2560,
+                baseClock: 2321,
+                boostClock: 2581,
+                bus: '192-bit',
+                bandwidth: 384,
+                tdp: 230,
+                performance: 95
+            },
+            'rx6800xt': {
+                name: 'ASROCK RX 6800XT Phantom Gaming',
+                manufacturer: 'ASROCK',
+                model: 'RX 6800 XT',
+                status: 'OUTLET',
+                price: '$550.000',
+                vram: '16GB GDDR6',
+                cores: 4608,
+                baseClock: 2015,
+                boostClock: 2250,
+                bus: '256-bit',
+                bandwidth: 512,
+                tdp: 300,
+                performance: 125
+            },
+            'rx6900xt': {
+                name: 'ASROCK RX 6900XT PHANTOM GAMING',
+                manufacturer: 'ASROCK',
+                model: 'RX 6900 XT',
+                status: 'OUTLET',
+                price: '$665.000',
+                vram: '16GB GDDR6',
+                cores: 5120,
+                baseClock: 2015,
+                boostClock: 2250,
+                bus: '256-bit',
+                bandwidth: 512,
+                tdp: 300,
+                performance: 135
+            },
+            'rx7700xt': {
+                name: 'GIGABYTE RX 7700XT GAMING OC',
+                manufacturer: 'GIGABYTE',
+                model: 'RX 7700 XT',
+                status: 'OUTLET',
+                price: '$679.000',
+                vram: '12GB GDDR6',
+                cores: 3456,
+                baseClock: 2171,
+                boostClock: 2599,
+                bus: '192-bit',
+                bandwidth: 432,
+                tdp: 245,
+                performance: 110
+            },
+
+            // NVIDIA - RTX 50 Series (NUEVAS)
+            'rtx5050': {
+                name: 'GIGABYTE RTX 5050 WF OC',
+                manufacturer: 'GIGABYTE',
+                model: 'RTX 5050',
+                status: 'NUEVA',
+                price: '$587.027',
+                vram: '8GB GDDR7',
+                cores: 3584,
+                baseClock: 1800,
+                boostClock: 2400,
+                bus: '128-bit',
+                bandwidth: 384,
+                tdp: 115,
+                performance: 70
+            },
+            'rtx5060ti': {
+                name: 'GIGABYTE RTX 5060Ti GAMING',
+                manufacturer: 'GIGABYTE',
+                model: 'RTX 5060 Ti',
+                status: 'NUEVA',
+                price: '$944.200',
+                vram: '8GB GDDR7',
+                cores: 4352,
+                baseClock: 1950,
+                boostClock: 2535,
+                bus: '128-bit',
+                bandwidth: 416,
+                tdp: 180,
+                performance: 105
+            },
+            'rtx5070': {
+                name: 'GIGABYTE RTX 5070 EAGLE OC',
+                manufacturer: 'GIGABYTE',
+                model: 'RTX 5070',
+                status: 'NUEVA',
+                price: '$1.462.877',
+                vram: '12GB GDDR7',
+                cores: 6144,
+                baseClock: 2160,
+                boostClock: 2490,
+                bus: '192-bit',
+                bandwidth: 672,
+                tdp: 250,
+                performance: 140
+            },
+            'rtx5070ti': {
+                name: 'GIGABYTE RTX 5070Ti GAMING OC',
+                manufacturer: 'GIGABYTE',
+                model: 'RTX 5070 Ti',
+                status: 'NUEVA',
+                price: '$2.176.163',
+                vram: '16GB GDDR7',
+                cores: 8960,
+                baseClock: 2250,
+                boostClock: 2610,
+                bus: '256-bit',
+                bandwidth: 896,
+                tdp: 300,
+                performance: 165
+            },
+
+            // AMD - RX 9000 Series (NUEVAS)
+            'rx9060xt': {
+                name: 'GIGABYTE RX 9060XT GAMING OC',
+                manufacturer: 'GIGABYTE',
+                model: 'RX 9060 XT',
+                status: 'NUEVA',
+                price: '$779.801',
+                vram: '8GB GDDR6',
+                cores: 2048,
+                baseClock: 2300,
+                boostClock: 2800,
+                bus: '128-bit',
+                bandwidth: 448,
+                tdp: 180,
+                performance: 90
+            },
+            'rx9070xt': {
+                name: 'GIGABYTE RX 9070XT GAMING OC',
+                manufacturer: 'GIGABYTE',
+                model: 'RX 9070 XT',
+                status: 'NUEVA',
+                price: '$1.656.695',
+                vram: '16GB GDDR6',
+                cores: 4096,
+                baseClock: 2400,
+                boostClock: 2900,
+                bus: '256-bit',
+                bandwidth: 640,
+                tdp: 280,
+                performance: 145
+            },
+
+            // AMD - RX 7000 / 6000 Series (NUEVAS)
+            'rx7600': {
+                name: 'SAPPHIRE PULSE RX 7600 OC',
+                manufacturer: 'SAPPHIRE',
+                model: 'RX 7600',
+                status: 'NUEVA',
+                price: '$616.623',
+                vram: '8GB GDDR6',
+                cores: 2048,
+                baseClock: 2250,
+                boostClock: 2655,
+                bus: '128-bit',
+                bandwidth: 288,
+                tdp: 165,
+                performance: 72
+            },
+            'rx6700xt-new': {
+                name: 'ASROCK RX 6700 XT CHALLENGER',
+                manufacturer: 'ASROCK',
+                model: 'RX 6700 XT',
+                status: 'NUEVA',
+                price: '$707.000',
+                vram: '12GB GDDR6',
+                cores: 2560,
+                baseClock: 2321,
+                boostClock: 2581,
+                bus: '192-bit',
+                bandwidth: 384,
+                tdp: 230,
+                performance: 95
+            },
+            'rx6800xt-xfx': {
+                name: 'XFX RX 6800 XT MERCURY 319',
+                manufacturer: 'XFX',
+                model: 'RX 6800 XT',
+                status: 'NUEVA',
+                price: '$755.899',
+                vram: '16GB GDDR6',
+                cores: 4608,
+                baseClock: 2015,
+                boostClock: 2250,
+                bus: '256-bit',
+                bandwidth: 512,
+                tdp: 300,
+                performance: 125
+            }
+        };
+
+        function updateComparison() {
+            const selectedGPU = document.getElementById('gpu-select').value;
+            const comparisonDiv = document.getElementById('comparison-vs');
+            const winnerDiv = document.getElementById('comparison-winner');
+
+            if (!selectedGPU) {
+                comparisonDiv.style.display = 'none';
+                return;
+            }
+
+            const baseGPU = gpuDatabase['base'];
+            const compareGPU = gpuDatabase[selectedGPU];
+
+            // Reset animaciones
+            const leftCard = document.querySelector('.vs-card-left');
+            const rightCard = document.querySelector('.vs-card-right');
+            const separator = document.querySelector('.vs-separator');
+            
+            leftCard.classList.remove('animate-left');
+            rightCard.classList.remove('animate-right');
+            separator.classList.remove('animate');
+            winnerDiv.classList.remove('animate');
+
+            // Mostrar comparación
+            comparisonDiv.classList.add('show');
+            comparisonDiv.style.display = 'block';
+
+            // Trigger animaciones después de un pequeño delay
+            setTimeout(() => {
+                leftCard.classList.add('animate-left');
+                rightCard.classList.add('animate-right');
+                separator.classList.add('animate');
+            }, 100);
+
+            // Actualizar tarjeta derecha
+            document.getElementById('right-header').textContent = compareGPU.status;
+            document.getElementById('right-title').textContent = compareGPU.name;
+            document.getElementById('right-subtitle').textContent = compareGPU.manufacturer;
+            
+            // Actualizar valores con flechas
+            updateValueWithArrow('vram', baseGPU.vram, compareGPU.vram, parseInt(baseGPU.vram), parseInt(compareGPU.vram));
+            updateValueWithArrow('cores', baseGPU.cores.toLocaleString(), compareGPU.cores.toLocaleString(), baseGPU.cores, compareGPU.cores);
+            updateValueWithArrow('base', baseGPU.baseClock + ' MHz', compareGPU.baseClock + ' MHz', baseGPU.baseClock, compareGPU.baseClock);
+            updateValueWithArrow('boost', baseGPU.boostClock + ' MHz', compareGPU.boostClock + ' MHz', baseGPU.boostClock, compareGPU.boostClock);
+            updateValueWithArrow('bandwidth', baseGPU.bandwidth + ' GB/s', compareGPU.bandwidth + ' GB/s', baseGPU.bandwidth, compareGPU.bandwidth);
+            updateValueWithArrowInverse('tdp', baseGPU.tdp + 'W', compareGPU.tdp + 'W', baseGPU.tdp, compareGPU.tdp);
+
+            // Valores que no cambian (bus y precio)
+            document.getElementById('right-bus').innerHTML = compareGPU.bus;
+            document.getElementById('right-price').innerHTML = compareGPU.price;
+
+            // Actualizar barras de rendimiento
+            const performancePercent = (compareGPU.performance / baseGPU.performance) * 100;
+            document.getElementById('right-performance').style.width = performancePercent + '%';
+            document.getElementById('right-performance').textContent = compareGPU.performance + '%';
+
+            // Mostrar conclusión
+            let conclusion = '';
+            let winnerName = '';
+            
+            if (compareGPU.performance > baseGPU.performance + 15) {
+                winnerName = compareGPU.model;
+                const diff = compareGPU.performance - baseGPU.performance;
+                conclusion = `La <strong>${compareGPU.model}</strong> es aproximadamente <strong>${diff}% más potente</strong> que la RTX 3060 Ti, ofreciendo mejor rendimiento en juegos y aplicaciones exigentes. Ideal si buscás más FPS en 1440p o 4K.`;
+            } else if (compareGPU.performance < baseGPU.performance - 15) {
+                winnerName = 'RTX 3060 Ti';
+                const diff = baseGPU.performance - compareGPU.performance;
+                conclusion = `La <strong>RTX 3060 Ti</strong> es aproximadamente <strong>${diff}% más potente</strong> que la ${compareGPU.model}. Mejor opción para gaming en 1440p con ray tracing y DLSS.`;
+            } else {
+                winnerName = 'Rendimiento Similar';
+                conclusion = `Ambas GPUs ofrecen <strong>rendimiento muy similar</strong>. La elección depende del precio y características específicas como VRAM, consumo y tecnologías disponibles (Ray Tracing, DLSS, FSR).`;
+            }
+
+            winnerDiv.innerHTML = `
+                <div class="winner-title">🏆 Conclusión</div>
+                <div class="winner-text">${conclusion}</div>
+            `;
+
+            // Trigger animación del winner
+            setTimeout(() => {
+                winnerDiv.classList.add('animate');
+            }, 500);
+        }
+
+        function updateValueWithArrow(spec, leftDisplay, rightDisplay, leftValue, rightValue) {
+            const leftElement = document.getElementById(`left-${spec}`);
+            const rightElement = document.getElementById(`right-${spec}`);
+            
+            leftElement.classList.remove('winner', 'loser');
+            rightElement.classList.remove('winner', 'loser');
+            
+            if (leftValue > rightValue) {
+                leftElement.classList.add('winner');
+                leftElement.innerHTML = `<span class="stat-arrow arrow-up">↑</span> ${leftDisplay}`;
+                rightElement.classList.add('loser');
+                rightElement.innerHTML = `<span class="stat-arrow arrow-down">↓</span> ${rightDisplay}`;
+            } else if (rightValue > leftValue) {
+                leftElement.classList.add('loser');
+                leftElement.innerHTML = `<span class="stat-arrow arrow-down">↓</span> ${leftDisplay}`;
+                rightElement.classList.add('winner');
+                rightElement.innerHTML = `<span class="stat-arrow arrow-up">↑</span> ${rightDisplay}`;
+            } else {
+                leftElement.innerHTML = leftDisplay;
+                rightElement.innerHTML = rightDisplay;
+            }
+        }
+
+        function updateValueWithArrowInverse(spec, leftDisplay, rightDisplay, leftValue, rightValue) {
+            const leftElement = document.getElementById(`left-${spec}`);
+            const rightElement = document.getElementById(`right-${spec}`);
+            
+            leftElement.classList.remove('winner', 'loser');
+            rightElement.classList.remove('winner', 'loser');
+            
+            // Para TDP, menor es mejor
+            if (leftValue < rightValue) {
+                leftElement.classList.add('winner');
+                leftElement.innerHTML = `<span class="stat-arrow arrow-up">↑</span> ${leftDisplay}`;
+                rightElement.classList.add('loser');
+                rightElement.innerHTML = `<span class="stat-arrow arrow-down">↓</span> ${rightDisplay}`;
+            } else if (rightValue < leftValue) {
+                leftElement.classList.add('loser');
+                leftElement.innerHTML = `<span class="stat-arrow arrow-down">↓</span> ${leftDisplay}`;
+                rightElement.classList.add('winner');
+                rightElement.innerHTML = `<span class="stat-arrow arrow-up">↑</span> ${rightDisplay}`;
+            } else {
+                leftElement.innerHTML = leftDisplay;
+                rightElement.innerHTML = rightDisplay;
+            }
+        }
+
+        function highlightWinner(spec, leftValue, rightValue) {
+            // Función legacy - ya no se usa
+        }
+
+        function highlightWinnerInverse(spec, leftValue, rightValue) {
+            // Función legacy - ya no se usa
+        }
+    </script>
+</body>
+</html>
