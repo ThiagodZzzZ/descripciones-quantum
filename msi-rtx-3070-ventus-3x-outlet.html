@@ -1522,8 +1522,8 @@
             </div>
 
             <div class="comparison-vs" id="comparison-vs" style="display:none;">
-                <div class="vs-container">
-                    <div class="vs-card vs-card-left">
+                <div class="vs-container" style="display:flex !important; flex-direction:row !important; gap:8px; align-items:flex-start; width:100%;">
+                    <div class="vs-card vs-card-left" style="flex:1; min-width:0;">
                         <div class="vs-card-header">TU ELECCIÓN</div>
                         <div class="vs-card-title">MSI RTX 3070 VENTUS 3X</div>
                         <div class="vs-card-subtitle">OUTLET</div>
@@ -1533,11 +1533,11 @@
                                 <div class="vs-spec-value" id="left-vram">8GB GDDR6</div>
                             </div>
                             <div class="vs-spec-item">
-                                <div class="vs-spec-label">CUDA Cores</div>
+                                <div class="vs-spec-label">CUDA</div>
                                 <div class="vs-spec-value" id="left-cores">5888</div>
                             </div>
                             <div class="vs-spec-item">
-                                <div class="vs-spec-label">Boost Clock</div>
+                                <div class="vs-spec-label">Boost</div>
                                 <div class="vs-spec-value" id="left-boost">1725 MHz</div>
                             </div>
                             <div class="vs-spec-item">
@@ -1545,7 +1545,7 @@
                                 <div class="vs-spec-value" id="left-bus">256-bit</div>
                             </div>
                             <div class="vs-spec-item">
-                                <div class="vs-spec-label">Bandwidth</div>
+                                <div class="vs-spec-label">BW</div>
                                 <div class="vs-spec-value" id="left-bandwidth">448 GB/s</div>
                             </div>
                             <div class="vs-spec-item">
@@ -1554,19 +1554,19 @@
                             </div>
                         </div>
                         <div class="vs-performance">
-                            <div class="performance-label">Rendimiento Relativo</div>
+                            <div class="performance-label">Rendimiento</div>
                             <div class="performance-bar">
                                 <div class="performance-fill" id="left-performance" style="width:100%">100%</div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="vs-separator">
+                    <div class="vs-separator" style="flex:0 0 40px; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:10px 0;">
                         <div class="vs-icon">⚔️</div>
                         <div class="vs-text">VS</div>
                     </div>
 
-                    <div class="vs-card vs-card-right">
+                    <div class="vs-card vs-card-right" style="flex:1; min-width:0;">
                         <div class="vs-card-header" id="right-header">COMPARACIÓN</div>
                         <div class="vs-card-title" id="right-title">-</div>
                         <div class="vs-card-subtitle" id="right-subtitle">-</div>
@@ -1576,11 +1576,11 @@
                                 <div class="vs-spec-value" id="right-vram">-</div>
                             </div>
                             <div class="vs-spec-item">
-                                <div class="vs-spec-label">CUDA Cores</div>
+                                <div class="vs-spec-label">CUDA</div>
                                 <div class="vs-spec-value" id="right-cores">-</div>
                             </div>
                             <div class="vs-spec-item">
-                                <div class="vs-spec-label">Boost Clock</div>
+                                <div class="vs-spec-label">Boost</div>
                                 <div class="vs-spec-value" id="right-boost">-</div>
                             </div>
                             <div class="vs-spec-item">
@@ -1588,7 +1588,7 @@
                                 <div class="vs-spec-value" id="right-bus">-</div>
                             </div>
                             <div class="vs-spec-item">
-                                <div class="vs-spec-label">Bandwidth</div>
+                                <div class="vs-spec-label">BW</div>
                                 <div class="vs-spec-value" id="right-bandwidth">-</div>
                             </div>
                             <div class="vs-spec-item">
@@ -1597,7 +1597,7 @@
                             </div>
                         </div>
                         <div class="vs-performance">
-                            <div class="performance-label">Rendimiento Relativo</div>
+                            <div class="performance-label">Rendimiento</div>
                             <div class="performance-bar">
                                 <div class="performance-fill" id="right-performance" style="width:0%">0%</div>
                             </div>
@@ -2127,8 +2127,12 @@
             separator.classList.remove('animate');
             winnerDiv.classList.remove('animate');
 
-            compDiv.classList.add('show');
             compDiv.style.display = 'block';
+            // Forzar flex en el contenedor interno
+            const container = compDiv.querySelector('.vs-container');
+            if (container) {
+                container.style.cssText = 'display:flex !important; flex-direction:row !important; gap:8px; align-items:flex-start; width:100%;';
+            }
 
             setTimeout(() => {
                 leftCard.classList.add('animate-left');
