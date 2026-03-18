@@ -1,0 +1,2209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASRock RX 6900 XT Phantom Gaming - Quantum Hardstore</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Verdana, Geneva, sans-serif;
+            background: #f5f5f5;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 24px 16px;
+        }
+
+        /* HEADER */
+        .header {
+            text-align: center;
+            padding: 28px 10px 22px;
+            border-bottom: 2px solid #ff007f;
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        .header-brand {
+            font-size: 11px;
+            letter-spacing: 6px;
+            color: #ff007f;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .header-manufacturer {
+            font-size: 12px;
+            letter-spacing: 5px;
+            color: #999;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .header-title {
+            font-size: 36px;
+            font-weight: bold;
+            color: #1c1c1c;
+            letter-spacing: 2px;
+            animation: slideDown 1s ease-out;
+        }
+
+        .header-subtitle {
+            font-size: 12px;
+            letter-spacing: 3px;
+            color: #999;
+            margin-top: 10px;
+        }
+
+        /* MSI BADGES */
+        .msi-badge {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin: 14px 0 6px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 14px;
+            border: 1px solid #ff007f;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #ff007f;
+            background: #fff5f9;
+            text-transform: uppercase;
+        }
+
+        /* HIGHLIGHT CENTRAL */
+        .highlight-central {
+            text-align: center;
+            margin: 24px 0 10px;
+            animation: scaleIn 1s ease-out;
+        }
+
+        .highlight-box {
+            display: inline-block;
+            padding: 16px 30px;
+            border: 2px solid #ff007f;
+            border-radius: 8px;
+            background: #ffffff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .highlight-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 0, 127, 0.3);
+        }
+
+        .highlight-label {
+            font-size: 10px;
+            letter-spacing: 5px;
+            color: #ff007f;
+            text-transform: uppercase;
+        }
+
+        .highlight-value {
+            font-size: 40px;
+            font-weight: bold;
+            color: #1c1c1c;
+            margin: 4px 0 2px;
+        }
+
+        .highlight-description {
+            font-size: 11px;
+            color: #aaa;
+            letter-spacing: 3px;
+        }
+
+        /* CARDS */
+        .card {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-top: 3px solid #ff007f;
+            border-radius: 10px;
+            padding: 18px;
+            text-align: center;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .card-label {
+            font-size: 10px;
+            letter-spacing: 4px;
+            color: #ff007f;
+            text-transform: uppercase;
+        }
+
+        .card-value {
+            font-size: 34px;
+            font-weight: bold;
+            color: #1c1c1c;
+            margin: 6px 0 2px;
+        }
+
+        .card-description {
+            font-size: 12px;
+            color: #999;
+        }
+
+        /* ENGINE CLOCK */
+        .engine-clock {
+            background: #1c1c1c;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 12px 0;
+        }
+
+        .engine-title {
+            font-size: 10px;
+            letter-spacing: 4px;
+            color: #999;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        .clock-item {
+            margin-bottom: 14px;
+        }
+
+        .clock-label {
+            font-size: 11px;
+            font-weight: bold;
+            color: #ff007f;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 6px;
+        }
+
+        .clock-bar-bg {
+            background: #2a2a2a;
+            border-radius: 6px;
+            height: 30px;
+            overflow: hidden;
+        }
+
+        .clock-bar {
+            height: 30px;
+            border-radius: 6px;
+            text-align: right;
+            padding-right: 12px;
+            line-height: 30px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #ffffff;
+            transition: width 1.5s ease-out;
+        }
+
+        .clock-bar-base {
+            background: linear-gradient(90deg, #c0005e, #e0007a);
+        }
+
+        .clock-bar-boost {
+            background: linear-gradient(90deg, #ff007f, #ff4da6);
+        }
+
+        /* VENTUS HIGHLIGHT */
+        .ventus {
+            background: #1c1c1c;
+            border-radius: 10px;
+            padding: 22px 20px;
+            margin: 12px 0;
+            border-top: 3px solid #ff007f;
+        }
+
+        .ventus-title {
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 5px;
+            color: #ff007f;
+            text-align: center;
+            margin-bottom: 6px;
+        }
+
+        .ventus-sub {
+            font-size: 11px;
+            color: #cccccc;
+            letter-spacing: 3px;
+            text-align: center;
+            margin-bottom: 18px;
+        }
+
+        .ventus-features {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .vf-feature {
+            flex: 1;
+            min-width: 120px;
+            background: #2a2a2a;
+            border: 1px solid #ff007f;
+            border-radius: 8px;
+            padding: 14px 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .vf-feature:hover {
+            background: #ff007f;
+            transform: translateY(-3px);
+        }
+
+        .vf-feature:hover .vf-label { color: #fff; }
+
+        .vf-icon {
+            font-size: 24px;
+            margin-bottom: 6px;
+        }
+
+        .vf-name {
+            font-size: 11px;
+            font-weight: bold;
+            color: #ff007f;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+            transition: color 0.3s ease;
+        }
+
+        .vf-feature:hover .vf-name { color: #fff; }
+
+        .vf-label {
+            font-size: 10px;
+            color: #aaa;
+            transition: color 0.3s ease;
+        }
+
+        /* SECTION TITLE */
+        .section-title {
+            margin: 28px 0 14px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .section-title span {
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 5px;
+            color: #ff007f;
+            text-transform: uppercase;
+        }
+
+        /* SPEC ITEM */
+        .spec-item {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-left: 3px solid #ff007f;
+            border-radius: 8px;
+            padding: 14px 16px;
+            margin: 8px 0;
+            transition: all 0.3s ease;
+        }
+
+        .spec-item:hover {
+            border-left-width: 5px;
+            padding-left: 14px;
+        }
+
+        .spec-label {
+            font-size: 9px;
+            letter-spacing: 3px;
+            color: #999;
+            text-transform: uppercase;
+        }
+
+        .spec-value {
+            font-size: 16px;
+            font-weight: bold;
+            color: #1c1c1c;
+            margin-top: 4px;
+        }
+
+        /* CONNECTIVITY */
+        .connectivity-item {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 8px 0;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .connectivity-item:hover {
+            background: #f9f9f9;
+            transform: translateX(5px);
+        }
+
+        .connectivity-icon {
+            background: #1c1c1c;
+            border-radius: 8px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 9px;
+            font-weight: bold;
+            color: #ff007f;
+            letter-spacing: 1px;
+            margin-right: 12px;
+        }
+
+        .connectivity-info { flex: 1; }
+
+        .connectivity-title {
+            font-size: 15px;
+            font-weight: bold;
+            color: #1c1c1c;
+        }
+
+        .connectivity-description {
+            font-size: 11px;
+            color: #999;
+        }
+
+        .connectivity-count {
+            font-size: 22px;
+            font-weight: bold;
+            color: #ff007f;
+            margin-left: auto;
+        }
+
+        /* DIMENSIONS */
+        .dimensions-box {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 20px 16px;
+            margin: 12px 0;
+        }
+
+        .dimensions-title {
+            font-size: 10px;
+            letter-spacing: 5px;
+            color: #ff007f;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        .dimensions-table {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .dimension-item { text-align: center; }
+
+        .dimension-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1c1c1c;
+        }
+
+        .dimension-label {
+            font-size: 11px;
+            color: #aaa;
+        }
+
+        .dimension-separator {
+            color: #d3d3d3;
+            font-size: 16px;
+        }
+
+        /* POWER */
+        .power-box {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-left: 4px solid #ff007f;
+            border-radius: 10px;
+            padding: 20px 16px;
+            margin: 12px 0;
+        }
+
+        .power-title {
+            font-size: 10px;
+            letter-spacing: 5px;
+            color: #ff007f;
+            text-transform: uppercase;
+        }
+
+        .power-value {
+            font-size: 34px;
+            font-weight: bold;
+            color: #1c1c1c;
+            margin-top: 4px;
+        }
+
+        .power-unit {
+            font-size: 18px;
+            color: #aaa;
+        }
+
+        .power-description {
+            font-size: 13px;
+            color: #999;
+            margin-top: 4px;
+        }
+
+        /* SOFTWARE */
+        .software-box {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 20px 16px;
+            margin: 12px 0;
+        }
+
+        .software-title {
+            font-size: 10px;
+            letter-spacing: 5px;
+            color: #ff007f;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .software-content {
+            font-size: 14px;
+            color: #1c1c1c;
+        }
+
+        .software-note {
+            font-size: 11px;
+            color: #999;
+            margin-top: 6px;
+        }
+
+        /* INTERACTIVE TOOLS */
+        .tool-tabs {
+            margin: 30px 0 20px;
+            display: flex;
+            gap: 10px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .tool-tab {
+            flex: 1;
+            padding: 15px 10px;
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-bottom: none;
+            border-radius: 8px 8px 0 0;
+            text-align: center;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #999;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tool-tab:hover { background: #f9f9f9; color: #666; }
+
+        .tool-tab.active {
+            background: #ff007f;
+            color: #ffffff;
+            border-color: #ff007f;
+        }
+
+        .tool-content {
+            display: none;
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 0 0 10px 10px;
+            padding: 25px 20px;
+        }
+
+        .tool-content.active {
+            display: block;
+            animation: fadeInUp 0.5s ease-out;
+        }
+
+        /* BOTTLENECK CALCULATOR */
+        .calculator-section { margin-bottom: 20px; }
+
+        .calculator-label {
+            font-size: 11px;
+            font-weight: bold;
+            color: #1c1c1c;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .calculator-select {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #ff007f;
+            border-radius: 10px;
+            font-size: 14px;
+            font-family: Verdana, Geneva, sans-serif;
+            color: #ffffff;
+            background: linear-gradient(135deg, #1c1c1c 0%, #2a2a2a 100%);
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 4px 15px rgba(255, 0, 127, 0.2);
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .calculator-select:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(255, 0, 127, 0.4);
+            border-color: #ff4da6;
+        }
+
+        .calculator-select:focus {
+            outline: none;
+            border-color: #ff007f;
+            box-shadow: 0 0 0 3px rgba(255, 0, 127, 0.3);
+        }
+
+        .calculator-select option { background: #1c1c1c; color: #ffffff; }
+        .calculator-select optgroup { background: #2a2a2a; color: #ff007f; font-weight: bold; }
+
+        .calculator-button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #ff007f, #ff4da6);
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #ffffff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .calculator-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(255, 0, 127, 0.4);
+        }
+
+        .calculator-result {
+            margin-top: 20px;
+            padding: 25px;
+            background: linear-gradient(135deg, #1c1c1c 0%, #2a2a2a 100%);
+            border: 2px solid #ff007f;
+            border-radius: 12px;
+            display: none;
+            transform: scale(0.9);
+            opacity: 0;
+            box-shadow: 0 10px 30px rgba(255, 0, 127, 0.3);
+        }
+
+        .calculator-result.show {
+            display: block;
+            animation: zoomIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+        }
+
+        .result-status {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ff007f;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .result-percentage {
+            font-size: 38px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #ff007f 0%, #ff4da6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .result-description {
+            font-size: 14px;
+            color: #cccccc;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        /* GPU COMPARATOR — compacto, siempre lado a lado */
+        .comparison-vs { margin-top: 20px; display: none; }
+        .comparison-vs.show { display: block; animation: fadeInUp 0.6s ease-out; }
+
+        .vs-container {
+            display: grid;
+            grid-template-columns: 1fr 48px 1fr;
+            gap: 8px;
+            margin-bottom: 14px;
+            align-items: start;
+        }
+
+        .vs-card {
+            background: #1c1c1c;
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 14px 12px;
+            opacity: 0;
+        }
+
+        .vs-card.animate-left  { animation: slideInLeft  0.5s cubic-bezier(0.68,-0.55,0.265,1.55) forwards; }
+        .vs-card.animate-right { animation: slideInRight 0.5s cubic-bezier(0.68,-0.55,0.265,1.55) forwards; animation-delay: 0.15s; }
+
+        .vs-card-left  { border-top: 3px solid #ff007f; }
+        .vs-card-right { border-top: 3px solid #00d4ff; }
+
+        .vs-card-header { font-size: 8px; letter-spacing: 3px; color: #888; text-transform: uppercase; margin-bottom: 4px; text-align: center; }
+        .vs-card-title  { font-size: 12px; font-weight: bold; color: #ffffff; text-align: center; margin-bottom: 2px; line-height: 1.3; }
+        .vs-card-subtitle { font-size: 9px; color: #888; text-align: center; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
+
+        .vs-specs { display: flex; flex-direction: column; gap: 4px; }
+
+        .vs-spec-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 8px;
+            background: #2a2a2a;
+            border-radius: 5px;
+        }
+        .vs-spec-label { font-size: 9px; color: #888; text-transform: uppercase; letter-spacing: 0.5px; }
+        .vs-spec-value { font-size: 11px; font-weight: bold; color: #ffffff; display: flex; align-items: center; gap: 4px; }
+        .vs-spec-value.winner { color: #00ff88; }
+        .vs-spec-value.loser  { color: #ff4444; }
+
+        .stat-arrow { font-size: 11px; font-weight: bold; animation: bounce 1s infinite; }
+        .arrow-up   { color: #00ff88; }
+        .arrow-down { color: #ff4444; }
+
+        @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-2px)} }
+        @keyframes slideInLeft  { from{opacity:0;transform:translateX(-30px)} to{opacity:1;transform:translateX(0)} }
+        @keyframes slideInRight { from{opacity:0;transform:translateX(30px)}  to{opacity:1;transform:translateX(0)} }
+        @keyframes zoomIn       { from{opacity:0;transform:scale(0.8)} to{opacity:1;transform:scale(1)} }
+
+        .vs-separator {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 0;
+            opacity: 0;
+        }
+        .vs-separator.animate { animation: zoomIn 0.5s cubic-bezier(0.68,-0.55,0.265,1.55) forwards; animation-delay: 0.3s; }
+
+        .vs-icon {
+            font-size: 20px;
+            margin-bottom: 4px;
+            animation: pulse 2s infinite, rotate 4s infinite;
+            filter: drop-shadow(0 0 6px rgba(255,0,127,0.6));
+        }
+        @keyframes rotate { 0%,100%{transform:rotate(-5deg)} 50%{transform:rotate(5deg)} }
+
+        .vs-text {
+            font-size: 16px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #ff007f 0%, #00d4ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 3px;
+        }
+
+        .vs-performance { margin-top: 10px; padding-top: 10px; border-top: 1px solid #333; }
+        .performance-label { font-size: 8px; letter-spacing: 2px; color: #888; text-transform: uppercase; margin-bottom: 5px; text-align: center; }
+        .performance-bar { background: #2a2a2a; border-radius: 10px; height: 20px; overflow: hidden; }
+        .performance-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ff007f, #ff4da6);
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 10px; font-weight: bold; color: #ffffff;
+            transition: width 1s ease-out;
+        }
+
+        .comparison-winner {
+            background: #1c1c1c;
+            border: 1px solid #ff007f;
+            border-radius: 10px;
+            padding: 16px;
+            text-align: center;
+            margin-top: 12px;
+            opacity: 0;
+        }
+        .comparison-winner.animate { animation: slideInUp 0.5s cubic-bezier(0.68,-0.55,0.265,1.55) forwards; animation-delay: 0.5s; }
+        @keyframes slideInUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+
+        .winner-title {
+            font-size: 11px; letter-spacing: 3px;
+            background: linear-gradient(135deg, #ff007f 0%, #ffd700 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+            text-transform: uppercase; margin-bottom: 10px; font-weight: bold;
+        }
+        .winner-text { font-size: 13px; color: #cccccc; line-height: 1.7; }
+        .winner-text strong { color: #ff007f; }
+
+        @keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.1)} }
+
+
+        /* OUTLET */
+        .outlet-box {
+            margin: 20px 0;
+            padding: 24px 20px;
+            background: #1c1c1c;
+            border-radius: 10px;
+            border-top: 3px solid #ff007f;
+        }
+
+        .outlet-title {
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #ff007f;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .outlet-description {
+            font-size: 13px;
+            color: #cccccc;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .outlet-benefits { display: flex; gap: 12px; }
+
+        .outlet-benefit {
+            flex: 1;
+            background: #2a2a2a;
+            border: 1px solid #ff007f;
+            border-radius: 10px;
+            padding: 16px 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .outlet-benefit:hover { background: #ff007f; transform: scale(1.05); }
+        .outlet-benefit:hover .benefit-value { color: #ffffff; }
+
+        .benefit-icon  { font-size: 28px; margin-bottom: 6px; }
+        .benefit-value { font-size: 22px; font-weight: bold; color: #ff007f; line-height: 1; transition: color 0.3s ease; }
+        .benefit-label { font-size: 11px; color: #cccccc; letter-spacing: 2px; margin-top: 4px; }
+
+        /* LOCATION */
+        .location-box {
+            margin: 12px 0;
+            padding: 24px 20px;
+            background: #1c1c1c;
+            border-radius: 10px;
+            border-top: 3px solid #ff007f;
+        }
+
+        .location-title {
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #ff007f;
+            text-align: center;
+            margin-bottom: 14px;
+            text-transform: uppercase;
+        }
+
+        .location-content {
+            background: #2a2a2a;
+            border: 1px solid #ff007f;
+            border-radius: 10px;
+            padding: 20px 16px;
+            text-align: center;
+        }
+
+        .location-icon   { font-size: 32px; margin-bottom: 8px; }
+        .location-status { font-size: 18px; font-weight: bold; color: #ff007f; line-height: 1.2; letter-spacing: 2px; }
+        .location-description { font-size: 12px; color: #cccccc; margin-top: 10px; line-height: 1.7; }
+
+        /* NOTE */
+        .note {
+            margin-top: 20px;
+            padding: 12px 16px;
+            border-left: 3px solid #d3d3d3;
+            font-size: 11px;
+            color: #999;
+            line-height: 1.8;
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeIn    { from { opacity:0; }                         to { opacity:1; } }
+        @keyframes slideDown { from { transform: translateY(-20px); opacity:0; } to { transform: translateY(0); opacity:1; } }
+        @keyframes scaleIn   { from { transform: scale(0.9); opacity:0; }  to { transform: scale(1); opacity:1; } }
+        @keyframes fadeInUp  { from { transform: translateY(20px); opacity:0; } to { transform: translateY(0); opacity:1; } }
+
+        /* ── PSU CHECKER ─────────────────────────────────── */
+        .psu-checker-box {
+            background: #1c1c1c;
+            border-radius: 10px;
+            padding: 22px 20px;
+            margin: 12px 0;
+            border-top: 3px solid #ff007f;
+        }
+        .psu-checker-title {
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #ff007f;
+            text-align: center;
+            margin-bottom: 6px;
+        }
+        .psu-checker-sub {
+            font-size: 11px;
+            color: #aaa;
+            text-align: center;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+        .psu-slider-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+        .psu-slider-label {
+            font-size: 11px;
+            font-weight: bold;
+            color: #ff007f;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            min-width: 110px;
+        }
+        .psu-range {
+            flex: 1;
+            -webkit-appearance: none;
+            height: 6px;
+            border-radius: 3px;
+            background: #2a2a2a;
+            outline: none;
+            border: 1px solid #ff007f;
+        }
+        .psu-range::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #ff007f;
+            cursor: pointer;
+            box-shadow: 0 0 8px rgba(255,0,127,0.6);
+        }
+        .psu-range::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #ff007f;
+            cursor: pointer;
+            border: none;
+        }
+        .psu-watts-out {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ffffff;
+            min-width: 60px;
+            text-align: right;
+        }
+        .psu-cert-title {
+            font-size: 10px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #999;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .psu-cert-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 8px;
+            margin-bottom: 18px;
+        }
+        .psu-cert-btn {
+            padding: 10px 4px;
+            border-radius: 8px;
+            border: 1px solid #2a2a2a;
+            background: #2a2a2a;
+            font-size: 11px;
+            font-weight: bold;
+            color: #888;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.2s ease;
+            letter-spacing: 0.5px;
+        }
+        .psu-cert-btn:hover { border-color: #ff007f; color: #ff007f; }
+        .active-sin    { background: #3a1a1a !important; border-color: #E24B4A !important; color: #F09595 !important; }
+        .active-bronze { background: #2a1f10 !important; border-color: #A0522D !important; color: #cd853f !important; }
+        .active-silver { background: #1e1e22 !important; border-color: #A0A0A0 !important; color: #d0d0d0 !important; }
+        .active-gold   { background: #2a2210 !important; border-color: #D4A017 !important; color: #ffd700 !important; }
+        .active-plat   {
+            background: linear-gradient(135deg, #1a1a2e, #0f3460) !important;
+            border-color: #00d4ff !important;
+            color: #00d4ff !important;
+            box-shadow: 0 0 12px rgba(0, 212, 255, 0.5) !important;
+            animation: platGlow 1.8s ease-in-out infinite !important;
+        }
+        @keyframes platGlow {
+            0%, 100% { box-shadow: 0 0 8px rgba(0,212,255,0.4); }
+            50%       { box-shadow: 0 0 20px rgba(0,212,255,0.9), 0 0 6px rgba(255,255,255,0.2); }
+        }
+        .psu-result {
+            background: #2a2a2a;
+            border-radius: 10px;
+            border: 1px solid #444;
+            padding: 18px 16px;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+        .psu-result-icon   { font-size: 32px; margin-bottom: 8px; }
+        .psu-result-status { font-size: 15px; font-weight: bold; color: #ffffff; margin-bottom: 8px; letter-spacing: 1px; }
+        .psu-result-desc   { font-size: 12px; color: #cccccc; line-height: 1.7; }
+        .psu-danger  { background: #2d1010 !important; border-color: #E24B4A !important; }
+        .psu-danger  .psu-result-status { color: #F09595; }
+        .psu-warn    { background: #2d1f08 !important; border-color: #BA7517 !important; }
+        .psu-warn    .psu-result-status { color: #FAC775; }
+        .psu-ok      { background: #0d2010 !important; border-color: #639922 !important; }
+        .psu-ok      .psu-result-status { color: #C0DD97; }
+        .psu-great   { background: #082018 !important; border-color: #1D9E75 !important; }
+        .psu-great   .psu-result-status { color: #5DCAA5; }
+
+        /* ── TOP 3 CPUs ───────────────────────────────────── */
+        .top3-brand-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+        .top3-brand-pill {
+            padding: 5px 16px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        .pill-amd   { background: #3a1010; color: #ff6060; border: 1px solid #ff4444; }
+        .pill-intel { background: #0d1f3a; color: #60b0ff; border: 1px solid #4488ff; }
+        .top3-brand-sub { font-size: 11px; color: #aaa; letter-spacing: 1px; }
+        .top3-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+        .top3-card {
+            background: #1c1c1c;
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 16px 12px 14px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .top3-card:hover { transform: translateY(-4px); }
+        .gold-card   { border-top: 3px solid #D4A017; }
+        .gold-card:hover   { box-shadow: 0 8px 24px rgba(212,160,23,0.3); }
+        .silver-card { border-top: 3px solid #A0A0A0; }
+        .silver-card:hover { box-shadow: 0 8px 24px rgba(160,160,160,0.3); }
+        .bronze-card { border-top: 3px solid #A0522D; }
+        .bronze-card:hover { box-shadow: 0 8px 24px rgba(160,82,45,0.3); }
+        .top3-medal       { font-size: 26px; margin-bottom: 4px; }
+        .top3-medal-label { font-size: 9px; font-weight: bold; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 8px; }
+        .gold-label   { color: #D4A017; }
+        .silver-label { color: #A0A0A0; }
+        .bronze-label { color: #A0522D; }
+        .top3-cpu-name {
+            font-size: 13px;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+        .top3-tag {
+            display: inline-block;
+            font-size: 9px;
+            font-weight: bold;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .tag-ideal { background: #0d2818; color: #5DCAA5; border: 1px solid #1D9E75; }
+        .tag-great { background: #1a2010; color: #97C459; border: 1px solid #639922; }
+        .tag-good  { background: #2a1f08; color: #FAC775; border: 1px solid #BA7517; }
+        .top3-specs { width: 100%; display: flex; flex-direction: column; gap: 5px; margin-bottom: 10px; }
+        .top3-spec-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 4px 8px;
+            background: #2a2a2a;
+            border-radius: 5px;
+        }
+        .top3-spec-k { font-size: 10px; color: #888; }
+        .top3-spec-v { font-size: 11px; font-weight: bold; color: #ff007f; }
+        .top3-why {
+            font-size: 10px;
+            color: #aaa;
+            line-height: 1.6;
+            text-align: left;
+            background: #252525;
+            border-radius: 6px;
+            padding: 8px 10px;
+            border-left: 2px solid #ff007f;
+        }
+
+        @media (max-width: 600px) {
+            .psu-cert-grid { grid-template-columns: repeat(3, 1fr); }
+            .top3-grid { grid-template-columns: 1fr; }
+            .psu-slider-label { min-width: 80px; font-size: 10px; }
+        }
+
+        @media (max-width: 768px) {
+            .header-title    { font-size: 26px; }
+            .highlight-value { font-size: 32px; }
+            .card-value      { font-size: 28px; }
+            .outlet-benefits { flex-direction: column; }
+            .tool-tabs       { flex-direction: column; }
+            .tool-tab        { border-radius: 8px; border-bottom: 1px solid #e0e0e0; }
+            .tool-tab.active { border-bottom: 1px solid #ff007f; }
+            .ventus-features { flex-direction: column; }
+            .msi-badge       { gap: 8px; }
+            /* comparador: siempre lado a lado, nunca apilado */
+            .vs-container    { grid-template-columns: 1fr 40px 1fr; gap: 6px; }
+            .vs-card-title   { font-size: 11px; }
+            .vs-spec-value   { font-size: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- HEADER -->
+        <div class="header">
+            <div class="header-brand">✦ Quantum Hardstore ✦</div>
+            <div class="header-manufacturer">ASROCK® Radeon™</div>
+            <div class="header-title">RX 6900 XT PHANTOM GAMING</div>
+            <div class="header-subtitle">16GB GDDR6 &nbsp;/&nbsp; PCI-E 4.0 &nbsp;/&nbsp; PHANTOM GAMING 3X &nbsp;/&nbsp; OUTLET</div>
+        </div>
+
+        <!-- ASUS ROG BADGES -->
+        <div class="msi-badge">
+            <span class="badge">PHANTOM 3X FAN</span>
+            <span class="badge">RAY TRACING</span>
+            <span class="badge">DLSS</span>
+            <span class="badge">ARGB LED</span>
+            <span class="badge">POLYCHROME SYNC</span>
+            <span class="badge">G-SYNC</span>
+            <span class="badge">DUAL BIOS</span>
+        </div>
+
+        <!-- HIGHLIGHT CENTRAL -->
+        <div class="highlight-central">
+            <div class="highlight-box">
+                <div class="highlight-label">Boost Clock (OC Mode)</div>
+                <div class="highlight-value">2340 MHz</div>
+                <div class="highlight-description">Arquitectura RDNA 2 — Navi 21</div>
+            </div>
+        </div>
+
+        <!-- 3 CARDS -->
+        <div class="card">
+            <div class="card-label">Memoria de Video</div>
+            <div class="card-value">16GB</div>
+            <div class="card-description">GDDR6 — 16 Gbps</div>
+        </div>
+
+        <div class="card">
+            <div class="card-label">CUDA Cores</div>
+            <div class="card-value">5120</div>
+            <div class="card-description">Unidades de Procesamiento</div>
+        </div>
+
+        <div class="card">
+            <div class="card-label">Bus de Memoria</div>
+            <div class="card-value">256-bit</div>
+            <div class="card-description">Ancho de Banda: 512 GB/s</div>
+        </div>
+
+        <!-- ENGINE CLOCK -->
+        <div class="engine-clock">
+            <div class="engine-title">⚡ Velocidad del Motor</div>
+            <div class="clock-item">
+                <div class="clock-label">● Base Clock</div>
+                <div class="clock-bar-bg">
+                    <div class="clock-bar clock-bar-base" id="base-clock" style="width: 0%">1925 MHz</div>
+                </div>
+            </div>
+            <div class="clock-item">
+                <div class="clock-label">● Boost Clock (OC Mode)</div>
+                <div class="clock-bar-bg">
+                    <div class="clock-bar clock-bar-boost" id="boost-clock" style="width: 0%">2340 MHz</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ASUS ROG STRIX PHANTOM 3X -->
+        <div class="ventus">
+            <div class="ventus-title">✦ PHANTOM GAMING 3X ✦</div>
+            <div class="ventus-sub">Sistema de refrigeración ASRock — Triple Fan Phantom Gaming 3X Cooling</div>
+            <div class="ventus-features">
+                <div class="vf-feature">
+                    <div class="vf-icon">🌀</div>
+                    <div class="vf-name">PHANTOM 3X</div>
+                    <div class="vf-label">3 × Striped Axial Fans</div>
+                </div>
+                <div class="vf-feature">
+                    <div class="vf-icon">🔇</div>
+                    <div class="vf-name">0dB SILENT</div>
+                    <div class="vf-label">Fan-stop en idle</div>
+                </div>
+                <div class="vf-feature">
+                    <div class="vf-icon">🛡️</div>
+                    <div class="vf-name">METAL FRAME</div>
+                    <div class="vf-label">Metal backplate</div>
+                </div>
+                <div class="vf-feature">
+                    <div class="vf-icon">🌈</div>
+                    <div class="vf-name">POLYCHROME SYNC</div>
+                    <div class="vf-label">ARGB Polychrome Sync</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ESPECIFICACIONES -->
+        <div class="section-title"><span>▎Especificaciones</span></div>
+
+        <div class="spec-item">
+            <div class="spec-label">Motor Gráfico</div>
+            <div class="spec-value">AMD Radeon™ RX 6900 XT</div>
+        </div>
+
+        <div class="spec-item">
+            <div class="spec-label">Arquitectura</div>
+            <div class="spec-value">AMD RDNA 2 (Navi 21)</div>
+        </div>
+
+        <div class="spec-item">
+            <div class="spec-label">Estándar del Bus</div>
+            <div class="spec-value">PCI Express® Gen 4 x16</div>
+        </div>
+
+        <div class="spec-item">
+            <div class="spec-label">OpenGL / DirectX</div>
+            <div class="spec-value">OpenGL® 4.6 &nbsp;/&nbsp; DirectX® 12 Ultimate (feature level 12_2)</div>
+        </div>
+
+        <div class="spec-item">
+            <div class="spec-label">Velocidad de Memoria</div>
+            <div class="spec-value">16 Gbps</div>
+        </div>
+
+        <div class="spec-item">
+            <div class="spec-label">Ancho de Banda de Memoria</div>
+            <div class="spec-value">512 GB/s</div>
+        </div>
+
+        <div class="spec-item">
+            <div class="spec-label">Resolución Máxima Digital</div>
+            <div class="spec-value">7680 × 4320 — 8K Digital</div>
+        </div>
+
+        <div class="spec-item">
+            <div class="spec-label">Resolución Recomendada</div>
+            <div class="spec-value">1440p / 4K</div>
+        </div>
+
+        <div class="spec-item">
+            <div class="spec-label">Pantallas Simultáneas</div>
+            <div class="spec-value">4</div>
+        </div>
+
+        <div class="spec-item">
+            <div class="spec-label">Ray Tracing / DLSS</div>
+            <div class="spec-value">Sí — Ray Tracing 2.0 / DLSS 2.0</div>
+        </div>
+
+        <div class="spec-item">
+            <div class="spec-label">G-SYNC / VR Ready</div>
+            <div class="spec-value">Sí — AMD FreeSync Premium Pro / VR Ready</div>
+        </div>
+
+        <div class="spec-item">
+            <div class="spec-label">Consumo Máximo (TDP)</div>
+            <div class="spec-value">300 W</div>
+        </div>
+
+        <div class="spec-item">
+            <div class="spec-label">Proceso de Fabricación</div>
+            <div class="spec-value">7 nm — TSMC</div>
+        </div>
+
+        <div class="spec-item">
+            <div class="spec-label">HDCP</div>
+            <div class="spec-value">Sí — HDCP 2.3</div>
+        </div>
+
+        <!-- CONECTIVIDAD -->
+        <div class="section-title"><span>▎Conectividad</span></div>
+
+        <div class="connectivity-item">
+            <div class="connectivity-icon">HDMI</div>
+            <div class="connectivity-info">
+                <div class="connectivity-title">HDMI™ 2.1 Nativo</div>
+                <div class="connectivity-description">4K@120Hz / 8K@60Hz</div>
+            </div>
+            <div class="connectivity-count">×1</div>
+        </div>
+
+        <div class="connectivity-item">
+            <div class="connectivity-icon">DP</div>
+            <div class="connectivity-info">
+                <div class="connectivity-title">DisplayPort 1.4 con DSC Nativo</div>
+                <div class="connectivity-description">4K@120Hz / 8K@60Hz</div>
+            </div>
+            <div class="connectivity-count">×3</div>
+        </div>
+
+        <!-- DIMENSIONES -->
+        <div class="dimensions-box">
+            <div class="dimensions-title">📐 Dimensiones</div>
+            <div class="dimensions-table">
+                <div class="dimension-item">
+                    <div class="dimension-value">332</div>
+                    <div class="dimension-label">mm — Largo</div>
+                </div>
+                <div class="dimension-separator">×</div>
+                <div class="dimension-item">
+                    <div class="dimension-value">140</div>
+                    <div class="dimension-label">mm — Alto</div>
+                </div>
+                <div class="dimension-separator">×</div>
+                <div class="dimension-item">
+                    <div class="dimension-value">57</div>
+                    <div class="dimension-label">mm — Ancho (3 slots)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FUENTE INTERACTIVA -->
+        <div class="psu-checker-box">
+            <div class="psu-checker-title">⚡ Verificador de Fuente de Poder</div>
+            <div class="psu-checker-sub">Conectores requeridos: 3 × 8-pin &nbsp;|&nbsp; Consumo máximo GPU: 300W</div>
+
+            <div class="psu-slider-row">
+                <span class="psu-slider-label">Watts de tu fuente</span>
+                <input type="range" class="psu-range" min="350" max="1200" step="50" value="750" id="psu-slider">
+                <span class="psu-watts-out" id="psu-watts-out">850 W</span>
+            </div>
+
+            <div class="psu-cert-title">Certificación 80 Plus</div>
+            <div class="psu-cert-grid">
+                <div class="psu-cert-btn cert-sin active-sin"      id="cert-sin"    onclick="setCert('sin')">Sin cert.</div>
+                <div class="psu-cert-btn cert-bronze"              id="cert-bronze" onclick="setCert('bronze')">🥉 Bronze</div>
+                <div class="psu-cert-btn cert-silver"              id="cert-silver" onclick="setCert('silver')">🥈 Silver</div>
+                <div class="psu-cert-btn cert-gold"                id="cert-gold"   onclick="setCert('gold')">🥇 Gold</div>
+                <div class="psu-cert-btn cert-plat"                id="cert-plat"   onclick="setCert('plat')">✨ Platinum</div>
+            </div>
+
+            <div class="psu-result" id="psu-result">
+                <div class="psu-result-icon" id="psu-result-icon">⚡</div>
+                <div class="psu-result-status" id="psu-result-status">Seleccioná tu fuente</div>
+                <div class="psu-result-desc" id="psu-result-desc">Mové el slider y elegí la certificación para ver el diagnóstico.</div>
+            </div>
+        </div>
+
+        <!-- SOFTWARE -->
+        <div class="software-box">
+            <div class="software-title">💿 Software</div>
+            <div class="software-content">ASRock Polychrome SYNC • AMD Radeon Software • AMD FidelityFX Super Resolution • AMD Anti-Lag • Radeon Image Sharpening</div>
+            <div class="software-note">Descargá todo el software desde el sitio de soporte oficial de ASRock.</div>
+        </div>
+
+        <!-- TOOL TABS -->
+        <div class="tool-tabs">
+            <div class="tool-tab active" onclick="switchTab(0)">
+                <span>🏆 Top CPUs Recomendados</span>
+            </div>
+            <div class="tool-tab" onclick="switchTab(1)">
+                <span>⚖️ Comparador de GPUs</span>
+            </div>
+        </div>
+
+        <!-- TOP 3 CPUs -->
+        <div class="tool-content active" id="tool-0">
+
+            <!-- AMD -->
+            <div class="top3-brand-header">
+                <span class="top3-brand-pill pill-amd">AMD</span>
+                <span class="top3-brand-sub">Mejores procesadores para la RX 6900 XT Phantom Gaming</span>
+            </div>
+            <div class="top3-grid">
+
+                <div class="top3-card gold-card">
+                    <div class="top3-medal">🥇</div>
+                    <div class="top3-medal-label gold-label">1er Lugar</div>
+                    <div class="top3-cpu-name">Ryzen 7 5800X3D</div>
+                    <span class="top3-tag tag-ideal">Combinación ideal</span>
+                    <div class="top3-specs">
+                        <div class="top3-spec-row"><span class="top3-spec-k">Núcleos</span><span class="top3-spec-v">8C / 16T</span></div>
+                        <div class="top3-spec-row"><span class="top3-spec-k">Boost</span><span class="top3-spec-v">4.5 GHz</span></div>
+                        <div class="top3-spec-row"><span class="top3-spec-k">3D V-Cache</span><span class="top3-spec-v">96 MB L3</span></div>
+                        <div class="top3-spec-row"><span class="top3-spec-k">Socket</span><span class="top3-spec-v">AM4</span></div>
+                    </div>
+                    <div class="top3-why">El rey del gaming en AM4. Su caché 3D elimina cuellos de botella y exprimís el 100% de la RTX 3070 en cualquier resolución.</div>
+                </div>
+
+                <div class="top3-card silver-card">
+                    <div class="top3-medal">🥈</div>
+                    <div class="top3-medal-label silver-label">2do Lugar</div>
+                    <div class="top3-cpu-name">Ryzen 5 5600X</div>
+                    <span class="top3-tag tag-great">Excelente precio/perf.</span>
+                    <div class="top3-specs">
+                        <div class="top3-spec-row"><span class="top3-spec-k">Núcleos</span><span class="top3-spec-v">6C / 12T</span></div>
+                        <div class="top3-spec-row"><span class="top3-spec-k">Boost</span><span class="top3-spec-v">4.6 GHz</span></div>
+                        <div class="top3-spec-row"><span class="top3-spec-k">Caché L3</span><span class="top3-spec-v">32 MB</span></div>
+                        <div class="top3-spec-row"><span class="top3-spec-k">Socket</span><span class="top3-spec-v">AM4</span></div>
+                    </div>
+                    <div class="top3-why">Balance perfecto entre precio y rendimiento. IPC altísimo en AM4, ideal para 1440p sin desperdiciar nada de la GPU.</div>
+                </div>
+
+                <div class="top3-card bronze-card">
+                    <div class="top3-medal">🥉</div>
+                    <div class="top3-medal-label bronze-label">3er Lugar</div>
+                    <div class="top3-cpu-name">Ryzen 7 5700X</div>
+                    <span class="top3-tag tag-good">Muy buena opción</span>
+                    <div class="top3-specs">
+                        <div class="top3-spec-row"><span class="top3-spec-k">Núcleos</span><span class="top3-spec-v">8C / 16T</span></div>
+                        <div class="top3-spec-row"><span class="top3-spec-k">Boost</span><span class="top3-spec-v">4.6 GHz</span></div>
+                        <div class="top3-spec-row"><span class="top3-spec-k">Caché L3</span><span class="top3-spec-v">32 MB</span></div>
+                        <div class="top3-spec-row"><span class="top3-spec-k">Socket</span><span class="top3-spec-v">AM4</span></div>
+                    </div>
+                    <div class="top3-why">8 núcleos accesibles. Ideal para gaming + streaming simultáneo junto a la RTX 3070 sin saturar el CPU.</div>
+                </div>
+            </div>
+
+            <!-- INTEL -->
+            <div class="top3-brand-header" style="margin-top: 24px;">
+                <span class="top3-brand-pill pill-intel">INTEL</span>
+                <span class="top3-brand-sub">Mejores procesadores para la RX 6900 XT Phantom Gaming</span>
+            </div>
+            <div class="top3-grid">
+
+                <div class="top3-card gold-card">
+                    <div class="top3-medal">🥇</div>
+                    <div class="top3-medal-label gold-label">1er Lugar</div>
+                    <div class="top3-cpu-name">Core i7-13700F</div>
+                    <span class="top3-tag tag-ideal">Combinación ideal</span>
+                    <div class="top3-specs">
+                        <div class="top3-spec-row"><span class="top3-spec-k">Núcleos</span><span class="top3-spec-v">16C / 24T</span></div>
+                        <div class="top3-spec-row"><span class="top3-spec-k">Boost</span><span class="top3-spec-v">5.2 GHz</span></div>
+                        <div class="top3-spec-row"><span class="top3-spec-k">Caché L3</span><span class="top3-spec-v">30 MB</span></div>
+                        <div class="top3-spec-row"><span class="top3-spec-k">Socket</span><span class="top3-spec-v">LGA1700</span></div>
+                    </div>
+                    <div class="top3-why">16 núcleos híbridos con boost altísimo. No desperdicia ni un MHz de la RTX 3070, ideal para 1440p y 4K con headroom de sobra.</div>
+                </div>
+
+                <div class="top3-card silver-card">
+                    <div class="top3-medal">🥈</div>
+                    <div class="top3-medal-label silver-label">2do Lugar</div>
+                    <div class="top3-cpu-name">Core i5-13600K</div>
+                    <span class="top3-tag tag-great">Excelente precio/perf.</span>
+                    <div class="top3-specs">
+                        <div class="top3-spec-row"><span class="top3-spec-k">Núcleos</span><span class="top3-spec-v">14C / 20T</span></div>
+                        <div class="top3-spec-row"><span class="top3-spec-k">Boost</span><span class="top3-spec-v">5.1 GHz</span></div>
+                        <div class="top3-spec-row"><span class="top3-spec-k">Caché L3</span><span class="top3-spec-v">24 MB</span></div>
+                        <div class="top3-spec-row"><span class="top3-spec-k">Socket</span><span class="top3-spec-v">LGA1700</span></div>
+                    </div>
+                    <div class="top3-why">El mejor i5 para gaming de su generación. Empareja perfectamente con la RTX 3070 sin pagar de más por un i7.</div>
+                </div>
+
+                <div class="top3-card bronze-card">
+                    <div class="top3-medal">🥉</div>
+                    <div class="top3-medal-label bronze-label">3er Lugar</div>
+                    <div class="top3-cpu-name">Core i5-12400F</div>
+                    <span class="top3-tag tag-good">Muy buena opción</span>
+                    <div class="top3-specs">
+                        <div class="top3-spec-row"><span class="top3-spec-k">Núcleos</span><span class="top3-spec-v">6C / 12T</span></div>
+                        <div class="top3-spec-row"><span class="top3-spec-k">Boost</span><span class="top3-spec-v">4.4 GHz</span></div>
+                        <div class="top3-spec-row"><span class="top3-spec-k">Caché L3</span><span class="top3-spec-v">18 MB</span></div>
+                        <div class="top3-spec-row"><span class="top3-spec-k">Socket</span><span class="top3-spec-v">LGA1700</span></div>
+                    </div>
+                    <div class="top3-why">Opción económica que se lleva muy bien con la RTX 3070 en 1080p y 1440p. PC gamer completa sin gastar de más.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- GPU COMPARATOR -->
+        <div class="tool-content" id="tool-1">
+            <div class="calculator-section">
+                <div class="calculator-label">Seleccioná una GPU para comparar</div>
+                <select class="calculator-select" id="gpu-select" onchange="updateComparison()">
+                    <option value="">-- Elegí una placa de video --</option>
+
+                    <optgroup label="NVIDIA — OUTLET">
+                        <option value="rtx3070-ventus2x">MSI RTX 3070 Ventus 2X (OUTLET)</option>
+                        <option value="rtx3070ti-tuf">ASUS RTX 3070 Ti TUF GAMING (OUTLET)</option>
+                        <option value="rtx3060ti-ventus2x">MSI RTX 3060 Ti Ventus 2X 8GB (OUTLET)</option>
+                        <option value="rtx3060ti-gamingxtrio">MSI RTX 3060 Ti GAMING X TRIO (OUTLET)</option>
+                        <option value="rtx3080-rogstrix">ASUS RTX 3080 ROG STRIX (OUTLET)</option>
+                        <option value="rtx3090-zotac">ZOTAC RTX 3090 TRINITY 24GB (OUTLET)</option>
+                        <option value="rtx3070-pny">PNY RTX 3070 XRL8 (OUTLET)</option>
+                        <option value="rtx2060-zotac">ZOTAC RTX 2060 Twin Fan 12GB (OUTLET)</option>
+                        <option value="gtx1660s-msi">MSI GTX 1660 SUPER Ventus Xs 6GB (OUTLET)</option>
+                        <option value="gtx1660s-gigabyte">GIGABYTE GTX 1660 Super OC (OUTLET)</option>
+                    </optgroup>
+
+                    <optgroup label="AMD — OUTLET">
+                        <option value="rx6700xt-asus">ASUS RX 6700XT DUAL (OUTLET)</option>
+                        <option value="rx6800xt-asrock">ASROCK RX 6800XT Phantom Gaming (OUTLET)</option>
+                        <option value="rx6900xt-asrock">ASROCK RX 6900XT PHANTOM GAMING (OUTLET)</option>
+                        <option value="rx6900xt-formula">ASROCK RX 6900XT OC Formula 16GB (OPENBOX)</option>
+                        <option value="rx7700xt-gigabyte">GIGABYTE RX 7700XT GAMING OC (OUTLET)</option>
+                    </optgroup>
+
+                    <optgroup label="NVIDIA — RTX 50 Series (NUEVAS)">
+                        <option value="rtx5050-gigabyte-wf">GIGABYTE RTX 5050 WF OC 8GB</option>
+                        <option value="rtx5050-gigabyte-gaming">GIGABYTE RTX 5050 GAMING OC 8GB</option>
+                        <option value="rtx5050-msi-gaming">MSI RTX 5050 GAMING 8G OC</option>
+                        <option value="rtx5050-msi-shadow">MSI RTX 5050 SHADOW 2X 8G OC</option>
+                        <option value="rtx5050-zotac-solo">ZOTAC RTX 5050 8GB SOLO</option>
+                        <option value="rtx5050-zotac-twin">ZOTAC RTX 5050 8GB TWIN EDGE</option>
+                        <option value="rtx5050-asus-prime">ASUS PRIME RTX 5050 O 8GB</option>
+                        <option value="rtx5060ti-gigabyte-gaming">GIGABYTE RTX 5060 Ti GAMING 8GB</option>
+                        <option value="rtx5060ti-gigabyte-wf2">GIGABYTE RTX 5060 Ti WF2 OC 8GB</option>
+                        <option value="rtx5060ti-gigabyte-eagle">GIGABYTE RTX 5060 Ti EAGLE OC 8GB</option>
+                        <option value="rtx5060ti-msi-gaming16">MSI RTX 5060 Ti GAMING 16G OC</option>
+                        <option value="rtx5060ti-msi-shadow8">MSI RTX 5060 Ti SHADOW 2X PLUS 8G</option>
+                        <option value="rtx5060ti-asus-prime8">ASUS PRIME RTX 5060 Ti O 8GB</option>
+                        <option value="rtx5070-gigabyte-eagle">GIGABYTE RTX 5070 EAGLE OC 12GB</option>
+                        <option value="rtx5070-gigabyte-aero">GIGABYTE RTX 5070 AERO OC 12GB</option>
+                        <option value="rtx5070-gigabyte-white">GIGABYTE RTX 5070 EAGLE OC ICE 12GB (WHITE)</option>
+                        <option value="rtx5070-zotac">ZOTAC RTX 5070 12GB SOLID OC GDDR7</option>
+                        <option value="rtx5070ti-gigabyte-gaming">GIGABYTE RTX 5070 Ti GAMING OC 16GB</option>
+                        <option value="rtx5070ti-gigabyte-aero">GIGABYTE RTX 5070 Ti AERO OC 16GB</option>
+                    </optgroup>
+
+                    <optgroup label="AMD — RX 9000 Series (NUEVAS)">
+                        <option value="rx9060xt-gigabyte-8g">GIGABYTE RX 9060 XT GAMING OC 8GB</option>
+                        <option value="rx9060xt-sapphire-16g">SAPPHIRE PULSE RX 9060 XT GAMING OC 16GB</option>
+                        <option value="rx9070-asus-prime">ASUS PRIME RX 9070 O 16GB EVO</option>
+                        <option value="rx9070xt-gigabyte-gaming">GIGABYTE RX 9070 XT GAMING OC 16GB</option>
+                        <option value="rx9070xt-gigabyte-aorus">GIGABYTE RX 9070 XT AORUS ELITE 16GB</option>
+                        <option value="rx9070xt-sapphire">SAPPHIRE PULSE RX 9070 XT 16GB</option>
+                        <option value="rx9070xt-asrock-dark">ASROCK RX 9070 XT STEEL LEGEND DARK 16GB</option>
+                        <option value="rx9070xt-asrock-challenger">ASROCK RX 9070 XT CHALLENGER 16GB</option>
+                    </optgroup>
+
+                    <optgroup label="AMD — RX 6000/7000 Series (NUEVAS)">
+                        <option value="rx6700xt-asrock-challenger">ASROCK RX 6700 XT CHALLENGER 12GB</option>
+                        <option value="rx7600-sapphire">SAPPHIRE PULSE RX 7600 OC 8GB</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <div class="comparison-vs" id="comparison-vs" style="display:none;">
+                <div class="vs-container" style="display:flex !important; flex-direction:row !important; gap:8px; align-items:flex-start; width:100%;">
+                    <div class="vs-card vs-card-left" style="flex:1; min-width:0;">
+                        <div class="vs-card-header">TU ELECCIÓN</div>
+                        <div class="vs-card-title">EVGA RX 6900 XT PHANTOM GAMING</div>
+                        <div class="vs-card-subtitle">OUTLET</div>
+                        <div class="vs-specs">
+                            <div class="vs-spec-item">
+                                <div class="vs-spec-label">VRAM</div>
+                                <div class="vs-spec-value" id="left-vram">16GB GDDR6</div>
+                            </div>
+                            <div class="vs-spec-item">
+                                <div class="vs-spec-label">CUDA</div>
+                                <div class="vs-spec-value" id="left-cores">5120</div>
+                            </div>
+                            <div class="vs-spec-item">
+                                <div class="vs-spec-label">Boost</div>
+                                <div class="vs-spec-value" id="left-boost">2340 MHz</div>
+                            </div>
+                            <div class="vs-spec-item">
+                                <div class="vs-spec-label">Bus</div>
+                                <div class="vs-spec-value" id="left-bus">256-bit</div>
+                            </div>
+                            <div class="vs-spec-item">
+                                <div class="vs-spec-label">BW</div>
+                                <div class="vs-spec-value" id="left-bandwidth">512 GB/s</div>
+                            </div>
+                            <div class="vs-spec-item">
+                                <div class="vs-spec-label">TDP</div>
+                                <div class="vs-spec-value" id="left-tdp">300W</div>
+                            </div>
+                        </div>
+                        <div class="vs-performance">
+                            <div class="performance-label">Rendimiento</div>
+                            <div class="performance-bar">
+                                <div class="performance-fill" id="left-performance" style="width:100%">100%</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="vs-separator" style="flex:0 0 40px; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:10px 0;">
+                        <div class="vs-icon">⚔️</div>
+                        <div class="vs-text">VS</div>
+                    </div>
+
+                    <div class="vs-card vs-card-right" style="flex:1; min-width:0;">
+                        <div class="vs-card-header" id="right-header">COMPARACIÓN</div>
+                        <div class="vs-card-title" id="right-title">-</div>
+                        <div class="vs-card-subtitle" id="right-subtitle">-</div>
+                        <div class="vs-specs">
+                            <div class="vs-spec-item">
+                                <div class="vs-spec-label">VRAM</div>
+                                <div class="vs-spec-value" id="right-vram">-</div>
+                            </div>
+                            <div class="vs-spec-item">
+                                <div class="vs-spec-label">CUDA</div>
+                                <div class="vs-spec-value" id="right-cores">-</div>
+                            </div>
+                            <div class="vs-spec-item">
+                                <div class="vs-spec-label">Boost</div>
+                                <div class="vs-spec-value" id="right-boost">-</div>
+                            </div>
+                            <div class="vs-spec-item">
+                                <div class="vs-spec-label">Bus</div>
+                                <div class="vs-spec-value" id="right-bus">-</div>
+                            </div>
+                            <div class="vs-spec-item">
+                                <div class="vs-spec-label">BW</div>
+                                <div class="vs-spec-value" id="right-bandwidth">-</div>
+                            </div>
+                            <div class="vs-spec-item">
+                                <div class="vs-spec-label">TDP</div>
+                                <div class="vs-spec-value" id="right-tdp">-</div>
+                            </div>
+                        </div>
+                        <div class="vs-performance">
+                            <div class="performance-label">Rendimiento</div>
+                            <div class="performance-bar">
+                                <div class="performance-fill" id="right-performance" style="width:0%">0%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="comparison-winner" id="comparison-winner"></div>
+            </div>
+        </div>
+
+        <!-- OUTLET -->
+        <div class="outlet-box">
+            <div class="outlet-title">🔖 PRODUCTO OUTLET</div>
+            <div class="outlet-description">Producto en excelente estado, revisado y verificado por nuestro equipo técnico. Puede presentar signos mínimos de uso externo.</div>
+            <div class="outlet-benefits">
+                <div class="outlet-benefit">
+                    <div class="benefit-icon">🔄</div>
+                    <div class="benefit-value">30 DÍAS</div>
+                    <div class="benefit-label">DE PRUEBA</div>
+                </div>
+                <div class="outlet-benefit">
+                    <div class="benefit-icon">✅</div>
+                    <div class="benefit-value">1 AÑO</div>
+                    <div class="benefit-label">DE GARANTÍA</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- UBICACIÓN -->
+        <div class="location-box">
+            <div class="location-title">✅ Disponible — En caso de retirar en el local</div>
+            <div class="location-content">
+                <div class="location-icon">🏪</div>
+                <div class="location-status">DISPONIBLE EN LOCAL</div>
+                <div class="location-description">El producto se encuentra disponible para retiro inmediato.<br>Pase directamente por el local una vez abonado su pedido.</div>
+            </div>
+        </div>
+
+        <!-- NOTA -->
+        <div class="note">* La recomendación de watts está basada en un sistema con GPU y CPU en carga total. Para una sugerencia más precisa, consultá con nuestro equipo de soporte. &nbsp;|&nbsp; ** El Boost Clock de 1800 MHz corresponde al modelo FTW3 Ultra. La memoria GDDR6X opera a 16 Gbps con bus de 384-bit.</div>
+
+    </div>
+
+    <script>
+        // Animate clock bars on load
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                document.getElementById('base-clock').style.width  = '73%';
+                document.getElementById('boost-clock').style.width = '90%';
+            }, 500);
+        });
+
+        function switchTab(index) {
+            document.querySelectorAll('.tool-tab').forEach((t, i) =>
+                t.classList.toggle('active', i === index));
+            document.querySelectorAll('.tool-content').forEach((c, i) =>
+                c.classList.toggle('active', i === index));
+        }
+
+        // CPU scores — escala 0-100 basada en rendimiento gaming single/multi core real
+        // La RTX 3070 tiene gpuScore = 72 (equivalente a CPU en escala gaming)
+        // Por debajo de 60 → cuello de botella serio en 1080p
+        const cpuData = {
+            // Intel Core Ultra (Arrow Lake)
+            'ultra9-285K':  { score: 98, name: 'Core Ultra 9 285K' },
+            'ultra7-265K':  { score: 94, name: 'Core Ultra 7 265K' },
+            'ultra5-245K':  { score: 87, name: 'Core Ultra 5 245K' },
+            'ultra5-225F':  { score: 80, name: 'Core Ultra 5 225F' },
+            // Intel 13th Gen
+            'i9-13900KS':   { score: 100, name: 'i9-13900KS' },
+            'i9-13900K':    { score: 98,  name: 'i9-13900K' },
+            'i9-13900F':    { score: 94,  name: 'i9-13900F' },
+            'i7-13700K':    { score: 90,  name: 'i7-13700K' },
+            'i7-13700KF':   { score: 90,  name: 'i7-13700KF' },
+            'i7-13700F':    { score: 85,  name: 'i7-13700F' },
+            'i5-13600K':    { score: 82,  name: 'i5-13600K' },
+            'i5-13600KF':   { score: 82,  name: 'i5-13600KF' },
+            'i5-13400F':    { score: 74,  name: 'i5-13400F' },
+            'i5-13400':     { score: 73,  name: 'i5-13400' },
+            'i3-13100F':    { score: 58,  name: 'i3-13100F' },
+            'i3-13100':     { score: 57,  name: 'i3-13100' },
+            // Intel 12th Gen
+            'i9-12900K':    { score: 96,  name: 'i9-12900K' },
+            'i9-12900KF':   { score: 96,  name: 'i9-12900KF' },
+            'i7-12700K':    { score: 88,  name: 'i7-12700K' },
+            'i7-12700KF':   { score: 88,  name: 'i7-12700KF' },
+            'i7-12700F':    { score: 84,  name: 'i7-12700F' },
+            'i5-12600K':    { score: 78,  name: 'i5-12600K' },
+            'i5-12600KF':   { score: 78,  name: 'i5-12600KF' },
+            'i5-12400F':    { score: 70,  name: 'i5-12400F' },
+            'i5-12400':     { score: 69,  name: 'i5-12400' },
+            'i3-12100F':    { score: 55,  name: 'i3-12100F' },
+            'i3-12100':     { score: 54,  name: 'i3-12100' },
+            // Intel 11th Gen
+            'i9-11900K':    { score: 80,  name: 'i9-11900K' },
+            'i7-11700K':    { score: 75,  name: 'i7-11700K' },
+            'i7-11700KF':   { score: 75,  name: 'i7-11700KF' },
+            'i5-11600K':    { score: 67,  name: 'i5-11600K' },
+            'i5-11400F':    { score: 63,  name: 'i5-11400F' },
+            'i3-11100F':    { score: 46,  name: 'i3-11100F' },
+            // Intel 10th Gen
+            'i9-10900K':    { score: 74,  name: 'i9-10900K' },
+            'i7-10700K':    { score: 70,  name: 'i7-10700K' },
+            'i7-10700F':    { score: 67,  name: 'i7-10700F' },
+            'i5-10600K':    { score: 62,  name: 'i5-10600K' },
+            'i5-10400F':    { score: 57,  name: 'i5-10400F' },
+            'i3-10100F':    { score: 44,  name: 'i3-10100F' },
+            'i3-10100':     { score: 43,  name: 'i3-10100' },
+            // Intel 9th/8th Gen
+            'i9-9900K':     { score: 72,  name: 'i9-9900K' },
+            'i7-9700K':     { score: 66,  name: 'i7-9700K' },
+            'i5-9600K':     { score: 58,  name: 'i5-9600K' },
+            'i5-9400F':     { score: 52,  name: 'i5-9400F' },
+            'i7-8700K':     { score: 64,  name: 'i7-8700K' },
+            'i5-8400':      { score: 50,  name: 'i5-8400' },
+            'i3-8100':      { score: 38,  name: 'i3-8100' },
+            // Intel 7th/6th Gen
+            'i7-7700K':     { score: 55,  name: 'i7-7700K' },
+            'i5-7600K':     { score: 48,  name: 'i5-7600K' },
+            'i5-7400':      { score: 42,  name: 'i5-7400' },
+            'i3-7100':      { score: 34,  name: 'i3-7100' },
+            'i7-6700K':     { score: 52,  name: 'i7-6700K' },
+            'i5-6600K':     { score: 46,  name: 'i5-6600K' },
+            'i5-6400':      { score: 38,  name: 'i5-6400' },
+            // AMD Ryzen 9000 (Zen 5)
+            'R9-9950X':     { score: 100, name: 'Ryzen 9 9950X' },
+            'R9-9900X':     { score: 97,  name: 'Ryzen 9 9900X' },
+            'R7-9800X3D':   { score: 100, name: 'Ryzen 7 9800X3D' },
+            'R7-9700X':     { score: 92,  name: 'Ryzen 7 9700X' },
+            'R5-9600X':     { score: 86,  name: 'Ryzen 5 9600X' },
+            'R5-9600':      { score: 83,  name: 'Ryzen 5 9600' },
+            // AMD Ryzen 7000 (Zen 4)
+            'R9-7950X3D':   { score: 100, name: 'Ryzen 9 7950X3D' },
+            'R9-7950X':     { score: 99,  name: 'Ryzen 9 7950X' },
+            'R9-7900X':     { score: 95,  name: 'Ryzen 9 7900X' },
+            'R9-7900':      { score: 92,  name: 'Ryzen 9 7900' },
+            'R7-7800X3D':   { score: 100, name: 'Ryzen 7 7800X3D' },
+            'R7-7700X':     { score: 89,  name: 'Ryzen 7 7700X' },
+            'R7-7700':      { score: 86,  name: 'Ryzen 7 7700' },
+            'R5-7600X':     { score: 82,  name: 'Ryzen 5 7600X' },
+            'R5-7600':      { score: 80,  name: 'Ryzen 5 7600' },
+            'R5-7500F':     { score: 76,  name: 'Ryzen 5 7500F' },
+            // AMD Ryzen 5000 (Zen 3)
+            'R9-5950X':     { score: 95,  name: 'Ryzen 9 5950X' },
+            'R9-5900X':     { score: 90,  name: 'Ryzen 9 5900X' },
+            'R9-5900':      { score: 87,  name: 'Ryzen 9 5900' },
+            'R7-5800X3D':   { score: 96,  name: 'Ryzen 7 5800X3D' },
+            'R7-5800X':     { score: 83,  name: 'Ryzen 7 5800X' },
+            'R7-5700X':     { score: 79,  name: 'Ryzen 7 5700X' },
+            'R7-5700G':     { score: 72,  name: 'Ryzen 7 5700G' },
+            'R5-5600X':     { score: 75,  name: 'Ryzen 5 5600X' },
+            'R5-5600':      { score: 73,  name: 'Ryzen 5 5600' },
+            'R5-5500':      { score: 64,  name: 'Ryzen 5 5500' },
+            'R3-5300G':     { score: 48,  name: 'Ryzen 3 5300G' },
+            // AMD Ryzen 3000 (Zen 2)
+            'R9-3950X':     { score: 80,  name: 'Ryzen 9 3950X' },
+            'R9-3900X':     { score: 76,  name: 'Ryzen 9 3900X' },
+            'R7-3800X':     { score: 68,  name: 'Ryzen 7 3800X' },
+            'R7-3700X':     { score: 66,  name: 'Ryzen 7 3700X' },
+            'R5-3600X':     { score: 60,  name: 'Ryzen 5 3600X' },
+            'R5-3600':      { score: 58,  name: 'Ryzen 5 3600' },
+            'R5-3500X':     { score: 52,  name: 'Ryzen 5 3500X' },
+            'R3-3300X':     { score: 44,  name: 'Ryzen 3 3300X' },
+            'R3-3100':      { score: 40,  name: 'Ryzen 3 3100' },
+        };
+
+        // RTX 3070 GPU score en escala gaming (equivalente a CPU 72 en 1080p)
+        const GPU_SCORE = 72;
+
+        function calculateBottleneck() {
+            const cpuKey     = document.getElementById('cpu-select').value;
+            const resolution = document.getElementById('resolution-select').value;
+            const resultDiv  = document.getElementById('calculator-result');
+
+            if (!cpuKey || !resolution) { alert('Por favor seleccioná tanto el CPU como la resolución'); return; }
+
+            const cpu      = cpuData[cpuKey];
+            const cpuScore = cpu.score;
+
+            // Ajuste por resolución: a mayor resolución, menos peso tiene el CPU
+            let gpuWeight, cpuWeight;
+            if (resolution === '1080p')      { gpuWeight = 1.0; cpuWeight = 1.0; }
+            else if (resolution === '1440p') { gpuWeight = 1.0; cpuWeight = 0.65; }
+            else                             { gpuWeight = 1.0; cpuWeight = 0.35; }
+
+            const effectiveCpu = cpuScore * cpuWeight;
+            const effectiveGpu = GPU_SCORE * gpuWeight;
+
+            // Cuello de botella = quién limita al otro, en %
+            let bottleneckPct, bottleneckSide;
+            if (effectiveCpu < effectiveGpu) {
+                bottleneckPct  = Math.round(((effectiveGpu - effectiveCpu) / effectiveGpu) * 100);
+                bottleneckSide = 'cpu';
+            } else if (effectiveCpu > effectiveGpu) {
+                bottleneckPct  = Math.round(((effectiveCpu - effectiveGpu) / effectiveCpu) * 100);
+                bottleneckSide = 'gpu';
+            } else {
+                bottleneckPct  = 0;
+                bottleneckSide = 'none';
+            }
+
+            let status = '', description = '';
+
+            // ─── RESULTADOS HONESTOS ─────────────────────────────────────────────────
+            if (bottleneckSide === 'none' || bottleneckPct <= 5) {
+                status = '✅ Equilibrio casi perfecto';
+                description = `Con ${resolution}, tu ${cpu.name} y la RTX 3070 están prácticamente parejos (${bottleneckPct}% de diferencia). Vas a exprimir la GPU al máximo sin desperdiciar nada del CPU. Combinación ideal.`;
+            }
+            else if (bottleneckSide === 'cpu' && bottleneckPct <= 15) {
+                status = '👌 Buen balance — CPU ligeramente limitante';
+                description = `Tu ${cpu.name} deja un ${bottleneckPct}% de la RTX 3070 sin aprovechar en ${resolution}. En la práctica apenas se nota, sobre todo en juegos GPU-intensivos. Es una combinación funcional y razonable.`;
+            }
+            else if (bottleneckSide === 'gpu' && bottleneckPct <= 15) {
+                status = '👌 Buen balance — GPU ligeramente limitante';
+                description = `Tu ${cpu.name} es algo más potente que la RTX 3070 en ${resolution}. Hay un ${bottleneckPct}% de margen del CPU sin usar, pero en gaming esto es normal: la GPU suele ser el cuello de botella real y eso está bien.`;
+            }
+            else if (bottleneckSide === 'cpu' && bottleneckPct <= 30) {
+                status = '⚠️ Cuello de botella moderado — CPU limita la GPU';
+                description = `Tu ${cpu.name} está frenando a la RTX 3070 en un ${bottleneckPct}% en ${resolution}. Vas a notar drops de FPS en juegos que usan muchos núcleos (Cyberpunk, Warzone, simuladores). Actualizar el CPU mejoraría bastante la experiencia.`;
+            }
+            else if (bottleneckSide === 'gpu' && bottleneckPct <= 30) {
+                status = '⚠️ GPU es el cuello de botella — CPU sobrante';
+                description = `Tu ${cpu.name} tiene mucho más poder del que la RTX 3070 puede aprovechar en ${resolution} (${bottleneckPct}% del CPU desperdiciado). La GPU va a saturarse antes. Si buscás más FPS, la solución está en actualizar la placa de video, no el CPU.`;
+            }
+            else if (bottleneckSide === 'cpu' && bottleneckPct <= 50) {
+                status = '🔴 Cuello de botella serio — CPU muy débil para esta GPU';
+                description = `Con tu ${cpu.name}, la RTX 3070 va a estar frenada un ${bottleneckPct}% en ${resolution}. En muchos juegos el CPU va a saturarse antes que la GPU, causando stutters, FPS bajos e inestabilidad. Necesitás actualizar el CPU para sacar partido a esta placa.`;
+            }
+            else if (bottleneckSide === 'gpu' && bottleneckPct <= 50) {
+                status = '🔴 GPU muy por debajo del CPU';
+                description = `Tu ${cpu.name} tiene ${bottleneckPct}% más potencia de la que la RTX 3070 puede usar en ${resolution}. El CPU va a estar esperando siempre a la GPU. Perdés mucho potencial del procesador. La RTX 3070 va a ser un cuello duro en esta configuración.`;
+            }
+            else if (bottleneckSide === 'cpu') {
+                status = '🚨 Cuello de botella crítico — CPU completamente incompatible';
+                description = `Tu ${cpu.name} no está en condiciones de acompañar a la RTX 3070 en ${resolution}. Estás desperdiciando más de la mitad del potencial de esta GPU (${bottleneckPct}% de diferencia). Antes de comprar esta placa, priorizá actualizar el CPU — de lo contrario no vas a ver la diferencia.`;
+            }
+            else {
+                status = '🚨 GPU completamente sobredimensionada';
+                description = `Tu ${cpu.name} supera a la RTX 3070 por un ${bottleneckPct}% en ${resolution}. Esta GPU no alcanza a aprovechar tu procesador. Si tu objetivo es gaming de alto rendimiento, la RTX 3070 va a ser el cuello de botella absoluto de tu sistema.`;
+            }
+
+            document.getElementById('result-status').textContent      = status;
+            document.getElementById('result-percentage').textContent   = bottleneckPct + '% de diferencia';
+            document.getElementById('result-description').textContent  = description;
+            resultDiv.classList.remove('show');
+            void resultDiv.offsetWidth; // force reflow for animation
+            resultDiv.classList.add('show');
+        }
+
+        // ── PSU CHECKER ──────────────────────────────────────
+        const PSU_MIN = 750;
+        const GPU_TDP = 300;
+        let psuCert = 'sin';
+        let psuWatts = 750;
+        const certEff = { sin: 0.72, bronze: 0.82, silver: 0.86, gold: 0.90, plat: 0.94 };
+        const certNames = {
+            sin: 'sin certificación 80 Plus',
+            bronze: '80 Plus Bronze', silver: '80 Plus Silver',
+            gold: '80 Plus Gold', plat: '80 Plus Platinum'
+        };
+
+        function setCert(c) {
+            psuCert = c;
+            ['sin','bronze','silver','gold','plat'].forEach(x => {
+                const el = document.getElementById('cert-' + x);
+                el.className = 'psu-cert-btn cert-' + x;
+            });
+            document.getElementById('cert-' + c).classList.add('active-' + c);
+            evaluatePSU();
+        }
+
+        function evaluatePSU() {
+            const w    = psuWatts;
+            const box  = document.getElementById('psu-result');
+            const icon = document.getElementById('psu-result-icon');
+            const sta  = document.getElementById('psu-result-status');
+            const dsc  = document.getElementById('psu-result-desc');
+            box.className = 'psu-result';
+            const cn = certNames[psuCert];
+
+            if (w < 500) {
+                box.classList.add('psu-danger');
+                icon.textContent = '🚨';
+                sta.textContent  = '¡Cambiar de fuente URGENTE! — Riesgo real de daño';
+                dsc.textContent  = `Con ${w}W (${cn}) no alcanzás para alimentar la RTX 3070 junto al CPU. Podés tener apagones, reinicios o daños permanentes en los componentes. No lo uses así.`;
+            } else if (w < 600) {
+                box.classList.add('psu-danger');
+                icon.textContent = '🚨';
+                sta.textContent  = '¡Cambiar de fuente urgente! — No da para el sistema completo';
+                dsc.textContent  = `${w}W ${cn !== 'sin certificación 80 Plus' ? '(' + cn + ')' : ''} es demasiado justo. Bajo carga total la GPU sola consume hasta ${GPU_TDP}W, más el CPU y el resto. Riesgo de inestabilidad severa y falla eléctrica.`;
+            } else if (w < PSU_MIN) {
+                box.classList.add('psu-warn');
+                icon.textContent = '⚠️';
+                sta.textContent  = 'Funciona, pero cambiala lo antes posible';
+                dsc.textContent  = `Con ${w}W vas a estar al límite bajo carga total. Puede generar throttling de la GPU, inestabilidad o acortar la vida de la fuente. Lo ideal es mínimo ${PSU_MIN}W. Usala con cuidado y actualizá pronto.`;
+            } else if (w <= 750) {
+                box.classList.add('psu-ok');
+                icon.textContent = '✅';
+                sta.textContent  = 'Perfecto — tu fuente es suficiente para esta GPU';
+                dsc.textContent  = `${w}W ${psuCert !== 'sin' ? 'con ' + cn : ''} es exactamente lo que necesitás. Tenés margen suficiente para CPU + GPU en carga máxima. ${psuCert === 'sin' ? 'Tip: con certificación Bronze o Gold ganás eficiencia y vida útil.' : 'La certificación ' + cn + ' te da estabilidad y eficiencia de sobra.'}`;
+            } else if (w <= 1000) {
+                box.classList.add('psu-great');
+                icon.textContent = '💚';
+                sta.textContent  = 'Más que suficiente — podés estar tranquilo';
+                dsc.textContent  = `${w}W con ${cn} te da un headroom muy cómodo. La fuente trabaja fresca, dura más y si el día de mañana actualizás el sistema, esta fuente te acompaña sin problemas.`;
+            } else {
+                box.classList.add('psu-great');
+                icon.textContent = '💚';
+                sta.textContent  = 'De sobra — esta fuente aguanta hasta el próximo upgrade';
+                dsc.textContent  = `${w}W con ${cn} es overkill para esta GPU (en el buen sentido). Trabajás al 30–40% de carga, máxima eficiencia y prácticamente cero riesgo de falla eléctrica. Esta fuente sobrevive varios upgrades.`;
+            }
+        }
+
+        document.getElementById('psu-slider').addEventListener('input', function() {
+            psuWatts = parseInt(this.value);
+            document.getElementById('psu-watts-out').textContent = psuWatts + ' W';
+            evaluatePSU();
+        });
+
+        evaluatePSU();
+
+
+        // performance = índice relativo donde RTX 3070 = 100
+        const gpuDatabase = {
+            'base': {
+                name: 'ASRock RX 6900 XT Phantom Gaming', manufacturer: 'ASRock', model: 'RX 6900 XT', status: 'OUTLET',
+                vram: '16GB GDDR6', cores: 5120, boostClock: 2340, bus: '256-bit', bandwidth: 512, tdp: 300, performance: 100
+            },
+            // ── OUTLET NVIDIA ──
+            'rtx3070-ventus2x': {
+                name: 'MSI RTX 3070 Ventus 2X', manufacturer: 'MSI', model: 'RTX 3070', status: 'OUTLET',
+                vram: '8GB GDDR6', cores: 5888, boostClock: 1725, bus: '256-bit', bandwidth: 448, tdp: 220, performance: 98
+            },
+            'rtx3070ti-tuf': {
+                name: 'ASUS RTX 3070 Ti TUF GAMING', manufacturer: 'ASUS', model: 'RTX 3070 Ti', status: 'OUTLET',
+                vram: '8GB GDDR6X', cores: 6144, boostClock: 1800, bus: '256-bit', bandwidth: 608, tdp: 290, performance: 113
+            },
+            'rtx3060ti-ventus2x': {
+                name: 'MSI RTX 3060 Ti Ventus 2X 8GB', manufacturer: 'MSI', model: 'RTX 3060 Ti', status: 'OUTLET',
+                vram: '8GB GDDR6', cores: 4864, boostClock: 1665, bus: '256-bit', bandwidth: 448, tdp: 200, performance: 89
+            },
+            'rtx3060ti-gamingxtrio': {
+                name: 'MSI RTX 3060 Ti GAMING X TRIO', manufacturer: 'MSI', model: 'RTX 3060 Ti', status: 'OUTLET',
+                vram: '8GB GDDR6', cores: 4864, boostClock: 1770, bus: '256-bit', bandwidth: 448, tdp: 220, performance: 92
+            },
+            'rtx3080-rogstrix': {
+                name: 'ASUS RTX 3080 ROG STRIX', manufacturer: 'ASUS', model: 'RTX 3080', status: 'OUTLET',
+                vram: '10GB GDDR6X', cores: 8704, boostClock: 1935, bus: '320-bit', bandwidth: 760, tdp: 370, performance: 145
+            },
+            'rtx3090-zotac': {
+                name: 'ZOTAC RTX 3090 TRINITY 24GB', manufacturer: 'ZOTAC', model: 'RTX 3090', status: 'OUTLET',
+                vram: '24GB GDDR6X', cores: 10496, boostClock: 1695, bus: '384-bit', bandwidth: 936, tdp: 350, performance: 157
+            },
+            'rtx3070-pny': {
+                name: 'PNY RTX 3070 XRL8', manufacturer: 'PNY', model: 'RTX 3070', status: 'OUTLET',
+                vram: '8GB GDDR6', cores: 5888, boostClock: 1725, bus: '256-bit', bandwidth: 448, tdp: 220, performance: 98
+            },
+            'rtx2060-zotac': {
+                name: 'ZOTAC RTX 2060 Twin Fan 12GB', manufacturer: 'ZOTAC', model: 'RTX 2060', status: 'OUTLET',
+                vram: '12GB GDDR6', cores: 2176, boostClock: 1650, bus: '192-bit', bandwidth: 336, tdp: 184, performance: 68
+            },
+            'gtx1660s-msi': {
+                name: 'MSI GTX 1660 SUPER Ventus Xs 6GB', manufacturer: 'MSI', model: 'GTX 1660 SUPER', status: 'OUTLET',
+                vram: '6GB GDDR6', cores: 1408, boostClock: 1785, bus: '192-bit', bandwidth: 336, tdp: 125, performance: 50
+            },
+            'gtx1660s-gigabyte': {
+                name: 'GIGABYTE GTX 1660 Super OC', manufacturer: 'GIGABYTE', model: 'GTX 1660 SUPER', status: 'OUTLET',
+                vram: '6GB GDDR6', cores: 1408, boostClock: 1860, bus: '192-bit', bandwidth: 336, tdp: 125, performance: 51
+            },
+            // ── OUTLET AMD ──
+            'rx6700xt-asus': {
+                name: 'ASUS RX 6700XT DUAL', manufacturer: 'ASUS', model: 'RX 6700 XT', status: 'OUTLET',
+                vram: '12GB GDDR6', cores: 2560, boostClock: 2581, bus: '192-bit', bandwidth: 384, tdp: 230, performance: 88
+            },
+            'rx6800xt-asrock': {
+                name: 'ASROCK RX 6800XT Phantom Gaming', manufacturer: 'ASROCK', model: 'RX 6800 XT', status: 'OUTLET',
+                vram: '16GB GDDR6', cores: 4608, boostClock: 2250, bus: '256-bit', bandwidth: 512, tdp: 300, performance: 118
+            },
+            'rx6900xt-asrock': {
+                name: 'ASROCK RX 6900XT PHANTOM GAMING', manufacturer: 'ASROCK', model: 'RX 6900 XT', status: 'OUTLET',
+                vram: '16GB GDDR6', cores: 5120, boostClock: 2250, bus: '256-bit', bandwidth: 512, tdp: 300, performance: 128
+            },
+            'rx6900xt-formula': {
+                name: 'ASROCK RX 6900XT OC Formula 16GB', manufacturer: 'ASROCK', model: 'RX 6900 XT', status: 'OPENBOX',
+                vram: '16GB GDDR6', cores: 5120, boostClock: 2340, bus: '256-bit', bandwidth: 512, tdp: 330, performance: 133
+            },
+            'rx7700xt-gigabyte': {
+                name: 'GIGABYTE RX 7700XT GAMING OC', manufacturer: 'GIGABYTE', model: 'RX 7700 XT', status: 'OUTLET',
+                vram: '12GB GDDR6', cores: 3456, boostClock: 2599, bus: '192-bit', bandwidth: 432, tdp: 245, performance: 104
+            },
+            // ── NUEVAS RTX 50 ──
+            'rtx5050-gigabyte-wf': {
+                name: 'GIGABYTE RTX 5050 WF OC 8GB', manufacturer: 'GIGABYTE', model: 'RTX 5050', status: 'NUEVA',
+                vram: '8GB GDDR7', cores: 3584, boostClock: 2400, bus: '128-bit', bandwidth: 448, tdp: 115, performance: 93
+            },
+            'rtx5050-gigabyte-gaming': {
+                name: 'GIGABYTE RTX 5050 GAMING OC 8GB', manufacturer: 'GIGABYTE', model: 'RTX 5050', status: 'NUEVA',
+                vram: '8GB GDDR7', cores: 3584, boostClock: 2445, bus: '128-bit', bandwidth: 448, tdp: 115, performance: 94
+            },
+            'rtx5050-msi-gaming': {
+                name: 'MSI RTX 5050 GAMING 8G OC', manufacturer: 'MSI', model: 'RTX 5050', status: 'NUEVA',
+                vram: '8GB GDDR7', cores: 3584, boostClock: 2430, bus: '128-bit', bandwidth: 448, tdp: 115, performance: 93
+            },
+            'rtx5050-msi-shadow': {
+                name: 'MSI RTX 5050 SHADOW 2X 8G OC', manufacturer: 'MSI', model: 'RTX 5050', status: 'NUEVA',
+                vram: '8GB GDDR7', cores: 3584, boostClock: 2400, bus: '128-bit', bandwidth: 448, tdp: 115, performance: 92
+            },
+            'rtx5050-zotac-solo': {
+                name: 'ZOTAC RTX 5050 8GB SOLO', manufacturer: 'ZOTAC', model: 'RTX 5050', status: 'NUEVA',
+                vram: '8GB GDDR7', cores: 3584, boostClock: 2370, bus: '128-bit', bandwidth: 448, tdp: 115, performance: 91
+            },
+            'rtx5050-zotac-twin': {
+                name: 'ZOTAC RTX 5050 8GB TWIN EDGE', manufacturer: 'ZOTAC', model: 'RTX 5050', status: 'NUEVA',
+                vram: '8GB GDDR7', cores: 3584, boostClock: 2400, bus: '128-bit', bandwidth: 448, tdp: 115, performance: 92
+            },
+            'rtx5050-asus-prime': {
+                name: 'ASUS PRIME RTX 5050 O 8GB', manufacturer: 'ASUS', model: 'RTX 5050', status: 'NUEVA',
+                vram: '8GB GDDR7', cores: 3584, boostClock: 2430, bus: '128-bit', bandwidth: 448, tdp: 115, performance: 93
+            },
+            'rtx5060ti-gigabyte-gaming': {
+                name: 'GIGABYTE RTX 5060 Ti GAMING 8GB', manufacturer: 'GIGABYTE', model: 'RTX 5060 Ti', status: 'NUEVA',
+                vram: '8GB GDDR7', cores: 4352, boostClock: 2535, bus: '128-bit', bandwidth: 416, tdp: 180, performance: 108
+            },
+            'rtx5060ti-gigabyte-wf2': {
+                name: 'GIGABYTE RTX 5060 Ti WF2 OC 8GB', manufacturer: 'GIGABYTE', model: 'RTX 5060 Ti', status: 'NUEVA',
+                vram: '8GB GDDR7', cores: 4352, boostClock: 2550, bus: '128-bit', bandwidth: 416, tdp: 180, performance: 109
+            },
+            'rtx5060ti-gigabyte-eagle': {
+                name: 'GIGABYTE RTX 5060 Ti EAGLE OC 8GB', manufacturer: 'GIGABYTE', model: 'RTX 5060 Ti', status: 'NUEVA',
+                vram: '8GB GDDR7', cores: 4352, boostClock: 2550, bus: '128-bit', bandwidth: 416, tdp: 180, performance: 109
+            },
+            'rtx5060ti-msi-gaming16': {
+                name: 'MSI RTX 5060 Ti GAMING 16G OC', manufacturer: 'MSI', model: 'RTX 5060 Ti 16GB', status: 'NUEVA',
+                vram: '16GB GDDR7', cores: 4352, boostClock: 2535, bus: '128-bit', bandwidth: 416, tdp: 180, performance: 111
+            },
+            'rtx5060ti-msi-shadow8': {
+                name: 'MSI RTX 5060 Ti SHADOW 2X PLUS 8G', manufacturer: 'MSI', model: 'RTX 5060 Ti', status: 'NUEVA',
+                vram: '8GB GDDR7', cores: 4352, boostClock: 2535, bus: '128-bit', bandwidth: 416, tdp: 180, performance: 107
+            },
+            'rtx5060ti-asus-prime8': {
+                name: 'ASUS PRIME RTX 5060 Ti O 8GB', manufacturer: 'ASUS', model: 'RTX 5060 Ti', status: 'NUEVA',
+                vram: '8GB GDDR7', cores: 4352, boostClock: 2550, bus: '128-bit', bandwidth: 416, tdp: 180, performance: 108
+            },
+            'rtx5070-gigabyte-eagle': {
+                name: 'GIGABYTE RTX 5070 EAGLE OC 12GB', manufacturer: 'GIGABYTE', model: 'RTX 5070', status: 'NUEVA',
+                vram: '12GB GDDR7', cores: 6144, boostClock: 2512, bus: '192-bit', bandwidth: 672, tdp: 250, performance: 141
+            },
+            'rtx5070-gigabyte-aero': {
+                name: 'GIGABYTE RTX 5070 AERO OC 12GB', manufacturer: 'GIGABYTE', model: 'RTX 5070', status: 'NUEVA',
+                vram: '12GB GDDR7', cores: 6144, boostClock: 2512, bus: '192-bit', bandwidth: 672, tdp: 250, performance: 141
+            },
+            'rtx5070-gigabyte-white': {
+                name: 'GIGABYTE RTX 5070 EAGLE OC ICE 12GB', manufacturer: 'GIGABYTE', model: 'RTX 5070', status: 'NUEVA',
+                vram: '12GB GDDR7', cores: 6144, boostClock: 2512, bus: '192-bit', bandwidth: 672, tdp: 250, performance: 141
+            },
+            'rtx5070-zotac': {
+                name: 'ZOTAC RTX 5070 12GB SOLID OC GDDR7', manufacturer: 'ZOTAC', model: 'RTX 5070', status: 'NUEVA',
+                vram: '12GB GDDR7', cores: 6144, boostClock: 2490, bus: '192-bit', bandwidth: 672, tdp: 250, performance: 139
+            },
+            'rtx5070ti-gigabyte-gaming': {
+                name: 'GIGABYTE RTX 5070 Ti GAMING OC 16GB', manufacturer: 'GIGABYTE', model: 'RTX 5070 Ti', status: 'NUEVA',
+                vram: '16GB GDDR7', cores: 8960, boostClock: 2610, bus: '256-bit', bandwidth: 896, tdp: 300, performance: 168
+            },
+            'rtx5070ti-gigabyte-aero': {
+                name: 'GIGABYTE RTX 5070 Ti AERO OC 16GB', manufacturer: 'GIGABYTE', model: 'RTX 5070 Ti', status: 'NUEVA',
+                vram: '16GB GDDR7', cores: 8960, boostClock: 2617, bus: '256-bit', bandwidth: 896, tdp: 300, performance: 169
+            },
+            // ── NUEVAS AMD RX 9000 ──
+            'rx9060xt-gigabyte-8g': {
+                name: 'GIGABYTE RX 9060 XT GAMING OC 8GB', manufacturer: 'GIGABYTE', model: 'RX 9060 XT 8GB', status: 'NUEVA',
+                vram: '8GB GDDR6', cores: 2048, boostClock: 2800, bus: '128-bit', bandwidth: 320, tdp: 150, performance: 89
+            },
+            'rx9060xt-sapphire-16g': {
+                name: 'SAPPHIRE PULSE RX 9060 XT GAMING OC 16GB', manufacturer: 'SAPPHIRE', model: 'RX 9060 XT 16GB', status: 'NUEVA',
+                vram: '16GB GDDR6', cores: 2048, boostClock: 2800, bus: '128-bit', bandwidth: 320, tdp: 165, performance: 92
+            },
+            'rx9070-asus-prime': {
+                name: 'ASUS PRIME RX 9070 O 16GB EVO', manufacturer: 'ASUS', model: 'RX 9070', status: 'NUEVA',
+                vram: '16GB GDDR6', cores: 3584, boostClock: 2520, bus: '256-bit', bandwidth: 576, tdp: 220, performance: 132
+            },
+            'rx9070xt-gigabyte-gaming': {
+                name: 'GIGABYTE RX 9070 XT GAMING OC 16GB', manufacturer: 'GIGABYTE', model: 'RX 9070 XT', status: 'NUEVA',
+                vram: '16GB GDDR6', cores: 4096, boostClock: 2970, bus: '256-bit', bandwidth: 640, tdp: 280, performance: 152
+            },
+            'rx9070xt-gigabyte-aorus': {
+                name: 'GIGABYTE RX 9070 XT AORUS ELITE 16GB', manufacturer: 'GIGABYTE', model: 'RX 9070 XT', status: 'NUEVA',
+                vram: '16GB GDDR6', cores: 4096, boostClock: 3000, bus: '256-bit', bandwidth: 640, tdp: 280, performance: 154
+            },
+            'rx9070xt-sapphire': {
+                name: 'SAPPHIRE PULSE RX 9070 XT 16GB', manufacturer: 'SAPPHIRE', model: 'RX 9070 XT', status: 'NUEVA',
+                vram: '16GB GDDR6', cores: 4096, boostClock: 2970, bus: '256-bit', bandwidth: 640, tdp: 275, performance: 151
+            },
+            'rx9070xt-asrock-dark': {
+                name: 'ASROCK RX 9070 XT STEEL LEGEND DARK 16GB', manufacturer: 'ASROCK', model: 'RX 9070 XT', status: 'NUEVA',
+                vram: '16GB GDDR6', cores: 4096, boostClock: 2970, bus: '256-bit', bandwidth: 640, tdp: 280, performance: 151
+            },
+            'rx9070xt-asrock-challenger': {
+                name: 'ASROCK RX 9070 XT CHALLENGER 16GB', manufacturer: 'ASROCK', model: 'RX 9070 XT', status: 'NUEVA',
+                vram: '16GB GDDR6', cores: 4096, boostClock: 2940, bus: '256-bit', bandwidth: 640, tdp: 280, performance: 149
+            },
+            // ── NUEVAS AMD RX 6000/7000 ──
+            'rx6700xt-asrock-challenger': {
+                name: 'ASROCK RX 6700 XT CHALLENGER 12GB', manufacturer: 'ASROCK', model: 'RX 6700 XT', status: 'NUEVA',
+                vram: '12GB GDDR6', cores: 2560, boostClock: 2581, bus: '192-bit', bandwidth: 384, tdp: 230, performance: 88
+            },
+            'rx7600-sapphire': {
+                name: 'SAPPHIRE PULSE RX 7600 OC 8GB', manufacturer: 'SAPPHIRE', model: 'RX 7600', status: 'NUEVA',
+                vram: '8GB GDDR6', cores: 2048, boostClock: 2655, bus: '128-bit', bandwidth: 288, tdp: 165, performance: 68
+            }
+        };
+
+        function updateComparison() {
+            const selected  = document.getElementById('gpu-select').value;
+            const compDiv   = document.getElementById('comparison-vs');
+            const winnerDiv = document.getElementById('comparison-winner');
+            if (!selected) { compDiv.style.display = 'none'; return; }
+
+            const base    = gpuDatabase['base'];
+            const compare = gpuDatabase[selected];
+
+            const leftCard  = document.querySelector('.vs-card-left');
+            const rightCard = document.querySelector('.vs-card-right');
+            const separator = document.querySelector('.vs-separator');
+
+            leftCard.classList.remove('animate-left');
+            rightCard.classList.remove('animate-right');
+            separator.classList.remove('animate');
+            winnerDiv.classList.remove('animate');
+
+            compDiv.style.display = 'block';
+            // Forzar flex en el contenedor interno
+            const container = compDiv.querySelector('.vs-container');
+            if (container) {
+                container.style.cssText = 'display:flex !important; flex-direction:row !important; gap:8px; align-items:flex-start; width:100%;';
+            }
+
+            setTimeout(() => {
+                leftCard.classList.add('animate-left');
+                rightCard.classList.add('animate-right');
+                separator.classList.add('animate');
+            }, 100);
+
+            document.getElementById('right-header').textContent   = compare.status;
+            document.getElementById('right-title').textContent    = compare.name;
+            document.getElementById('right-subtitle').textContent = compare.manufacturer;
+
+            updateValueWithArrow('vram',      base.vram,                    compare.vram,                    parseInt(base.vram),  parseInt(compare.vram));
+            updateValueWithArrow('cores',     base.cores.toLocaleString(),  compare.cores.toLocaleString(),  base.cores,           compare.cores);
+            updateValueWithArrow('boost',     base.boostClock + ' MHz',     compare.boostClock + ' MHz',     base.boostClock,      compare.boostClock);
+            updateValueWithArrow('bandwidth', base.bandwidth + ' GB/s',     compare.bandwidth + ' GB/s',     base.bandwidth,       compare.bandwidth);
+            updateValueWithArrowInverse('tdp', base.tdp + 'W',              compare.tdp + 'W',               base.tdp,             compare.tdp);
+
+            document.getElementById('right-bus').innerHTML = compare.bus;
+
+            const pct      = (compare.performance / base.performance) * 100;
+            const cappedPct = Math.min(pct, 100);
+            document.getElementById('right-performance').style.width  = cappedPct + '%';
+            document.getElementById('right-performance').textContent  = compare.performance + '%';
+
+            let conclusion = '';
+            if (compare.performance > base.performance + 15) {
+                const diff = Math.round(((compare.performance - base.performance) / base.performance) * 100);
+                conclusion = `La <strong>${compare.model}</strong> es aproximadamente <strong>${diff}% más potente</strong> que la RX 6900 XT Phantom Gaming, ofreciendo mayor rendimiento en 4K y cargas exigentes.`;
+            } else if (compare.performance < base.performance - 15) {
+                const diff = Math.round(((base.performance - compare.performance) / base.performance) * 100);
+                conclusion = `La <strong>RX 6900 XT Phantom Gaming</strong> es aproximadamente <strong>${diff}% más potente</strong> que la ${compare.model}. Con 16GB GDDR6, Phantom Gaming 3X Cooling y Polychrome SYNC, es un monstruo para 1440p y 4K nativo.`;
+            } else {
+                conclusion = `Ambas GPUs ofrecen <strong>rendimiento muy similar</strong>. La elección depende del precio, VRAM disponible y características específicas como Ray Tracing 2.0, DLSS o FSR según la plataforma.`;
+            }
+
+            winnerDiv.innerHTML = `<div class="winner-title">🏆 Conclusión</div><div class="winner-text">${conclusion}</div>`;
+            setTimeout(() => winnerDiv.classList.add('animate'), 500);
+        }
+
+        function updateValueWithArrow(spec, ld, rd, lv, rv) {
+            const le = document.getElementById(`left-${spec}`);
+            const re = document.getElementById(`right-${spec}`);
+            le.classList.remove('winner', 'loser');
+            re.classList.remove('winner', 'loser');
+            if (lv > rv) {
+                le.classList.add('winner'); le.innerHTML = `<span class="stat-arrow arrow-up">↑</span> ${ld}`;
+                re.classList.add('loser');  re.innerHTML = `<span class="stat-arrow arrow-down">↓</span> ${rd}`;
+            } else if (rv > lv) {
+                le.classList.add('loser');  le.innerHTML = `<span class="stat-arrow arrow-down">↓</span> ${ld}`;
+                re.classList.add('winner'); re.innerHTML = `<span class="stat-arrow arrow-up">↑</span> ${rd}`;
+            } else {
+                le.innerHTML = ld; re.innerHTML = rd;
+            }
+        }
+
+        function updateValueWithArrowInverse(spec, ld, rd, lv, rv) {
+            const le = document.getElementById(`left-${spec}`);
+            const re = document.getElementById(`right-${spec}`);
+            le.classList.remove('winner', 'loser');
+            re.classList.remove('winner', 'loser');
+            if (lv < rv) {
+                le.classList.add('winner'); le.innerHTML = `<span class="stat-arrow arrow-up">↑</span> ${ld}`;
+                re.classList.add('loser');  re.innerHTML = `<span class="stat-arrow arrow-down">↓</span> ${rd}`;
+            } else if (rv < lv) {
+                le.classList.add('loser');  le.innerHTML = `<span class="stat-arrow arrow-down">↓</span> ${ld}`;
+                re.classList.add('winner'); re.innerHTML = `<span class="stat-arrow arrow-up">↑</span> ${rd}`;
+            } else {
+                le.innerHTML = ld; re.innerHTML = rd;
+            }
+        }
+    </script>
+</body>
+</html>
