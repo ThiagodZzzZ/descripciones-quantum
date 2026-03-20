@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BenQ GW2791 Monitor - Quantum Hardstore</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Verdana, Geneva, sans-serif; background: #f5f5f5; }
+        .container { max-width: 860px; margin: 0 auto; padding: 24px 16px; }
+        .header { text-align: center; padding: 28px 10px 22px; border-bottom: 2px solid #ff007f; animation: fadeIn 0.8s ease-in; }
+        .header-brand { font-size: 11px; letter-spacing: 6px; color: #ff007f; text-transform: uppercase; margin-bottom: 10px; }
+        .header-manufacturer { font-size: 12px; letter-spacing: 5px; color: #999; text-transform: uppercase; margin-bottom: 6px; }
+        .header-title { font-size: 32px; font-weight: bold; color: #1c1c1c; letter-spacing: 2px; }
+        .header-subtitle { font-size: 11px; letter-spacing: 3px; color: #999; margin-top: 10px; }
+        .badge-row { display: flex; justify-content: center; gap: 10px; margin: 14px 0 6px; flex-wrap: wrap; }
+        .badge { display: inline-block; padding: 5px 12px; border: 1px solid #ff007f; border-radius: 20px; font-size: 10px; font-weight: bold; letter-spacing: 2px; color: #ff007f; background: #fff5f9; text-transform: uppercase; }
+        .highlight-central { text-align: center; margin: 22px 0 10px; }
+        .highlight-box { display: inline-block; padding: 14px 28px; border: 2px solid #ff007f; border-radius: 8px; background: #fff; transition: transform 0.3s, box-shadow 0.3s; }
+        .highlight-box:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(255,0,127,0.25); }
+        .highlight-label { font-size: 10px; letter-spacing: 5px; color: #ff007f; text-transform: uppercase; }
+        .highlight-value { font-size: 38px; font-weight: bold; color: #1c1c1c; margin: 4px 0 2px; }
+        .highlight-desc { font-size: 11px; color: #aaa; letter-spacing: 2px; }
+        .cards-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin: 10px 0; }
+        .card { background: #fff; border: 1px solid #e0e0e0; border-top: 3px solid #ff007f; border-radius: 10px; padding: 16px; text-align: center; transition: all 0.3s; }
+        .card:hover { transform: translateY(-3px); box-shadow: 0 5px 18px rgba(0,0,0,0.08); }
+        .card-label { font-size: 10px; letter-spacing: 4px; color: #ff007f; text-transform: uppercase; }
+        .card-value { font-size: 26px; font-weight: bold; color: #1c1c1c; margin: 5px 0 2px; }
+        .card-desc { font-size: 11px; color: #999; }
+        .dark-box { background: #1c1c1c; border-radius: 10px; padding: 22px 16px; margin: 16px 0; border-top: 3px solid #ff007f; }
+        .dark-title { font-size: 15px; font-weight: bold; letter-spacing: 4px; color: #ff007f; text-align: center; margin-bottom: 4px; }
+        .dark-sub { font-size: 10px; color: #aaa; text-align: center; margin-bottom: 18px; letter-spacing: 1px; }
+        .carousel-outer { overflow: hidden; padding: 2rem 0 0.5rem; }
+        .carousel-track { display: flex; align-items: flex-end; gap: 20px; transition: transform 0.4s cubic-bezier(.4,0,.2,1); padding: 0 48px 0 8px; }
+        .mcol { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+        .mpill { font-size: 9px; background: #ff007f; color: #fff; padding: 3px 10px; border-radius: 20px; margin-bottom: 6px; letter-spacing: 1px; font-weight: bold; white-space: nowrap; }
+        .mspacer { height: 25px; }
+        .mlbl-top { font-size: 9px; color: #aaa; margin-bottom: 6px; text-align: center; white-space: nowrap; }
+        .mlbl-top.act { color: #ff007f; font-weight: bold; }
+        .mframe { border: 2px solid #333; border-radius: 5px; background: #2a2a2a; display: flex; align-items: center; justify-content: center; transition: border-color 0.2s; position: relative; }
+        .mframe.act { border-color: #ff007f; border-width: 3px; }
+        .mframe.act::after { content:''; position:absolute; bottom:-13px; left:50%; transform:translateX(-50%); width:0; height:0; border-left:7px solid transparent; border-right:7px solid transparent; border-top:8px solid #ff007f; }
+        .mframe.dimmed { opacity: 0.4; pointer-events: none; }
+        .mframe-hz { font-size: 9px; color: #666; }
+        .mstand { width: 4px; height: 14px; background: #333; }
+        .mbase { height: 4px; border-radius: 2px; background: #333; }
+        .msize { margin-top: 6px; font-size: 13px; font-weight: bold; color: #fff; }
+        .msize.act { color: #ff007f; }
+        .mres { font-size: 9px; color: #888; margin-top: 2px; }
+        .nav-row { display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 10px; }
+        .nav-btn { width: 34px; height: 34px; border-radius: 50%; border: 1px solid #ff007f; background: #2a2a2a; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 15px; color: #ff007f; transition: all 0.15s; user-select: none; }
+        .nav-btn:hover { background: #ff007f; color: #fff; }
+        .nav-btn:disabled { opacity: 0.25; cursor: default; }
+        .nav-dots { display: flex; gap: 6px; align-items: center; }
+        .ndot { width: 6px; height: 6px; border-radius: 50%; background: #444; transition: all 0.2s; }
+        .ndot.act { background: #ff007f; width: 16px; border-radius: 3px; }
+        .compare-note { text-align: center; font-size: 11px; color: #aaa; margin: 10px 0; padding: 7px; background: #252525; border-radius: 6px; }
+        .cinfo-box { background: #2a2a2a; border-radius: 10px; border: 1px solid #333; padding: 14px; margin-top: 12px; }
+        .cinfo-top { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 2px; }
+        .cinfo-name { font-size: 14px; font-weight: bold; color: #fff; }
+        .cinfo-type { font-size: 11px; color: #ff007f; font-weight: bold; }
+        .cinfo-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 7px; margin-top: 10px; }
+        .cicard { background: #1c1c1c; border: 1px solid #333; border-radius: 6px; padding: 8px 9px; }
+        .cicard-lbl { font-size: 9px; color: #888; margin-bottom: 2px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .cicard-val { font-size: 12px; font-weight: bold; color: #fff; }
+        .cicard-val.pink { color: #ff007f; }
+        .uso-box { margin-top: 10px; border-radius: 8px; border: 1px solid #333; overflow: hidden; }
+        .uso-title-bar { font-size: 10px; font-weight: bold; color: #999; text-transform: uppercase; letter-spacing: 1px; padding: 8px 12px; background: #252525; border-bottom: 1px solid #333; }
+        .uso-row { display: flex; align-items: flex-start; gap: 10px; padding: 10px 12px; border-bottom: 1px solid #2a2a2a; background: #1c1c1c; }
+        .uso-row:last-child { border-bottom: none; }
+        .uso-icon-box { width: 28px; height: 28px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+        .uso-icon-box.g { background: #0d2818; }
+        .uso-icon-box.b { background: #0a1e3a; }
+        .uso-icon-box.a { background: #2a1f08; }
+        .uso-text { flex: 1; }
+        .uso-cat { font-size: 11px; font-weight: bold; color: #fff; margin-bottom: 2px; }
+        .uso-games { font-size: 10px; color: #aaa; line-height: 1.5; }
+        .uso-badge { font-size: 9px; padding: 2px 8px; border-radius: 20px; margin-left: auto; flex-shrink: 0; font-weight: bold; align-self: center; }
+        .bpg { background: #0d2818; color: #5DCAA5; border: 1px solid #1D9E75; }
+        .bgg { background: #2a1f08; color: #FAC775; border: 1px solid #BA7517; }
+        .bog { background: #2a1010; color: #F09595; border: 1px solid #E24B4A; }
+        .conn-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-top: 0; }
+        .conn-card { background: #2a2a2a; border: 1px solid #333; border-radius: 10px; padding: 16px 10px 14px; display: flex; flex-direction: column; align-items: center; text-align: center; transition: all 0.3s; }
+        .conn-card:hover { border-color: #ff007f; transform: translateY(-3px); }
+        .conn-port-name { font-size: 12px; font-weight: bold; color: #fff; margin: 8px 0 3px; }
+        .conn-port-desc { font-size: 9px; color: #888; line-height: 1.5; }
+        .conn-count { margin-top: 8px; background: #ff007f; color: #fff; font-size: 12px; font-weight: bold; padding: 3px 14px; border-radius: 20px; letter-spacing: 1px; }
+        .outlet-box { margin: 16px 0; padding: 22px 18px; background: #1c1c1c; border-radius: 10px; border-top: 3px solid #ff007f; }
+        .outlet-title { font-size: 15px; font-weight: bold; letter-spacing: 4px; color: #ff007f; text-align: center; margin-bottom: 8px; }
+        .outlet-desc { font-size: 12px; color: #ccc; text-align: center; margin-bottom: 18px; }
+        .outlet-benefits { display: flex; gap: 12px; }
+        .ob { flex: 1; background: #2a2a2a; border: 1px solid #ff007f; border-radius: 10px; padding: 14px 10px; text-align: center; transition: all 0.3s; }
+        .ob:hover { background: #ff007f; transform: scale(1.04); }
+        .ob:hover .ob-val { color: #fff; }
+        .ob-icon { font-size: 26px; margin-bottom: 5px; }
+        .ob-val { font-size: 20px; font-weight: bold; color: #ff007f; line-height: 1; transition: color 0.3s; }
+        .ob-lbl { font-size: 10px; color: #ccc; letter-spacing: 2px; margin-top: 3px; }
+        .location-box { margin: 12px 0; padding: 22px 18px; background: #1c1c1c; border-radius: 10px; border-top: 3px solid #ff007f; }
+        .location-title { font-size: 12px; font-weight: bold; letter-spacing: 4px; color: #ff007f; text-align: center; margin-bottom: 12px; text-transform: uppercase; }
+        .location-content { background: #2a2a2a; border: 1px solid #ff007f; border-radius: 10px; padding: 18px 14px; text-align: center; }
+        .location-icon { font-size: 30px; margin-bottom: 7px; }
+        .location-status { font-size: 16px; font-weight: bold; color: #ff007f; letter-spacing: 2px; }
+        .location-desc { font-size: 11px; color: #ccc; margin-top: 8px; line-height: 1.7; }
+        .note { margin-top: 18px; padding: 10px 14px; border-left: 3px solid #d3d3d3; font-size: 10px; color: #999; line-height: 1.8; }
+        @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+        @media(max-width:600px){
+            .header-title{font-size:22px;}
+            .cards-row{grid-template-columns:1fr;}
+            .cinfo-grid{grid-template-columns:repeat(2,1fr);}
+            .conn-grid{grid-template-columns:repeat(2,1fr);}
+            .outlet-benefits{flex-direction:column;}
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <div class="header">
+        <div class="header-brand">✦ Quantum Hardstore ✦</div>
+        <div class="header-manufacturer">BenQ® Monitor™</div>
+        <div class="header-title">GW2791</div>
+        <div class="header-subtitle">27" FULL HD &nbsp;/&nbsp; 100Hz &nbsp;/&nbsp; IPS &nbsp;/&nbsp; 5ms &nbsp;/&nbsp; 99% sRGB &nbsp;/&nbsp; EYE-CARE &nbsp;/&nbsp; NUEVO</div>
+    </div>
+
+    <div class="badge-row">
+        <span class="badge">100Hz</span>
+        <span class="badge">IPS PANEL</span>
+        <span class="badge">99% sRGB</span>
+        <span class="badge">FLICKER-FREE</span>
+        <span class="badge">LOW BLUE LIGHT</span>
+        <span class="badge">EYESAFE 2.0</span>
+        <span class="badge">EPAPER MODE</span>
+        <span class="badge">BISEL 4 LADOS</span>
+        <span class="badge">EYE-CAREU</span>
+    </div>
+
+    <div class="highlight-central">
+        <div class="highlight-box">
+            <div class="highlight-label">Frecuencia de Refresco</div>
+            <div class="highlight-value">100 Hz</div>
+            <div class="highlight-desc">IPS Panel — 5ms GTG — Full HD 1080p — 99% sRGB — Eye-Care</div>
+        </div>
+    </div>
+
+    <div class="cards-row">
+        <div class="card">
+            <div class="card-label">Respuesta</div>
+            <div class="card-value">5ms</div>
+            <div class="card-desc">GTG — AMA Technology</div>
+        </div>
+        <div class="card">
+            <div class="card-label">Resolución</div>
+            <div class="card-value">1080p</div>
+            <div class="card-desc">1920×1080 Full HD — 178°</div>
+        </div>
+        <div class="card">
+            <div class="card-label">Brillo</div>
+            <div class="card-value">250</div>
+            <div class="card-desc">cd/m² — Contraste 1300:1</div>
+        </div>
+    </div>
+
+    <!-- COMPARADOR -->
+    <div class="dark-box">
+        <div class="dark-title">📐 ¿QUÉ TAN GRANDE ES ESTE MONITOR?</div>
+        <div class="dark-sub">Usá las flechas para navegar y ver el tamaño de este monitor en comparación</div>
+        <div class="carousel-outer"><div class="carousel-track" id="track"></div></div>
+        <div class="nav-row">
+            <button class="nav-btn" id="prev">&#8592;</button>
+            <div class="nav-dots" id="dots"></div>
+            <button class="nav-btn" id="next">&#8594;</button>
+        </div>
+        <div class="compare-note">Navegá el carrusel para ver el tamaño en comparación con otros monitores</div>
+        <div class="cinfo-box">
+            <div class="cinfo-top">
+                <div class="cinfo-name" id="cinfo-name">Este monitor — 27" Full HD</div>
+                <div class="cinfo-type" id="cinfo-type">100Hz · Panel IPS · Sin parlantes</div>
+            </div>
+            <div class="cinfo-grid" id="cinfo-grid"></div>
+        </div>
+        <div class="uso-box" id="uso-box"></div>
+    </div>
+
+    <!-- CONECTIVIDAD -->
+    <div class="dark-box">
+        <div class="dark-title">🔌 CONECTIVIDAD</div>
+        <div class="dark-sub">Puertos disponibles en el panel trasero</div>
+        <div class="conn-grid">
+
+            <!-- HDMI 1.4 x1 -->
+            <div class="conn-card">
+                <svg width="56" height="40" viewBox="0 0 56 40" fill="none">
+                    <path d="M4 28 L4 12 Q4 10 6 10 L50 10 Q52 10 52 12 L52 28 Q52 30 50 30 L6 30 Q4 30 4 28Z" fill="#1c1c1c" stroke="#ff007f" stroke-width="1.5"/>
+                    <path d="M10 10 L8 4 L48 4 L46 10" fill="#2a2a2a" stroke="#ff007f" stroke-width="1.5" stroke-linejoin="round"/>
+                    <rect x="11" y="14" width="34" height="12" rx="2" fill="#252525" stroke="#444" stroke-width="0.5"/>
+                    <rect x="14" y="17" width="6" height="6" rx="1" fill="#555"/>
+                    <rect x="22" y="17" width="6" height="6" rx="1" fill="#555"/>
+                    <rect x="30" y="17" width="6" height="6" rx="1" fill="#555"/>
+                    <rect x="38" y="17" width="3" height="6" rx="1" fill="#555"/>
+                    <path d="M7 30 L49 30 L51 38 L5 38Z" fill="#2a2a2a" stroke="#444" stroke-width="0.5"/>
+                </svg>
+                <div class="conn-port-name">HDMI 1.4</div>
+                <div class="conn-port-desc">100Hz Full HD — PC, notebooks y consolas</div>
+                <div class="conn-count">× 1</div>
+            </div>
+
+            <!-- DisplayPort 1.2 -->
+            <div class="conn-card">
+                <svg width="56" height="40" viewBox="0 0 56 40" fill="none">
+                    <path d="M6 10 L44 10 Q50 10 50 16 L50 28 Q50 32 46 32 L6 32 Q4 32 4 30 L4 12 Q4 10 6 10Z" fill="#1c1c1c" stroke="#ff007f" stroke-width="1.5"/>
+                    <path d="M44 10 L50 16" stroke="#ff007f" stroke-width="1.5"/>
+                    <rect x="9" y="15" width="36" height="13" rx="2" fill="#252525" stroke="#444" stroke-width="0.5"/>
+                    <rect x="12" y="18" width="5" height="7" rx="1" fill="#555"/>
+                    <rect x="19" y="18" width="5" height="7" rx="1" fill="#555"/>
+                    <rect x="26" y="18" width="5" height="7" rx="1" fill="#555"/>
+                    <rect x="33" y="18" width="5" height="7" rx="1" fill="#555"/>
+                </svg>
+                <div class="conn-port-name">DisplayPort 1.2</div>
+                <div class="conn-port-desc">100Hz Full HD — máxima calidad de imagen</div>
+                <div class="conn-count">× 1</div>
+            </div>
+
+            <!-- Eye-Care / Flicker-Free -->
+            <div class="conn-card">
+                <svg width="56" height="40" viewBox="0 0 56 40" fill="none">
+                    <ellipse cx="28" cy="20" rx="20" ry="13" fill="#1c1c1c" stroke="#ff007f" stroke-width="1.5"/>
+                    <circle cx="28" cy="20" r="6" fill="#2a2a2a" stroke="#ff007f" stroke-width="1.5"/>
+                    <circle cx="28" cy="20" r="3" fill="#ff007f"/>
+                    <line x1="10" y1="20" x2="16" y2="20" stroke="#ff007f" stroke-width="1" opacity="0.5"/>
+                    <line x1="40" y1="20" x2="46" y2="20" stroke="#ff007f" stroke-width="1" opacity="0.5"/>
+                </svg>
+                <div class="conn-port-name">Flicker-Free + LBL</div>
+                <div class="conn-port-desc">Sin parpadeo — Low Blue Light Plus certificado TÜV</div>
+                <div class="conn-count" style="background:#333; color:#ff007f; border:1px solid #ff007f;">INCL.</div>
+            </div>
+
+            <!-- Parlantes -->
+            <div class="conn-card">
+                <svg width="56" height="40" viewBox="0 0 56 40" fill="none">
+                    <rect x="6" y="12" width="10" height="16" rx="2" fill="#1c1c1c" stroke="#555" stroke-width="1.5"/>
+                    <path d="M16 10 L28 4 L28 36 L16 30 Z" fill="#444"/>
+                    <path d="M30 13 Q38 20 30 27" stroke="#555" stroke-width="2" stroke-linecap="round" fill="none"/>
+                    <path d="M33 9 Q44 20 33 31" stroke="#555" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.5"/>
+                </svg>
+                <div class="conn-port-name">Parlantes</div>
+                <div class="conn-port-desc">No incluye parlantes integrados</div>
+                <div class="conn-count" style="background:#555;">NO INCL.</div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- GARANTIA -->
+    <div class="outlet-box">
+        <div class="outlet-title">🆕 PRODUCTO NUEVO</div>
+        <div class="outlet-desc">Producto nuevo en caja original, sellado de fábrica. Garantía oficial del fabricante incluida.</div>
+        <div class="outlet-benefits">
+            <div class="ob"><div class="ob-icon">🔄</div><div class="ob-val">30 DÍAS</div><div class="ob-lbl">DE PRUEBA</div></div>
+            <div class="ob"><div class="ob-icon">🛡️</div><div class="ob-val">1 AÑO</div><div class="ob-lbl">DE GARANTÍA</div></div>
+        </div>
+    </div>
+
+    <div class="location-box">
+        <div class="location-title">✅ Disponible — En depósito</div>
+        <div class="location-content">
+            <div class="location-icon">🏭</div>
+            <div class="location-status">DISPONIBLE EN DEPÓSITO</div>
+            <div class="location-desc">El producto se encuentra disponible en nuestro depósito.<br>Coordiná el retiro o envío una vez abonado tu pedido.</div>
+        </div>
+    </div>
+
+    <div class="note">* Panel IPS — 27" — 1920×1080 Full HD. 100Hz (48–100Hz) — 5ms GTG — 1300:1 contraste nativo — 250 cd/m² — 178°/178° ángulos de visión — 16.7 millones de colores (8-bit) — 99% sRGB — Dot Pitch 0.311mm — PPI 82. Conectividad: 1× HDMI 1.4 + 1× DisplayPort 1.2 + salida de audio 3.5mm (sin VGA). Eye-Care: Flicker-Free y Low Blue Light Plus certificados por TÜV Rheinland — Eyesafe 2.0 certified. Modos de color: Estándar, Juego, ePaper, Código, Cine. AMA (Advanced Motion Accelerator): reduce el motion blur para imágenes en movimiento más nítidas. Eye-CareU: software de gestión de pausas activas y ajustes de pantalla desde PC. Diseño de bisel ultra delgado 4 lados. Ajuste de inclinación -5°/+20°. VESA 100×100mm. K-Locker compatible. Sin parlantes integrados. Dimensiones: 615×451×182mm — Peso: 4.13 kg. Color: gris oscuro. Ideal para trabajo en oficina, estudio, programación y uso extendido con protección ocular certificada.</div>
+
+</div>
+
+<script>
+const ALL_MONITORS = [
+    { size:19.5, label:'19.5"', res:'1600×900',  type:'HD+',     hz:'75 Hz',  panel:'TN',         speakers:false,
+      usos:[
+        {icon:'🖥️',cat:'Ofimática básica',games:'Navegación, documentos, correo — ideal para espacios reducidos',badge:'bpg',txt:'Ideal',color:'g'},
+        {icon:'🎯',cat:'Competitivo entry-level',games:'CS2 en resoluciones bajas para máx FPS',badge:'bgg',txt:'Funciona',color:'b'},
+        {icon:'🎮',cat:'Juegos Triple-A',games:'Resolución y tamaño insuficientes para disfrutar la imagen',badge:'bog',txt:'No ideal',color:'a'},
+    ]},
+    { size:23.8, label:'23.8"', res:'1920×1080', type:'Full HD', hz:'100 Hz', panel:'IPS',         speakers:false,
+      usos:[
+        {icon:'🖥️',cat:'Ofimática y uso diario',games:'Office, estudio, navegación, videollamadas',badge:'bpg',txt:'Ideal',color:'g'},
+        {icon:'🎮',cat:'Gaming casual y entretenimiento',games:'FIFA 25, GTA V, Fortnite, series — 100Hz IPS',badge:'bgg',txt:'Muy bueno',color:'b'},
+        {icon:'🖥️',cat:'Setup multi-monitor',games:'Diseño borderless 3 lados ideal para setups de 2 o 3 pantallas',badge:'bpg',txt:'Ideal',color:'a'},
+    ]},
+    { size:27, label:'27"', res:'1920×1080', type:'Full HD', hz:'100 Hz', panel:'IPS', speakers:false, isProduct:true,
+      usos:[
+        {icon:'🖥️',cat:'Trabajo y estudio prolongado — uso principal',games:'Office, programación, videollamadas, diseño — IPS 99% sRGB con Flicker-Free y Low Blue Light certificados TÜV ideal para jornadas largas',badge:'bpg',txt:'Ideal',color:'g'},
+        {icon:'🎮',cat:'Gaming casual y entretenimiento',games:'FIFA 25, GTA V, Fortnite, series, películas — 100Hz IPS con AMA y modos Juego y Cine para una experiencia inmersiva en 27"',badge:'bgg',txt:'Muy bueno',color:'b'},
+        {icon:'✏️',cat:'Diseño, contenido y productividad',games:'Edición de fotos/video, diseño gráfico, multitarea — 99% sRGB y bisel ultra delgado 4 lados para setup profesional',badge:'bpg',txt:'Ideal',color:'a'},
+    ]},
+    { size:32,   label:'32"',   res:'2560×1440', type:'2K QHD',  hz:'144 Hz', panel:'VA',          speakers:false,
+      usos:[
+        {icon:'🎮',cat:'Experiencia inmersiva',games:"Red Dead 2, God of War, Starfield, Baldur's Gate 3",badge:'bpg',txt:'Ideal',color:'g'},
+        {icon:'✏️',cat:'Workstation / productividad',games:'Edición, diseño, multitarea con varias ventanas',badge:'bgg',txt:'Muy bueno',color:'b'},
+        {icon:'🎯',cat:'Competitivo',games:'CS2, Valorant — no ideal por tamaño grande',badge:'bog',txt:'Regular',color:'a'},
+    ]},
+    { size:34,   label:'34"',   res:'3440×1440', type:'UWQHD',   hz:'144 Hz', panel:'IPS',         speakers:true,
+      usos:[
+        {icon:'🎮',cat:'Inmersión total ultrawide',games:'Cyberpunk 2077, Forza Horizon 5, sim racing, RPGs',badge:'bpg',txt:'Ideal',color:'g'},
+        {icon:'✏️',cat:'Productividad avanzada',games:'Multitarea, edición, programación con espacio extra',badge:'bpg',txt:'Ideal',color:'b'},
+        {icon:'🎯',cat:'Competitivo',games:'CS2, Valorant — ultrawide no recomendado para eSports',badge:'bog',txt:'No ideal',color:'a'},
+    ]},
+];
+
+const PRODUCT_IDX = ALL_MONITORS.findIndex(m => m.isProduct);
+const VISIBLE = 3;
+let offset = Math.max(0, Math.min(PRODUCT_IDX, ALL_MONITORS.length - VISIBLE));
+const SCALE = 5.8;
+
+function renderTrack() {
+    const track = document.getElementById('track');
+    track.innerHTML = '';
+    ALL_MONITORS.forEach((mon, i) => {
+        const isP = i === PRODUCT_IDX;
+        const W = Math.round(mon.size * SCALE * 1.23);
+        const H = Math.round(mon.size * SCALE * 0.69);
+        const col = document.createElement('div');
+        col.className = 'mcol';
+        col.style.minWidth = W + 'px';
+        const sp = document.createElement('div');
+        if (isP) { sp.className = 'mpill'; sp.textContent = 'Este monitor'; }
+        else { sp.className = 'mspacer'; }
+        col.appendChild(sp);
+        const lbl = document.createElement('div');
+        lbl.className = 'mlbl-top' + (isP ? ' act' : '');
+        lbl.textContent = mon.res;
+        col.appendChild(lbl);
+        const fr = document.createElement('div');
+        fr.className = 'mframe' + (isP ? ' act' : ' dimmed');
+        fr.style.cssText = 'width:'+W+'px;height:'+H+'px;';
+        fr.innerHTML = '<span class="mframe-hz">'+mon.hz+'</span>';
+        col.appendChild(fr);
+        const st = document.createElement('div'); st.className = 'mstand'; col.appendChild(st);
+        const ba = document.createElement('div'); ba.className = 'mbase'; ba.style.width = Math.round(W*0.42)+'px'; col.appendChild(ba);
+        const sz = document.createElement('div'); sz.className = 'msize'+(isP?' act':''); sz.textContent = mon.label; col.appendChild(sz);
+        const rs = document.createElement('div'); rs.className = 'mres'; rs.textContent = mon.type; col.appendChild(rs);
+        track.appendChild(col);
+    });
+    const cols = track.querySelectorAll('.mcol');
+    let tx = 0;
+    for (let i = 0; i < offset && i < cols.length; i++) tx += cols[i].offsetWidth + 20;
+    track.style.transform = 'translateX(-'+tx+'px)';
+    renderDots();
+}
+
+function renderDots() {
+    const dots = document.getElementById('dots');
+    dots.innerHTML = '';
+    const pages = ALL_MONITORS.length - VISIBLE + 1;
+    for (let i = 0; i < pages; i++) {
+        const d = document.createElement('div');
+        d.className = 'ndot'+(i===offset?' act':'');
+        dots.appendChild(d);
+    }
+    document.getElementById('prev').disabled = offset === 0;
+    document.getElementById('next').disabled = offset >= ALL_MONITORS.length - VISIBLE;
+}
+
+function renderInfo() {
+    var m = ALL_MONITORS[PRODUCT_IDX];
+    document.getElementById('cinfo-name').textContent = 'Este monitor — ' + m.label + ' ' + m.type;
+    document.getElementById('cinfo-type').textContent = m.hz + ' · Panel ' + m.panel + (m.speakers ? ' · Con parlantes' : ' · Sin parlantes');
+    var specs = [
+        {lbl:'Resolución', val:m.res,   pink:false},
+        {lbl:'Frecuencia', val:m.hz,    pink:true},
+        {lbl:'Panel',      val:m.panel, pink:false},
+        {lbl:'Parlantes',  val:'✗ No incluye', pink:false},
+    ];
+    document.getElementById('cinfo-grid').innerHTML = specs.map(function(x){
+        return '<div class="cicard"><div class="cicard-lbl">'+x.lbl+'</div><div class="cicard-val'+(x.pink?' pink':'')+'" >'+x.val+'</div></div>';
+    }).join('');
+    document.getElementById('uso-box').innerHTML =
+        '<div class="uso-title-bar">Para qué es ideal este monitor</div>' +
+        m.usos.map(function(u){
+            return '<div class="uso-row"><div class="uso-icon-box '+u.color+'">'+u.icon+'</div><div class="uso-text"><div class="uso-cat">'+u.cat+'</div><div class="uso-games">'+u.games+'</div></div><span class="uso-badge '+u.badge+'">'+u.txt+'</span></div>';
+        }).join('');
+}
+
+document.getElementById('prev').onclick = () => { if(offset>0){offset--;renderTrack();} };
+document.getElementById('next').onclick = () => { if(offset<ALL_MONITORS.length-VISIBLE){offset++;renderTrack();} };
+renderTrack();
+renderInfo();
+</script>
+</body>
+</html>
