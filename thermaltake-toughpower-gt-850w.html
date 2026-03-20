@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thermaltake Toughpower GT 850W - Quantum Hardstore</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Verdana, Geneva, sans-serif; background: #f5f5f5; }
+        .container { max-width: 860px; margin: 0 auto; padding: 24px 16px; }
+
+        .header { text-align: center; padding: 28px 10px 22px; border-bottom: 2px solid #ff007f; animation: fadeIn 0.8s ease-in; }
+        .header-brand { font-size: 11px; letter-spacing: 6px; color: #ff007f; text-transform: uppercase; margin-bottom: 10px; }
+        .header-manufacturer { font-size: 12px; letter-spacing: 5px; color: #999; text-transform: uppercase; margin-bottom: 6px; }
+        .header-title { font-size: 32px; font-weight: bold; color: #1c1c1c; letter-spacing: 2px; }
+        .header-subtitle { font-size: 11px; letter-spacing: 3px; color: #999; margin-top: 10px; }
+
+        .badge-row { display: flex; justify-content: center; gap: 10px; margin: 14px 0 6px; flex-wrap: wrap; }
+        .badge { display: inline-block; padding: 5px 12px; border: 1px solid #ff007f; border-radius: 20px; font-size: 10px; font-weight: bold; letter-spacing: 2px; color: #ff007f; background: #fff5f9; text-transform: uppercase; }
+
+        .highlight-central { text-align: center; margin: 22px 0 10px; }
+        .highlight-box { display: inline-block; padding: 14px 28px; border: 2px solid #ff007f; border-radius: 8px; background: #fff; transition: transform 0.3s, box-shadow 0.3s; }
+        .highlight-box:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(255,0,127,0.25); }
+        .highlight-label { font-size: 10px; letter-spacing: 5px; color: #ff007f; text-transform: uppercase; }
+        .highlight-value { font-size: 38px; font-weight: bold; color: #1c1c1c; margin: 4px 0 2px; }
+        .highlight-desc { font-size: 11px; color: #aaa; letter-spacing: 2px; }
+
+        .cards-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin: 10px 0; }
+        .card { background: #fff; border: 1px solid #e0e0e0; border-top: 3px solid #ff007f; border-radius: 10px; padding: 16px; text-align: center; transition: all 0.3s; }
+        .card:hover { transform: translateY(-3px); box-shadow: 0 5px 18px rgba(0,0,0,0.08); }
+        .card-label { font-size: 10px; letter-spacing: 4px; color: #ff007f; text-transform: uppercase; }
+        .card-value { font-size: 26px; font-weight: bold; color: #1c1c1c; margin: 5px 0 2px; }
+        .card-desc { font-size: 11px; color: #999; }
+
+        .dark-box { background: #1c1c1c; border-radius: 10px; padding: 22px 16px; margin: 16px 0; border-top: 3px solid #ff007f; }
+        .dark-title { font-size: 15px; font-weight: bold; letter-spacing: 4px; color: #ff007f; text-align: center; margin-bottom: 4px; }
+        .dark-sub { font-size: 10px; color: #aaa; text-align: center; margin-bottom: 18px; letter-spacing: 1px; }
+
+        .conn-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; }
+        .conn-card { background: #2a2a2a; border: 1px solid #333; border-radius: 10px; padding: 16px 10px 14px; display: flex; flex-direction: column; align-items: center; text-align: center; transition: all 0.3s; }
+        .conn-card:hover { border-color: #ff007f; transform: translateY(-3px); }
+        .conn-port-name { font-size: 12px; font-weight: bold; color: #fff; margin: 8px 0 3px; }
+        .conn-port-desc { font-size: 9px; color: #888; line-height: 1.5; }
+        .conn-count { margin-top: 8px; background: #ff007f; color: #fff; font-size: 12px; font-weight: bold; padding: 3px 14px; border-radius: 20px; letter-spacing: 1px; }
+
+        /* 80 PLUS */
+        .cert-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+        .cert-card { background: #2a2a2a; border: 2px solid #333; border-radius: 10px; padding: 12px 6px; text-align: center; position: relative; }
+        .cert-card.active { border-color: #ff007f; box-shadow: 0 0 18px rgba(255,0,127,0.3); animation: pulseGlow 2.5s infinite; }
+        .cert-card.inactive { opacity: 0.32; }
+        .cert-badge-label { font-size: 8px; font-weight: bold; letter-spacing: 2px; color: #999; text-transform: uppercase; margin-bottom: 6px; }
+        .cert-icon { font-size: 22px; margin-bottom: 4px; }
+        .cert-name { font-size: 11px; font-weight: bold; color: #fff; margin-bottom: 4px; }
+        .cert-eff { font-size: 10px; color: #ff007f; font-weight: bold; }
+        .cert-desc { font-size: 8px; color: #888; margin-top: 4px; line-height: 1.5; }
+        .cert-this { position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: #ff007f; color: #fff; font-size: 8px; font-weight: bold; padding: 2px 8px; border-radius: 20px; white-space: nowrap; letter-spacing: 1px; }
+
+        .cert-benefits { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-top: 14px; }
+        .cb { background: #2a2a2a; border: 1px solid #333; border-radius: 10px; padding: 14px 12px; border-left: 3px solid #ff007f; transition: all 0.3s; }
+        .cb:hover { background: #333; transform: translateX(3px); }
+        .cb-icon { font-size: 20px; margin-bottom: 6px; }
+        .cb-title { font-size: 11px; font-weight: bold; color: #ff007f; margin-bottom: 4px; letter-spacing: 1px; }
+        .cb-text { font-size: 10px; color: #aaa; line-height: 1.6; }
+
+        /* CALCULADORA */
+        .calc-box { background: #1c1c1c; border-radius: 10px; padding: 22px 16px; margin: 16px 0; border-top: 3px solid #ff007f; }
+        .calc-title { font-size: 15px; font-weight: bold; letter-spacing: 4px; color: #ff007f; text-align: center; margin-bottom: 4px; }
+        .calc-sub { font-size: 10px; color: #aaa; text-align: center; margin-bottom: 20px; letter-spacing: 1px; }
+
+        .watt-bar-wrap { background: #111; border-radius: 10px; padding: 16px 18px; margin-bottom: 18px; border: 1px solid #2a2a2a; }
+        .watt-bar-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
+        .watt-bar-label { font-size: 10px; color: #888; letter-spacing: 2px; text-transform: uppercase; }
+        .watt-bar-numbers { display: flex; align-items: baseline; gap: 4px; }
+        .watt-current { font-size: 28px; font-weight: bold; color: #fff; transition: color 0.3s; }
+        .watt-unit { font-size: 11px; color: #666; margin-left: 2px; }
+        .watt-sep { font-size: 14px; color: #555; }
+        .watt-max { font-size: 14px; color: #555; }
+        .bar-track { background: #222; border-radius: 6px; height: 22px; overflow: hidden; position: relative; }
+        .bar-fill { height: 100%; border-radius: 6px; width: 0%; transition: width 0.5s cubic-bezier(.4,0,.2,1), background 0.4s; }
+        .bar-markers { display: flex; justify-content: space-between; margin-top: 5px; }
+        .bar-marker { font-size: 8px; color: #555; }
+        .bar-marker.warn { color: #ff9800; }
+        .bar-marker.danger { color: #ff007f; }
+
+        .verdict-box { border-radius: 8px; padding: 14px 16px; margin-bottom: 18px; border: 1px solid #333; background: #161616; transition: all 0.4s; display: flex; align-items: center; gap: 14px; }
+        .verdict-icon { font-size: 28px; flex-shrink: 0; }
+        .verdict-text-wrap { flex: 1; }
+        .verdict-title { font-size: 13px; font-weight: bold; color: #fff; margin-bottom: 3px; }
+        .verdict-desc { font-size: 10px; color: #aaa; line-height: 1.6; }
+
+        .reset-row { text-align: right; margin-bottom: 12px; }
+        .reset-btn { background: transparent; border: 1px solid #333; border-radius: 20px; color: #666; font-size: 10px; padding: 5px 14px; cursor: pointer; transition: all 0.2s; letter-spacing: 1px; font-family: Verdana, sans-serif; }
+        .reset-btn:hover { border-color: #ff007f; color: #ff007f; }
+
+        .comp-sections { display: flex; flex-direction: column; gap: 14px; }
+        .comp-section { background: #252525; border-radius: 8px; overflow: hidden; border: 1px solid #2e2e2e; }
+        .comp-section-title { font-size: 10px; font-weight: bold; color: #ff007f; letter-spacing: 3px; text-transform: uppercase; padding: 9px 14px; background: #1e1e1e; border-bottom: 1px solid #2e2e2e; display: flex; align-items: center; gap: 8px; }
+        .comp-section-watts { margin-left: auto; font-size: 11px; color: #ff007f; font-weight: bold; letter-spacing: 0; min-width: 40px; text-align: right; }
+        .comp-options { display: flex; flex-wrap: wrap; gap: 8px; padding: 12px 14px; }
+        .multi-hint { font-size: 9px; color: #555; padding: 0 14px 10px; font-style: italic; }
+
+        .comp-btn { background: #1c1c1c; border: 1px solid #333; border-radius: 8px; padding: 8px 12px; cursor: pointer; transition: all 0.2s; display: flex; flex-direction: column; align-items: center; gap: 3px; min-width: 86px; user-select: none; }
+        .comp-btn:hover { border-color: #ff007f; background: #222; }
+        .comp-btn.selected { border-color: #ff007f; background: #2a0d18; box-shadow: 0 0 10px rgba(255,0,127,0.2); }
+        .comp-btn-icon { font-size: 16px; }
+        .comp-btn-name { font-size: 9px; font-weight: bold; color: #ccc; text-align: center; line-height: 1.3; }
+        .comp-btn.selected .comp-btn-name { color: #ff007f; }
+        .comp-btn-w { font-size: 9px; color: #555; }
+        .comp-btn.selected .comp-btn-w { color: #ff007f; opacity: 0.7; }
+
+        .qty-row { display: flex; flex-direction: column; gap: 6px; padding: 10px 14px 12px; }
+        .qty-item { display: flex; align-items: center; gap: 10px; background: #1c1c1c; border: 1px solid #2e2e2e; border-radius: 8px; padding: 8px 12px; transition: border-color 0.2s; }
+        .qty-item.active { border-color: #ff007f; background: #2a0d18; }
+        .qty-icon { font-size: 16px; flex-shrink: 0; }
+        .qty-info { flex: 1; }
+        .qty-name { font-size: 10px; font-weight: bold; color: #ccc; }
+        .qty-item.active .qty-name { color: #ff007f; }
+        .qty-pw { font-size: 9px; color: #555; margin-top: 1px; }
+        .qty-item.active .qty-pw { color: #ff007f; opacity: 0.6; }
+        .qty-controls { display: flex; align-items: center; background: #111; border-radius: 6px; overflow: hidden; border: 1px solid #333; }
+        .qty-btn { width: 28px; height: 28px; background: transparent; border: none; color: #ff007f; font-size: 16px; cursor: pointer; transition: background 0.15s; display: flex; align-items: center; justify-content: center; font-weight: bold; font-family: Verdana, sans-serif; }
+        .qty-btn:hover { background: #ff007f22; }
+        .qty-btn:disabled { color: #333; cursor: default; }
+        .qty-num { width: 32px; text-align: center; font-size: 13px; font-weight: bold; color: #fff; background: transparent; border: none; border-left: 1px solid #222; border-right: 1px solid #222; padding: 0; line-height: 28px; }
+        .qty-total-w { font-size: 10px; color: #888; min-width: 38px; text-align: right; }
+        .qty-item.active .qty-total-w { color: #ff007f; }
+
+        .outlet-box { margin: 16px 0; padding: 22px 18px; background: #1c1c1c; border-radius: 10px; border-top: 3px solid #ff007f; }
+        .outlet-title { font-size: 15px; font-weight: bold; letter-spacing: 4px; color: #ff007f; text-align: center; margin-bottom: 8px; }
+        .outlet-desc { font-size: 12px; color: #ccc; text-align: center; margin-bottom: 18px; }
+        .outlet-benefits { display: flex; gap: 12px; }
+        .ob { flex: 1; background: #2a2a2a; border: 1px solid #ff007f; border-radius: 10px; padding: 14px 10px; text-align: center; transition: all 0.3s; }
+        .ob:hover { background: #ff007f; transform: scale(1.04); }
+        .ob:hover .ob-val { color: #fff; }
+        .ob-icon { font-size: 26px; margin-bottom: 5px; }
+        .ob-val { font-size: 20px; font-weight: bold; color: #ff007f; line-height: 1; transition: color 0.3s; }
+        .ob-lbl { font-size: 10px; color: #ccc; letter-spacing: 2px; margin-top: 3px; }
+
+        .location-box { margin: 12px 0; padding: 22px 18px; background: #1c1c1c; border-radius: 10px; border-top: 3px solid #ff007f; }
+        .location-title { font-size: 12px; font-weight: bold; letter-spacing: 4px; color: #ff007f; text-align: center; margin-bottom: 12px; text-transform: uppercase; }
+        .location-content { background: #2a2a2a; border: 1px solid #ff007f; border-radius: 10px; padding: 18px 14px; text-align: center; }
+        .location-icon { font-size: 30px; margin-bottom: 7px; }
+        .location-status { font-size: 16px; font-weight: bold; color: #ff007f; letter-spacing: 2px; }
+        .location-desc { font-size: 11px; color: #ccc; margin-top: 8px; line-height: 1.7; }
+        .note { margin-top: 18px; padding: 10px 14px; border-left: 3px solid #d3d3d3; font-size: 10px; color: #999; line-height: 1.8; }
+
+        @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+        @keyframes pulseGlow { 0%,100%{box-shadow:0 0 8px rgba(255,0,127,0.3)} 50%{box-shadow:0 0 22px rgba(255,0,127,0.6)} }
+
+        @media(max-width:600px){
+            .header-title{font-size:24px;}
+            .cards-row{grid-template-columns:1fr;}
+            .conn-grid{grid-template-columns:repeat(2,1fr);}
+            .cert-grid{grid-template-columns:repeat(3,1fr);}
+            .cert-benefits{grid-template-columns:1fr;}
+            .outlet-benefits{flex-direction:column;}
+            .comp-btn{min-width:75px;}
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="header-brand">✦ Quantum Hardstore ✦</div>
+        <div class="header-manufacturer">Thermaltake® Fuentes™</div>
+        <div class="header-title">TOUGHPOWER GT 850W</div>
+        <div class="header-subtitle">850W &nbsp;/&nbsp; 80 PLUS GOLD &nbsp;/&nbsp; FULLY MODULAR &nbsp;/&nbsp; ATX 3.1 &nbsp;/&nbsp; PCIe Gen 5.1 &nbsp;/&nbsp; SMART ZERO FAN &nbsp;/&nbsp; NUEVA</div>
+    </div>
+
+    <div class="badge-row">
+        <span class="badge">850W</span>
+        <span class="badge">80 PLUS GOLD</span>
+        <span class="badge">FULLY MODULAR</span>
+        <span class="badge">ATX 3.1</span>
+        <span class="badge">PCIe GEN 5.1</span>
+        <span class="badge">SMART ZERO FAN</span>
+        <span class="badge">SINGLE RAIL +12V</span>
+        <span class="badge">LLC + DC-DC</span>
+        <span class="badge">100.000HS MTBF</span>
+        <span class="badge">GARANTÍA 5 AÑOS</span>
+    </div>
+
+    <div class="highlight-central">
+        <div class="highlight-box">
+            <div class="highlight-label">Potencia Certificada</div>
+            <div class="highlight-value">850 W</div>
+            <div class="highlight-desc">80 PLUS GOLD — ≥90% eficiencia — Fully Modular — ATX 3.1 — PCIe 5.1</div>
+        </div>
+    </div>
+
+    <div class="cards-row">
+        <div class="card">
+            <div class="card-label">Eficiencia</div>
+            <div class="card-value">90%</div>
+            <div class="card-desc">80 PLUS GOLD — hasta 92% típico</div>
+        </div>
+        <div class="card">
+            <div class="card-label">Riel +12V</div>
+            <div class="card-value">70.8A</div>
+            <div class="card-desc">Single Rail — potencia total disponible</div>
+        </div>
+        <div class="card">
+            <div class="card-label">PCIe 5.1</div>
+            <div class="card-value">450W</div>
+            <div class="card-desc">Conector 12V-2×6 nativo — RTX 4090 ready</div>
+        </div>
+    </div>
+
+    <!-- CONECTORES -->
+    <div class="dark-box">
+        <div class="dark-title">🔌 CONECTORES INCLUIDOS</div>
+        <div class="dark-sub">Fully Modular — todos los cables son removibles y solo conectás los que necesitás</div>
+        <div class="conn-grid">
+
+            <!-- ATX 24-pin -->
+            <div class="conn-card">
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+                    <rect x="4" y="6" width="36" height="32" rx="3" fill="#1c1c1c" stroke="#ff007f" stroke-width="1.5"/>
+                    <rect x="8" y="11" width="5" height="5" rx="1" fill="#ff007f" opacity="0.9"/>
+                    <rect x="15" y="11" width="5" height="5" rx="1" fill="#ff007f" opacity="0.7"/>
+                    <rect x="22" y="11" width="5" height="5" rx="1" fill="#ff007f" opacity="0.5"/>
+                    <rect x="29" y="11" width="5" height="5" rx="1" fill="#555"/>
+                    <rect x="8" y="20" width="5" height="5" rx="1" fill="#ff007f" opacity="0.9"/>
+                    <rect x="15" y="20" width="5" height="5" rx="1" fill="#ff007f" opacity="0.7"/>
+                    <rect x="22" y="20" width="5" height="5" rx="1" fill="#ff007f" opacity="0.5"/>
+                    <rect x="29" y="20" width="5" height="5" rx="1" fill="#555"/>
+                    <rect x="8" y="29" width="5" height="5" rx="1" fill="#ff007f" opacity="0.4"/>
+                    <rect x="15" y="29" width="5" height="5" rx="1" fill="#ff007f" opacity="0.3"/>
+                    <rect x="22" y="29" width="5" height="5" rx="1" fill="#555"/>
+                    <rect x="29" y="29" width="5" height="5" rx="1" fill="#555"/>
+                </svg>
+                <div class="conn-port-name">ATX 24-pin</div>
+                <div class="conn-port-desc">Alimentación principal motherboard — cable 55cm</div>
+                <div class="conn-count">× 1</div>
+            </div>
+
+            <!-- CPU 4+4 -->
+            <div class="conn-card">
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+                    <rect x="8" y="4" width="28" height="36" rx="3" fill="#1c1c1c" stroke="#ff007f" stroke-width="1.5"/>
+                    <rect x="12" y="9" width="8" height="8" rx="1" fill="#ff007f" opacity="0.9"/>
+                    <rect x="24" y="9" width="8" height="8" rx="1" fill="#ff007f" opacity="0.7"/>
+                    <rect x="12" y="21" width="8" height="8" rx="1" fill="#ff007f" opacity="0.5"/>
+                    <rect x="24" y="21" width="8" height="8" rx="1" fill="#ff007f" opacity="0.3"/>
+                    <line x1="22" y1="4" x2="22" y2="40" stroke="#333" stroke-width="1" stroke-dasharray="2,3"/>
+                </svg>
+                <div class="conn-port-name">CPU 4+4 pin</div>
+                <div class="conn-port-desc">×2 unidades — soporta motherboards de alta gama con 2 conectores EPS</div>
+                <div class="conn-count">× 2</div>
+            </div>
+
+            <!-- PCIe 12V-2x6 Gen 5.1 -->
+            <div class="conn-card">
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+                    <rect x="4" y="8" width="36" height="28" rx="3" fill="#1c1c1c" stroke="#ff007f" stroke-width="2"/>
+                    <rect x="8" y="13" width="6" height="7" rx="1" fill="#ff007f" opacity="1"/>
+                    <rect x="17" y="13" width="6" height="7" rx="1" fill="#ff007f" opacity="0.8"/>
+                    <rect x="26" y="13" width="6" height="7" rx="1" fill="#ff007f" opacity="0.6"/>
+                    <rect x="8" y="24" width="6" height="4" rx="1" fill="#555"/>
+                    <rect x="17" y="24" width="6" height="4" rx="1" fill="#555"/>
+                    <rect x="26" y="24" width="6" height="4" rx="1" fill="#ff007f" opacity="0.3"/>
+                    <rect x="35" y="13" width="3" height="7" rx="1" fill="#ff007f" opacity="0.4"/>
+                    <rect x="35" y="24" width="3" height="4" rx="1" fill="#555"/>
+                    <!-- badge 5.1 -->
+                    <rect x="28" y="3" width="14" height="8" rx="2" fill="#ff007f"/>
+                    <text x="35" y="10" font-size="5.5" fill="#fff" text-anchor="middle" font-family="Verdana" font-weight="bold">5.1</text>
+                </svg>
+                <div class="conn-port-name">PCIe 12V-2×6</div>
+                <div class="conn-port-desc">Gen 5.1 nativo — hasta 450W — RTX 4090 / RX 7900 XTX ready</div>
+                <div class="conn-count">× 1</div>
+            </div>
+
+            <!-- PCIe 6+2 -->
+            <div class="conn-card">
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+                    <rect x="4" y="10" width="36" height="24" rx="3" fill="#1c1c1c" stroke="#ff007f" stroke-width="1.5"/>
+                    <rect x="8" y="15" width="7" height="7" rx="1" fill="#ff007f" opacity="0.9"/>
+                    <rect x="18" y="15" width="7" height="7" rx="1" fill="#ff007f" opacity="0.7"/>
+                    <rect x="28" y="15" width="7" height="7" rx="1" fill="#ff007f" opacity="0.5"/>
+                    <rect x="8" y="26" width="7" height="4" rx="1" fill="#555"/>
+                    <rect x="18" y="26" width="7" height="4" rx="1" fill="#555"/>
+                    <rect x="28" y="26" width="7" height="4" rx="1" fill="#ff007f" opacity="0.3"/>
+                </svg>
+                <div class="conn-port-name">PCIe 6+2 pin</div>
+                <div class="conn-port-desc">Para GPUs legacy — compatible 6 y 8 pin</div>
+                <div class="conn-count">× 2</div>
+            </div>
+
+            <!-- SATA -->
+            <div class="conn-card">
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+                    <rect x="4" y="16" width="36" height="12" rx="2" fill="#1c1c1c" stroke="#ff007f" stroke-width="1.5"/>
+                    <rect x="7" y="19" width="30" height="6" rx="1" fill="#252525"/>
+                    <circle cx="11" cy="22" r="2" fill="#ff007f" opacity="0.9"/>
+                    <circle cx="18" cy="22" r="2" fill="#ff007f" opacity="0.7"/>
+                    <circle cx="25" cy="22" r="2" fill="#ff007f" opacity="0.5"/>
+                    <circle cx="32" cy="22" r="2" fill="#555"/>
+                    <line x1="11" y1="16" x2="11" y2="10" stroke="#ff007f" stroke-width="1.2" opacity="0.5"/>
+                    <line x1="18" y1="16" x2="18" y2="10" stroke="#ff007f" stroke-width="1.2" opacity="0.4"/>
+                    <line x1="25" y1="16" x2="25" y2="10" stroke="#ff007f" stroke-width="1.2" opacity="0.3"/>
+                    <line x1="32" y1="16" x2="32" y2="10" stroke="#555" stroke-width="1.2"/>
+                </svg>
+                <div class="conn-port-name">SATA</div>
+                <div class="conn-port-desc">Para SSDs SATA, HDDs y lectoras ópticas</div>
+                <div class="conn-count">× 6</div>
+            </div>
+
+            <!-- Molex -->
+            <div class="conn-card">
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+                    <rect x="8" y="12" width="28" height="20" rx="3" fill="#1c1c1c" stroke="#ff007f" stroke-width="1.5"/>
+                    <circle cx="16" cy="22" r="3.5" fill="#2a2a2a" stroke="#ff007f" stroke-width="1.2"/>
+                    <circle cx="16" cy="22" r="1.5" fill="#ff007f" opacity="0.8"/>
+                    <circle cx="28" cy="22" r="3.5" fill="#2a2a2a" stroke="#ff007f" stroke-width="1.2"/>
+                    <circle cx="28" cy="22" r="1.5" fill="#ff007f" opacity="0.4"/>
+                    <line x1="8" y1="18" x2="4" y2="18" stroke="#ff007f" stroke-width="1" opacity="0.4"/>
+                    <line x1="8" y1="26" x2="4" y2="26" stroke="#ff007f" stroke-width="1" opacity="0.4"/>
+                </svg>
+                <div class="conn-port-name">Molex 4-pin</div>
+                <div class="conn-port-desc">Periféricos legacy, tiras LED y adaptadores</div>
+                <div class="conn-count">× 4</div>
+            </div>
+
+            <!-- Smart Zero Fan -->
+            <div class="conn-card">
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+                    <circle cx="22" cy="22" r="17" fill="#1c1c1c" stroke="#ff007f" stroke-width="1.5"/>
+                    <circle cx="22" cy="22" r="4" fill="#2a2a2a" stroke="#ff007f" stroke-width="1.2"/>
+                    <path d="M22 8 Q28 14 22 18 Q16 14 22 8Z" fill="#ff007f" opacity="0.7"/>
+                    <path d="M36 22 Q30 28 26 22 Q30 16 36 22Z" fill="#ff007f" opacity="0.7"/>
+                    <path d="M22 36 Q16 30 22 26 Q28 30 22 36Z" fill="#ff007f" opacity="0.7"/>
+                    <path d="M8 22 Q14 16 18 22 Q14 28 8 22Z" fill="#ff007f" opacity="0.7"/>
+                    <circle cx="22" cy="22" r="2" fill="#ff007f"/>
+                </svg>
+                <div class="conn-port-name">Smart Zero Fan</div>
+                <div class="conn-port-desc">Fan 120mm HDB — modo silencioso bajo carga ligera</div>
+                <div class="conn-count" style="background:#333;color:#ff007f;border:1px solid #ff007f;">INCL.</div>
+            </div>
+
+            <!-- Fully Modular -->
+            <div class="conn-card">
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+                    <rect x="6" y="8" width="32" height="28" rx="3" fill="#1c1c1c" stroke="#ff007f" stroke-width="1.5"/>
+                    <line x1="6" y1="20" x2="38" y2="20" stroke="#333" stroke-width="1"/>
+                    <circle cx="14" cy="14" r="3" fill="#2a2a2a" stroke="#ff007f" stroke-width="1.2"/>
+                    <circle cx="22" cy="14" r="3" fill="#2a2a2a" stroke="#ff007f" stroke-width="1.2"/>
+                    <circle cx="30" cy="14" r="3" fill="#2a2a2a" stroke="#555" stroke-width="1"/>
+                    <circle cx="14" cy="28" r="3" fill="#2a2a2a" stroke="#ff007f" stroke-width="1.2"/>
+                    <circle cx="22" cy="28" r="3" fill="#2a2a2a" stroke="#ff007f" stroke-width="1.2"/>
+                    <circle cx="30" cy="28" r="3" fill="#2a2a2a" stroke="#ff007f" stroke-width="1.2"/>
+                    <line x1="14" y1="8" x2="14" y2="5" stroke="#ff007f" stroke-width="1.5" stroke-dasharray="1,1"/>
+                    <line x1="22" y1="8" x2="22" y2="5" stroke="#ff007f" stroke-width="1.5" stroke-dasharray="1,1"/>
+                </svg>
+                <div class="conn-port-name">Fully Modular</div>
+                <div class="conn-port-desc">Todos los cables son removibles — mejor airflow y orden en gabinete</div>
+                <div class="conn-count" style="background:#333;color:#ff007f;border:1px solid #ff007f;">INCL.</div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 80 PLUS GOLD -->
+    <div class="dark-box">
+        <div class="dark-title">🏆 CERTIFICACIÓN 80 PLUS GOLD</div>
+        <div class="dark-sub">¿Qué significa y por qué importa para tu PC?</div>
+
+        <div class="cert-grid">
+            <div class="cert-card inactive">
+                <div class="cert-badge-label">Básica</div>
+                <div class="cert-icon">⚪</div>
+                <div class="cert-name">80 PLUS</div>
+                <div class="cert-eff">80%</div>
+                <div class="cert-desc">Mínimo certificado — casi no se ve en el mercado actual</div>
+            </div>
+            <div class="cert-card inactive">
+                <div class="cert-badge-label">Bronce</div>
+                <div class="cert-icon">🥉</div>
+                <div class="cert-name">BRONZE</div>
+                <div class="cert-eff">85%</div>
+                <div class="cert-desc">Entry level — opción económica para builds básicos</div>
+            </div>
+            <div class="cert-card inactive">
+                <div class="cert-badge-label">Plata</div>
+                <div class="cert-icon">🥈</div>
+                <div class="cert-name">SILVER</div>
+                <div class="cert-eff">88%</div>
+                <div class="cert-desc">Poco común — entre Bronze y Gold</div>
+            </div>
+            <div class="cert-card active">
+                <div class="cert-this">✦ ESTA FUENTE</div>
+                <div class="cert-badge-label">Oro</div>
+                <div class="cert-icon">🥇</div>
+                <div class="cert-name">GOLD</div>
+                <div class="cert-eff">≥ 90%</div>
+                <div class="cert-desc">Estándar premium — relación precio/eficiencia óptima</div>
+            </div>
+            <div class="cert-card inactive">
+                <div class="cert-badge-label">Platino</div>
+                <div class="cert-icon">💎</div>
+                <div class="cert-name">PLATINUM</div>
+                <div class="cert-eff">92%</div>
+                <div class="cert-desc">Alta gama — workstations y builds 24/7</div>
+            </div>
+        </div>
+
+        <div class="cert-benefits">
+            <div class="cb">
+                <div class="cb-icon">🌡️</div>
+                <div class="cb-title">MÁS FRÍA Y SILENCIOSA</div>
+                <div class="cb-text">Al perder solo el 10% como calor, la fuente trabaja más fría. El Smart Zero Fan ni siquiera se activa bajo carga ligera — silencio total en ofimática o navegación.</div>
+            </div>
+            <div class="cb">
+                <div class="cb-icon">⚡</div>
+                <div class="cb-title">AHORRO EN ELECTRICIDAD</div>
+                <div class="cb-text">Con una PC que consume 500W, una Gold ahorra entre $4.000 y $6.000 anuales en luz vs una Bronze del mismo wattaje. Se paga sola con el tiempo.</div>
+            </div>
+            <div class="cb">
+                <div class="cb-icon">🔋</div>
+                <div class="cb-title">LLC + DC-DC REGULADO</div>
+                <div class="cb-text">El diseño LLC + DC to DC entrega voltajes ultra estables a CPU, RAM y GPU — sin picos ni caídas que dañen componentes. Ideal para overclocking.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CALCULADORA -->
+    <div class="calc-box">
+        <div class="calc-title">⚡ CALCULADORA DE CONSUMO</div>
+        <div class="calc-sub">Seleccioná los componentes de tu PC y mirá si esta fuente de 850W te alcanza en tiempo real</div>
+
+        <div class="watt-bar-wrap">
+            <div class="watt-bar-header">
+                <div class="watt-bar-label">Consumo estimado de tu PC</div>
+                <div class="watt-bar-numbers">
+                    <span class="watt-current" id="watt-current">0</span>
+                    <span class="watt-unit">W</span>
+                    <span class="watt-sep">&nbsp;/&nbsp;</span>
+                    <span class="watt-max">850</span>
+                    <span class="watt-unit">W</span>
+                </div>
+            </div>
+            <div class="bar-track">
+                <div class="bar-fill" id="bar-fill"></div>
+            </div>
+            <div class="bar-markers">
+                <span class="bar-marker">0W</span>
+                <span class="bar-marker warn">425W — 50%</span>
+                <span class="bar-marker warn">680W — 80% ⚠</span>
+                <span class="bar-marker danger">850W</span>
+            </div>
+        </div>
+
+        <div class="verdict-box" id="verdict-box">
+            <div class="verdict-icon" id="verdict-icon">🟡</div>
+            <div class="verdict-text-wrap">
+                <div class="verdict-title" id="verdict-title">Seleccioná tus componentes para ver el resultado</div>
+                <div class="verdict-desc" id="verdict-desc">Usamos el criterio del 80% de carga máxima recomendado — así tu fuente trabaja eficiente, fría y dura más tiempo.</div>
+            </div>
+        </div>
+
+        <div class="reset-row">
+            <button class="reset-btn" onclick="resetAll()">↺ Resetear selección</button>
+        </div>
+
+        <div class="comp-sections">
+
+            <!-- CPU -->
+            <div class="comp-section">
+                <div class="comp-section-title">🖥️ PROCESADOR <span class="comp-section-watts" id="watts-cpu">0W</span></div>
+                <div class="comp-options" id="group-cpu">
+                    <div class="comp-btn" data-w="45"  data-group="cpu" onclick="selectComp(this)"><span class="comp-btn-icon">🔵</span><span class="comp-btn-name">Celeron / Athlon</span><span class="comp-btn-w">~45W</span></div>
+                    <div class="comp-btn" data-w="65"  data-group="cpu" onclick="selectComp(this)"><span class="comp-btn-icon">🔵</span><span class="comp-btn-name">i3 / Ryzen 3</span><span class="comp-btn-w">~65W</span></div>
+                    <div class="comp-btn" data-w="90"  data-group="cpu" onclick="selectComp(this)"><span class="comp-btn-icon">🔵</span><span class="comp-btn-name">i5 / Ryzen 5</span><span class="comp-btn-w">~90W</span></div>
+                    <div class="comp-btn" data-w="125" data-group="cpu" onclick="selectComp(this)"><span class="comp-btn-icon">🟡</span><span class="comp-btn-name">i7 / Ryzen 7</span><span class="comp-btn-w">~125W</span></div>
+                    <div class="comp-btn" data-w="170" data-group="cpu" onclick="selectComp(this)"><span class="comp-btn-icon">🟠</span><span class="comp-btn-name">i9 / Ryzen 9</span><span class="comp-btn-w">~170W</span></div>
+                    <div class="comp-btn" data-w="250" data-group="cpu" onclick="selectComp(this)"><span class="comp-btn-icon">🔴</span><span class="comp-btn-name">Threadripper / Xeon</span><span class="comp-btn-w">~250W</span></div>
+                </div>
+            </div>
+
+            <!-- GPU -->
+            <div class="comp-section">
+                <div class="comp-section-title">🎮 PLACA DE VIDEO <span class="comp-section-watts" id="watts-gpu">0W</span></div>
+                <div class="comp-options" id="group-gpu">
+                    <div class="comp-btn" data-w="0"   data-group="gpu" onclick="selectComp(this)"><span class="comp-btn-icon">⬛</span><span class="comp-btn-name">Gráfica integrada</span><span class="comp-btn-w">0W</span></div>
+                    <div class="comp-btn" data-w="50"  data-group="gpu" onclick="selectComp(this)"><span class="comp-btn-icon">🟢</span><span class="comp-btn-name">GT 1030 / RX 550</span><span class="comp-btn-w">~50W</span></div>
+                    <div class="comp-btn" data-w="75"  data-group="gpu" onclick="selectComp(this)"><span class="comp-btn-icon">🟢</span><span class="comp-btn-name">GTX 1650</span><span class="comp-btn-w">~75W</span></div>
+                    <div class="comp-btn" data-w="90"  data-group="gpu" onclick="selectComp(this)"><span class="comp-btn-icon">🟢</span><span class="comp-btn-name">RTX 3050 / RX 6500</span><span class="comp-btn-w">~90W</span></div>
+                    <div class="comp-btn" data-w="115" data-group="gpu" onclick="selectComp(this)"><span class="comp-btn-icon">🟢</span><span class="comp-btn-name">RTX 4060 / RX 7600</span><span class="comp-btn-w">~115W</span></div>
+                    <div class="comp-btn" data-w="170" data-group="gpu" onclick="selectComp(this)"><span class="comp-btn-icon">🟢</span><span class="comp-btn-name">RTX 3060 / RX 6600</span><span class="comp-btn-w">~170W</span></div>
+                    <div class="comp-btn" data-w="185" data-group="gpu" onclick="selectComp(this)"><span class="comp-btn-icon">🟡</span><span class="comp-btn-name">RTX 4060 Ti</span><span class="comp-btn-w">~185W</span></div>
+                    <div class="comp-btn" data-w="200" data-group="gpu" onclick="selectComp(this)"><span class="comp-btn-icon">🟡</span><span class="comp-btn-name">RTX 3070 / RX 6700</span><span class="comp-btn-w">~200W</span></div>
+                    <div class="comp-btn" data-w="220" data-group="gpu" onclick="selectComp(this)"><span class="comp-btn-icon">🟡</span><span class="comp-btn-name">RX 7700 / RX 7800</span><span class="comp-btn-w">~220W</span></div>
+                    <div class="comp-btn" data-w="250" data-group="gpu" onclick="selectComp(this)"><span class="comp-btn-icon">🟠</span><span class="comp-btn-name">RTX 3080 / RX 6800</span><span class="comp-btn-w">~250W</span></div>
+                    <div class="comp-btn" data-w="285" data-group="gpu" onclick="selectComp(this)"><span class="comp-btn-icon">🟠</span><span class="comp-btn-name">RTX 4070 / RX 7900 GRE</span><span class="comp-btn-w">~285W</span></div>
+                    <div class="comp-btn" data-w="300" data-group="gpu" onclick="selectComp(this)"><span class="comp-btn-icon">🟠</span><span class="comp-btn-name">RTX 4070 Ti / RX 6900</span><span class="comp-btn-w">~300W</span></div>
+                    <div class="comp-btn" data-w="320" data-group="gpu" onclick="selectComp(this)"><span class="comp-btn-icon">🔴</span><span class="comp-btn-name">RTX 3090 / RX 7900 XT</span><span class="comp-btn-w">~320W</span></div>
+                    <div class="comp-btn" data-w="350" data-group="gpu" onclick="selectComp(this)"><span class="comp-btn-icon">🔴</span><span class="comp-btn-name">RTX 4080 / RX 7900 XTX</span><span class="comp-btn-w">~350W</span></div>
+                    <div class="comp-btn" data-w="450" data-group="gpu" onclick="selectComp(this)"><span class="comp-btn-icon">🔴</span><span class="comp-btn-name">RTX 4090</span><span class="comp-btn-w">~450W</span></div>
+                </div>
+                <div class="multi-hint">Seleccioná la que más se parezca a la tuya — esta fuente soporta hasta RTX 4090 con conector PCIe 5.1 nativo</div>
+            </div>
+
+            <!-- RAM -->
+            <div class="comp-section">
+                <div class="comp-section-title">🧠 MEMORIA RAM <span class="comp-section-watts" id="watts-ram">0W</span></div>
+                <div class="comp-options" id="group-ram">
+                    <div class="comp-btn" data-w="5"  data-group="ram" onclick="selectComp(this)"><span class="comp-btn-icon">🟦</span><span class="comp-btn-name">1 stick 8GB</span><span class="comp-btn-w">~5W</span></div>
+                    <div class="comp-btn" data-w="10" data-group="ram" onclick="selectComp(this)"><span class="comp-btn-icon">🟦</span><span class="comp-btn-name">2 sticks 16GB</span><span class="comp-btn-w">~10W</span></div>
+                    <div class="comp-btn" data-w="15" data-group="ram" onclick="selectComp(this)"><span class="comp-btn-icon">🟦</span><span class="comp-btn-name">2×16GB / 32GB</span><span class="comp-btn-w">~15W</span></div>
+                    <div class="comp-btn" data-w="22" data-group="ram" onclick="selectComp(this)"><span class="comp-btn-icon">🟦</span><span class="comp-btn-name">4 sticks / 64GB</span><span class="comp-btn-w">~22W</span></div>
+                </div>
+            </div>
+
+            <!-- ALMACENAMIENTO -->
+            <div class="comp-section">
+                <div class="comp-section-title">💾 ALMACENAMIENTO <span class="comp-section-watts" id="watts-storage">0W</span></div>
+                <div class="qty-row">
+                    <div class="qty-item" id="qi-nvme">
+                        <span class="qty-icon">⚡</span>
+                        <div class="qty-info"><div class="qty-name">SSD NVMe M.2</div><div class="qty-pw">~5W por unidad — hasta 6 conectores SATA disponibles</div></div>
+                        <div class="qty-controls">
+                            <button class="qty-btn" onclick="changeQty('nvme',-1)" id="btn-nvme-minus">−</button>
+                            <span class="qty-num" id="qty-nvme">0</span>
+                            <button class="qty-btn" onclick="changeQty('nvme',1)">+</button>
+                        </div>
+                        <span class="qty-total-w" id="qtw-nvme">0W</span>
+                    </div>
+                    <div class="qty-item" id="qi-sata">
+                        <span class="qty-icon">📀</span>
+                        <div class="qty-info"><div class="qty-name">SSD SATA 2.5"</div><div class="qty-pw">~3W por unidad</div></div>
+                        <div class="qty-controls">
+                            <button class="qty-btn" onclick="changeQty('sata',-1)" id="btn-sata-minus">−</button>
+                            <span class="qty-num" id="qty-sata">0</span>
+                            <button class="qty-btn" onclick="changeQty('sata',1)">+</button>
+                        </div>
+                        <span class="qty-total-w" id="qtw-sata">0W</span>
+                    </div>
+                    <div class="qty-item" id="qi-hdd35">
+                        <span class="qty-icon">🖴</span>
+                        <div class="qty-info"><div class="qty-name">HDD 3.5" (escritorio)</div><div class="qty-pw">~10W por unidad</div></div>
+                        <div class="qty-controls">
+                            <button class="qty-btn" onclick="changeQty('hdd35',-1)" id="btn-hdd35-minus">−</button>
+                            <span class="qty-num" id="qty-hdd35">0</span>
+                            <button class="qty-btn" onclick="changeQty('hdd35',1)">+</button>
+                        </div>
+                        <span class="qty-total-w" id="qtw-hdd35">0W</span>
+                    </div>
+                    <div class="qty-item" id="qi-hdd25">
+                        <span class="qty-icon">🖴</span>
+                        <div class="qty-info"><div class="qty-name">HDD 2.5" (notebook)</div><div class="qty-pw">~5W por unidad</div></div>
+                        <div class="qty-controls">
+                            <button class="qty-btn" onclick="changeQty('hdd25',-1)" id="btn-hdd25-minus">−</button>
+                            <span class="qty-num" id="qty-hdd25">0</span>
+                            <button class="qty-btn" onclick="changeQty('hdd25',1)">+</button>
+                        </div>
+                        <span class="qty-total-w" id="qtw-hdd25">0W</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COOLING -->
+            <div class="comp-section">
+                <div class="comp-section-title">🌀 COOLING / VENTILACIÓN <span class="comp-section-watts" id="watts-cooling">0W</span></div>
+                <div class="comp-options" id="group-coolingcpu" style="padding-bottom:4px;">
+                    <div class="comp-btn" data-w="5"  data-group="coolingcpu" onclick="selectComp(this)"><span class="comp-btn-icon">🌀</span><span class="comp-btn-name">Cooler stock</span><span class="comp-btn-w">~5W</span></div>
+                    <div class="comp-btn" data-w="8"  data-group="coolingcpu" onclick="selectComp(this)"><span class="comp-btn-icon">🌀</span><span class="comp-btn-name">Aftermarket</span><span class="comp-btn-w">~8W</span></div>
+                    <div class="comp-btn" data-w="18" data-group="coolingcpu" onclick="selectComp(this)"><span class="comp-btn-icon">💧</span><span class="comp-btn-name">Water 240mm</span><span class="comp-btn-w">~18W</span></div>
+                    <div class="comp-btn" data-w="25" data-group="coolingcpu" onclick="selectComp(this)"><span class="comp-btn-icon">💧</span><span class="comp-btn-name">Water 360mm</span><span class="comp-btn-w">~25W</span></div>
+                </div>
+                <div class="multi-hint" style="padding-top:0; margin-top:-2px;">Cooler de CPU — elegí uno</div>
+                <div class="qty-row" style="padding-top:0;">
+                    <div class="qty-item" id="qi-fan120">
+                        <span class="qty-icon">🔵</span>
+                        <div class="qty-info"><div class="qty-name">Fan 120mm extra</div><div class="qty-pw">~3W por fan</div></div>
+                        <div class="qty-controls">
+                            <button class="qty-btn" onclick="changeQty('fan120',-1)" id="btn-fan120-minus">−</button>
+                            <span class="qty-num" id="qty-fan120">0</span>
+                            <button class="qty-btn" onclick="changeQty('fan120',1)">+</button>
+                        </div>
+                        <span class="qty-total-w" id="qtw-fan120">0W</span>
+                    </div>
+                    <div class="qty-item" id="qi-fan140">
+                        <span class="qty-icon">🔵</span>
+                        <div class="qty-info"><div class="qty-name">Fan 140mm extra</div><div class="qty-pw">~4W por fan</div></div>
+                        <div class="qty-controls">
+                            <button class="qty-btn" onclick="changeQty('fan140',-1)" id="btn-fan140-minus">−</button>
+                            <span class="qty-num" id="qty-fan140">0</span>
+                            <button class="qty-btn" onclick="changeQty('fan140',1)">+</button>
+                        </div>
+                        <span class="qty-total-w" id="qtw-fan140">0W</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EXTRAS -->
+            <div class="comp-section">
+                <div class="comp-section-title">🔌 EXTRAS / PERIFÉRICOS INTERNOS <span class="comp-section-watts" id="watts-extras">0W</span></div>
+                <div class="comp-options" id="group-extras">
+                    <div class="comp-btn" data-w="10" data-group="extras" onclick="toggleComp(this)"><span class="comp-btn-icon">🌈</span><span class="comp-btn-name">RGB strips / hub</span><span class="comp-btn-w">~10W</span></div>
+                    <div class="comp-btn" data-w="10" data-group="extras" onclick="toggleComp(this)"><span class="comp-btn-icon">📶</span><span class="comp-btn-name">Tarjeta red PCIe</span><span class="comp-btn-w">~10W</span></div>
+                    <div class="comp-btn" data-w="15" data-group="extras" onclick="toggleComp(this)"><span class="comp-btn-icon">📹</span><span class="comp-btn-name">Capturadora</span><span class="comp-btn-w">~15W</span></div>
+                    <div class="comp-btn" data-w="5"  data-group="extras" onclick="toggleComp(this)"><span class="comp-btn-icon">🔌</span><span class="comp-btn-name">Hub USB interno</span><span class="comp-btn-w">~5W</span></div>
+                    <div class="comp-btn" data-w="25" data-group="extras" onclick="toggleComp(this)"><span class="comp-btn-icon">🔊</span><span class="comp-btn-name">Tarjeta de sonido</span><span class="comp-btn-w">~25W</span></div>
+                </div>
+                <div class="multi-hint">Podés seleccionar varios</div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- GARANTIA -->
+    <div class="outlet-box">
+        <div class="outlet-title">🆕 PRODUCTO NUEVO</div>
+        <div class="outlet-desc">Producto nuevo en caja original, sellado de fábrica. Garantía oficial Thermaltake incluida.</div>
+        <div class="outlet-benefits">
+            <div class="ob"><div class="ob-icon">🔄</div><div class="ob-val">30 DÍAS</div><div class="ob-lbl">DE PRUEBA</div></div>
+            <div class="ob"><div class="ob-icon">🛡️</div><div class="ob-val">5 AÑOS</div><div class="ob-lbl">DE GARANTÍA</div></div>
+        </div>
+    </div>
+
+    <div class="location-box">
+        <div class="location-title">✅ Disponible — En depósito</div>
+        <div class="location-content">
+            <div class="location-icon">🏭</div>
+            <div class="location-status">DISPONIBLE EN DEPÓSITO</div>
+            <div class="location-desc">El producto se encuentra disponible en nuestro depósito.<br>Coordiná el retiro o envío una vez abonado tu pedido.</div>
+        </div>
+    </div>
+
+    <div class="note">* Thermaltake Toughpower GT 850W — P/N: PS-TPT-0850FNFAGE-3. 850W potencia total — Single +12V Rail 70.8A. 80 PLUS GOLD certificada: ≥90% eficiencia a carga del 50% / ≥87% a 20% y 100% / 60% eficiencia a baja carga (ATX 3.1). Fully Modular — ATX 3.1 compliant — PCIe Gen 5.1 12V-2×6 nativo hasta 450W. Conectores: 1× ATX 24-pin (55cm) / 2× CPU 4+4-pin EPS / 1× PCIe 12V-2×6 (Gen 5.1) / 2× PCIe 6+2-pin / 6× SATA / 4× Molex 4-pin. Fan: 120mm Hydraulic Bearing (HDB) con Smart Zero — modo silencioso bajo carga ligera. Circuito LLC + DC to DC — voltajes ultra estables. PFC activo — Input 100–240V AC / 10A max / 50–60Hz. Hold-up Time: 17ms al 80% de carga. MTBF: 100.000 horas mínimo. Protecciones: OCP / OVP / UVP / OPP / SCP / OTP. Dimensiones: 150×86×140mm — Peso: aprox. 1.8 kg. Garantía oficial Thermaltake: 5 años. Los valores de consumo en la calculadora son estimados TDP típicos — el consumo real puede variar según OC, configuración y carga.</div>
+
+</div>
+
+<script>
+const PSU_WATTS = 850;
+const SAFE_PCT  = 0.80;
+
+const state = { cpu:0, gpu:0, ram:0, storage:0, coolingcpu:0, coolingfans:0, extras:0 };
+const qty   = { nvme:0, sata:0, hdd35:0, hdd25:0, fan120:0, fan140:0 };
+const qtyW  = { nvme:5, sata:3, hdd35:10, hdd25:5, fan120:3, fan140:4 };
+const qtyMax= { nvme:8, sata:8, hdd35:6, hdd25:6, fan120:12, fan140:8 };
+
+function total() { return Object.values(state).reduce((a,b)=>a+b,0); }
+
+function selectComp(btn) {
+    const group = btn.dataset.group;
+    const wasSelected = btn.classList.contains('selected');
+    document.querySelectorAll(`[data-group="${group}"]`).forEach(b => b.classList.remove('selected'));
+    if (!wasSelected) { btn.classList.add('selected'); state[group] = parseInt(btn.dataset.w); }
+    else { state[group] = 0; }
+    update();
+}
+
+function toggleComp(btn) {
+    btn.classList.toggle('selected');
+    let sum = 0;
+    document.querySelectorAll('[data-group="extras"].selected').forEach(b => sum += parseInt(b.dataset.w));
+    state.extras = sum;
+    update();
+}
+
+function changeQty(key, delta) {
+    qty[key] = Math.max(0, Math.min(qtyMax[key], qty[key] + delta));
+    document.getElementById('qty-' + key).textContent = qty[key];
+    const tw = qty[key] * qtyW[key];
+    document.getElementById('qtw-' + key).textContent = tw + 'W';
+    const minBtn = document.getElementById('btn-' + key + '-minus');
+    if (minBtn) minBtn.disabled = qty[key] === 0;
+    const qiEl = document.getElementById('qi-' + key);
+    if (qiEl) qiEl.classList.toggle('active', qty[key] > 0);
+    const storageKeys = ['nvme','sata','hdd35','hdd25'];
+    const fanKeys = ['fan120','fan140'];
+    if (storageKeys.includes(key)) state.storage = storageKeys.reduce((a,k)=>a+qty[k]*qtyW[k],0);
+    if (fanKeys.includes(key))     state.coolingfans = fanKeys.reduce((a,k)=>a+qty[k]*qtyW[k],0);
+    update();
+}
+
+function update() {
+    const t = total();
+    const safeW = Math.round(PSU_WATTS * SAFE_PCT);
+    const pct = Math.min((t / PSU_WATTS) * 100, 100);
+
+    document.getElementById('watt-current').textContent = t;
+
+    const fill = document.getElementById('bar-fill');
+    fill.style.width = pct + '%';
+    let barColor, numColor;
+    if      (pct <= 50) { barColor='linear-gradient(90deg,#00c853,#69f0ae)'; numColor='#69f0ae'; }
+    else if (pct <= 75) { barColor='linear-gradient(90deg,#00c853,#ffee58)'; numColor='#ffee58'; }
+    else if (pct <= 80) { barColor='linear-gradient(90deg,#ffee58,#ff9800)'; numColor='#ff9800'; }
+    else if (pct <= 95) { barColor='linear-gradient(90deg,#ff9800,#ff007f)'; numColor='#ff007f'; }
+    else                { barColor='linear-gradient(90deg,#ff007f,#ff1744)'; numColor='#ff4444'; }
+    fill.style.background = barColor;
+    document.getElementById('watt-current').style.color = numColor;
+
+    const storageTotal = ['nvme','sata','hdd35','hdd25'].reduce((a,k)=>a+qty[k]*qtyW[k],0);
+    const fansTotal    = ['fan120','fan140'].reduce((a,k)=>a+qty[k]*qtyW[k],0);
+
+    document.getElementById('watts-cpu').textContent     = state.cpu > 0       ? state.cpu + 'W'    : '0W';
+    document.getElementById('watts-gpu').textContent     = state.gpu > 0       ? state.gpu + 'W'    : '0W';
+    document.getElementById('watts-ram').textContent     = state.ram > 0       ? state.ram + 'W'    : '0W';
+    document.getElementById('watts-storage').textContent = storageTotal > 0    ? storageTotal + 'W' : '0W';
+    document.getElementById('watts-cooling').textContent = (state.coolingcpu + fansTotal) > 0 ? (state.coolingcpu + fansTotal) + 'W' : '0W';
+    document.getElementById('watts-extras').textContent  = state.extras > 0    ? state.extras + 'W' : '0W';
+
+    const vbox   = document.getElementById('verdict-box');
+    const vicon  = document.getElementById('verdict-icon');
+    const vtitle = document.getElementById('verdict-title');
+    const vdesc  = document.getElementById('verdict-desc');
+    const minRec = Math.ceil((t / 0.75) / 50) * 50;
+
+    if (t === 0) {
+        vbox.style.cssText = 'border-color:#333;background:#161616;';
+        vicon.textContent  = '🟡';
+        vtitle.textContent = 'Seleccioná tus componentes para ver el resultado';
+        vdesc.textContent  = 'Usamos el criterio del 80% de carga máxima recomendado — así tu fuente trabaja eficiente, fría y dura más tiempo.';
+    } else if (t <= safeW * 0.70) {
+        vbox.style.cssText = 'border-color:#1D9E75;background:#0a2016;';
+        vicon.textContent  = '✅';
+        vtitle.textContent = `¡Esta fuente de 850W te sobra! — tu build consume ${t}W`;
+        vdesc.textContent  = `Usás solo el ${Math.round(pct)}% de la fuente. Tenés margen de sobra para futuros upgrades de GPU, más storage o refrigeración adicional sin cambiar la fuente.`;
+    } else if (t <= safeW) {
+        vbox.style.cssText = 'border-color:#1D9E75;background:#0a2016;';
+        vicon.textContent  = '✅';
+        vtitle.textContent = `Esta fuente de 850W soporta perfectamente tu build — consumo: ${t}W`;
+        vdesc.textContent  = `Estás al ${Math.round(pct)}% de la capacidad, dentro del margen seguro del 80%. Tu PC va a funcionar estable y eficiente con esta fuente.`;
+    } else if (t <= PSU_WATTS * 0.90) {
+        vbox.style.cssText = 'border-color:#BA7517;background:#201508;';
+        vicon.textContent  = '⚠️';
+        vtitle.textContent = `Justo — tu build consume ${t}W, cerca del límite recomendado del 80%`;
+        vdesc.textContent  = `Estás al ${Math.round(pct)}% de la fuente. Funciona, pero sin margen de seguridad ante picos de carga en gaming intenso o turbo de CPU/GPU. Considerá una fuente de ${minRec}W.`;
+    } else if (t <= PSU_WATTS) {
+        vbox.style.cssText = 'border-color:#E24B4A;background:#200a0a;';
+        vicon.textContent  = '🔴';
+        vtitle.textContent = `Riesgoso — tu build consume ${t}W, muy cerca del límite de 850W`;
+        vdesc.textContent  = `Estás al ${Math.round(pct)}% de la capacidad. La fuente puede inestabilizarse o apagarse bajo carga máxima. Recomendamos una fuente de al menos ${minRec}W.`;
+    } else {
+        vbox.style.cssText = 'border-color:#E24B4A;background:#200a0a;';
+        vicon.textContent  = '❌';
+        vtitle.textContent = `No alcanza — tu build consume ${t}W y supera los 850W de esta fuente`;
+        vdesc.textContent  = `Necesitás una fuente de al menos ${minRec}W. Con esta fuente tu PC no va a arrancar correctamente o se va a apagar bajo carga.`;
+    }
+}
+
+function resetAll() {
+    document.querySelectorAll('.comp-btn.selected').forEach(b => b.classList.remove('selected'));
+    Object.keys(state).forEach(k => state[k] = 0);
+    Object.keys(qty).forEach(k => {
+        qty[k] = 0;
+        const n = document.getElementById('qty-'  + k); if(n) n.textContent = '0';
+        const w = document.getElementById('qtw-'  + k); if(w) w.textContent = '0W';
+        const i = document.getElementById('qi-'   + k); if(i) i.classList.remove('active');
+        const b = document.getElementById('btn-'  + k + '-minus'); if(b) b.disabled = true;
+    });
+    update();
+}
+
+resetAll();
+</script>
+</body>
+</html>
