@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMD Ryzen 7 5700X (AM4) - Quantum Hardstore</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}body{font-family:Verdana,Geneva,sans-serif;background:#f5f5f5;padding:0}.container{max-width:860px;margin:0 auto;padding:24px 16px}.header{text-align:center;padding:28px 10px 22px;border-bottom:2px solid #ff007f;animation:fadeIn 0.8s ease-in}.header-brand{font-size:11px;letter-spacing:6px;color:#ff007f;text-transform:uppercase;margin-bottom:10px}.header-manufacturer{font-size:12px;letter-spacing:5px;color:#999;text-transform:uppercase;margin-bottom:6px}.header-title{font-size:36px;font-weight:bold;color:#1c1c1c;letter-spacing:2px;animation:slideDown 1s ease-out}.header-subtitle{font-size:12px;letter-spacing:3px;color:#999;margin-top:10px}.badge-row{display:flex;justify-content:center;gap:12px;margin:14px 0 6px;flex-wrap:wrap}.badge{display:inline-block;padding:6px 14px;border:1px solid #ff007f;border-radius:20px;font-size:10px;font-weight:bold;letter-spacing:2px;color:#ff007f;background:#fff5f9;text-transform:uppercase}.highlight-box{text-align:center;margin:24px 0;display:inline-block;width:100%;padding:16px}.hl{display:inline-block;padding:16px 30px;border:2px solid #ff007f;border-radius:8px;background:#ffffff;transition:transform 0.3s ease}.hl:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(255,0,127,0.3)}.hl-label{font-size:10px;letter-spacing:5px;color:#ff007f;text-transform:uppercase}.hl-value{font-size:40px;font-weight:bold;color:#1c1c1c;margin:4px 0 2px}.hl-desc{font-size:11px;color:#aaa;letter-spacing:3px}.card{background:#ffffff;border:1px solid #e0e0e0;border-top:3px solid #ff007f;border-radius:10px;padding:18px;text-align:center;margin:10px 0;animation:fadeInUp 0.6s ease-out}.card:hover{transform:translateY(-3px);box-shadow:0 5px 20px rgba(0,0,0,0.1)}.card-label{font-size:10px;letter-spacing:4px;color:#ff007f;text-transform:uppercase}.card-value{font-size:34px;font-weight:bold;color:#1c1c1c;margin:6px 0 2px}.card-desc{font-size:12px;color:#999}.section-title{margin:28px 0 14px;padding-bottom:8px;border-bottom:1px solid #e0e0e0}.section-title span{font-size:12px;font-weight:bold;letter-spacing:5px;color:#ff007f;text-transform:uppercase}.spec-item{background:#ffffff;border:1px solid #e0e0e0;border-left:3px solid #ff007f;border-radius:8px;padding:14px 16px;margin:8px 0}.spec-label{font-size:9px;letter-spacing:3px;color:#999;text-transform:uppercase}.spec-value{font-size:16px;font-weight:bold;color:#1c1c1c;margin-top:4px}.workload-analyzer{background:#1c1c1c;border-radius:10px;padding:24px 20px;margin:12px 0;border-top:3px solid #ff007f}.workload-title{font-size:16px;font-weight:bold;letter-spacing:4px;color:#ff007f;text-align:center;margin-bottom:6px}.workload-sub{font-size:11px;color:#aaa;text-align:center;margin-bottom:20px}.workload-label{font-size:11px;font-weight:bold;color:#ff007f;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}.app-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px}.app-checkbox{display:flex;align-items:center;padding:12px;background:#2a2a2a;border:1px solid #333;border-radius:8px;cursor:pointer;transition:all 0.3s ease}.app-checkbox:hover{border-color:#ff007f;background:#2d2d2d}.app-checkbox input{margin-right:10px;cursor:pointer;width:16px;height:16px}.app-name{font-size:12px;font-weight:bold;color:#ffffff}.app-req{font-size:9px;color:#888;margin-top:2px}.cores-visualization{background:#2a2a2a;border-radius:8px;padding:16px;margin-bottom:20px}.viz-label{font-size:10px;letter-spacing:2px;color:#999;text-transform:uppercase;margin-bottom:10px}.cores-bar{display:flex;gap:4px;margin-bottom:12px}.core-block{flex:1;height:40px;border-radius:4px;background:#333;border:1px solid #444;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:bold;color:#666;transition:all 0.3s ease}.core-block.active{background:#ff007f;color:#ffffff;border-color:#ff007f}.workload-eval{padding:16px;border-radius:8px;text-align:center;margin-top:16px;font-weight:bold;border:2px solid #333}.eval-good{background:#0d2818;border-color:#1D9E75;color:#5DCAA5}.eval-warning{background:#2a1f08;border-color:#BA7517;color:#FAC775}.eval-bad{background:#3a1a1a;border-color:#E24B4A;color:#F09595}.cores-info{background:#252525;border-left:3px solid #ff007f;padding:12px;border-radius:4px;margin-top:12px;font-size:11px;color:#ccc;line-height:1.6}.cores-threads-education{background:#ffffff;border:1px solid #e0e0e0;border-radius:10px;padding:20px;margin:12px 0}.edu-title{font-size:14px;font-weight:bold;color:#ff007f;letter-spacing:2px;margin-bottom:14px;text-transform:uppercase}.edu-section{margin-bottom:16px}.edu-label{font-size:11px;font-weight:bold;color:#1c1c1c;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}.comparison-table{width:100%;border-collapse:collapse;margin-bottom:16px}.comparison-table td{padding:10px;border:1px solid #e0e0e0;font-size:11px}.comparison-table th{padding:10px;background:#ff007f;color:#ffffff;font-weight:bold;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:1px}.comparison-table td:first-child{font-weight:bold;color:#ff007f;background:#f9f9f9}.edu-info{background:#f0f7ff;border-left:3px solid #00bfff;padding:12px;border-radius:6px;font-size:10px;color:#333;line-height:1.6;margin-bottom:12px}.note{margin-top:20px;padding:12px 16px;border-left:3px solid #d3d3d3;font-size:11px;color:#999;line-height:1.8}@keyframes fadeIn{from{opacity:0}to{opacity:1}}@keyframes slideDown{from{transform:translateY(-20px);opacity:0}to{transform:translateY(0);opacity:1}}@keyframes fadeInUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <div class="header-brand">⚡ QUANTUM HARDSTORE</div>
+            <div class="header-manufacturer">AMD® RYZEN™</div>
+            <h1 class="header-title">RYZEN 7 5700X</h1>
+            <div class="header-subtitle">8-CORE / 16-THREAD / AM4 / SIN COOLER / NUEVA</div>
+        </div>
+
+        <!-- BADGES -->
+        <div class="badge-row">
+            <span class="badge">ZEN 3</span>
+            <span class="badge">8 CORES</span>
+            <span class="badge">16 THREADS</span>
+            <span class="badge">4.6 GHz BOOST</span>
+            <span class="badge">65W TDP</span>
+            <span class="badge">SIN COOLER</span>
+        </div>
+
+        <!-- HIGHLIGHT -->
+        <div class="highlight-box">
+            <div class="hl">
+                <div class="hl-label">Boost Clock</div>
+                <div class="hl-value">4.6 GHz</div>
+                <div class="hl-desc">Arquitectura Zen 3 — 7nm</div>
+            </div>
+        </div>
+
+        <!-- CARDS -->
+        <div class="card">
+            <div class="card-label">Cores / Threads</div>
+            <div class="card-value">8 / 16</div>
+            <div class="card-desc">Procesamiento Paralelo Máximo</div>
+        </div>
+        <div class="card">
+            <div class="card-label">Base Clock</div>
+            <div class="card-value">3.6 GHz</div>
+            <div class="card-desc">Frecuencia de Reposo</div>
+        </div>
+        <div class="card">
+            <div class="card-label">Cache L3</div>
+            <div class="card-value">32 MB</div>
+            <div class="card-desc">Memoria Ultra Rápida</div>
+        </div>
+
+        <!-- CORES vs THREADS EDUCATION -->
+        <div class="cores-threads-education">
+            <div class="edu-title">📚 ¿Cores vs Threads? Entender la diferencia</div>
+
+            <div class="edu-section">
+                <div class="edu-label">¿Qué es un CORE (Núcleo)?</div>
+                <div class="edu-info">
+                    Un core es una unidad de procesamiento física e independiente. Con 8 cores, tu CPU puede procesar 8 operaciones completamente diferentes simultáneamente. Cada core tiene su propia lógica de procesamiento.
+                </div>
+            </div>
+
+            <div class="edu-section">
+                <div class="edu-label">¿Qué es un THREAD (Hilo)?</div>
+                <div class="edu-info">
+                    Un thread es una línea de instrucciones que el CPU puede ejecutar. Con SMT (Simultaneous Multi-Threading), cada core puede ejecutar 2 threads en paralelo, simulando ser 2 cores lógicos.
+                </div>
+            </div>
+
+            <div class="edu-section">
+                <div class="edu-label">Impacto en Rendimiento: Cores vs Threads</div>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Escenario</th>
+                            <th>Cores Importa</th>
+                            <th>Threads Importa</th>
+                            <th>Resultado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Gaming Single-Player</td>
+                            <td>✓ Mucho</td>
+                            <td>~ Poco</td>
+                            <td>Prefieres cores rápidos que threads</td>
+                        </tr>
+                        <tr>
+                            <td>Gaming Competitivo (CS2, Valorant)</td>
+                            <td>✓ Mucho</td>
+                            <td>~ Poco</td>
+                            <td>6 cores = 120 FPS garantizados</td>
+                        </tr>
+                        <tr>
+                            <td>Streaming + Gaming</td>
+                            <td>✓✓ Crítico</td>
+                            <td>✓ Muy Importante</td>
+                            <td>Necesitas cores extras para OBS</td>
+                        </tr>
+                        <tr>
+                            <td>Video Editing (Rendering)</td>
+                            <td>✓✓ Crítico</td>
+                            <td>✓✓ Crítico</td>
+                            <td>Cuantos más threads, más rápido</td>
+                        </tr>
+                        <tr>
+                            <td>3D Rendering (Blender)</td>
+                            <td>✓✓ Crítico</td>
+                            <td>✓✓ Crítico</td>
+                            <td>Todos los cores/threads = mejor</td>
+                        </tr>
+                        <tr>
+                            <td>Compilación de Código</td>
+                            <td>✓✓ Crítico</td>
+                            <td>✓ Importante</td>
+                            <td>Paralelización masiva = más rápido</td>
+                        </tr>
+                        <tr>
+                            <td>Ofimática (Office, Sheets)</td>
+                            <td>~ Poco</td>
+                            <td>~ Poco</td>
+                            <td>1-2 cores son suficientes</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="edu-section">
+                <div class="edu-label">Tu Ryzen 7 5700X: 8 Cores / 16 Threads</div>
+                <div class="edu-info">
+                    <strong>✓ Ventaja:</strong> Tienes suficientes cores para gaming sin sacrificar threads para multitarea.<br>
+                    <strong>✓ Ideal para:</strong> Gaming + Streaming, Video Editing, Programación, Multitarea pesada.<br>
+                    <strong>→ Resultado:</strong> CPU muy equilibrado para casi cualquier carga de trabajo.
+                </div>
+            </div>
+        </div>
+
+        <!-- CPU WORKLOAD ANALYZER -->
+        <div class="workload-analyzer">
+            <div class="workload-title">🎮 CPU WORKLOAD ANALYZER</div>
+            <div class="workload-sub">Selecciona aplicaciones para evaluar rendimiento</div>
+
+            <div class="workload-label">Seleccionar Cargas de Trabajo:</div>
+            <div class="app-grid">
+                <label class="app-checkbox" onclick="toggleApp(event, 'gaming-esports')">
+                    <input type="checkbox" name="apps" value="gaming-esports">
+                    <div>
+                        <div class="app-name">Gaming Esports</div>
+                        <div class="app-req">CS2, Valorant, Fortnite</div>
+                    </div>
+                </label>
+                <label class="app-checkbox" onclick="toggleApp(event, 'gaming-aaa')">
+                    <input type="checkbox" name="apps" value="gaming-aaa">
+                    <div>
+                        <div class="app-name">Gaming AAA</div>
+                        <div class="app-req">Cyberpunk, Starfield</div>
+                    </div>
+                </label>
+                <label class="app-checkbox" onclick="toggleApp(event, 'streaming')">
+                    <input type="checkbox" name="apps" value="streaming">
+                    <div>
+                        <div class="app-name">Streaming + Gaming</div>
+                        <div class="app-req">OBS + Game simultáneo</div>
+                    </div>
+                </label>
+                <label class="app-checkbox" onclick="toggleApp(event, 'editing')">
+                    <input type="checkbox" name="apps" value="editing">
+                    <div>
+                        <div class="app-name">Video Editing</div>
+                        <div class="app-req">Premiere, DaVinci</div>
+                    </div>
+                </label>
+                <label class="app-checkbox" onclick="toggleApp(event, '3d')">
+                    <input type="checkbox" name="apps" value="3d">
+                    <div>
+                        <div class="app-name">3D Rendering</div>
+                        <div class="app-req">Blender, Cinema4D</div>
+                    </div>
+                </label>
+                <label class="app-checkbox" onclick="toggleApp(event, 'programming')">
+                    <input type="checkbox" name="apps" value="programming">
+                    <div>
+                        <div class="app-name">Programación</div>
+                        <div class="app-req">Compilación, VMs</div>
+                    </div>
+                </label>
+                <label class="app-checkbox" onclick="toggleApp(event, 'office')">
+                    <input type="checkbox" name="apps" value="office">
+                    <div>
+                        <div class="app-name">Ofimática</div>
+                        <div class="app-req">Office, Docs</div>
+                    </div>
+                </label>
+                <label class="app-checkbox" onclick="toggleApp(event, 'multitask')">
+                    <input type="checkbox" name="apps" value="multitask">
+                    <div>
+                        <div class="app-name">Multitarea Pesada</div>
+                        <div class="app-req">10+ aplicaciones</div>
+                    </div>
+                </label>
+            </div>
+
+            <div class="workload-label">Visualización de Carga de Cores:</div>
+            <div class="cores-visualization">
+                <div class="viz-label">8 Cores disponibles (16 threads con SMT)</div>
+                <div class="cores-bar" id="coresBar">
+                    <div class="core-block" id="core0">1</div>
+                    <div class="core-block" id="core1">2</div>
+                    <div class="core-block" id="core2">3</div>
+                    <div class="core-block" id="core3">4</div>
+                    <div class="core-block" id="core4">5</div>
+                    <div class="core-block" id="core5">6</div>
+                    <div class="core-block" id="core6">7</div>
+                    <div class="core-block" id="core7">8</div>
+                </div>
+                <div class="cores-info" id="coresInfo">
+                    ℹ️ Selecciona cargas de trabajo arriba para ver estimación de uso de cores.
+                </div>
+            </div>
+
+            <div class="workload-eval" id="workloadEval">
+                ℹ️ Sin selección — Selecciona al menos una carga para evaluar
+            </div>
+        </div>
+
+        <!-- SPECIFICATIONS -->
+        <div class="section-title"><span>📋 Especificaciones Técnicas</span></div>
+
+        <div class="spec-item">
+            <div class="spec-label">Procesador</div>
+            <div class="spec-value">AMD Ryzen 7 5700X</div>
+        </div>
+        <div class="spec-item">
+            <div class="spec-label">Arquitectura</div>
+            <div class="spec-value">Zen 3 (Vermeer)</div>
+        </div>
+        <div class="spec-item">
+            <div class="spec-label">Socket</div>
+            <div class="spec-value">AM4 (AMD Ryzen Socket)</div>
+        </div>
+        <div class="spec-item">
+            <div class="spec-label">Núcleos / Hilos</div>
+            <div class="spec-value">8 Cores / 16 Threads</div>
+        </div>
+        <div class="spec-item">
+            <div class="spec-label">Frecuencia Base</div>
+            <div class="spec-value">3.6 GHz</div>
+        </div>
+        <div class="spec-item">
+            <div class="spec-label">Frecuencia Boost</div>
+            <div class="spec-value">4.6 GHz</div>
+        </div>
+        <div class="spec-item">
+            <div class="spec-label">Cache L3</div>
+            <div class="spec-value">32 MB</div>
+        </div>
+        <div class="spec-item">
+            <div class="spec-label">TDP</div>
+            <div class="spec-value">65 W</div>
+        </div>
+        <div class="spec-item">
+            <div class="spec-label">Proceso de Fabricación</div>
+            <div class="spec-value">7 nm — TSMC</div>
+        </div>
+        <div class="spec-item">
+            <div class="spec-label">Consumo de Energía</div>
+            <div class="spec-value">Bajo (compatible con coolers entry-level)</div>
+        </div>
+        <div class="spec-item">
+            <div class="spec-label">Cooler Incluido</div>
+            <div class="spec-value">NO — Requiere cooler AM4 (vendido por separado)</div>
+        </div>
+
+        <!-- NOTE -->
+        <div class="note">
+            <strong>⚠️ IMPORTANTE:</strong> Este procesador NO incluye cooler. Necesitarás comprar un cooler AM4 compatible (air o liquid). Recomendamos consultar con nuestro equipo para elegir el mejor según tu presupuesto.
+        </div>
+    </div>
+
+    <script>
+        const appRequirements = {
+            'gaming-esports': { cores: 4, threads: 8, desc: 'Gaming Esports (4-6 cores recomendados)' },
+            'gaming-aaa': { cores: 6, threads: 12, desc: 'Gaming AAA (6-8 cores recomendados)' },
+            'streaming': { cores: 7, threads: 14, desc: 'Streaming + Gaming (7-8 cores necesarios)' },
+            'editing': { cores: 8, threads: 16, desc: 'Video Editing (cuantos más mejor, máximo aproveche)' },
+            '3d': { cores: 8, threads: 16, desc: '3D Rendering (aprovecha todos los cores)' },
+            'programming': { cores: 6, threads: 12, desc: 'Programación (6-8 cores para compilación rápida)' },
+            'office': { cores: 2, threads: 4, desc: 'Ofimática (2-4 cores suficientes)' },
+            'multitask': { cores: 8, threads: 16, desc: 'Multitarea Pesada (aprovecha todo)' }
+        };
+
+        function toggleApp(event, appId) {
+            event.preventDefault();
+            const checkbox = event.currentTarget.querySelector('input[type="checkbox"]');
+            checkbox.checked = !checkbox.checked;
+            updateWorkloadAnalysis();
+        }
+
+        function updateWorkloadAnalysis() {
+            const checkboxes = document.querySelectorAll('input[name="apps"]:checked');
+            const selectedApps = Array.from(checkboxes).map(cb => cb.value);
+
+            if (selectedApps.length === 0) {
+                document.getElementById('workloadEval').className = 'workload-eval';
+                document.getElementById('workloadEval').innerHTML = 'ℹ️ Sin selección — Selecciona al menos una carga para evaluar';
+                document.getElementById('coresInfo').innerHTML = 'ℹ️ Selecciona cargas de trabajo para ver estimación de uso de cores.';
+                resetCores();
+                return;
+            }
+
+            let maxCoresNeeded = 0;
+            let descriptions = [];
+
+            selectedApps.forEach(appId => {
+                const req = appRequirements[appId];
+                maxCoresNeeded = Math.max(maxCoresNeeded, req.cores);
+                descriptions.push(req.desc);
+            });
+
+            // Visualizar cores usados
+            for (let i = 0; i < 8; i++) {
+                const coreBlock = document.getElementById(`core${i}`);
+                if (i < maxCoresNeeded) {
+                    coreBlock.classList.add('active');
+                } else {
+                    coreBlock.classList.remove('active');
+                }
+            }
+
+            // Evaluación
+            let evaluation = '';
+            let className = 'workload-eval ';
+
+            if (maxCoresNeeded <= 2) {
+                className += 'eval-good';
+                evaluation = '✓ EXCELENTE — Sobrado incluso para multitarea pesada';
+            } else if (maxCoresNeeded <= 4) {
+                className += 'eval-good';
+                evaluation = '✓ EXCELENTE — Carga muy cómoda, cores de sobra';
+            } else if (maxCoresNeeded <= 6) {
+                className += 'eval-good';
+                evaluation = '✓ EXCELENTE — Rendimiento óptimo para esta carga';
+            } else if (maxCoresNeeded <= 7) {
+                className += 'eval-warning';
+                evaluation = '⚠️ JUSTO — Rendimiento bueno, sin margen extra';
+            } else {
+                className += 'eval-warning';
+                evaluation = '⚠️ JUSTO — Aprovecharás todos los cores, rendimiento consistente';
+            }
+
+            document.getElementById('workloadEval').className = className;
+            document.getElementById('workloadEval').innerHTML = evaluation;
+
+            const infoParts = descriptions.map(d => `• ${d}`).join('<br>');
+            document.getElementById('coresInfo').innerHTML = `<strong>Cargas seleccionadas:</strong><br>${infoParts}`;
+        }
+
+        function resetCores() {
+            for (let i = 0; i < 8; i++) {
+                document.getElementById(`core${i}`).classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>
