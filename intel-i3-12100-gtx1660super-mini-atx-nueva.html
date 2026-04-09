@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intel Core i3-12100 + GTX 1660 Super - Quantum Hardstore</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Barlow','Barlow Condensed',sans-serif;background:#f5f5f5;padding:0}.container{max-width:860px;margin:0 auto;background:#fff;padding:24px 16px}.header{text-align:center;padding:28px 10px 22px;border-bottom:2px solid #ff007f;animation:fadeIn 0.8s ease-in}.header-brand{font-size:11px;letter-spacing:6px;color:#ff007f;text-transform:uppercase;margin-bottom:10px}.header-manufacturer{font-size:12px;letter-spacing:5px;color:#999;text-transform:uppercase;margin-bottom:6px}.header-title{font-size:36px;font-weight:bold;color:#1c1c1c;letter-spacing:2px;animation:slideDown 1s ease-out}.header-subtitle{font-size:12px;letter-spacing:3px;color:#999;margin-top:10px}.badge-container{display:flex;justify-content:center;gap:12px;margin:14px 0 6px;flex-wrap:wrap}.badge{display:inline-block;padding:6px 14px;border:1px solid #ff007f;border-radius:20px;font-size:10px;font-weight:bold;letter-spacing:2px;color:#ff007f;background:#fff5f9;text-transform:uppercase}.highlight-central{text-align:center;margin:24px 0 10px;animation:scaleIn 1s ease-out}.highlight-box{display:inline-block;padding:16px 30px;border:2px solid #ff007f;border-radius:8px;background:#fff;transition:transform 0.3s ease,box-shadow 0.3s ease}.highlight-box:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(255,0,127,0.3)}.highlight-label{font-size:10px;letter-spacing:5px;color:#ff007f;text-transform:uppercase}.highlight-value{font-size:40px;font-weight:bold;color:#1c1c1c;margin:4px 0 2px}.highlight-description{font-size:11px;color:#aaa;letter-spacing:3px}.cards-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:16px 0}.card{background:#fff;border:1px solid #e0e0e0;border-top:3px solid #ff007f;border-radius:10px;padding:18px;text-align:center;transition:all 0.3s ease;animation:fadeInUp 0.6s ease-out}.card:hover{transform:translateY(-3px);box-shadow:0 5px 20px rgba(0,0,0,0.1)}.card-label{font-size:10px;letter-spacing:4px;color:#ff007f;text-transform:uppercase}.card-value{font-size:34px;font-weight:bold;color:#1c1c1c;margin:6px 0 2px}.card-description{font-size:12px;color:#999}.selector-section{background:#f9f9f9;border-radius:10px;padding:18px;margin:16px 0}.selector-title{font-size:11px;font-weight:bold;color:#ff007f;text-transform:uppercase;letter-spacing:3px;margin-bottom:10px}.selector-label{font-size:10px;color:#666;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:block}.selector-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:14px}.selector-btn{padding:12px;border:2px solid #e0e0e0;border-radius:8px;background:#fff;color:#333;cursor:pointer;transition:all 0.3s ease;font-size:11px;font-weight:bold}.selector-btn:hover{border-color:#ff007f;color:#ff007f}.selector-btn.active{border-color:#ff007f;background:#ff007f;color:#fff}.selector-info{font-size:11px;color:#666;padding:10px;background:#fff;border-radius:6px;border-left:3px solid #ff007f}.perf-bars{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}.perf-bar{background:#e0e0e0;border-radius:6px;height:8px;overflow:hidden}.perf-bar-fill{background:linear-gradient(90deg,#ff007f,#ff4d9f);height:100%;border-radius:6px;transition:width 0.5s ease}.perf-label{font-size:10px;color:#666;margin-bottom:4px}.specs{margin:20px 0}.spec-row{display:flex;padding:12px 0;border-bottom:1px solid #eee}.spec-label{flex:0 0 45%;font-size:11px;font-weight:bold;color:#ff007f;text-transform:uppercase;letter-spacing:2px}.spec-value{flex:1;font-size:12px;color:#333;text-align:right;padding-right:10px}.connectivity{background:#f9f9f9;border-radius:10px;padding:16px;margin:16px 0}.connectivity-title{font-size:12px;font-weight:bold;color:#ff007f;text-transform:uppercase;letter-spacing:3px;margin-bottom:10px}.connection-item{padding:8px 0;font-size:11px;color:#555;border-bottom:1px solid #e0e0e0}.connection-item:last-child{border-bottom:none}.psu-container{background:#f9f9f9;border-radius:10px;padding:20px;margin:20px 0}.psu-title{font-size:12px;font-weight:bold;color:#ff007f;text-transform:uppercase;letter-spacing:3px;margin-bottom:14px}.psu-tabs{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap}.psu-tab{padding:6px 12px;font-size:10px;font-weight:bold;border:1px solid #ddd;border-radius:4px;background:#fff;color:#666;cursor:pointer;transition:all 0.3s ease}.psu-tab.active{border-color:#ff007f;background:#ff007f;color:#fff}.psu-slider-box{margin:14px 0}.psu-slider-label{font-size:11px;color:#666;margin-bottom:8px;display:block}.psu-slider{width:100%;height:6px;border-radius:3px;background:linear-gradient(90deg,#ff007f,#ff4d9f);outline:none;-webkit-appearance:none;appearance:none}.psu-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:16px;height:16px;border-radius:50%;background:#ff007f;cursor:pointer;box-shadow:0 2px 8px rgba(255,0,127,0.3)}.psu-slider::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:#ff007f;cursor:pointer;border:none;box-shadow:0 2px 8px rgba(255,0,127,0.3)}.psu-output{font-size:13px;font-weight:bold;color:#1c1c1c;margin-top:8px;text-align:center}.psu-result{background:#fff;border-radius:8px;padding:16px;margin-top:14px;border-left:4px solid #999;transition:all 0.3s ease}.psu-result.psu-danger{border-left-color:#e74c3c;background:#fdeaea}.psu-result.psu-warn{border-left-color:#f39c12;background:#fef5e7}.psu-result.psu-ok{border-left-color:#27ae60;background:#eafaf1}.psu-result.psu-great{border-left-color:#3498db;background:#eaf2f8}.psu-result-icon{font-size:20px;margin-bottom:8px}.psu-result-status{font-size:11px;font-weight:bold;color:#ff007f;text-transform:uppercase;letter-spacing:2px;margin-bottom:6px}.psu-result-desc{font-size:11px;color:#555;line-height:1.5}.cert-warn-banner{background:#fff;border-left:3px solid #f39c12;margin-top:10px;padding:10px;border-radius:4px;font-size:10px;color:#555;line-height:1.4}.outlet-box{background:linear-gradient(135deg,#fff5f9,#fff);border:2px solid #ff007f;border-radius:10px;padding:16px;margin:16px 0;text-align:center;animation:fadeInUp 0.6s ease-out}.outlet-label{font-size:10px;letter-spacing:4px;color:#ff007f;text-transform:uppercase;font-weight:bold;margin-bottom:8px}.outlet-description{font-size:11px;color:#555;line-height:1.6}.location-box{background:#f0f0f0;border-radius:10px;padding:16px;margin:16px 0;text-align:center;border-left:4px solid #ff007f}.location-icon{font-size:20px;margin-bottom:8px}.location-title{font-size:11px;letter-spacing:3px;color:#ff007f;text-transform:uppercase;font-weight:bold;margin-bottom:6px}.location-status{font-size:12px;font-weight:bold;color:#27ae60;margin-bottom:6px}.location-desc{font-size:11px;color:#555;line-height:1.5}.cpu-section{margin:20px 0}.cpu-title{font-size:13px;letter-spacing:3px;color:#ff007f;text-transform:uppercase;margin-bottom:14px;font-weight:bold}.cpu-card{background:#f9f9f9;border-radius:8px;padding:12px;margin-bottom:10px;border-left:3px solid #ff007f}.cpu-name{font-size:11px;font-weight:bold;color:#1c1c1c}.cpu-desc{font-size:10px;color:#666;margin-top:4px}.fps-section{background:#f9f9f9;border-radius:10px;padding:18px;margin:16px 0}.fps-title{font-size:12px;font-weight:bold;color:#ff007f;text-transform:uppercase;letter-spacing:3px;margin-bottom:14px;text-align:center}.fps-game{background:#fff;border-radius:8px;padding:12px;margin-bottom:10px;border-left:3px solid #ff007f}.fps-game-name{font-size:11px;font-weight:bold;color:#333;margin-bottom:6px}.fps-row{display:flex;justify-content:space-between;font-size:10px;color:#666;margin-bottom:4px}.fps-bar{background:#e0e0e0;border-radius:4px;height:6px;overflow:hidden;margin:4px 0}.fps-bar-fill{background:linear-gradient(90deg,#ff007f,#ff4d9f);height:100%;border-radius:4px}.footer{text-align:center;padding:20px 0;border-top:1px solid #eee;margin-top:24px}.footer-text{font-size:10px;color:#999;letter-spacing:2px;text-transform:uppercase}.footer-sub{font-size:9px;color:#bbb;margin-top:6px}@keyframes fadeIn{from{opacity:0}to{opacity:1}}@keyframes slideDown{from{transform:translateY(-20px);opacity:0}to{transform:translateY(0);opacity:1}}@keyframes scaleIn{from{transform:scale(0.95);opacity:0}to{transform:scale(1);opacity:1}}@keyframes fadeInUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}@keyframes fadeInLeft{from{transform:translateX(-20px);opacity:0}to{transform:translateX(0);opacity:1}}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <div class="header-brand">Quantum Hardstore</div>
+            <div class="header-manufacturer">Intel Core i3 + NVIDIA/AMD</div>
+            <div class="header-title">Gaming Entry Level</div>
+            <div class="header-subtitle">Core i3-12100 / DDR4 / MINI ATX / NUEVA</div>
+        </div>
+
+        <!-- BADGES -->
+        <div class="badge-container">
+            <div class="badge">12th GEN INTEL</div>
+            <div class="badge">DDR4</div>
+            <div class="badge">MINI ATX</div>
+            <div class="badge">GAMING 1080P</div>
+        </div>
+
+        <!-- HIGHLIGHT CENTRAL -->
+        <div class="highlight-central">
+            <div class="highlight-box">
+                <div class="highlight-label">Procesador</div>
+                <div class="highlight-value">Core i3-12100</div>
+                <div class="highlight-description">4C/8T — 12th Gen Intel</div>
+            </div>
+        </div>
+
+        <!-- GPU SELECTOR -->
+        <div class="selector-section">
+            <div class="selector-title">🎮 Selecciona tu Tarjeta Gráfica</div>
+            <div class="selector-label">Opciones disponibles</div>
+            <div class="selector-grid" id="gpu-selector">
+                <button class="selector-btn active" onclick="setGpu('rx580')">RX 580 8GB</button>
+                <button class="selector-btn" onclick="setGpu('gtx1660s')">GTX 1660 Super</button>
+                <button class="selector-btn" onclick="setGpu('gtx2060')">GTX 2060 6GB</button>
+            </div>
+            <div class="selector-info" id="gpu-info">
+                AMD Radeon RX 580 — 8GB GDDR5 · 2304 shaders · 185W TDP
+            </div>
+        </div>
+
+        <!-- MAIN CARDS -->
+        <div class="cards-grid" id="gpu-cards">
+            <div class="card">
+                <div class="card-label">Memoria de Video</div>
+                <div class="card-value" id="card-vram">8GB</div>
+                <div class="card-description" id="card-vram-desc">GDDR5</div>
+            </div>
+            <div class="card">
+                <div class="card-label">Stream Processors</div>
+                <div class="card-value" id="card-cores">2304</div>
+                <div class="card-description">Unidades de Procesamiento</div>
+            </div>
+            <div class="card">
+                <div class="card-label">TDP Consumo</div>
+                <div class="card-value" id="card-tdp">185W</div>
+                <div class="card-description">Potencia Requerida</div>
+            </div>
+        </div>
+
+        <!-- PERF BARS -->
+        <div style="background:#f9f9f9;border-radius:10px;padding:16px;margin:16px 0;">
+            <div style="font-size:11px;font-weight:bold;color:#ff007f;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px;">Rendimiento Estimado</div>
+            <div class="perf-bars">
+                <div>
+                    <div class="perf-label">Gaming 1080p</div>
+                    <div class="perf-bar"><div class="perf-bar-fill" id="perf-1080" style="width: 65%;"></div></div>
+                </div>
+                <div>
+                    <div class="perf-label">Gaming 720p</div>
+                    <div class="perf-bar"><div class="perf-bar-fill" id="perf-720" style="width: 85%;"></div></div>
+                </div>
+                <div>
+                    <div class="perf-label">Esports</div>
+                    <div class="perf-bar"><div class="perf-bar-fill" id="perf-esports" style="width: 92%;"></div></div>
+                </div>
+                <div>
+                    <div class="perf-label">Multimedia</div>
+                    <div class="perf-bar"><div class="perf-bar-fill" id="perf-multi" style="width: 80%;"></div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RAM SELECTOR -->
+        <div class="selector-section">
+            <div class="selector-title">💾 Memoria RAM</div>
+            <div class="selector-label">Configuración</div>
+            <div class="selector-grid">
+                <button class="selector-btn active" onclick="setRam('2x8')">2×8GB DDR4</button>
+                <button class="selector-btn" onclick="setRam('1x16')">1×16GB DDR4</button>
+            </div>
+            <div class="selector-info" id="ram-info">
+                2×8GB DDR4 3200MHz — Dual Channel (Recomendado)
+            </div>
+        </div>
+
+        <!-- STORAGE SELECTOR -->
+        <div class="selector-section">
+            <div class="selector-title">💿 Almacenamiento</div>
+            <div class="selector-label">Capacidad</div>
+            <div class="selector-grid">
+                <button class="selector-btn active" onclick="setStorage('240')">240GB SSD</button>
+                <button class="selector-btn" onclick="setStorage('480')">480GB SSD</button>
+                <button class="selector-btn" onclick="setStorage('1tb')">1TB NVMe</button>
+            </div>
+            <div class="selector-info" id="storage-info">
+                240GB — SSD SATA (Arrancable + Juegos esenciales)
+            </div>
+        </div>
+
+        <!-- SPECIFICATIONS -->
+        <h2 style="font-size: 13px; letter-spacing: 3px; color: #ff007f; text-transform: uppercase; margin: 20px 0 12px; font-weight: bold;">Especificaciones del Sistema</h2>
+        <div class="specs">
+            <div class="spec-row">
+                <div class="spec-label">Procesador</div>
+                <div class="spec-value">Intel Core i3-12100 (12th Gen)</div>
+            </div>
+            <div class="spec-row">
+                <div class="spec-label">Cores / Threads</div>
+                <div class="spec-value">4 Cores / 8 Threads</div>
+            </div>
+            <div class="spec-row">
+                <div class="spec-label">Base Clock / Turbo</div>
+                <div class="spec-value">3.3 GHz / 4.3 GHz</div>
+            </div>
+            <div class="spec-row">
+                <div class="spec-label">Socket</div>
+                <div class="spec-value">LGA 1700</div>
+            </div>
+            <div class="spec-row">
+                <div class="spec-label">TDP CPU</div>
+                <div class="spec-value">58 W</div>
+            </div>
+            <div class="spec-row">
+                <div class="spec-label">Memoria</div>
+                <div class="spec-value">DDR4 3200MHz</div>
+            </div>
+            <div class="spec-row">
+                <div class="spec-label">Forma</div>
+                <div class="spec-value">Mini ATX</div>
+            </div>
+            <div class="spec-row">
+                <div class="spec-label">Resolución Nativa</div>
+                <div class="spec-value">1080p / 720p Gaming</div>
+            </div>
+        </div>
+
+        <!-- FPS GAMES -->
+        <div class="fps-section">
+            <div class="fps-title">🎮 FPS Estimados en Juegos (1080p Medium)</div>
+            <div class="fps-game">
+                <div class="fps-game-name" id="game0-name">Valorant</div>
+                <div class="fps-row">
+                    <span id="game0-fps">120+ FPS</span>
+                    <span id="game0-perf">Excelente</span>
+                </div>
+                <div class="fps-bar"><div class="fps-bar-fill" id="game0-bar" style="width: 95%;"></div></div>
+            </div>
+            <div class="fps-game">
+                <div class="fps-game-name" id="game1-name">CS2</div>
+                <div class="fps-row">
+                    <span id="game1-fps">100+ FPS</span>
+                    <span id="game1-perf">Excelente</span>
+                </div>
+                <div class="fps-bar"><div class="fps-bar-fill" id="game1-bar" style="width: 90%;"></div></div>
+            </div>
+            <div class="fps-game">
+                <div class="fps-game-name" id="game2-name">Fortnite</div>
+                <div class="fps-row">
+                    <span id="game2-fps">75-90 FPS</span>
+                    <span id="game2-perf">Muy Bueno</span>
+                </div>
+                <div class="fps-bar"><div class="fps-bar-fill" id="game2-bar" style="width: 80%;"></div></div>
+            </div>
+            <div class="fps-game">
+                <div class="fps-game-name" id="game3-name">GTA V</div>
+                <div class="fps-row">
+                    <span id="game3-fps">55-70 FPS</span>
+                    <span id="game3-perf">Bueno</span>
+                </div>
+                <div class="fps-bar"><div class="fps-bar-fill" id="game3-bar" style="width: 70%;"></div></div>
+            </div>
+            <div class="fps-game">
+                <div class="fps-game-name" id="game4-name">Cyberpunk 2077</div>
+                <div class="fps-row">
+                    <span id="game4-fps">35-50 FPS</span>
+                    <span id="game4-perf">Jugable</span>
+                </div>
+                <div class="fps-bar"><div class="fps-bar-fill" id="game4-bar" style="width: 50%;"></div></div>
+            </div>
+        </div>
+
+        <!-- PSU CHECKER -->
+        <div class="psu-container">
+            <div class="psu-title">⚡ Calculadora de Fuente de Poder</div>
+            <div class="psu-tabs">
+                <button class="psu-tab" id="cert-bronze" onclick="setCert('bronze')">80+ Bronze</button>
+                <button class="psu-tab active" id="cert-gold" onclick="setCert('gold')">80+ Gold</button>
+                <button class="psu-tab" id="cert-plat" onclick="setCert('plat')">80+ Platinum</button>
+            </div>
+            <div class="psu-slider-box">
+                <label class="psu-slider-label">Potencia de tu Fuente (W)</label>
+                <input type="range" id="psu-slider" class="psu-slider" min="300" max="1000" value="500">
+                <div class="psu-output"><span id="psu-watts-out">500 W</span></div>
+            </div>
+            <div id="psu-result" class="psu-result psu-ok">
+                <div class="psu-result-icon" id="psu-result-icon">✅</div>
+                <div class="psu-result-status" id="psu-result-status">Perfecto</div>
+                <div class="psu-result-desc" id="psu-result-desc">Evaluando...</div>
+            </div>
+        </div>
+
+        <!-- LOCATION BOX -->
+        <div class="location-box">
+            <div class="location-icon">🏪</div>
+            <div class="location-title">📍 Producto en Local</div>
+            <div class="location-status">RETIRO INMEDIATO</div>
+            <div class="location-desc">El producto se encuentra en nuestro local.<br>Podés retirarlo en el día al concretar tu compra.</div>
+        </div>
+
+        <!-- TOP CPUs RECOMENDADAS -->
+        <div class="cpu-section">
+            <h3 style="font-size: 13px; letter-spacing: 3px; color: #ff007f; text-transform: uppercase; margin-bottom: 14px; font-weight: bold;">💻 Upgrade de Procesador (Opcional)</h3>
+            <div class="cpu-card">
+                <div class="cpu-name">🥇 Intel Core i5-12400 — 6C/12T, 2.5-4.4 GHz</div>
+                <div class="cpu-desc">Salto significativo de rendimiento para gaming competitivo</div>
+            </div>
+            <div class="cpu-card">
+                <div class="cpu-name">🥈 Intel Core i5-13400 — 10C/16T, 2.5-5.4 GHz</div>
+                <div class="cpu-desc">Excelente relación precio/rendimiento para 1080p</div>
+            </div>
+            <div class="cpu-card">
+                <div class="cpu-name">🥉 AMD Ryzen 5 5600 — 6C/12T, 3.5-4.6 GHz</div>
+                <div class="cpu-desc">Alternativa AMD con buen rendimiento y eficiencia</div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <div class="footer-text">Quantum Hardstore — Componentes de PC de Calidad</div>
+            <div class="footer-sub">Especificaciones sujetas a cambios sin previo aviso. Consultar disponibilidad.</div>
+        </div>
+    </div>
+
+    <script>
+        // GPU DATA
+        const gpuData = {
+            'rx580': {
+                name: 'AMD Radeon RX 580 8GB',
+                vram: '8GB GDDR5',
+                cores: 2304,
+                boost: 1360,
+                tdp: 185,
+                perf1080: 65,
+                perf720: 85,
+                perfEsports: 92,
+                perfMulti: 80,
+                games: [
+                    { name: 'Valorant', fps1080: '120+ FPS', perf1080: 95 },
+                    { name: 'CS2', fps1080: '100+ FPS', perf1080: 90 },
+                    { name: 'Fortnite', fps1080: '75-90 FPS', perf1080: 80 },
+                    { name: 'GTA V', fps1080: '45-60 FPS', perf1080: 60 },
+                    { name: 'Cyberpunk 2077', fps1080: '25-35 FPS', perf1080: 40 }
+                ]
+            },
+            'gtx1660s': {
+                name: 'NVIDIA GeForce GTX 1660 Super 6GB',
+                vram: '6GB GDDR6',
+                cores: 1408,
+                boost: 1830,
+                tdp: 125,
+                perf1080: 72,
+                perf720: 88,
+                perfEsports: 94,
+                perfMulti: 82,
+                games: [
+                    { name: 'Valorant', fps1080: '140+ FPS', perf1080: 98 },
+                    { name: 'CS2', fps1080: '120+ FPS', perf1080: 95 },
+                    { name: 'Fortnite', fps1080: '90-110 FPS', perf1080: 85 },
+                    { name: 'GTA V', fps1080: '70-85 FPS', perf1080: 75 },
+                    { name: 'Cyberpunk 2077', fps1080: '45-60 FPS', perf1080: 60 }
+                ]
+            },
+            'gtx2060': {
+                name: 'NVIDIA GeForce GTX 2060 6GB',
+                vram: '6GB GDDR6',
+                cores: 1920,
+                boost: 1860,
+                tdp: 160,
+                perf1080: 75,
+                perf720: 89,
+                perfEsports: 95,
+                perfMulti: 84,
+                games: [
+                    { name: 'Valorant', fps1080: '150+ FPS', perf1080: 99 },
+                    { name: 'CS2', fps1080: '130+ FPS', perf1080: 97 },
+                    { name: 'Fortnite', fps1080: '100-120 FPS', perf1080: 88 },
+                    { name: 'GTA V', fps1080: '80-100 FPS', perf1080: 80 },
+                    { name: 'Cyberpunk 2077', fps1080: '55-70 FPS', perf1080: 65 }
+                ]
+            }
+        };
+
+        let currentGpu = 'rx580';
+        let currentRam = '2x8';
+        let currentStorage = '240';
+        let psuCert = 'gold';
+        let psuWatts = 500;
+
+        function setGpu(gpu) {
+            currentGpu = gpu;
+            document.querySelectorAll('#gpu-selector button').forEach(b => b.classList.remove('active'));
+            event.target.classList.add('active');
+            updateDisplay();
+        }
+
+        function setRam(ram) {
+            currentRam = ram;
+            document.querySelectorAll('[onclick*="setRam"]').forEach((b, i) => b.classList.remove('active'));
+            event.target.classList.add('active');
+            const ramLabels = ['2×8GB DDR4 3200MHz — Dual Channel (Recomendado)', '1×16GB DDR4 3200MHz — Single Channel'];
+            document.getElementById('ram-info').textContent = ramLabels[ram === '2x8' ? 0 : 1];
+        }
+
+        function setStorage(storage) {
+            currentStorage = storage;
+            document.querySelectorAll('[onclick*="setStorage"]').forEach(b => b.classList.remove('active'));
+            event.target.classList.add('active');
+            const storageLabels = {
+                '240': '240GB — SSD SATA (Arrancable + Juegos esenciales)',
+                '480': '480GB — SSD SATA (SO + 2-3 Juegos AAA)',
+                '1tb': '1TB — NVMe (SO + Múltiples Juegos)'
+            };
+            document.getElementById('storage-info').textContent = storageLabels[storage];
+        }
+
+        function updateDisplay() {
+            const gpu = gpuData[currentGpu];
+            document.getElementById('gpu-info').textContent = gpu.name + ' — ' + gpu.vram + ' · ' + gpu.cores + ' CUDA · ' + gpu.tdp + 'W TDP';
+            document.getElementById('card-vram').textContent = gpu.vram.split(' ')[0];
+            document.getElementById('card-vram-desc').textContent = gpu.vram.split(' ')[1];
+            document.getElementById('card-cores').textContent = gpu.cores;
+            document.getElementById('card-tdp').textContent = gpu.tdp + 'W';
+
+            document.getElementById('perf-1080').style.width = gpu.perf1080 + '%';
+            document.getElementById('perf-720').style.width = gpu.perf720 + '%';
+            document.getElementById('perf-esports').style.width = gpu.perfEsports + '%';
+            document.getElementById('perf-multi').style.width = gpu.perfMulti + '%';
+
+            gpu.games.forEach((game, i) => {
+                document.getElementById('game' + i + '-name').textContent = game.name;
+                document.getElementById('game' + i + '-fps').textContent = game.fps1080;
+                document.getElementById('game' + i + '-bar').style.width = game.perf1080 + '%';
+            });
+
+            evaluatePSU();
+        }
+
+        function setCert(c) {
+            psuCert = c;
+            ['bronze', 'gold', 'plat'].forEach(x => {
+                document.getElementById('cert-' + x).classList.remove('active');
+            });
+            document.getElementById('cert-' + c).classList.add('active');
+            evaluatePSU();
+        }
+
+        function evaluatePSU() {
+            const gpu = gpuData[currentGpu];
+            const totalTdp = gpu.tdp + 58; // CPU TDP
+            const w = psuWatts;
+            const box = document.getElementById('psu-result');
+            const icon = document.getElementById('psu-result-icon');
+            const sta = document.getElementById('psu-result-status');
+            const dsc = document.getElementById('psu-result-desc');
+
+            box.className = 'psu-result';
+
+            if (w < totalTdp + 50) {
+                box.classList.add('psu-warn');
+                icon.textContent = '⚠️';
+                sta.textContent = 'Justo, pero funciona';
+                dsc.innerHTML = `Con ${w}W estás al límite (TDP sistema ~${totalTdp}W). Recomendamos mínimo ${totalTdp + 100}W para margen.`;
+            } else if (w <= 650) {
+                box.classList.add('psu-ok');
+                icon.textContent = '✅';
+                sta.textContent = 'Perfecto — Suficiente';
+                dsc.innerHTML = `${w}W es ideal para esta configuración (TDP ~${totalTdp}W). Margen seguro para picos de consumo.`;
+            } else {
+                box.classList.add('psu-great');
+                icon.textContent = '💚';
+                sta.textContent = 'Excelente — De sobra';
+                dsc.innerHTML = `${w}W ofrece margen más que suficiente. Máxima eficiencia, cero riesgos.`;
+            }
+        }
+
+        document.getElementById('psu-slider').addEventListener('input', function() {
+            psuWatts = parseInt(this.value);
+            document.getElementById('psu-watts-out').textContent = psuWatts + ' W';
+            evaluatePSU();
+        });
+
+        updateDisplay();
+    </script>
+</body>
+</html>
