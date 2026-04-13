@@ -1,0 +1,295 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MSI RTX 3080 VENTUS 3X - Quantum Hardstore</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Verdana,Geneva,sans-serif;background:#f5f5f5}
+.container{max-width:860px;margin:0 auto;padding:24px 16px}
+.header{text-align:center;padding:28px 10px 22px;border-bottom:2px solid #ff007f;animation:fadeIn .8s ease-in}
+.header-brand{font-size:11px;letter-spacing:6px;color:#ff007f;text-transform:uppercase;margin-bottom:10px}
+.header-manufacturer{font-size:12px;letter-spacing:5px;color:#999;text-transform:uppercase;margin-bottom:6px}
+.header-title{font-size:36px;font-weight:bold;color:#1c1c1c;letter-spacing:2px;animation:slideDown 1s ease-out}
+.header-subtitle{font-size:12px;letter-spacing:3px;color:#999;margin-top:10px}
+.badges{display:flex;justify-content:center;gap:10px;margin:14px 0 6px;flex-wrap:wrap}
+.badge{padding:6px 14px;border:1px solid #ff007f;border-radius:20px;font-size:10px;font-weight:bold;letter-spacing:2px;color:#ff007f;background:#fff5f9;text-transform:uppercase}
+.hl{text-align:center;margin:24px 0 10px;animation:scaleIn 1s ease-out}
+.hl-box{display:inline-block;padding:16px 30px;border:2px solid #ff007f;border-radius:8px;background:#fff;transition:transform .3s,box-shadow .3s}
+.hl-box:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(255,0,127,.3)}
+.hl-label{font-size:10px;letter-spacing:5px;color:#ff007f;text-transform:uppercase}
+.hl-value{font-size:40px;font-weight:bold;color:#1c1c1c;margin:4px 0 2px}
+.hl-desc{font-size:11px;color:#aaa;letter-spacing:3px}
+.card{background:#fff;border:1px solid #e0e0e0;border-top:3px solid #ff007f;border-radius:10px;padding:18px;text-align:center;margin:10px 0;transition:all .3s;animation:fadeInUp .6s ease-out}
+.card:hover{transform:translateY(-3px);box-shadow:0 5px 20px rgba(0,0,0,.1)}
+.card-label{font-size:10px;letter-spacing:4px;color:#ff007f;text-transform:uppercase}
+.card-value{font-size:34px;font-weight:bold;color:#1c1c1c;margin:6px 0 2px}
+.card-desc{font-size:12px;color:#999}
+.engine{background:#1c1c1c;border-radius:10px;padding:20px;margin:12px 0}
+.engine-title{font-size:10px;letter-spacing:4px;color:#999;text-transform:uppercase;margin-bottom:14px}
+.clock-item{margin-bottom:14px}
+.clock-label{font-size:11px;font-weight:bold;color:#ff007f;text-transform:uppercase;letter-spacing:2px;margin-bottom:6px}
+.bar-bg{background:#2a2a2a;border-radius:6px;height:30px;overflow:hidden}
+.bar{height:30px;border-radius:6px;text-align:right;padding-right:12px;line-height:30px;font-size:14px;font-weight:bold;color:#fff;transition:width 1.5s ease-out}
+.bar-base{background:linear-gradient(90deg,#c0005e,#e0007a)}
+.bar-boost{background:linear-gradient(90deg,#ff007f,#ff4da6)}
+.cooling{background:#1c1c1c;border-radius:10px;padding:22px 20px;margin:12px 0;border-top:3px solid #ff007f}
+.cooling-title{font-size:20px;font-weight:bold;letter-spacing:5px;color:#ff007f;text-align:center;margin-bottom:6px}
+.cooling-sub{font-size:11px;color:#ccc;letter-spacing:3px;text-align:center;margin-bottom:18px}
+.cooling-features{display:flex;gap:10px;flex-wrap:wrap}
+.cf{flex:1;min-width:120px;background:#2a2a2a;border:1px solid #ff007f;border-radius:8px;padding:14px 10px;text-align:center;transition:all .3s}
+.cf:hover{background:#ff007f;transform:translateY(-3px)}
+.cf:hover .cf-name,.cf:hover .cf-label{color:#fff}
+.cf-icon{font-size:24px;margin-bottom:6px}
+.cf-name{font-size:11px;font-weight:bold;color:#ff007f;letter-spacing:1px;margin-bottom:4px;transition:color .3s}
+.cf-label{font-size:10px;color:#aaa;transition:color .3s}
+.section-title{margin:28px 0 14px;padding-bottom:8px;border-bottom:1px solid #e0e0e0}
+.section-title span{font-size:12px;font-weight:bold;letter-spacing:5px;color:#ff007f;text-transform:uppercase}
+.spec-table{background:#fff;border:1px solid #e0e0e0;border-radius:10px;overflow:hidden;margin:8px 0}
+.spec-table div{display:flex;justify-content:space-between;align-items:center;padding:9px 14px;border-bottom:1px solid #f0f0f0;gap:10px;transition:all .2s}
+.spec-table div:last-child{border-bottom:none}
+.spec-table div:hover{background:#fff5f9;border-left:3px solid #ff007f;padding-left:11px}
+.spec-table span{font-size:9px;color:#999;text-transform:uppercase;letter-spacing:2px;white-space:nowrap}
+.spec-table strong{font-size:13px;color:#1c1c1c;text-align:right}
+.conn-table{background:#fff;border:1px solid #e0e0e0;border-radius:10px;overflow:hidden;margin:8px 0}
+.conn-table div{display:flex;align-items:center;padding:12px 14px;border-bottom:1px solid #f0f0f0;gap:12px;transition:all .2s}
+.conn-table div:last-child{border-bottom:none}
+.conn-table div:hover{background:#f9f9f9;transform:translateX(4px)}
+.conn-chip{background:#1c1c1c;border-radius:6px;padding:4px 8px;font-size:9px;font-weight:bold;color:#ff007f;letter-spacing:1px;white-space:nowrap}
+.conn-info{flex:1}
+.conn-info b{font-size:14px;color:#1c1c1c;display:block}
+.conn-info small{font-size:10px;color:#999}
+.conn-count{font-size:20px;font-weight:bold;color:#ff007f}
+.dim-box{background:#fff;border:1px solid #e0e0e0;border-radius:10px;padding:16px;margin:8px 0;display:flex;justify-content:space-around;align-items:center}
+.dim-box .d{text-align:center}
+.dim-box .d b{font-size:22px;font-weight:bold;color:#1c1c1c;display:block}
+.dim-box .d small{font-size:10px;color:#aaa}
+.dim-box .sep{color:#d3d3d3;font-size:14px}
+.sw-box{background:#fff;border:1px solid #e0e0e0;border-radius:10px;padding:16px;margin:12px 0}
+.sw-title{font-size:10px;letter-spacing:5px;color:#ff007f;text-transform:uppercase;margin-bottom:8px}
+.sw-content{font-size:13px;color:#1c1c1c}
+.sw-note{font-size:11px;color:#999;margin-top:6px}
+.psu-box{background:#1c1c1c;border-radius:10px;padding:22px 20px;margin:12px 0;border-top:3px solid #ff007f}
+.psu-title{font-size:16px;font-weight:bold;letter-spacing:4px;color:#ff007f;text-align:center;margin-bottom:6px}
+.psu-sub{font-size:11px;color:#aaa;text-align:center;margin-bottom:20px;letter-spacing:1px}
+.psu-row{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.psu-lbl{font-size:11px;font-weight:bold;color:#ff007f;letter-spacing:2px;text-transform:uppercase;min-width:110px}
+.psu-range{flex:1;-webkit-appearance:none;appearance:none;height:6px;border-radius:3px;background:#2a2a2a;outline:none;border:1px solid #ff007f}
+.psu-range::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:#ff007f;cursor:pointer;box-shadow:0 0 8px rgba(255,0,127,.6)}
+.psu-range::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:#ff007f;cursor:pointer;border:none}
+.psu-out{font-size:18px;font-weight:bold;color:#fff;min-width:60px;text-align:right}
+.psu-cert-title{font-size:10px;font-weight:bold;letter-spacing:4px;color:#999;text-transform:uppercase;margin-bottom:10px}
+.psu-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:18px}
+.pcb{padding:10px 4px;border-radius:8px;border:1px solid #2a2a2a;background:#2a2a2a;font-size:11px;font-weight:bold;color:#888;cursor:pointer;text-align:center;transition:all .2s;letter-spacing:.5px}
+.pcb:hover{border-color:#ff007f;color:#ff007f}
+.a-sin{background:#3a1a1a!important;border-color:#E24B4A!important;color:#F09595!important}
+.a-bronze{background:#2a1f10!important;border-color:#A0522D!important;color:#cd853f!important}
+.a-silver{background:#1e1e22!important;border-color:#A0A0A0!important;color:#d0d0d0!important}
+.a-gold{background:#2a2210!important;border-color:#D4A017!important;color:#ffd700!important}
+.a-plat{background:linear-gradient(135deg,#1a1a2e,#0f3460)!important;border-color:#00d4ff!important;color:#00d4ff!important;box-shadow:0 0 12px rgba(0,212,255,.5)!important;animation:platGlow 1.8s ease-in-out infinite!important}
+@keyframes platGlow{0%,100%{box-shadow:0 0 8px rgba(0,212,255,.4)}50%{box-shadow:0 0 20px rgba(0,212,255,.9)}}
+.psu-result{background:#2a2a2a;border-radius:10px;border:1px solid #444;padding:18px 16px;text-align:center;transition:all .4s}
+.psu-icon{font-size:32px;margin-bottom:8px}
+.psu-status{font-size:15px;font-weight:bold;color:#fff;margin-bottom:8px;letter-spacing:1px}
+.psu-desc{font-size:12px;color:#ccc;line-height:1.7;text-align:left}
+.psu-desc strong{color:#ffcc00}
+.psu-danger{background:#2d1010!important;border-color:#E24B4A!important} .psu-danger .psu-status{color:#F09595}
+.psu-warn{background:#2d1f08!important;border-color:#BA7517!important} .psu-warn .psu-status{color:#FAC775}
+.psu-ok{background:#0d2010!important;border-color:#639922!important} .psu-ok .psu-status{color:#C0DD97}
+.psu-great{background:#082018!important;border-color:#1D9E75!important} .psu-great .psu-status{color:#5DCAA5}
+.outlet-box{margin:12px 0;padding:24px 20px;background:#1c1c1c;border-radius:10px;border-top:3px solid #ff007f}
+.outlet-title{font-size:16px;font-weight:bold;letter-spacing:4px;color:#ff007f;text-align:center;margin-bottom:10px}
+.outlet-desc{font-size:13px;color:#ccc;text-align:center;margin-bottom:20px}
+.outlet-benefits{display:flex;gap:12px}
+.ob{flex:1;background:#2a2a2a;border:1px solid #ff007f;border-radius:10px;padding:16px 10px;text-align:center;transition:all .3s}
+.ob:hover{background:#ff007f;transform:scale(1.05)}
+.ob:hover .ob-val{color:#fff}
+.ob-icon{font-size:28px;margin-bottom:6px}
+.ob-val{font-size:22px;font-weight:bold;color:#ff007f;line-height:1;transition:color .3s}
+.ob-lbl{font-size:11px;color:#ccc;letter-spacing:2px;margin-top:4px}
+.note{margin-top:20px;padding:12px 16px;border-left:3px solid #d3d3d3;font-size:11px;color:#999;line-height:1.8}
+.back-top{position:fixed;bottom:22px;right:22px;width:44px;height:44px;border-radius:50%;background:#ff007f;color:#fff;font-size:20px;border:none;cursor:pointer;box-shadow:0 4px 14px rgba(255,0,127,.5);display:none;align-items:center;justify-content:center;transition:transform .2s,box-shadow .2s;z-index:999}
+.back-top:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(255,0,127,.7)}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideDown{from{transform:translateY(-20px);opacity:0}to{transform:translateY(0);opacity:1}}
+@keyframes scaleIn{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes fadeInUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+@media(max-width:768px){.header-title{font-size:26px}.hl-value{font-size:32px}.card-value{font-size:28px}.outlet-benefits{flex-direction:column}.badges{gap:8px}}
+@media(max-width:480px){.header-title{font-size:20px;letter-spacing:1px}.header-subtitle{font-size:10px;letter-spacing:1px}}
+</style>
+</head>
+<body>
+<button class="back-top" id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Volver arriba">↑</button>
+<div class="container">
+
+<div class="header">
+  <div class="header-brand">✦ Quantum Hardstore ✦</div>
+  <div class="header-manufacturer">MSI® GeForce™</div>
+  <div class="header-title">RTX 3080 VENTUS 3X</div>
+  <div class="header-subtitle">10GB GDDR6X &nbsp;/&nbsp; PCI-E 4.0 &nbsp;/&nbsp; TRIPLE FAN &nbsp;/&nbsp; OUTLET</div>
+</div>
+
+<div class="badges">
+  <span class="badge">AMPERE</span><span class="badge">RAY TRACING</span><span class="badge">DLSS</span>
+  <span class="badge">REFLEX</span><span class="badge">VENTUS COOLING</span><span class="badge">TRIPLE FAN</span><span class="badge">METAL BACKPLATE</span><span class="badge">HDMI 2.1</span>
+</div>
+
+<div class="hl"><div class="hl-box">
+  <div class="hl-label">Boost Clock</div>
+  <div class="hl-value">1860 MHz</div>
+  <div class="hl-desc">Arquitectura Ampere — GA102</div>
+</div></div>
+
+<div class="card"><div class="card-label">Memoria de Video</div><div class="card-value">10GB</div><div class="card-desc">GDDR6X — 19 Gbps</div></div>
+<div class="card"><div class="card-label">CUDA Cores</div><div class="card-value">8704</div><div class="card-desc">68 SM — Arquitectura Ampere</div></div>
+<div class="card"><div class="card-label">Bus de Memoria</div><div class="card-value">320-bit</div><div class="card-desc">Ancho de Banda: 760 GB/s</div></div>
+
+<div class="engine">
+  <div class="engine-title">⚡ Velocidad del Motor</div>
+  <div class="clock-item"><div class="clock-label">● Base Clock</div><div class="bar-bg"><div class="bar bar-base" style="width:0%">1440 MHz</div></div></div>
+  <div class="clock-item"><div class="clock-label">● Boost Clock</div><div class="bar-bg"><div class="bar bar-boost" style="width:0%">1860 MHz</div></div></div>
+</div>
+
+<div class="cooling">
+  <div class="cooling-title">✦ VENTUS COOLING ✦</div>
+  <div class="cooling-sub">Sistema de refrigeración MSI VENTUS — Triple ventilador con disipador de calor de aluminio</div>
+  <div class="cooling-features">
+    <div class="cf"><div class="cf-icon">❄️</div><div class="cf-name">TRIPLE FAN</div><div class="cf-label">Enfriamiento superior</div></div>
+    <div class="cf"><div class="cf-icon">💨</div><div class="cf-name">AIR FLOW</div><div class="cf-label">Ventilación optimizada</div></div>
+    <div class="cf"><div class="cf-icon">🔥</div><div class="cf-name">ALUMINIO</div><div class="cf-label">Disipador de calor eficiente</div></div>
+    <div class="cf"><div class="cf-icon">🛡️</div><div class="cf-name">BACKPLATE</div><div class="cf-label">Metal completo protector</div></div>
+  </div>
+</div>
+
+<div class="section-title"><span>▎Especificaciones</span></div>
+<div class="spec-table">
+  <div><span>Motor Gráfico</span><strong>NVIDIA GeForce RTX 3080</strong></div>
+  <div><span>Arquitectura</span><strong>Ampere (GA102) — Samsung 8nm</strong></div>
+  <div><span>CUDA Cores / SM</span><strong>8704 CUDA / 68 SM</strong></div>
+  <div><span>Bus</span><strong>PCIe Gen 4 x16</strong></div>
+  <div><span>API</span><strong>OpenGL 4.6 / DX12 Ultimate</strong></div>
+  <div><span>Memoria</span><strong>19 Gbps — 760 GB/s</strong></div>
+  <div><span>Resolución Máx.</span><strong>8K (7680×4320)</strong></div>
+  <div><span>Pantallas</span><strong>4 simultáneas</strong></div>
+  <div><span>Ray Tracing / DLSS</span><strong>Sí — 2ª Gen / DLSS 2</strong></div>
+  <div><span>Reflex / Broadcast</span><strong>Sí — NVIDIA Reflex / Broadcast</strong></div>
+  <div><span>TDP</span><strong>320 W</strong></div>
+  <div><span>HDCP</span><strong>Sí — HDCP 2.3</strong></div>
+</div>
+
+<div class="section-title"><span>▎Conectividad</span></div>
+<div class="conn-table">
+  <div><span class="conn-chip">HDMI</span><div class="conn-info"><b>HDMI™ 2.1 con VRR Nativo</b><small>4K@120Hz / 8K@60Hz</small></div><span class="conn-count">×2</span></div>
+  <div><span class="conn-chip">DP</span><div class="conn-info"><b>DisplayPort 1.4a Nativo</b><small>4K@120Hz / 8K@60Hz</small></div><span class="conn-count">×2</span></div>
+</div>
+
+<div class="dim-box">
+  <div class="d"><b>284</b><small>mm — Largo</small></div><span class="sep">×</span>
+  <div class="d"><b>112</b><small>mm — Alto</small></div><span class="sep">×</span>
+  <div class="d"><b>42</b><small>mm — Ancho (2.7 slots)</small></div>
+</div>
+
+<div class="psu-box">
+  <div class="psu-title">⚡ Verificador de Fuente de Poder</div>
+  <div class="psu-sub">Conectores: 2 × 8-pin &nbsp;|&nbsp; TDP GPU: 320W</div>
+  <div class="psu-row">
+    <span class="psu-lbl">Watts de tu fuente</span>
+    <input type="range" class="psu-range" min="350" max="1200" step="50" value="750" id="psu-slider" oninput="updatePsu()">
+    <span class="psu-out" id="psu-out">750 W</span>
+  </div>
+  <div class="psu-cert-title">Certificación 80 Plus</div>
+  <div class="psu-grid">
+    <div class="pcb a-sin" id="cert-sin" onclick="setCert('sin')">Sin cert.</div>
+    <div class="pcb" id="cert-bronze" onclick="setCert('bronze')">🥉 Bronze</div>
+    <div class="pcb" id="cert-silver" onclick="setCert('silver')">🥈 Silver</div>
+    <div class="pcb" id="cert-gold" onclick="setCert('gold')">🥇 Gold</div>
+    <div class="pcb" id="cert-plat" onclick="setCert('plat')">✨ Platinum</div>
+  </div>
+  <div class="psu-result" id="psu-result">
+    <div class="psu-icon" id="psu-icon">⚡</div>
+    <div class="psu-status" id="psu-status">Seleccioná tu fuente</div>
+    <div class="psu-desc" id="psu-desc">Mové el slider y elegí la certificación para ver el diagnóstico.</div>
+  </div>
+</div>
+
+<div class="sw-box">
+  <div class="sw-title">💿 Software</div>
+  <div class="sw-content">NVIDIA GeForce Experience • NVIDIA Broadcast • NVIDIA ShadowPlay • NVIDIA Reflex • NVIDIA DLSS • MSI Dragon Center • MSI Afterburner</div>
+  <div class="sw-note">Descargá el software desde el sitio oficial de NVIDIA o desde la página de soporte de MSI.</div>
+</div>
+
+<div class="outlet-box">
+  <div class="outlet-title">⚡ OUTLET — STOCK LIMITADO</div>
+  <div class="outlet-desc">Unidades en perfectas condiciones de funcionamiento con empaque original, probadas y testeadas.</div>
+  <div class="outlet-benefits">
+    <div class="ob"><div class="ob-icon">💰</div><div class="ob-val">-30%</div><div class="ob-lbl">Descuento vs. Precio Normal</div></div>
+    <div class="ob"><div class="ob-icon">✓</div><div class="ob-val">100%</div><div class="ob-lbl">Funcionamiento Garantizado</div></div>
+    <div class="ob"><div class="ob-icon">📦</div><div class="ob-val">NUEVO</div><div class="ob-lbl">En Caja Original</div></div>
+  </div>
+</div>
+
+<div class="note">⚠️ <strong>Stock limitado.</strong> Una vez que se agoten las unidades OUTLET de la RTX 3080 VENTUS 3X, no habrá más disponibilidad en este modelo. <strong>Garantía de 1 año</strong> en todos los componentes. Envío a todo el país.</div>
+
+</div>
+
+<script>
+var currentCert = 'sin';
+document.getElementById('psu-slider').oninput = function() {
+  document.getElementById('psu-out').textContent = this.value + ' W';
+  updatePsu();
+};
+
+function setCert(cert) {
+  currentCert = cert;
+  document.querySelectorAll('.pcb').forEach(el => el.style.opacity = '0.5');
+  document.getElementById('cert-' + cert).style.opacity = '1';
+  updatePsu();
+}
+
+function updatePsu() {
+  var wattage = parseInt(document.getElementById('psu-slider').value);
+  var result = document.getElementById('psu-result');
+  var icon = document.getElementById('psu-icon');
+  var status = document.getElementById('psu-status');
+  var desc = document.getElementById('psu-desc');
+  var cpuPower = 105;
+  var moboRam = 50;
+  var totalSystem = cpuPower + moboRam + 320;
+  var efficiency = currentCert === 'sin' ? 0.75 : currentCert === 'bronze' ? 0.85 : currentCert === 'silver' ? 0.89 : currentCert === 'gold' ? 0.92 : 0.94;
+  var requiredWattage = totalSystem / efficiency;
+
+  result.className = 'psu-result';
+
+  if (wattage < requiredWattage * 1.15) {
+    result.classList.add('psu-danger');
+    icon.textContent = '❌';
+    status.textContent = 'INSUFICIENTE';
+    desc.innerHTML = '<strong>RIESGO:</strong> Tu fuente podría no soportar picos de consumo. Mínimo recomendado: <strong>' + Math.ceil(requiredWattage * 1.15) + 'W</strong> (' + currentCert + ')';
+  } else if (wattage < requiredWattage * 1.3) {
+    result.classList.add('psu-warn');
+    icon.textContent = '⚠️';
+    status.textContent = 'MARGINAL';
+    desc.innerHTML = '<strong>LÍMITE:</strong> Funciona pero sin margen de seguridad. Se recomienda <strong>' + Math.ceil(requiredWattage * 1.3) + 'W</strong> para mayor estabilidad.';
+  } else if (wattage < requiredWattage * 1.5) {
+    result.classList.add('psu-ok');
+    icon.textContent = '✓';
+    status.textContent = 'ACEPTABLE';
+    desc.innerHTML = '<strong>OK:</strong> Tu fuente es suficiente. Consumo estimado del sistema: <strong>' + Math.ceil(totalSystem) + 'W</strong>.';
+  } else {
+    result.classList.add('psu-great');
+    icon.textContent = '👍';
+    status.textContent = 'EXCELENTE';
+    desc.innerHTML = '<strong>IDEAL:</strong> Excelente margen de seguridad. Consumo estimado: <strong>' + Math.ceil(totalSystem) + 'W</strong>. Tu PC funciona con total estabilidad.';
+  }
+}
+
+document.getElementById('cert-sin').click();
+window.addEventListener('scroll', function() {
+  var backTop = document.getElementById('back-top');
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    backTop.style.display = 'flex';
+  } else {
+    backTop.style.display = 'none';
+  }
+});
+</script>
+</body>
+</html>
