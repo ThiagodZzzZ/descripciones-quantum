@@ -1,0 +1,254 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intel Celeron G5925 - Quantum Hardstore</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Verdana,Geneva,sans-serif;background:#f5f5f5}
+.container{max-width:860px;margin:0 auto;padding:24px 16px}
+.header{text-align:center;padding:28px 10px 22px;border-bottom:2px solid #ff007f;animation:fadeIn .8s ease-in}
+.header-brand{font-size:11px;letter-spacing:6px;color:#ff007f;text-transform:uppercase;margin-bottom:10px}
+.header-manufacturer{font-size:12px;letter-spacing:5px;color:#999;text-transform:uppercase;margin-bottom:6px}
+.header-title{font-size:36px;font-weight:bold;color:#1c1c1c;letter-spacing:2px;animation:slideDown 1s ease-out}
+.header-subtitle{font-size:12px;letter-spacing:3px;color:#999;margin-top:10px}
+.badges{display:flex;justify-content:center;gap:10px;margin:14px 0 6px;flex-wrap:wrap}
+.badge{padding:6px 14px;border:1px solid #ff007f;border-radius:20px;font-size:10px;font-weight:bold;letter-spacing:2px;color:#ff007f;background:#e6f2ff;text-transform:uppercase}
+.hl{text-align:center;margin:24px 0 10px;animation:scaleIn 1s ease-out}
+.hl-box{display:inline-block;padding:16px 30px;border:2px solid #ff007f;border-radius:8px;background:#fff;transition:transform .3s,box-shadow .3s}
+.hl-box:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(0,113,197,.3)}
+.hl-label{font-size:10px;letter-spacing:5px;color:#ff007f;text-transform:uppercase}
+.hl-value{font-size:40px;font-weight:bold;color:#1c1c1c;margin:4px 0 2px}
+.hl-desc{font-size:11px;color:#aaa;letter-spacing:3px}
+.card{background:#fff;border:1px solid #e0e0e0;border-top:3px solid #ff007f;border-radius:10px;padding:18px;text-align:center;margin:10px 0;transition:all .3s;animation:fadeInUp .6s ease-out}
+.card:hover{transform:translateY(-3px);box-shadow:0 5px 20px rgba(0,0,0,.1)}
+.card-label{font-size:10px;letter-spacing:4px;color:#ff007f;text-transform:uppercase}
+.card-value{font-size:34px;font-weight:bold;color:#1c1c1c;margin:6px 0 2px}
+.card-desc{font-size:12px;color:#999}
+.section-title{margin:28px 0 14px;padding-bottom:8px;border-bottom:1px solid #e0e0e0}
+.section-title span{font-size:12px;font-weight:bold;letter-spacing:5px;color:#ff007f;text-transform:uppercase}
+.variant-box{background:#fff;border:1px solid #e0e0e0;border-top:3px solid #ff007f;border-radius:10px;padding:16px;margin:10px 0;transition:all .3s}
+.variant-box:hover{transform:translateY(-3px);box-shadow:0 5px 20px rgba(0,0,0,.1)}
+.variant-title{font-size:13px;font-weight:bold;color:#1c1c1c;margin-bottom:12px}
+.variant-list{list-style:none;font-size:12px}
+.variant-list li{padding:6px 0;color:#555;border-bottom:1px solid #f0f0f0}
+.variant-list li:last-child{border-bottom:none}
+.variant-list strong{color:#ff007f}
+.gpu-tab{background:#fff;border:1px solid #e0e0e0;border-top:3px solid #ff007f;border-radius:10px;padding:12px 16px;margin:8px 0;cursor:pointer;font-weight:bold;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#999;transition:all .3s}
+.gpu-tab.active{background:#1c1c1c;color:#ff007f;border-top-color:#ff007f}
+.gpu-content{display:none}
+.gpu-content.active{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;margin:12px 0}
+.gpu-card{background:#fff;border:1px solid #e0e0e0;border-top:3px solid #ff007f;border-radius:10px;padding:16px;transition:all .3s}
+.gpu-card:hover{transform:translateY(-3px);box-shadow:0 5px 20px rgba(0,0,0,.1)}
+.gpu-rank{display:inline-block;background:#e6f2ff;color:#ff007f;padding:4px 10px;border-radius:4px;font-size:9px;font-weight:bold;margin-bottom:10px}
+.gpu-card h3{font-size:14px;font-weight:bold;color:#1c1c1c;margin-bottom:10px}
+.gpu-spec{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #f0f0f0;font-size:11px}
+.gpu-spec:last-child{border-bottom:none}
+.gpu-spec span{color:#999}
+.gpu-spec strong{color:#ff007f}
+.gpu-check{padding:12px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:8px;cursor:pointer;transition:all .3s;text-align:center;font-weight:bold;font-size:11px}
+.gpu-check:hover{border-color:#ff007f;background:#e6f2ff}
+.gpu-check.active{background:#1c1c1c;color:#ff007f;border-color:#ff007f}
+.bottleneck-status{display:inline-block;padding:18px 40px;border-radius:12px;font-size:18px;font-weight:900;text-transform:uppercase;letter-spacing:2px;margin-top:10px;box-shadow:0 8px 25px rgba(0,0,0,.15)}
+.status-excellent{background:linear-gradient(135deg,#00d47f,#00ff88);color:#fff;text-shadow:0 2px 4px rgba(0,0,0,.2);box-shadow:0 8px 25px rgba(0,212,127,.4)!important}
+.status-good{background:linear-gradient(135deg,#ffcc00,#ffdd44);color:#1c1c1c;text-shadow:0 1px 2px rgba(0,0,0,.1);box-shadow:0 8px 25px rgba(255,204,0,.4)!important}
+.status-moderate{background:linear-gradient(135deg,#ff9900,#ffaa33);color:#fff;text-shadow:0 2px 4px rgba(0,0,0,.2);box-shadow:0 8px 25px rgba(255,153,0,.4)!important}
+.status-severe{background:linear-gradient(135deg,#ff3333,#ff6666);color:#fff;text-shadow:0 2px 4px rgba(0,0,0,.2);box-shadow:0 8px 25px rgba(255,51,51,.4)!important}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideDown{from{transform:translateY(-20px);opacity:0}to{transform:translateY(0);opacity:1}}
+@keyframes scaleIn{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes fadeInUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+@keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,51,51,.7)}50%{box-shadow:0 0 0 8px rgba(255,51,51,0)}100%{box-shadow:0 0 0 0 rgba(255,51,51,0)}}
+@media(max-width:768px){.header-title{font-size:26px}.hl-value{font-size:32px}.card-value{font-size:28px}.gpu-content{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <div class="header-brand">✦ Quantum Hardstore ✦</div>
+  <div class="header-manufacturer">Intel® Core™</div>
+  <div class="header-title">Celeron G5925</div>
+  <div class="header-subtitle">2 Núcleos / 2 Hilos &nbsp;/&nbsp; 3.6 GHz &nbsp;/&nbsp; 58W &nbsp;/&nbsp; Socket LGA1200 &nbsp;/&nbsp; OUTLET</div>
+</div>
+
+<div class="badges">
+  <span class="badge">10ª GEN</span><span class="badge">COMET LAKE</span><span class="badge">LGA1200</span>
+  <span class="badge">2 CORES</span><span class="badge">4MB CACHE</span><span class="badge">58W TDP</span><span class="badge">BUDGET</span><span class="badge">OUTLET</span>
+</div>
+
+<div class="hl"><div class="hl-box">
+  <div class="hl-label">Frecuencia Base</div>
+  <div class="hl-value">3.6 GHz</div>
+  <div class="hl-desc">10ª Generación — Comet Lake</div>
+</div></div>
+
+<div class="card"><div class="card-label">Núcleos / Hilos</div><div class="card-value">2 / 2</div><div class="card-desc">Entrada - Procesamiento Básico</div></div>
+<div class="card"><div class="card-label">Caché L3</div><div class="card-value">4 MB</div><div class="card-desc">Almacenamiento Rápido</div></div>
+<div class="card"><div class="card-label">TDP</div><div class="card-value">58W</div><div class="card-desc">Consumo Ultra Eficiente</div></div>
+
+<div class="section-title"><span>Nomenclatura - Celeron G</span></div>
+
+<div class="variant-box">
+  <div class="variant-title">🔵 Celeron G5925</div>
+  <ul class="variant-list">
+    <li><strong>Familia:</strong> Celeron G (entrada presupuestaria)</li>
+    <li><strong>Generación:</strong> 10ª Generación (Comet Lake)</li>
+    <li><strong>Especificación:</strong> 2 Núcleos / 2 Hilos | 3.6 GHz | 4MB L3 | 58W</li>
+    <li><strong>GPU Integrada:</strong> SÍ - Intel UHD 610</li>
+    <li><strong>Socket:</strong> LGA1200</li>
+    <li><strong>Ideal para:</strong> Tareas ofimáticas, navegación web, multimedia básica</li>
+  </ul>
+</div>
+
+<div class="section-title"><span>Top 3 Composiciones Recomendadas</span></div>
+
+<div style="margin:14px 0">
+  <button class="gpu-tab active" onclick="switchGPU('nvidia')">NVIDIA</button>
+  <button class="gpu-tab" onclick="switchGPU('amd')">AMD</button>
+</div>
+
+<div id="nvidia" class="gpu-content active">
+  <div class="gpu-card">
+    <span class="gpu-rank">🥇 MEJOR - GTX 1660</span>
+    <h3>Celeron G5925 + GTX 1660</h3>
+    <div class="gpu-spec"><span>GPU:</span> <strong>GTX 1660 (6GB GDDR5)</strong></div>
+    <div class="gpu-spec"><span>Resolución Ideal:</span> <strong>1080p 60FPS</strong></div>
+    <div class="gpu-spec"><span>Cuello Botella:</span> <strong style="color:#ff6432">~35%</strong></div>
+    <div class="gpu-spec"><span>Mejor para:</span> <strong>Gaming Casual</strong></div>
+  </div>
+  <div class="gpu-card">
+    <span class="gpu-rank">🥈 EXCELENTE - GTX 1650</span>
+    <h3>Celeron G5925 + GTX 1650</h3>
+    <div class="gpu-spec"><span>GPU:</span> <strong>GTX 1650 (4GB GDDR6)</strong></div>
+    <div class="gpu-spec"><span>Resolución Ideal:</span> <strong>1080p 30-45FPS</strong></div>
+    <div class="gpu-spec"><span>Cuello Botella:</span> <strong style="color:#ff6432">~28%</strong></div>
+    <div class="gpu-spec"><span>Mejor para:</span> <strong>E-sports Ligero</strong></div>
+  </div>
+  <div class="gpu-card">
+    <span class="gpu-rank">🥉 BUENA - iGPU UHD 610</span>
+    <h3>Celeron G5925 + Integrada</h3>
+    <div class="gpu-spec"><span>GPU:</span> <strong>Intel UHD 610 (Integrada)</strong></div>
+    <div class="gpu-spec"><span>Resolución Ideal:</span> <strong>720p 30FPS</strong></div>
+    <div class="gpu-spec"><span>Cuello Botella:</span> <strong style="color:#2e7d32">~0%</strong></div>
+    <div class="gpu-spec"><span>Mejor para:</span> <strong>Multimedia Básica</strong></div>
+  </div>
+</div>
+
+<div id="amd" class="gpu-content">
+  <div class="gpu-card">
+    <span class="gpu-rank">🥇 MEJOR - RX 6500 XT</span>
+    <h3>Celeron G5925 + RX 6500 XT</h3>
+    <div class="gpu-spec"><span>GPU:</span> <strong>RX 6500 XT (4GB GDDR6)</strong></div>
+    <div class="gpu-spec"><span>Resolución Ideal:</span> <strong>1080p 50FPS</strong></div>
+    <div class="gpu-spec"><span>Cuello Botella:</span> <strong style="color:#ff6432">~40%</strong></div>
+    <div class="gpu-spec"><span>Mejor para:</span> <strong>Gaming AMD Entry</strong></div>
+  </div>
+  <div class="gpu-card">
+    <span class="gpu-rank">🥈 EXCELENTE - RX 6600</span>
+    <h3>Celeron G5925 + RX 6600</h3>
+    <div class="gpu-spec"><span>GPU:</span> <strong>RX 6600 (8GB GDDR6)</strong></div>
+    <div class="gpu-spec"><span>Resolución Ideal:</span> <strong>1080p 40-50FPS</strong></div>
+    <div class="gpu-spec"><span>Cuello Botella:</span> <strong style="color:#ff6432">~38%</strong></div>
+    <div class="gpu-spec"><span>Mejor para:</span> <strong>Gaming AMD Balanced</strong></div>
+  </div>
+  <div class="gpu-card">
+    <span class="gpu-rank">🥉 ALTERNATIVA - iGPU UHD 630</span>
+    <h3>Celeron G5925 + Integrada</h3>
+    <div class="gpu-spec"><span>GPU:</span> <strong>Intel UHD 610 (Integrada)</strong></div>
+    <div class="gpu-spec"><span>Resolución Ideal:</span> <strong>720p 30FPS</strong></div>
+    <div class="gpu-spec"><span>Cuello Botella:</span> <strong style="color:#2e7d32">~0%</strong></div>
+    <div class="gpu-spec"><span>Mejor para:</span> <strong>Uso Ofimático</strong></div>
+  </div>
+</div>
+
+<div class="section-title"><span>Compatibilidad con GPUs</span></div>
+
+<div style="background:linear-gradient(135deg,#fff 0%,#f9f9f9 100%);border:2px solid rgba(0,113,197,.15);border-radius:12px;padding:20px;margin:10px 0;box-shadow:0 5px 20px rgba(0,113,197,.08)">
+  <p style="font-size:13px;color:#555;margin-bottom:18px;font-weight:500">Selecciona una placa de video para ver su compatibilidad</p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px">
+    <div>
+      <label style="display:block;font-size:11px;color:#ff007f;font-weight:bold;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">NVIDIA</label>
+      <select id="gpuSelectorNVIDIA" onchange="selectGPUFromNVIDIA()" style="width:100%;padding:12px;border:2px solid #76b900;border-radius:10px;font-size:12px;color:#1c1c1c;background:#fff;cursor:pointer;font-weight:500;box-shadow:0 3px 12px rgba(118,185,0,.1);transition:all .3s" onmouseover="this.style.boxShadow='0 5px 15px rgba(118,185,0,.2)'" onmouseout="this.style.boxShadow='0 3px 12px rgba(118,185,0,.1)'">
+        <option value="">-- NVIDIA --</option>
+      </select>
+    </div>
+    <div>
+      <label style="display:block;font-size:11px;color:#ff007f;font-weight:bold;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">AMD</label>
+      <select id="gpuSelectorAMD" onchange="selectGPUFromAMD()" style="width:100%;padding:12px;border:2px solid #ed1c24;border-radius:10px;font-size:12px;color:#1c1c1c;background:#fff;cursor:pointer;font-weight:500;box-shadow:0 3px 12px rgba(237,28,36,.1);transition:all .3s" onmouseover="this.style.boxShadow='0 5px 15px rgba(237,28,36,.2)'" onmouseout="this.style.boxShadow='0 3px 12px rgba(237,28,36,.1)'">
+        <option value="">-- AMD --</option>
+      </select>
+    </div>
+  </div>
+
+  <div id="gpuDetailsBox" style="display:none;margin-top:25px;background:linear-gradient(135deg,#fff 0%,#f9f9f9 100%);border:2px solid #ff007f;border-radius:15px;padding:28px;animation:slideUp .5s ease-out;box-shadow:0 10px 40px rgba(0,113,197,.1)">
+    <div style="font-size:20px;font-weight:bold;color:#1c1c1c;margin-bottom:20px;padding-bottom:14px;border-bottom:3px solid #ff007f;letter-spacing:.5px" id="gpuSelectedName"></div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;margin-bottom:24px">
+      <div style="background:linear-gradient(135deg,rgba(0,113,197,.08),rgba(0,150,200,.05));border:2px solid rgba(0,113,197,.2);border-radius:12px;padding:18px;text-align:center;transition:all .3s;cursor:default" onmouseover="this.style.boxShadow='0 5px 20px rgba(0,113,197,.2)'" onmouseout="this.style.boxShadow='none'">
+        <div style="font-size:8px;color:#ff007f;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px;font-weight:900">VRAM</div>
+        <div style="font-size:26px;font-weight:900;color:#1c1c1c;font-family:monospace" id="gpuSelectedVRAM">-</div>
+      </div>
+      <div style="background:linear-gradient(135deg,rgba(0,255,136,.08),rgba(0,200,100,.05));border:2px solid rgba(0,255,136,.2);border-radius:12px;padding:18px;text-align:center;transition:all .3s;cursor:default" onmouseover="this.style.boxShadow='0 5px 20px rgba(0,255,136,.2)'" onmouseout="this.style.boxShadow='none'">
+        <div style="font-size:8px;color:#00ff88;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px;font-weight:900">Rendimiento</div>
+        <div style="font-size:26px;font-weight:900;color:#1c1c1c;font-family:monospace" id="gpuSelectedPerf">-</div>
+      </div>
+      <div style="background:linear-gradient(135deg,rgba(255,100,50,.08),rgba(255,150,100,.05));border:2px solid rgba(255,100,50,.2);border-radius:12px;padding:18px;text-align:center;transition:all .3s;cursor:default" onmouseover="this.style.boxShadow='0 5px 20px rgba(255,100,50,.2)'" onmouseout="this.style.boxShadow='none'">
+        <div style="font-size:8px;color:#ff6432;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px;font-weight:900">Cuello Botella</div>
+        <div style="font-size:26px;font-weight:900;color:#ff6432;font-family:monospace" id="gpuSelectedBottleneck">-</div>
+      </div>
+    </div>
+
+    <div id="statusContainer" style="border-radius:12px;padding:24px;text-align:center;margin-top:16px">
+      <div style="font-size:10px;color:#666;margin-bottom:14px;text-transform:uppercase;letter-spacing:2px;font-weight:900">Compatibilidad</div>
+      <div style="display:inline-block;padding:16px 32px;border-radius:10px;font-size:20px;font-weight:900;text-transform:uppercase;letter-spacing:2px;margin-bottom:16px;min-width:280px;box-shadow:0 8px 20px rgba(0,0,0,.15)" class="bottleneck-status" id="gpuSelectedStatus"></div>
+      <div style="font-size:13px;line-height:1.8;margin-top:14px;font-weight:500;color:#1c1c1c" id="gpuSelectedDesc"></div>
+    </div>
+  </div>
+</div>
+
+<div class="section-title"><span>Rendimiento Multitarea - 2 Núcleos en Acción</span></div>
+
+<div style="background:#fff;border:1px solid #e0e0e0;border-radius:10px;padding:16px;margin:10px 0">
+  <p style="font-size:12px;color:#666;margin-bottom:14px"><strong>Selecciona las aplicaciones simultáneas</strong> para ver cómo el Celeron G5925 distribuye la carga entre sus 2 núcleos</p>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-bottom:20px" id="appSelector">
+    <div class="gpu-check active" style="cursor:not-allowed;opacity:0.7;pointer-events:none;background:#1c1c1c;color:#ff007f;border-color:#ff007f">🔒 Sistema (10%)</div>
+  </div>
+
+  <div style="background:#f9f9f9;border:1px solid #e0e0e0;border-radius:8px;padding:16px">
+    <div style="font-size:11px;font-weight:bold;color:#ff007f;margin-bottom:8px;letter-spacing:1px">USO DE CPU</div>
+    <div style="background:#e0e0e0;height:30px;border-radius:6px;overflow:hidden;margin-bottom:8px">
+      <div id="cpuBar" style="height:100%;background:linear-gradient(90deg,#60d156,#f0c847);width:0%;transition:width .4s ease;display:flex;align-items:center;justify-content:center">
+        <span id="cpuPercent" style="font-size:11px;font-weight:bold;color:#1c1c1c">0%</span>
+      </div>
+    </div>
+    <div style="font-size:10px;color:#666;margin-bottom:12px">Núcleos disponibles: <span id="coresAvail" style="color:#ff007f;font-weight:bold">2/2</span></div>
+    <div id="cpuWarning" style="display:none;background:linear-gradient(135deg,#ff3333 0%,#ff6666 100%);border:2px solid #ff0000;border-radius:8px;padding:12px;text-align:center;animation:pulse 1.5s ease-in-out infinite">
+      <div style="font-size:12px;font-weight:bold;color:#fff;letter-spacing:1px">⚠️ ADVERTENCIA</div>
+      <div style="font-size:11px;color:#fff;margin-top:6px">CPU al 100% - Todos los núcleos en uso</div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script>
+const apps={Sistema:10,Discord:8,Chrome:15,'Navegación':12,Gaming:90,Streaming:45,'Video Editing':50};
+const selectedApps=new Set(['Sistema']);
+const gpuList=[{name:'GTX 1650',p:35,ram:'4GB',type:'NVIDIA'},{name:'GTX 1660',p:42,ram:'6GB',type:'NVIDIA'},{name:'GTX 1660 Ti',p:48,ram:'6GB',type:'NVIDIA'},{name:'RTX 2060',p:55,ram:'6GB',type:'NVIDIA'},{name:'RTX 2060 Super',p:62,ram:'8GB',type:'NVIDIA'},{name:'RTX 3050',p:48,ram:'8GB',type:'NVIDIA'},{name:'RTX 3060',p:58,ram:'12GB',type:'NVIDIA'},{name:'RX 6500 XT',p:52,ram:'4GB',type:'AMD'},{name:'RX 6600',p:60,ram:'8GB',type:'AMD'},{name:'RX 6600 XT',p:65,ram:'16GB',type:'AMD'},{name:'RX 6700',p:72,ram:'12GB',type:'AMD'}];
+const cpu=25;
+function getBottleneckStatus(bn){if(bn>30)return{st:'severe',txt:'✗ SEVERO',desc:'Cuello de botella severo. GPU demasiado potente para este CPU.'};if(bn>20)return{st:'moderate',txt:'⚠ MODERADO',desc:'Cuello de botella moderado. La GPU se limitará bastante.'};if(bn>10)return{st:'good',txt:'→ BUENO',desc:'Cuello de botella bajo. Compatibilidad aceptable.'};return{st:'excellent',txt:'✓ EXCELENTE',desc:'Cuello de botella mínimo. Pareja muy balanceada.'}}
+function initApps(){let html='<div class="gpu-check active" style="cursor:not-allowed;opacity:0.7;pointer-events:none;background:#1c1c1c;color:#ff007f;border-color:#ff007f">🔒 Sistema (10%)</div>';Object.keys(apps).filter(a=>a!=='Sistema').forEach(app=>{html+=`<div class="gpu-check" onclick="toggleApp(this,'${app}')" style="cursor:pointer">${app}</div>`});document.getElementById('appSelector').innerHTML=html;updateCPUUsage();initGPUSelector()}
+function initGPUSelector(){['NVIDIA','AMD'].forEach(brand=>{const selector=brand==='NVIDIA'?document.getElementById('gpuSelectorNVIDIA'):document.getElementById('gpuSelectorAMD');const nvidiaGpus=gpuList.filter(g=>g.type==='NVIDIA');const amdGpus=gpuList.filter(g=>g.type==='AMD');const gpus=brand==='NVIDIA'?nvidiaGpus:amdGpus;if(gpus.length>0){const optgroup=document.createElement('optgroup');optgroup.label=brand;gpus.forEach((g)=>{const actualIdx=gpuList.indexOf(g);const opt=document.createElement('option');opt.value=actualIdx;opt.textContent=g.name;optgroup.appendChild(opt)});selector.appendChild(optgroup)}});}
+function selectGPUFromNVIDIA(){const idx=parseInt(document.getElementById('gpuSelectorNVIDIA').value);if(!isNaN(idx)&&idx>=0){selectGPU(idx);document.getElementById('gpuSelectorAMD').value=''}else{document.getElementById('gpuDetailsBox').style.display='none'}}
+function selectGPUFromAMD(){const idx=parseInt(document.getElementById('gpuSelectorAMD').value);if(!isNaN(idx)&&idx>=0){selectGPU(idx);document.getElementById('gpuSelectorNVIDIA').value=''}else{document.getElementById('gpuDetailsBox').style.display='none'}}
+function animateNumber(el,target,duration=800){const start=0;const startTime=Date.now();const animate=()=>{const elapsed=Date.now()-startTime;const progress=Math.min(elapsed/duration,1);const current=Math.floor(start+(target-start)*progress);el.innerText=current;if(progress<1)requestAnimationFrame(animate)};animate()}
+function selectGPU(idx){const g=gpuList[idx];selectedApps.add('Gaming');const bn=Math.max(0,Math.abs(g.p-cpu)/Math.max(g.p,cpu)*100);const status=getBottleneckStatus(bn);const box=document.getElementById('gpuDetailsBox');box.style.opacity='0';box.style.display='block';document.getElementById('gpuSelectedName').innerText=g.name;setTimeout(()=>{const perfNum=parseInt(g.p);const bnNum=parseFloat(bn.toFixed(1));document.getElementById('gpuSelectedVRAM').innerText=g.ram;document.getElementById('gpuSelectedStatus').innerText=status.txt;document.getElementById('gpuSelectedStatus').className='bottleneck-status status-'+status.st;document.getElementById('gpuSelectedDesc').innerText=status.desc;animateNumber(document.getElementById('gpuSelectedPerf'),perfNum,600);animateNumber(document.getElementById('gpuSelectedBottleneck'),bnNum,600);document.querySelector('.gpu-check[onclick*="Gaming"]').classList.add('active');updateCPUUsage();box.style.opacity='1';box.style.transition='opacity .3s ease'},50)}
+function toggleApp(el,app){if(selectedApps.has(app)){selectedApps.delete(app);el.classList.remove('active')}else{selectedApps.add(app);el.classList.add('active')}updateCPUUsage()}
+function updateCPUUsage(){let total=0;selectedApps.forEach(app=>{total+=apps[app]});const usage=Math.min(100,total);const cores=Math.ceil(usage/50);document.getElementById('cpuBar').style.width=usage+'%';document.getElementById('cpuPercent').innerText=usage+'%';document.getElementById('coresAvail').innerText=Math.max(0,2-cores)+'/2';if(usage>=100){document.getElementById('cpuWarning').style.display='block';document.getElementById('cpuBar').style.background='linear-gradient(90deg,#ff3333,#ff0000)'}else{document.getElementById('cpuWarning').style.display='none';document.getElementById('cpuBar').style.background='linear-gradient(90deg,#60d156,#f0c847)'}}
+function switchGPU(b){document.querySelectorAll('.gpu-tab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.gpu-content').forEach(c=>c.classList.remove('active'));event.target.classList.add('active');document.getElementById(b).classList.add('active')}
+document.addEventListener('DOMContentLoaded',initApps)
+</script>
+</body>
+</html>
