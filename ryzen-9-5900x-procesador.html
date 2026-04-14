@@ -1,0 +1,218 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ryzen 9 5900X - Quantum Hardstore</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Verdana,Geneva,sans-serif;background:#f5f5f5}
+.container{max-width:860px;margin:0 auto;padding:24px 16px}
+.header{text-align:center;padding:28px 10px 22px;border-bottom:2px solid #ff007f;animation:fadeIn .8s ease-in}
+.header-brand{font-size:11px;letter-spacing:6px;color:#ff007f;text-transform:uppercase;margin-bottom:10px}
+.header-manufacturer{font-size:12px;letter-spacing:5px;color:#999;text-transform:uppercase;margin-bottom:6px}
+.header-title{font-size:36px;font-weight:bold;color:#1c1c1c;letter-spacing:2px;animation:slideDown 1s ease-out}
+.header-subtitle{font-size:12px;letter-spacing:3px;color:#999;margin-top:10px}
+.badges{display:flex;justify-content:center;gap:10px;margin:14px 0 6px;flex-wrap:wrap}
+.badge{padding:6px 14px;border:1px solid #ff007f;border-radius:20px;font-size:10px;font-weight:bold;letter-spacing:2px;color:#ff007f;background:#fff5f9;text-transform:uppercase}
+.hl{text-align:center;margin:24px 0 10px;animation:scaleIn 1s ease-out}
+.hl-box{display:inline-block;padding:16px 30px;border:2px solid #ff007f;border-radius:8px;background:#fff;transition:transform .3s,box-shadow .3s}
+.hl-box:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(255,0,127,.3)}
+.hl-label{font-size:10px;letter-spacing:5px;color:#ff007f;text-transform:uppercase}
+.hl-value{font-size:40px;font-weight:bold;color:#1c1c1c;margin:4px 0 2px}
+.hl-desc{font-size:11px;color:#aaa;letter-spacing:3px}
+.card{background:#fff;border:1px solid #e0e0e0;border-top:3px solid #ff007f;border-radius:10px;padding:18px;text-align:center;margin:10px 0;transition:all .3s;animation:fadeInUp .6s ease-out}
+.card:hover{transform:translateY(-3px);box-shadow:0 5px 20px rgba(0,0,0,.1)}
+.card-label{font-size:10px;letter-spacing:4px;color:#ff007f;text-transform:uppercase}
+.card-value{font-size:34px;font-weight:bold;color:#1c1c1c;margin:6px 0 2px}
+.card-desc{font-size:12px;color:#999}
+.section-title{margin:28px 0 14px;padding-bottom:8px;border-bottom:1px solid #e0e0e0}
+.section-title span{font-size:12px;font-weight:bold;letter-spacing:5px;color:#ff007f;text-transform:uppercase}
+.spec-table{background:#fff;border:1px solid #e0e0e0;border-radius:10px;overflow:hidden;margin:8px 0}
+.spec-table div{display:flex;justify-content:space-between;align-items:center;padding:9px 14px;border-bottom:1px solid #f0f0f0;gap:10px;transition:all .2s}
+.spec-table div:last-child{border-bottom:none}
+.spec-table div:hover{background:#fff5f9;border-left:3px solid #ff007f;padding-left:11px}
+.spec-table span{font-size:9px;color:#999;text-transform:uppercase;letter-spacing:2px;white-space:nowrap}
+.spec-table strong{font-size:13px;color:#1c1c1c;text-align:right}
+.variant-box{background:#fff;border:1px solid #e0e0e0;border-top:3px solid #ff007f;border-radius:10px;padding:16px;margin:10px 0;transition:all .3s}
+.variant-box:hover{transform:translateY(-3px);box-shadow:0 5px 20px rgba(0,0,0,.1)}
+.variant-title{font-size:13px;font-weight:bold;color:#1c1c1c;margin-bottom:12px}
+.variant-list{list-style:none;font-size:12px}
+.variant-list li{padding:6px 0;color:#555;border-bottom:1px solid #f0f0f0}
+.variant-list li:last-child{border-bottom:none}
+.variant-list strong{color:#ff007f}
+.cores-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:6px;margin:14px 0}
+.core{aspect-ratio:1;background:#fff;border:2px solid #ff007f;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:bold;color:#ff007f;cursor:pointer;transition:all .3s}
+.core:hover{background:#ff007f;color:#fff;transform:scale(1.08)}
+.gpu-tab{background:#fff;border:1px solid #e0e0e0;border-top:3px solid #ff007f;border-radius:10px;padding:12px 16px;margin:8px 0;cursor:pointer;font-weight:bold;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#999;transition:all .3s}
+.gpu-tab.active{background:#1c1c1c;color:#ff007f;border-top-color:#ff007f}
+.gpu-content{display:none}
+.gpu-content.active{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;margin:12px 0}
+.gpu-card{background:#fff;border:1px solid #e0e0e0;border-top:3px solid #ff007f;border-radius:10px;padding:16px;transition:all .3s}
+.gpu-card:hover{transform:translateY(-3px);box-shadow:0 5px 20px rgba(0,0,0,.1)}
+.gpu-rank{display:inline-block;background:#fff5f9;color:#ff007f;padding:4px 10px;border-radius:4px;font-size:9px;font-weight:bold;margin-bottom:10px}
+.gpu-card h3{font-size:14px;font-weight:bold;color:#1c1c1c;margin-bottom:10px}
+.gpu-spec{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #f0f0f0;font-size:11px}
+.gpu-spec:last-child{border-bottom:none}
+.gpu-spec span{color:#999}
+.gpu-spec strong{color:#ff007f}
+.bottleneck-btn{background:#fff;border:2px solid #ff007f;color:#ff007f;padding:10px 16px;border-radius:8px;cursor:pointer;font-weight:bold;font-size:11px;letter-spacing:1px;margin:8px 4px;transition:all .3s;text-transform:uppercase}
+.bottleneck-btn:hover{background:#ff007f;color:#fff;transform:scale(1.05)}
+.gpu-selector{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:12px 0}
+.gpu-check{padding:12px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:8px;cursor:pointer;transition:all .3s;text-align:center;font-weight:bold;font-size:11px}
+.gpu-check:hover{border-color:#ff007f;background:#fff5f9}
+.gpu-check.active{background:#1c1c1c;color:#ff007f;border-color:#ff007f}
+.result-box{background:#fff;border:1px solid #e0e0e0;border-top:3px solid #ff007f;border-radius:10px;padding:16px;text-align:center;margin:10px 0;transition:all .3s}
+.result-box:hover{transform:translateY(-3px);box-shadow:0 5px 20px rgba(0,0,0,.1)}
+.result-box h4{font-size:12px;color:#ff007f;font-weight:bold;margin-bottom:10px}
+.bottleneck-value{font-size:32px;font-weight:bold;color:#1c1c1c;margin-bottom:8px}
+.bottleneck-status{display:inline-block;padding:6px 12px;border-radius:4px;font-size:9px;font-weight:bold;text-transform:uppercase;letter-spacing:1px;margin-top:10px}
+.status-excellent{background:#e8f5e9;color:#2e7d32}
+.status-good{background:#fff8e1;color:#f9a825}
+.status-moderate{background:#ffe0b2;color:#e65100}
+.status-severe{background:#ffebee;color:#c62828}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideDown{from{transform:translateY(-20px);opacity:0}to{transform:translateY(0);opacity:1}}
+@keyframes scaleIn{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes fadeInUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+@media(max-width:768px){.header-title{font-size:26px}.hl-value{font-size:32px}.card-value{font-size:28px}.cores-grid{grid-template-columns:repeat(6,1fr)}.gpu-content{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <div class="header-brand">✦ Quantum Hardstore ✦</div>
+  <div class="header-manufacturer">AMD® Ryzen™</div>
+  <div class="header-title">Ryzen 9 5900X</div>
+  <div class="header-subtitle">12 Núcleos / 24 Hilos &nbsp;/&nbsp; 3.7-4.6 GHz &nbsp;/&nbsp; 105W &nbsp;/&nbsp; Socket AM4</div>
+</div>
+
+<div class="badges">
+  <span class="badge">ZEN 3</span><span class="badge">7NM</span><span class="badge">AM4</span>
+  <span class="badge">12 CORES</span><span class="badge">64MB CACHE</span><span class="badge">MULTITHREADING</span><span class="badge">GAMING</span><span class="badge">WORKSTATION</span>
+</div>
+
+<div class="hl"><div class="hl-box">
+  <div class="hl-label">Boost Clock</div>
+  <div class="hl-value">4.6 GHz</div>
+  <div class="hl-desc">Arquitectura Zen 3 — 7nm</div>
+</div></div>
+
+<div class="card"><div class="card-label">Núcleos / Hilos</div><div class="card-value">12 / 24</div><div class="card-desc">Diseño SMT — Multithreading Simultáneo</div></div>
+<div class="card"><div class="card-label">Frecuencia Base</div><div class="card-value">3.7 GHz</div><div class="card-desc">Rendimiento de Base Estable</div></div>
+<div class="card"><div class="card-label">Caché L3</div><div class="card-value">64 MB</div><div class="card-desc">Almacenamiento Ultra-rápido</div></div>
+
+<div class="section-title"><span>Nomenclatura - Variante X</span></div>
+
+<div class="variant-box">
+  <div class="variant-title">🔴 La X en Ryzen 9 5900X</div>
+  <ul class="variant-list">
+    <li><strong>Significado:</strong> La "X" indica versión con frecuencias boost elevadas</li>
+    <li><strong>Frecuencia Boost:</strong> 4.6 GHz (superior a versiones sin X)</li>
+    <li><strong>Rendimiento:</strong> Mejor rendimiento en gaming y tareas single-thread</li>
+    <li><strong>Consumo:</strong> 105W TDP estándar de Ryzen 5000</li>
+    <li><strong>Alternativas:</strong> Versiones sin X tienen boost de 4.4 GHz (menor rendimiento)</li>
+  </ul>
+</div>
+
+<div class="section-title"><span>Top 3 GPUs Recomendadas</span></div>
+
+<div style="margin:14px 0">
+  <button class="gpu-tab active" onclick="switchGPU('nvidia')">NVIDIA</button>
+  <button class="gpu-tab" onclick="switchGPU('amd')">AMD</button>
+</div>
+
+<div id="nvidia" class="gpu-content active">
+  <div class="gpu-card">
+    <span class="gpu-rank">🥇 MEJOR</span>
+    <h3>RTX 3080 VENTUS 3X</h3>
+    <div class="gpu-spec"><span>VRAM:</span> <strong>10GB GDDR6X</strong></div>
+    <div class="gpu-spec"><span>CUDA Cores:</span> <strong>8,704</strong></div>
+    <div class="gpu-spec"><span>Boost Clock:</span> <strong>1860 MHz</strong></div>
+    <div class="gpu-spec"><span>TDP:</span> <strong>320W</strong></div>
+    <div class="gpu-spec"><span>Cuello Botella:</span> <strong style="color:#2e7d32">~2%</strong></div>
+  </div>
+  <div class="gpu-card">
+    <span class="gpu-rank">🥈 EXCELENTE</span>
+    <h3>RTX 3070 Ti TUF</h3>
+    <div class="gpu-spec"><span>VRAM:</span> <strong>8GB GDDR6X</strong></div>
+    <div class="gpu-spec"><span>CUDA Cores:</span> <strong>5,888</strong></div>
+    <div class="gpu-spec"><span>Boost Clock:</span> <strong>1860 MHz</strong></div>
+    <div class="gpu-spec"><span>TDP:</span> <strong>290W</strong></div>
+    <div class="gpu-spec"><span>Cuello Botella:</span> <strong style="color:#2e7d32">~3%</strong></div>
+  </div>
+  <div class="gpu-card">
+    <span class="gpu-rank">🥉 BUENA</span>
+    <h3>RTX 3070 ZOTAC Twin</h3>
+    <div class="gpu-spec"><span>VRAM:</span> <strong>8GB GDDR6</strong></div>
+    <div class="gpu-spec"><span>CUDA Cores:</span> <strong>5,888</strong></div>
+    <div class="gpu-spec"><span>Boost Clock:</span> <strong>1770 MHz</strong></div>
+    <div class="gpu-spec"><span>TDP:</span> <strong>220W</strong></div>
+    <div class="gpu-spec"><span>Cuello Botella:</span> <strong style="color:#f9a825">~5%</strong></div>
+  </div>
+</div>
+
+<div id="amd" class="gpu-content">
+  <div class="gpu-card">
+    <span class="gpu-rank">🥇 MEJOR</span>
+    <h3>RX 6800 XT GAMING TRIO</h3>
+    <div class="gpu-spec"><span>VRAM:</span> <strong>16GB GDDR6</strong></div>
+    <div class="gpu-spec"><span>Stream Processors:</span> <strong>4,608</strong></div>
+    <div class="gpu-spec"><span>Boost Clock:</span> <strong>2.425 GHz</strong></div>
+    <div class="gpu-spec"><span>TDP:</span> <strong>300W</strong></div>
+    <div class="gpu-spec"><span>Cuello Botella:</span> <strong style="color:#2e7d32">~2%</strong></div>
+  </div>
+  <div class="gpu-card">
+    <span class="gpu-rank">🥈 EXCELENTE</span>
+    <h3>RX 6800 XT Phantom Gaming</h3>
+    <div class="gpu-spec"><span>VRAM:</span> <strong>16GB GDDR6</strong></div>
+    <div class="gpu-spec"><span>Stream Processors:</span> <strong>4,608</strong></div>
+    <div class="gpu-spec"><span>Boost Clock:</span> <strong>2.390 GHz</strong></div>
+    <div class="gpu-spec"><span>TDP:</span> <strong>300W</strong></div>
+    <div class="gpu-spec"><span>Cuello Botella:</span> <strong style="color:#2e7d32">~2%</strong></div>
+  </div>
+  <div class="gpu-card">
+    <span class="gpu-rank">🥉 BUENA</span>
+    <h3>RX 6700 XT CHALLENGER</h3>
+    <div class="gpu-spec"><span>VRAM:</span> <strong>12GB GDDR6</strong></div>
+    <div class="gpu-spec"><span>Stream Processors:</span> <strong>2,560</strong></div>
+    <div class="gpu-spec"><span>Boost Clock:</span> <strong>2.500 GHz</strong></div>
+    <div class="gpu-spec"><span>TDP:</span> <strong>250W</strong></div>
+    <div class="gpu-spec"><span>Cuello Botella:</span> <strong style="color:#f9a825">~5%</strong></div>
+  </div>
+</div>
+
+<div class="section-title"><span>Rendimiento Multitarea - 12 Núcleos en Acción</span></div>
+
+<div style="background:#fff;border:1px solid #e0e0e0;border-radius:10px;padding:16px;margin:10px 0">
+  <p style="font-size:12px;color:#666;margin-bottom:14px"><strong>Selecciona las aplicaciones que usarías simultáneamente</strong> para ver cómo el Ryzen 9 5900X distribuye la carga entre sus 12 núcleos</p>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-bottom:20px" id="appSelector">
+    <div class="gpu-check active" style="cursor:not-allowed;opacity:0.7;pointer-events:none;background:#1c1c1c;color:#ff007f;border-color:#ff007f">🔒 Sistema (10%)</div>
+  </div>
+
+  <div style="background:#f9f9f9;border:1px solid #e0e0e0;border-radius:8px;padding:16px">
+    <div style="font-size:11px;font-weight:bold;color:#ff007f;margin-bottom:8px;letter-spacing:1px">USO DE CPU</div>
+    <div style="background:#e0e0e0;height:30px;border-radius:6px;overflow:hidden;margin-bottom:8px">
+      <div id="cpuBar" style="height:100%;background:linear-gradient(90deg,#60d156,#f0c847);width:0%;transition:width .4s ease;display:flex;align-items:center;justify-content:center">
+        <span id="cpuPercent" style="font-size:11px;font-weight:bold;color:#1c1c1c">0%</span>
+      </div>
+    </div>
+    <div style="font-size:10px;color:#666">Núcleos disponibles: <span id="coresAvail" style="color:#ff007f;font-weight:bold">12/12</span></div>
+  </div>
+</div>
+
+
+
+
+</div>
+
+<script>
+const apps={Sistema:10,Discord:8,Chrome:15,'Navegación':12,Gaming:35,Streaming:45,'Video Editing':50,Coding:20,'3D Rendering':60};
+const selectedApps=new Set(['Sistema']);
+function initApps(){let html='<div class="gpu-check active" style="cursor:not-allowed;opacity:0.7;pointer-events:none;background:#1c1c1c;color:#ff007f;border-color:#ff007f">🔒 Sistema (10%)</div>';Object.keys(apps).filter(a=>a!=='Sistema').forEach(app=>{html+=`<div class="gpu-check" onclick="toggleApp(this,'${app}')" style="cursor:pointer">${app}</div>`});document.getElementById('appSelector').innerHTML=html;updateCPUUsage()}
+function toggleApp(el,app){if(selectedApps.has(app)){selectedApps.delete(app);el.classList.remove('active')}else{selectedApps.add(app);el.classList.add('active')}updateCPUUsage()}
+function updateCPUUsage(){let total=0;selectedApps.forEach(app=>{total+=apps[app]});const usage=Math.min(100,total);const cores=Math.ceil(usage/8);document.getElementById('cpuBar').style.width=usage+'%';document.getElementById('cpuPercent').innerText=usage+'%';document.getElementById('coresAvail').innerText=Math.max(0,12-cores)+'/12'}
+function switchGPU(b){document.querySelectorAll('.gpu-tab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.gpu-content').forEach(c=>c.classList.remove('active'));event.target.classList.add('active');document.getElementById(b).classList.add('active')}
+document.addEventListener('DOMContentLoaded',initApps)
+</script>
+</body>
+</html>
