@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PALIT GTX 1660 TI DUAL - Quantum Hardstore</title>
+    <style>
+        :root { --pink: #ff007f; --dark: #1c1c1c; --gray: #666; --light: #ccc; --nvidia-green: #76b900; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Verdana, sans-serif; background: #f5f5f5; }
+        .container { max-width: 860px; margin: 0 auto; padding: 24px 16px; }
+
+        .header { text-align: center; padding: 28px 10px 22px; border-bottom: 2px solid var(--nvidia-green); animation: fadeIn 0.8s; }
+        .header-brand, .header-manufacturer { font-size: 11px; letter-spacing: 6px; color: var(--nvidia-green); text-transform: uppercase; margin-bottom: 8px; }
+        .header-title { font-size: 32px; font-weight: bold; color: #111; letter-spacing: 2px; }
+        .header-subtitle { font-size: 11px; color: #999; margin-top: 10px; letter-spacing: 1px; }
+
+        .badge-row { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin: 14px 0; }
+        .badge { padding: 5px 12px; border: 1px solid var(--nvidia-green); border-radius: 20px; font-size: 10px; font-weight: bold; color: var(--nvidia-green); background: #f0f9e0; text-transform: uppercase; letter-spacing: 2px; }
+
+        .highlight-central { text-align: center; margin: 22px 0 10px; }
+        .highlight-box { display: inline-block; padding: 14px 28px; border: 2px solid var(--nvidia-green); border-radius: 8px; background: #fff; transition: all 0.3s; }
+        .highlight-box:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(118,185,0,0.25); }
+        .highlight-label { font-size: 10px; letter-spacing: 5px; color: var(--nvidia-green); text-transform: uppercase; }
+        .highlight-value { font-size: 38px; font-weight: bold; color: #111; margin: 4px 0 2px; }
+        .highlight-desc { font-size: 11px; color: #aaa; letter-spacing: 2px; }
+
+        .cards-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin: 10px 0; }
+        .card { background: #fff; border: 1px solid #e0e0e0; border-top: 3px solid var(--nvidia-green); border-radius: 10px; padding: 16px; text-align: center; transition: all 0.3s; }
+        .card:hover { transform: translateY(-3px); box-shadow: 0 5px 18px rgba(0,0,0,0.08); }
+        .card-label { font-size: 10px; letter-spacing: 4px; color: var(--nvidia-green); text-transform: uppercase; }
+        .card-value { font-size: 26px; font-weight: bold; color: #111; margin: 5px 0 2px; }
+        .card-desc { font-size: 11px; color: #999; }
+
+        .dark-box { background: var(--dark); border-radius: 10px; padding: 22px 16px; margin: 16px 0; border-top: 3px solid var(--nvidia-green); }
+        .dark-title { font-size: 15px; font-weight: bold; letter-spacing: 4px; color: var(--nvidia-green); text-align: center; margin-bottom: 4px; }
+        .dark-sub { font-size: 10px; color: #aaa; text-align: center; margin-bottom: 18px; letter-spacing: 1px; }
+
+        .compat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        .compat-section { background: #252525; border-radius: 8px; overflow: hidden; border: 1px solid #2e2e2e; }
+        .compat-section-title { font-size: 10px; font-weight: bold; color: var(--nvidia-green); letter-spacing: 3px; text-transform: uppercase; padding: 9px 14px; background: #1e1e1e; border-bottom: 1px solid #2e2e2e; }
+        .compat-options { display: flex; flex-wrap: wrap; gap: 8px; padding: 12px 14px; }
+        .compat-btn { background: var(--dark); border: 1px solid #333; border-radius: 8px; padding: 8px 12px; cursor: pointer; transition: all 0.2s; text-align: center; font-size: 9px; font-weight: bold; color: var(--light); }
+        .compat-btn:hover { border-color: var(--nvidia-green); background: #222; }
+        .compat-btn.ok { border-color: var(--nvidia-green); background: #1a2a0a; box-shadow: 0 0 10px rgba(118,185,0,0.2); color: var(--nvidia-green); }
+
+        .compat-result { background: #161616; border-radius: 10px; padding: 16px; margin-top: 14px; border: 1px solid #333; grid-column: 1/-1; }
+        .compat-result-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+        .compat-result-row:last-child { margin-bottom: 0; }
+        .compat-result-icon { font-size: 20px; width: 28px; text-align: center; }
+        .compat-result-info { flex: 1; }
+        .compat-result-title { font-size: 11px; font-weight: bold; color: var(--light); margin-bottom: 2px; }
+        .compat-result-detail { font-size: 9px; color: #666; }
+        .compat-status { font-size: 10px; font-weight: bold; padding: 3px 10px; border-radius: 20px; white-space: nowrap; }
+        .compat-status.ok { background: #0a2016; color: #1D9E75; border: 1px solid #1D9E75; }
+        .compat-status.neutral { background: var(--dark); color: #666; border: 1px solid #333; }
+
+        .perf-chart { background: #252525; border-radius: 10px; padding: 16px; margin: 14px 0; border: 1px solid #2e2e2e; }
+        .perf-title { font-size: 12px; font-weight: bold; color: var(--light); margin-bottom: 12px; }
+        .perf-bar { margin-bottom: 10px; }
+        .perf-label { font-size: 9px; color: #aaa; margin-bottom: 4px; display: flex; justify-content: space-between; }
+        .perf-bar-bg { background: #1a1a1a; border-radius: 4px; height: 20px; overflow: hidden; }
+        .perf-bar-fill { background: linear-gradient(90deg, var(--nvidia-green), #a8d500); height: 100%; border-radius: 4px; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; color: #fff; font-size: 8px; font-weight: bold; }
+
+        .outlet-box, .location-box { margin: 16px 0; padding: 22px 18px; background: var(--dark); border-radius: 10px; border-top: 3px solid var(--nvidia-green); }
+        .outlet-title, .location-title { font-size: 15px; font-weight: bold; letter-spacing: 4px; color: var(--nvidia-green); text-align: center; margin-bottom: 8px; }
+        .outlet-desc { font-size: 12px; color: var(--light); text-align: center; margin-bottom: 18px; }
+        .outlet-benefits { display: flex; gap: 12px; }
+        .ob { flex: 1; background: var(--nvidia-green); border: 1px solid var(--nvidia-green); border-radius: 10px; padding: 22px 10px; text-align: center; transition: all 0.3s; }
+        .ob:nth-child(2) { background: #2a2a2a; }
+        .ob:hover { transform: scale(1.03); filter: brightness(1.1); }
+        .ob-icon { font-size: 32px; margin-bottom: 8px; }
+        .ob-val { font-size: 28px; font-weight: bold; color: #fff; line-height: 1; }
+        .ob-lbl { font-size: 11px; color: rgba(255,255,255,0.8); letter-spacing: 2px; margin-top: 5px; }
+
+        .location-content { background: #2a2a2a; border: 1px solid var(--nvidia-green); border-radius: 10px; padding: 18px 14px; text-align: center; }
+        .location-icon { font-size: 30px; margin-bottom: 7px; }
+        .location-status { font-size: 16px; font-weight: bold; color: var(--nvidia-green); letter-spacing: 2px; }
+        .location-desc { font-size: 11px; color: var(--light); margin-top: 8px; line-height: 1.7; }
+        .note { margin-top: 18px; padding: 10px 14px; border-left: 3px solid #d3d3d3; font-size: 10px; color: #999; line-height: 1.8; }
+
+        @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+        @media(max-width:600px) { .header-title{font-size:24px;} .cards-row, .compat-grid, .outlet-benefits{grid-template-columns:1fr;} }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="header-brand">⚡ Quantum Hardstore ⚡</div>
+        <div class="header-manufacturer">NVIDIA® GEFORCE™ Graphics</div>
+        <div class="header-title">GTX 1660 TI DUAL</div>
+        <div class="header-subtitle">By PALIT &nbsp;/&nbsp; 6GB GDDR6 &nbsp;/&nbsp; PCIe 3.0 &nbsp;/&nbsp; 1770 MHz Boost &nbsp;/&nbsp; 120W TDP</div>
+    </div>
+
+    <div class="badge-row">
+        <span class="badge">TURING ARCHITECTURE</span>
+        <span class="badge">6GB GDDR6 VRAM</span>
+        <span class="badge">PCIe 3.0</span>
+        <span class="badge">1536 CUDA Cores</span>
+        <span class="badge">120W TDP</span>
+        <span class="badge">DUAL FAN DESIGN</span>
+        <span class="badge">HDMI 2.0 + DP</span>
+        <span class="badge">1 Año de Garantía</span>
+    </div>
+
+    <div class="highlight-central">
+        <div class="highlight-box">
+            <div class="highlight-label">Rendimiento</div>
+            <div class="highlight-value">1080p Gaming</div>
+            <div class="highlight-desc">Excelente en Full HD • Muy bueno en 1440p • 4K moderado</div>
+        </div>
+    </div>
+
+    <div class="cards-row">
+        <div class="card"><div class="card-label">Memoria</div><div class="card-value">6GB</div><div class="card-desc">GDDR6 a 12 Gbps</div></div>
+        <div class="card"><div class="card-label">Boost Clock</div><div class="card-value">1770 MHz</div><div class="card-desc">Rendimiento estable</div></div>
+        <div class="card"><div class="card-label">Consumo</div><div class="card-value">120W</div><div class="card-desc">Ultra eficiente</div></div>
+    </div>
+
+    <div class="dark-box">
+        <div class="dark-title">📊 ESPECIFICACIONES TÉCNICAS</div>
+        <div class="dark-sub">Información oficial PALIT & NVIDIA</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px;">
+            <div>
+                <div style="background:#252525;padding:12px;border-radius:8px;margin-bottom:10px;">
+                    <div style="font-size:9px;color:#aaa;text-transform:uppercase;letter-spacing:2px;margin-bottom:6px;">GPU</div>
+                    <div style="font-size:13px;font-weight:bold;color:#fff;">NVIDIA GeForce GTX 1660 Ti</div>
+                    <div style="font-size:9px;color:#999;margin-top:4px;">Turing TU116</div>
+                </div>
+                <div style="background:#252525;padding:12px;border-radius:8px;margin-bottom:10px;">
+                    <div style="font-size:9px;color:#aaa;text-transform:uppercase;letter-spacing:2px;margin-bottom:6px;">CUDA Cores</div>
+                    <div style="font-size:13px;font-weight:bold;color:#fff;">1536</div>
+                </div>
+                <div style="background:#252525;padding:12px;border-radius:8px;">
+                    <div style="font-size:9px;color:#aaa;text-transform:uppercase;letter-spacing:2px;margin-bottom:6px;">Bus de Datos</div>
+                    <div style="font-size:13px;font-weight:bold;color:#fff;">192-bit</div>
+                </div>
+            </div>
+            <div>
+                <div style="background:#252525;padding:12px;border-radius:8px;margin-bottom:10px;">
+                    <div style="font-size:9px;color:#aaa;text-transform:uppercase;letter-spacing:2px;margin-bottom:6px;">Memoria</div>
+                    <div style="font-size:13px;font-weight:bold;color:#fff;">6GB GDDR6</div>
+                    <div style="font-size:9px;color:#999;margin-top:4px;">12 Gbps • 288 GB/s</div>
+                </div>
+                <div style="background:#252525;padding:12px;border-radius:8px;margin-bottom:10px;">
+                    <div style="font-size:9px;color:#aaa;text-transform:uppercase;letter-spacing:2px;margin-bottom:6px;">Boost Clock</div>
+                    <div style="font-size:13px;font-weight:bold;color:#fff;">Hasta 1770 MHz</div>
+                </div>
+                <div style="background:#252525;padding:12px;border-radius:8px;">
+                    <div style="font-size:9px;color:#aaa;text-transform:uppercase;letter-spacing:2px;margin-bottom:6px;">TDP</div>
+                    <div style="font-size:13px;font-weight:bold;color:#fff;">120W</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="dark-box">
+        <div class="dark-title">🎮 RENDIMIENTO ESTIMADO</div>
+        <div class="dark-sub">Basado en benchmarks oficiales - Rivales GTX 1070</div>
+        <div class="perf-chart">
+            <div class="perf-bar">
+                <div class="perf-label"><span>1080p Ultra (Fortnite)</span><span>~120 FPS</span></div>
+                <div class="perf-bar-bg"><div class="perf-bar-fill" style="width:98%;"></div></div>
+            </div>
+            <div class="perf-bar">
+                <div class="perf-label"><span>1440p Ultra (Valorant)</span><span>~100 FPS</span></div>
+                <div class="perf-bar-bg"><div class="perf-bar-fill" style="width:95%;"></div></div>
+            </div>
+            <div class="perf-bar">
+                <div class="perf-label"><span>1080p Ray Tracing</span><span>~70 FPS</span></div>
+                <div class="perf-bar-bg"><div class="perf-bar-fill" style="width:70%;"></div></div>
+            </div>
+            <div class="perf-bar">
+                <div class="perf-label"><span>2160p Ultra (Cyberpunk 2077)</span><span>~40 FPS</span></div>
+                <div class="perf-bar-bg"><div class="perf-bar-fill" style="width:40%;"></div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="dark-box">
+        <div class="dark-title">🔌 CONECTIVIDAD & COMPATIBILIDAD</div>
+        <div class="dark-sub">Puertos y requisitos del sistema</div>
+        <div class="compat-grid">
+            <div class="compat-section">
+                <div class="compat-section-title">🔗 PUERTOS DE SALIDA</div>
+                <div class="compat-options" style="flex-direction:column;gap:10px;padding:14px;">
+                    <div style="background:#1a1a1a;padding:10px;border-radius:6px;border-left:3px solid var(--nvidia-green);">
+                        <div style="font-size:10px;font-weight:bold;color:var(--light);margin-bottom:3px;">2× HDMI 2.0</div>
+                        <div style="font-size:9px;color:#999;">Resolución máxima: 4K@30Hz</div>
+                    </div>
+                    <div style="background:#1a1a1a;padding:10px;border-radius:6px;border-left:3px solid var(--nvidia-green);">
+                        <div style="font-size:10px;font-weight:bold;color:var(--light);margin-bottom:3px;">2× DisplayPort 1.4</div>
+                        <div style="font-size:9px;color:#999;">Resolución máxima: 7680×4320@60Hz</div>
+                    </div>
+                </div>
+            </div>
+            <div class="compat-section">
+                <div class="compat-section-title">⚡ REQUISITOS MÍNIMOS</div>
+                <div class="compat-options" style="flex-direction:column;gap:10px;padding:14px;">
+                    <div style="background:#1a1a1a;padding:10px;border-radius:6px;border-left:3px solid var(--nvidia-green);">
+                        <div style="font-size:10px;font-weight:bold;color:var(--light);margin-bottom:3px;">Fuente de Poder</div>
+                        <div style="font-size:9px;color:#999;">Mínimo 500W recomendado • 550W+ ideal</div>
+                    </div>
+                    <div style="background:#1a1a1a;padding:10px;border-radius:6px;border-left:3px solid var(--nvidia-green);">
+                        <div style="font-size:10px;font-weight:bold;color:var(--light);margin-bottom:3px;">PCIe Slot</div>
+                        <div style="font-size:9px;color:#999;">PCIe 3.0 x8 mínimo (funciona en 2.0)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="dark-box">
+        <div class="dark-title">🧊 COMPATIBILIDAD CON CPUS</div>
+        <div class="dark-sub">Selecciona tu procesador para verificar compatibilidad</div>
+        <div class="compat-grid">
+            <div class="compat-section">
+                <div class="compat-section-title">AMD RYZEN</div>
+                <div class="compat-options">
+                    <div class="compat-btn" onclick="selectCPU('amd',this,'Ryzen 5 2600 — Compatible, muy bueno')"><div style="font-size:9px;">Ryzen 5 2600</div></div>
+                    <div class="compat-btn" onclick="selectCPU('amd',this,'Ryzen 5 3600 — Compatible ideal')"><div style="font-size:9px;">Ryzen 5 3600</div></div>
+                    <div class="compat-btn" onclick="selectCPU('amd',this,'Ryzen 7 3700X — Compatible excelente')"><div style="font-size:9px;">Ryzen 7 3700X</div></div>
+                    <div class="compat-btn" onclick="selectCPU('amd',this,'Ryzen 5 5500 — Compatible perfecto')"><div style="font-size:9px;">Ryzen 5 5500</div></div>
+                </div>
+            </div>
+            <div class="compat-section">
+                <div class="compat-section-title">INTEL CORE</div>
+                <div class="compat-options">
+                    <div class="compat-btn" onclick="selectCPU('intel',this,'Core i5-9400 — Compatible muy bueno')"><div style="font-size:9px;">Core i5-9400</div></div>
+                    <div class="compat-btn" onclick="selectCPU('intel',this,'Core i7-10700 — Compatible ideal')"><div style="font-size:9px;">Core i7-10700</div></div>
+                    <div class="compat-btn" onclick="selectCPU('intel',this,'Core i5-10400 — Compatible excelente')"><div style="font-size:9px;">Core i5-10400</div></div>
+                    <div class="compat-btn" onclick="selectCPU('intel',this,'Core i7-12700 — Compatible perfecto')"><div style="font-size:9px;">Core i7-12700</div></div>
+                </div>
+            </div>
+            <div class="compat-result">
+                <div class="compat-result-row"><div class="compat-result-icon">🧊</div><div class="compat-result-info"><div class="compat-result-title">Procesador</div><div class="compat-result-detail" id="cpu-detail">Selecciona un CPU para verificar</div></div><div class="compat-status neutral" id="cpu-status">–</div></div>
+                <div class="compat-result-row"><div class="compat-result-icon">⚡</div><div class="compat-result-info"><div class="compat-result-title">Cuello de Botella</div><div class="compat-result-detail" id="bottleneck-detail">Sin cuello de botella esperado</div></div><div class="compat-status neutral" id="bottleneck-status">–</div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="outlet-box">
+        <div class="outlet-title">📦 PRODUCTO OUTLET</div>
+        <div class="outlet-desc">Unidad de prueba o retorno en perfecto estado. Garantía oficial PALIT incluida.</div>
+        <div class="outlet-benefits">
+            <div class="ob"><div class="ob-icon">✓</div><div class="ob-val">OUTLET</div><div class="ob-lbl">PRECIO REDUCIDO</div></div>
+            <div class="ob"><div class="ob-icon">🛡️</div><div class="ob-val">1 AÑO</div><div class="ob-lbl">DE GARANTÍA</div></div>
+        </div>
+    </div>
+
+    <div class="location-box">
+        <div class="location-title">📦 DISPONIBLE EN DEPÓSITO</div>
+        <div class="location-content">
+            <div class="location-icon">🏢</div>
+            <div class="location-status">DISPONIBLE EN DEPÓSITO</div>
+            <div class="location-desc">Stock limitado. Coordina retiro o envío una vez abonado tu pedido.</div>
+        </div>
+        <div class="note">⚠️ Las imágenes son de referencia. Ante dudas sobre especificaciones consúltanos antes de comprar. Datos obtenidos de fuentes oficiales PALIT & NVIDIA.</div>
+    </div>
+</div>
+
+<script>
+const updateStatus = (id, text, color) => { document.getElementById(id).textContent = text; document.getElementById(id).className = `compat-status ${color}`; };
+const selectCPU = (brand, btn, detail) => { document.querySelectorAll('[onclick*="selectCPU"]').forEach(x => x.classList.remove('ok')); btn.classList.add('ok'); document.getElementById('cpu-detail').textContent = detail; updateStatus('cpu-status', '✓ Compatible', 'ok'); document.getElementById('bottleneck-detail').textContent = 'Pairing excelente - sin cuello de botella'; updateStatus('bottleneck-status', '✓ Óptimo', 'ok'); };
+window.addEventListener('load',()=>{const h=document.body.scrollHeight;window.parent.postMessage('iframeHeight:'+h,'*');});
+window.addEventListener('resize',()=>{const h=document.body.scrollHeight;window.parent.postMessage('iframeHeight:'+h,'*');});
+</script>
+</body>
+</html>
