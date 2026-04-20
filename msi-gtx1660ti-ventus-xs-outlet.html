@@ -1,0 +1,507 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MSI GTX 1660 TI VENTUS XS - Quantum Hardstore</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Verdana,Geneva,sans-serif;background:#f5f5f5}
+.container{max-width:860px;margin:0 auto;padding:24px 16px}
+.header{text-align:center;padding:28px 10px 22px;border-bottom:2px solid #ff007f;animation:fadeIn .8s ease-in}
+.header-brand{font-size:11px;letter-spacing:6px;color:#ff007f;text-transform:uppercase;margin-bottom:10px}
+.header-manufacturer{font-size:12px;letter-spacing:5px;color:#999;text-transform:uppercase;margin-bottom:6px}
+.header-title{font-size:36px;font-weight:bold;color:#1c1c1c;letter-spacing:2px;animation:slideDown 1s ease-out}
+.header-subtitle{font-size:12px;letter-spacing:3px;color:#999;margin-top:10px}
+.badges{display:flex;justify-content:center;gap:10px;margin:14px 0 6px;flex-wrap:wrap}
+.badge{padding:6px 14px;border:1px solid #ff007f;border-radius:20px;font-size:10px;font-weight:bold;letter-spacing:2px;color:#ff007f;background:#fff5f9;text-transform:uppercase}
+.hl{text-align:center;margin:24px 0 10px;animation:scaleIn 1s ease-out}
+.hl-box{display:inline-block;padding:16px 30px;border:2px solid #ff007f;border-radius:8px;background:#fff;transition:transform .3s,box-shadow .3s}
+.hl-box:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(255,0,127,.3)}
+.hl-label{font-size:10px;letter-spacing:5px;color:#ff007f;text-transform:uppercase}
+.hl-value{font-size:40px;font-weight:bold;color:#1c1c1c;margin:4px 0 2px}
+.hl-desc{font-size:11px;color:#aaa;letter-spacing:3px}
+.card{background:#fff;border:1px solid #e0e0e0;border-top:3px solid #ff007f;border-radius:10px;padding:18px;text-align:center;margin:10px 0;transition:all .3s;animation:fadeInUp .6s ease-out}
+.card:hover{transform:translateY(-3px);box-shadow:0 5px 20px rgba(0,0,0,.1)}
+.card-label{font-size:10px;letter-spacing:4px;color:#ff007f;text-transform:uppercase}
+.card-value{font-size:34px;font-weight:bold;color:#1c1c1c;margin:6px 0 2px}
+.card-desc{font-size:12px;color:#999}
+.engine{background:#1c1c1c;border-radius:10px;padding:20px;margin:12px 0}
+.engine-title{font-size:10px;letter-spacing:4px;color:#999;text-transform:uppercase;margin-bottom:14px}
+.clock-item{margin-bottom:14px}
+.clock-label{font-size:11px;font-weight:bold;color:#ff007f;text-transform:uppercase;letter-spacing:2px;margin-bottom:6px}
+.bar-bg{background:#2a2a2a;border-radius:6px;height:30px;overflow:hidden}
+.bar{height:30px;border-radius:6px;text-align:right;padding-right:12px;line-height:30px;font-size:14px;font-weight:bold;color:#fff;transition:width 1.5s ease-out}
+.bar-base{background:linear-gradient(90deg,#c0005e,#e0007a)}
+.bar-boost{background:linear-gradient(90deg,#ff007f,#ff4da6)}
+.cooling{background:#1c1c1c;border-radius:10px;padding:22px 20px;margin:12px 0;border-top:3px solid #ff007f}
+.cooling-title{font-size:20px;font-weight:bold;letter-spacing:5px;color:#ff007f;text-align:center;margin-bottom:6px}
+.cooling-sub{font-size:11px;color:#ccc;letter-spacing:3px;text-align:center;margin-bottom:18px}
+.cooling-features{display:flex;gap:10px;flex-wrap:wrap}
+.cf{flex:1;min-width:120px;background:#2a2a2a;border:1px solid #ff007f;border-radius:8px;padding:14px 10px;text-align:center;transition:all .3s}
+.cf:hover{background:#ff007f;transform:translateY(-3px)}
+.cf:hover .cf-name,.cf:hover .cf-label{color:#fff}
+.cf-icon{font-size:24px;margin-bottom:6px}
+.cf-name{font-size:11px;font-weight:bold;color:#ff007f;letter-spacing:1px;margin-bottom:4px;transition:color .3s}
+.cf-label{font-size:10px;color:#aaa;transition:color .3s}
+.section-title{margin:28px 0 14px;padding-bottom:8px;border-bottom:1px solid #e0e0e0}
+.section-title span{font-size:12px;font-weight:bold;letter-spacing:5px;color:#ff007f;text-transform:uppercase}
+.spec-table{background:#fff;border:1px solid #e0e0e0;border-radius:10px;overflow:hidden;margin:8px 0}
+.spec-table div{display:flex;justify-content:space-between;align-items:center;padding:9px 14px;border-bottom:1px solid #f0f0f0;gap:10px;transition:all .2s}
+.spec-table div:last-child{border-bottom:none}
+.spec-table div:hover{background:#fff5f9;border-left:3px solid #ff007f;padding-left:11px}
+.spec-table span{font-size:9px;color:#999;text-transform:uppercase;letter-spacing:2px;white-space:nowrap}
+.spec-table strong{font-size:13px;color:#1c1c1c;text-align:right}
+.conn-table{background:#fff;border:1px solid #e0e0e0;border-radius:10px;overflow:hidden;margin:8px 0}
+.conn-table div{display:flex;align-items:center;padding:12px 14px;border-bottom:1px solid #f0f0f0;gap:12px;transition:all .2s}
+.conn-table div:last-child{border-bottom:none}
+.conn-table div:hover{background:#f9f9f9;transform:translateX(4px)}
+.conn-chip{background:#1c1c1c;border-radius:6px;padding:4px 8px;font-size:9px;font-weight:bold;color:#ff007f;letter-spacing:1px;white-space:nowrap}
+.conn-info{flex:1}
+.conn-info b{font-size:14px;color:#1c1c1c;display:block}
+.conn-info small{font-size:10px;color:#999}
+.conn-count{font-size:20px;font-weight:bold;color:#ff007f}
+.dim-box{background:#fff;border:1px solid #e0e0e0;border-radius:10px;padding:16px;margin:8px 0;display:flex;justify-content:space-around;align-items:center}
+.dim-box .d{text-align:center}
+.dim-box .d b{font-size:22px;font-weight:bold;color:#1c1c1c;display:block}
+.dim-box .d small{font-size:10px;color:#aaa}
+.dim-box .sep{color:#d3d3d3;font-size:14px}
+.sw-box{background:#fff;border:1px solid #e0e0e0;border-radius:10px;padding:16px;margin:12px 0}
+.sw-title{font-size:10px;letter-spacing:5px;color:#ff007f;text-transform:uppercase;margin-bottom:8px}
+.sw-content{font-size:13px;color:#1c1c1c}
+.sw-note{font-size:11px;color:#999;margin-top:6px}
+.psu-box{background:#1c1c1c;border-radius:10px;padding:22px 20px;margin:12px 0;border-top:3px solid #ff007f}
+.psu-title{font-size:16px;font-weight:bold;letter-spacing:4px;color:#ff007f;text-align:center;margin-bottom:6px}
+.psu-sub{font-size:11px;color:#aaa;text-align:center;margin-bottom:20px;letter-spacing:1px}
+.psu-row{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.psu-lbl{font-size:11px;font-weight:bold;color:#ff007f;letter-spacing:2px;text-transform:uppercase;min-width:110px}
+.psu-range{flex:1;-webkit-appearance:none;appearance:none;height:6px;border-radius:3px;background:#2a2a2a;outline:none;border:1px solid #ff007f}
+.psu-range::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:#ff007f;cursor:pointer;box-shadow:0 0 8px rgba(255,0,127,.6)}
+.psu-range::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:#ff007f;cursor:pointer;border:none}
+.psu-out{font-size:18px;font-weight:bold;color:#fff;min-width:60px;text-align:right}
+.psu-cert-title{font-size:10px;font-weight:bold;letter-spacing:4px;color:#999;text-transform:uppercase;margin-bottom:10px}
+.psu-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:18px}
+.pcb{padding:10px 4px;border-radius:8px;border:1px solid #2a2a2a;background:#2a2a2a;font-size:11px;font-weight:bold;color:#888;cursor:pointer;text-align:center;transition:all .2s;letter-spacing:.5px}
+.pcb:hover{border-color:#ff007f;color:#ff007f}
+.a-sin{background:#3a1a1a!important;border-color:#E24B4A!important;color:#F09595!important}
+.a-bronze{background:#2a1f10!important;border-color:#A0522D!important;color:#cd853f!important}
+.a-silver{background:#1e1e22!important;border-color:#A0A0A0!important;color:#d0d0d0!important}
+.a-gold{background:#2a2210!important;border-color:#D4A017!important;color:#ffd700!important}
+.a-plat{background:linear-gradient(135deg,#1a1a2e,#0f3460)!important;border-color:#00d4ff!important;color:#00d4ff!important;box-shadow:0 0 12px rgba(0,212,255,.5)!important;animation:platGlow 1.8s ease-in-out infinite!important}
+@keyframes platGlow{0%,100%{box-shadow:0 0 8px rgba(0,212,255,.4)}50%{box-shadow:0 0 20px rgba(0,212,255,.9)}}
+.psu-result{background:#2a2a2a;border-radius:10px;border:1px solid #444;padding:18px 16px;text-align:center;transition:all .4s}
+.psu-icon{font-size:32px;margin-bottom:8px}
+.psu-status{font-size:15px;font-weight:bold;color:#fff;margin-bottom:8px;letter-spacing:1px}
+.psu-desc{font-size:12px;color:#ccc;line-height:1.7;text-align:left}
+.psu-desc strong{color:#ffcc00}
+.psu-danger{background:#2d1010!important;border-color:#E24B4A!important}.psu-danger .psu-status{color:#F09595}
+.psu-warn{background:#2d1f08!important;border-color:#BA7517!important}.psu-warn .psu-status{color:#FAC775}
+.psu-ok{background:#0d2010!important;border-color:#639922!important}.psu-ok .psu-status{color:#C0DD97}
+.psu-great{background:#082018!important;border-color:#1D9E75!important}.psu-great .psu-status{color:#5DCAA5}
+.cert-warn{margin-top:10px;padding:8px 12px;border-radius:8px;background:#2a1a08;border:1px solid #BA7517;font-size:11px;color:#FAC775;line-height:1.6;text-align:left}
+.cert-warn strong{color:#ffdd88}
+.tool-tabs{margin:30px 0 0;display:flex;gap:10px;border-bottom:2px solid #e0e0e0}
+.tool-tab{flex:1;padding:15px 10px;background:#fff;border:1px solid #e0e0e0;border-bottom:none;border-radius:8px 8px 0 0;text-align:center;font-size:12px;font-weight:bold;letter-spacing:2px;color:#999;cursor:pointer;transition:all .3s}
+.tool-tab:hover{background:#f9f9f9;color:#666}
+.tool-tab.active{background:#ff007f;color:#fff;border-color:#ff007f}
+.tool-content{display:none;background:#fff;border:1px solid #e0e0e0;border-radius:0 0 10px 10px;padding:25px 20px}
+.tool-content.active{display:block;animation:fadeInUp .5s ease-out}
+.t3-header{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.t3-pill{padding:5px 16px;border-radius:20px;font-size:11px;font-weight:bold;letter-spacing:3px;text-transform:uppercase;white-space:nowrap}
+.pill-amd{background:#3a1010;color:#ff6060;border:1px solid #ff4444}
+.pill-intel{background:#0d1f3a;color:#60b0ff;border:1px solid #4488ff}
+.t3-sub{font-size:11px;color:#aaa;letter-spacing:1px}
+.t3-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px}
+.t3-card{background:#1c1c1c;border:1px solid #333;border-radius:10px;padding:12px 8px 10px;display:flex;flex-direction:column;align-items:center;text-align:center;transition:transform .3s,box-shadow .3s;min-width:0}
+.t3-card:hover{transform:translateY(-4px)}
+.gc{border-top:3px solid #D4A017}.gc:hover{box-shadow:0 8px 24px rgba(212,160,23,.3)}
+.sc{border-top:3px solid #A0A0A0}.sc:hover{box-shadow:0 8px 24px rgba(160,160,160,.3)}
+.bc{border-top:3px solid #A0522D}.bc:hover{box-shadow:0 8px 24px rgba(160,82,45,.3)}
+.t3-medal{font-size:22px;margin-bottom:3px}
+.t3-mlabel{font-size:8px;font-weight:bold;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+.gl{color:#D4A017}.sl{color:#A0A0A0}.bl{color:#A0522D}
+.t3-name{font-size:11px;font-weight:bold;color:#fff;margin-bottom:6px;line-height:1.3;word-break:break-word}
+.t3-tag{display:inline-block;font-size:8px;font-weight:bold;padding:2px 7px;border-radius:20px;margin-bottom:8px;letter-spacing:.5px;text-transform:uppercase}
+.tag-ideal{background:#0d2818;color:#5DCAA5;border:1px solid #1D9E75}
+.tag-great{background:#1a2010;color:#97C459;border:1px solid #639922}
+.tag-good{background:#2a1f08;color:#FAC775;border:1px solid #BA7517}
+.t3-specs{width:100%;display:flex;flex-direction:column;gap:4px;margin-bottom:8px}
+.t3-row{display:flex;justify-content:space-between;align-items:center;padding:3px 6px;background:#2a2a2a;border-radius:4px;gap:4px}
+.t3-k{font-size:9px;color:#888;white-space:nowrap}
+.t3-v{font-size:9px;font-weight:bold;color:#ff007f;white-space:nowrap}
+.calc-label{font-size:11px;font-weight:bold;color:#1c1c1c;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
+.calc-sel{width:100%;padding:15px 20px;border:2px solid #ff007f;border-radius:10px;font-size:14px;font-family:Verdana,Geneva,sans-serif;color:#fff;background:linear-gradient(135deg,#1c1c1c,#2a2a2a);cursor:pointer;transition:all .4s;box-shadow:0 4px 15px rgba(255,0,127,.2);font-weight:bold;letter-spacing:1px}
+.calc-sel:hover{transform:translateY(-2px);box-shadow:0 6px 25px rgba(255,0,127,.4);border-color:#ff4da6}
+.calc-sel:focus{outline:none;box-shadow:0 0 0 3px rgba(255,0,127,.3)}
+.calc-sel option{background:#1c1c1c;color:#fff}
+.calc-sel optgroup{background:#2a2a2a;color:#ff007f;font-weight:bold}
+.cmp-vs{margin-top:20px;display:none}
+.vs-container{display:flex!important;flex-direction:row!important;gap:8px;margin-bottom:14px;align-items:stretch;width:100%}
+.vs-card{flex:1;min-width:0;background:#1c1c1c;border:1px solid #333;border-radius:10px;padding:12px 10px;opacity:0;display:flex;flex-direction:column}
+.vs-card.aL{animation:slideInLeft .5s cubic-bezier(.68,-.55,.265,1.55) forwards}
+.vs-card.aR{animation:slideInRight .5s cubic-bezier(.68,-.55,.265,1.55) forwards;animation-delay:.15s}
+.vs-card-left{border-top:3px solid #ff007f}
+.vs-card-right{border-top:3px solid #00d4ff}
+.vs-hdr{font-size:7px;letter-spacing:2px;color:#888;text-transform:uppercase;margin-bottom:3px;text-align:center}
+.vs-title{font-size:10px;font-weight:bold;color:#fff;text-align:center;margin-bottom:2px;line-height:1.3;word-break:break-word}
+.vs-sub{font-size:8px;color:#888;text-align:center;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}
+.vs-specs{display:flex;flex-direction:column;gap:3px;flex:1}
+.vs-row{display:flex;justify-content:space-between;align-items:center;padding:4px 6px;background:#2a2a2a;border-radius:4px;gap:4px}
+.vs-lbl{font-size:8px;color:#888;text-transform:uppercase;letter-spacing:.5px;white-space:nowrap}
+.vs-val{font-size:9px;font-weight:bold;color:#fff;display:flex;align-items:center;gap:2px;white-space:nowrap}
+.vs-val.win{color:#00ff88}.vs-val.lose{color:#ff4444}
+.arr{font-size:9px;font-weight:bold;animation:bounce 1s infinite}
+.arr-u{color:#00ff88}.arr-d{color:#ff4444}
+.vs-sep{flex:0 0 36px;display:flex!important;flex-direction:column!important;align-items:center;justify-content:center;padding:8px 0;opacity:0}
+.vs-sep.aS{animation:zoomIn .5s cubic-bezier(.68,-.55,.265,1.55) forwards;animation-delay:.3s}
+.vs-ico{font-size:16px;margin-bottom:3px;animation:pulse 2s infinite,rotate 4s infinite;filter:drop-shadow(0 0 6px rgba(255,0,127,.6))}
+.vs-txt{font-size:12px;font-weight:bold;background:linear-gradient(135deg,#ff007f,#00d4ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:2px}
+.vs-perf{margin-top:8px;padding-top:8px;border-top:1px solid #333}
+.perf-lbl{font-size:7px;letter-spacing:2px;color:#888;text-transform:uppercase;margin-bottom:4px;text-align:center}
+.perf-bar{background:#2a2a2a;border-radius:10px;height:16px;overflow:hidden}
+.perf-fill{height:100%;background:linear-gradient(90deg,#ff007f,#ff4da6);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:bold;color:#fff;transition:width 1s ease-out}
+.cmp-winner{background:#1c1c1c;border:1px solid #ff007f;border-radius:10px;padding:16px;text-align:center;margin-top:12px;opacity:0}
+.cmp-winner.aw{animation:slideInUp .5s cubic-bezier(.68,-.55,.265,1.55) forwards;animation-delay:.5s}
+.win-title{font-size:11px;letter-spacing:3px;background:linear-gradient(135deg,#ff007f,#ffd700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-transform:uppercase;margin-bottom:10px;font-weight:bold}
+.win-text{font-size:13px;color:#ccc;line-height:1.7}
+.win-text strong{color:#ff007f}
+.outlet-box,.location-box{margin:12px 0;padding:24px 20px;background:#1c1c1c;border-radius:10px;border-top:3px solid #ff007f}
+.outlet-title,.location-title{font-size:16px;font-weight:bold;letter-spacing:4px;color:#ff007f;text-align:center;margin-bottom:10px}
+.location-title{font-size:13px;text-transform:uppercase;margin-bottom:14px}
+.outlet-desc{font-size:13px;color:#ccc;text-align:center;margin-bottom:20px}
+.outlet-benefits{display:flex;gap:12px}
+.ob{flex:1;background:#2a2a2a;border:1px solid #ff007f;border-radius:10px;padding:16px 10px;text-align:center;transition:all .3s}
+.ob:hover{background:#ff007f;transform:scale(1.05)}
+.ob:hover .ob-val{color:#fff}
+.ob-icon{font-size:28px;margin-bottom:6px}
+.ob-val{font-size:22px;font-weight:bold;color:#ff007f;line-height:1;transition:color .3s}
+.ob-lbl{font-size:11px;color:#ccc;letter-spacing:2px;margin-top:4px}
+.loc-content{background:#2a2a2a;border:1px solid #ff007f;border-radius:10px;padding:20px 16px;text-align:center}
+.loc-icon{font-size:32px;margin-bottom:8px}
+.loc-status{font-size:18px;font-weight:bold;color:#ff007f;line-height:1.2;letter-spacing:2px}
+.loc-desc{font-size:12px;color:#ccc;margin-top:10px;line-height:1.7}
+.note{margin-top:20px;padding:12px 16px;border-left:3px solid #d3d3d3;font-size:11px;color:#999;line-height:1.8}
+.back-top{position:fixed;bottom:22px;right:22px;width:44px;height:44px;border-radius:50%;background:#ff007f;color:#fff;font-size:20px;border:none;cursor:pointer;box-shadow:0 4px 14px rgba(255,0,127,.5);display:none;align-items:center;justify-content:center;transition:transform .2s,box-shadow .2s;z-index:999}
+.back-top:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(255,0,127,.7)}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideDown{from{transform:translateY(-20px);opacity:0}to{transform:translateY(0);opacity:1}}
+@keyframes scaleIn{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes fadeInUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+@keyframes slideInLeft{from{opacity:0;transform:translateX(-30px)}to{opacity:1;transform:translateX(0)}}
+@keyframes slideInRight{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:translateX(0)}}
+@keyframes zoomIn{from{opacity:0;transform:scale(.8)}to{opacity:1;transform:scale(1)}}
+@keyframes slideInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+@keyframes rotate{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+@media(max-width:768px){.header-title{font-size:26px}.hl-value{font-size:32px}.card-value{font-size:28px}.outlet-benefits{flex-direction:column}.tool-tabs{flex-wrap:wrap}.tool-tab{font-size:10px;padding:10px 6px;letter-spacing:1px}.cooling-features{flex-direction:column}.badges{gap:8px}.psu-grid{grid-template-columns:repeat(3,1fr)}.psu-lbl{min-width:80px;font-size:10px}}
+@media(max-width:480px){.header-title{font-size:20px;letter-spacing:1px}.header-subtitle{font-size:10px;letter-spacing:1px}.t3-card{padding:8px 5px}.t3-name{font-size:9px}.t3-medal{font-size:18px}.vs-title{font-size:9px}.vs-val{font-size:8px}.vs-lbl{font-size:7px}.vs-sep{flex:0 0 28px}.vs-txt{font-size:10px}.vs-ico{font-size:13px}}
+</style>
+</head>
+<body>
+<button class="back-top" id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Volver arriba">↑</button>
+<div class="container">
+
+<div class="header">
+  <div class="header-brand">✦ Quantum Hardstore ✦</div>
+  <div class="header-manufacturer">MSI® NVIDIA</div>
+  <div class="header-title">GTX 1660 TI VENTUS XS</div>
+  <div class="header-subtitle">6GB GDDR6 &nbsp;/&nbsp; PCI-E 3.0 &nbsp;/&nbsp; DUAL FAN &nbsp;/&nbsp; OUTLET</div>
+</div>
+
+<div class="badges">
+  <span class="badge">TURING</span><span class="badge">DUAL FAN</span><span class="badge">1080P / 1440P</span>
+  <span class="badge">VENTUS</span><span class="badge">COMPACT</span><span class="badge">120W TDP</span>
+</div>
+
+<div class="hl"><div class="hl-box">
+  <div class="hl-label">Boost Clock</div>
+  <div class="hl-value">1770 MHz</div>
+  <div class="hl-desc">Arquitectura Turing — TU116</div>
+</div></div>
+
+<div class="card"><div class="card-label">Memoria de Video</div><div class="card-value">6GB</div><div class="card-desc">GDDR6 — 12 Gbps</div></div>
+<div class="card"><div class="card-label">CUDA Cores</div><div class="card-value">1536</div><div class="card-desc">24 SM — Arquitectura Turing</div></div>
+<div class="card"><div class="card-label">Bus de Memoria</div><div class="card-value">192-bit</div><div class="card-desc">Ancho de Banda: 288 GB/s</div></div>
+
+<div class="engine">
+  <div class="engine-title">⚡ Velocidad del Motor</div>
+  <div class="clock-item"><div class="clock-label">● Base Clock</div><div class="bar-bg"><div class="bar bar-base" id="bc" style="width:0%">1350 MHz</div></div></div>
+  <div class="clock-item"><div class="clock-label">● Boost Clock</div><div class="bar-bg"><div class="bar bar-boost" id="boc" style="width:0%">1770 MHz</div></div></div>
+</div>
+
+<div class="cooling">
+  <div class="cooling-title">✦ VENTUS DUAL FAN ✦</div>
+  <div class="cooling-sub">Sistema de refrigeración MSI Ventus — Dual Fan compacto con disipación eficiente</div>
+  <div class="cooling-features">
+    <div class="cf"><div class="cf-icon">🌀</div><div class="cf-name">DUAL FAN</div><div class="cf-label">Enfriamiento balanceado y compacto</div></div>
+    <div class="cf"><div class="cf-icon">🔇</div><div class="cf-name">QUIET MODE</div><div class="cf-label">Operación silenciosa a baja carga</div></div>
+    <div class="cf"><div class="cf-icon">🔥</div><div class="cf-name">HEATSINK</div><div class="cf-label">Disipador de aluminio optimizado</div></div>
+    <div class="cf"><div class="cf-icon">💾</div><div class="cf-name">ZERO FROZR</div><div class="cf-label">Control inteligente de ventiladores</div></div>
+  </div>
+</div>
+
+<div class="section-title"><span>▎Especificaciones</span></div>
+<div class="spec-table">
+  <div><span>Motor Gráfico</span><strong>NVIDIA GeForce GTX 1660 Ti</strong></div>
+  <div><span>Arquitectura</span><strong>Turing (TU116) — TSMC 12nm</strong></div>
+  <div><span>CUDA Cores / SM</span><strong>1536 CUDA / 24 SM</strong></div>
+  <div><span>Bus</span><strong>PCIe Gen 3 x16</strong></div>
+  <div><span>API</span><strong>OpenGL 4.6 / DX12</strong></div>
+  <div><span>Memoria</span><strong>12 Gbps — 288 GB/s</strong></div>
+  <div><span>Resolución Máx.</span><strong>7680×4320</strong></div>
+  <div><span>Pantallas</span><strong>4 simultáneas</strong></div>
+  <div><span>NVENC / NVDEC</span><strong>Sí — Encoding/Decoding</strong></div>
+  <div><span>Soporte VR</span><strong>Sí — Compatible</strong></div>
+  <div><span>TDP</span><strong>120 W</strong></div>
+  <div><span>HDCP</span><strong>Sí — HDCP 2.3</strong></div>
+</div>
+
+<div class="section-title"><span>▎Conectividad</span></div>
+<div class="conn-table">
+  <div><span class="conn-chip">HDMI</span><div class="conn-info"><b>HDMI 2.0b Estándar</b><small>4K@60Hz</small></div><span class="conn-count">×1</span></div>
+  <div><span class="conn-chip">DP</span><div class="conn-info"><b>DisplayPort 1.4</b><small>4K@60Hz</small></div><span class="conn-count">×2</span></div>
+</div>
+
+<div class="dim-box">
+  <div class="d"><b>224</b><small>mm — Largo</small></div><span class="sep">×</span>
+  <div class="d"><b>107</b><small>mm — Alto</small></div><span class="sep">×</span>
+  <div class="d"><b>38</b><small>mm — Ancho (1.9 slots)</small></div>
+</div>
+
+<div class="psu-box">
+  <div class="psu-title">⚡ Verificador de Fuente de Poder</div>
+  <div class="psu-sub">Conectores: 1 × 6-pin &nbsp;|&nbsp; TDP GPU: 120W</div>
+  <div class="psu-row">
+    <span class="psu-lbl">Watts de tu fuente</span>
+    <input type="range" class="psu-range" min="350" max="1200" step="50" value="500" id="psu-slider">
+    <span class="psu-out" id="psu-out">500 W</span>
+  </div>
+  <div class="psu-cert-title">Certificación 80 Plus</div>
+  <div class="psu-grid">
+    <div class="pcb a-sin" id="cert-sin" onclick="setCert('sin')">Sin cert.</div>
+    <div class="pcb" id="cert-bronze" onclick="setCert('bronze')">🥉 Bronze</div>
+    <div class="pcb" id="cert-silver" onclick="setCert('silver')">🥈 Silver</div>
+    <div class="pcb" id="cert-gold" onclick="setCert('gold')">🥇 Gold</div>
+    <div class="pcb" id="cert-plat" onclick="setCert('plat')">✨ Platinum</div>
+  </div>
+  <div class="psu-result" id="psu-result">
+    <div class="psu-icon" id="psu-icon">⚡</div>
+    <div class="psu-status" id="psu-status">Seleccioná tu fuente</div>
+    <div class="psu-desc" id="psu-desc">Mové el slider y elegí la certificación para ver el diagnóstico.</div>
+  </div>
+</div>
+
+<div class="sw-box">
+  <div class="sw-title">💿 Software</div>
+  <div class="sw-content">NVIDIA GeForce Experience • NVIDIA GFXBench • MSI Dragon Center • DirectX 12 • OpenGL 4.6</div>
+  <div class="sw-note">Descargá el software desde el sitio oficial de NVIDIA o desde la página de soporte de MSI.</div>
+</div>
+
+<div class="tool-tabs">
+  <div class="tool-tab active" onclick="switchTab(0)">🏆 Top CPUs Recomendados</div>
+  <div class="tool-tab" onclick="switchTab(1)">⚖️ Comparador de GPUs</div>
+</div>
+
+<div class="tool-content active" id="tool-0">
+  <div class="t3-header"><span class="t3-pill pill-amd">AMD</span><span class="t3-sub">Mejores procesadores para la GTX 1660 Ti</span></div>
+  <div class="t3-grid">
+    <div class="t3-card gc"><div class="t3-medal">🥇</div><div class="t3-mlabel gl">1er Lugar</div><div class="t3-name">Ryzen 5 3600</div><span class="t3-tag tag-ideal">Combinación ideal</span><div class="t3-specs"><div class="t3-row"><span class="t3-k">Núcleos</span><span class="t3-v">6C/12T</span></div><div class="t3-row"><span class="t3-k">Boost</span><span class="t3-v">4.2 GHz</span></div><div class="t3-row"><span class="t3-k">Caché L3</span><span class="t3-v">32 MB</span></div><div class="t3-row"><span class="t3-k">Socket</span><span class="t3-v">AM4</span></div></div></div>
+    <div class="t3-card sc"><div class="t3-medal">🥈</div><div class="t3-mlabel sl">2do Lugar</div><div class="t3-name">Ryzen 5 5500</div><span class="t3-tag tag-great">Gran precio/perf.</span><div class="t3-specs"><div class="t3-row"><span class="t3-k">Núcleos</span><span class="t3-v">6C/12T</span></div><div class="t3-row"><span class="t3-k">Boost</span><span class="t3-v">4.6 GHz</span></div><div class="t3-row"><span class="t3-k">Caché L3</span><span class="t3-v">16 MB</span></div><div class="t3-row"><span class="t3-k">Socket</span><span class="t3-v">AM4</span></div></div></div>
+    <div class="t3-card bc"><div class="t3-medal">🥉</div><div class="t3-mlabel bl">3er Lugar</div><div class="t3-name">Ryzen 3 3100</div><span class="t3-tag tag-good">Muy buena opción</span><div class="t3-specs"><div class="t3-row"><span class="t3-k">Núcleos</span><span class="t3-v">4C/8T</span></div><div class="t3-row"><span class="t3-k">Boost</span><span class="t3-v">3.9 GHz</span></div><div class="t3-row"><span class="t3-k">Caché L3</span><span class="t3-v">16 MB</span></div><div class="t3-row"><span class="t3-k">Socket</span><span class="t3-v">AM4</span></div></div></div>
+  </div>
+  <div class="t3-header" style="margin-top:24px"><span class="t3-pill pill-intel">INTEL</span><span class="t3-sub">Mejores procesadores para la GTX 1660 Ti</span></div>
+  <div class="t3-grid">
+    <div class="t3-card gc"><div class="t3-medal">🥇</div><div class="t3-mlabel gl">1er Lugar</div><div class="t3-name">Core i5-10400</div><span class="t3-tag tag-ideal">Combinación ideal</span><div class="t3-specs"><div class="t3-row"><span class="t3-k">Núcleos</span><span class="t3-v">6C/12T</span></div><div class="t3-row"><span class="t3-k">Boost</span><span class="t3-v">4.3 GHz</span></div><div class="t3-row"><span class="t3-k">Caché L3</span><span class="t3-v">12 MB</span></div><div class="t3-row"><span class="t3-k">Socket</span><span class="t3-v">LGA1200</span></div></div></div>
+    <div class="t3-card sc"><div class="t3-medal">🥈</div><div class="t3-mlabel sl">2do Lugar</div><div class="t3-name">Core i5-11400</div><span class="t3-tag tag-great">Gran precio/perf.</span><div class="t3-specs"><div class="t3-row"><span class="t3-k">Núcleos</span><span class="t3-v">6C/12T</span></div><div class="t3-row"><span class="t3-k">Boost</span><span class="t3-v">4.4 GHz</span></div><div class="t3-row"><span class="t3-k">Caché L3</span><span class="t3-v">12 MB</span></div><div class="t3-row"><span class="t3-k">Socket</span><span class="t3-v">LGA1200</span></div></div></div>
+    <div class="t3-card bc"><div class="t3-medal">🥉</div><div class="t3-mlabel bl">3er Lugar</div><div class="t3-name">Core i3-10100</div><span class="t3-tag tag-good">Muy buena opción</span><div class="t3-specs"><div class="t3-row"><span class="t3-k">Núcleos</span><span class="t3-v">4C/8T</span></div><div class="t3-row"><span class="t3-k">Boost</span><span class="t3-v">4.3 GHz</span></div><div class="t3-row"><span class="t3-k">Caché L3</span><span class="t3-v">6 MB</span></div><div class="t3-row"><span class="t3-k">Socket</span><span class="t3-v">LGA1200</span></div></div></div>
+  </div>
+</div>
+
+<div class="tool-content" id="tool-1">
+  <div class="calc-label">Seleccioná una GPU para comparar</div>
+  <select class="calc-sel" id="gpu-select" onchange="updateCmp()">
+    <option value="">-- Elegí una placa de video --</option>
+    <optgroup label="NVIDIA — OUTLET">
+      <option value="rtx3060">RTX 3060 12GB (OUTLET)</option>
+      <option value="rtx3060ti">RTX 3060 Ti 8GB (OUTLET)</option>
+      <option value="rtx2060super">RTX 2060 Super 8GB (OUTLET)</option>
+      <option value="gtx1080">GTX 1080 8GB (OUTLET)</option>
+      <option value="gtx1070ti">GTX 1070 Ti 8GB (OUTLET)</option>
+      <option value="gtx1660super">GTX 1660 Super 6GB (OUTLET)</option>
+      <option value="gtx1650super">GTX 1650 Super 4GB (OUTLET)</option>
+      <option value="gtx1650">GTX 1650 4GB (OUTLET)</option>
+    </optgroup>
+    <optgroup label="AMD — OUTLET">
+      <option value="rx6700xt">RX 6700 XT 12GB (OUTLET)</option>
+      <option value="rx6600xt">RX 6600 XT 16GB (OUTLET)</option>
+      <option value="rx5700xt">RX 5700 XT 8GB (OUTLET)</option>
+      <option value="rx5600xt">RX 5600 XT 6GB (OUTLET)</option>
+    </optgroup>
+    <optgroup label="NVIDIA — NUEVAS">
+      <option value="rtx4070super">RTX 4070 Super 12GB</option>
+      <option value="rtx4070">RTX 4070 12GB</option>
+    </optgroup>
+  </select>
+  <div class="cmp-vs" id="cmp-vs">
+    <div class="vs-container">
+      <div class="vs-card vs-card-left">
+        <div class="vs-hdr">TU ELECCIÓN</div>
+        <div class="vs-title">MSI GTX 1660 Ti Ventus XS 6GB</div>
+        <div class="vs-sub">OUTLET</div>
+        <div class="vs-specs">
+          <div class="vs-row"><div class="vs-lbl">VRAM</div><div class="vs-val" id="l-vram">6GB GDDR6</div></div>
+          <div class="vs-row"><div class="vs-lbl">CUDA</div><div class="vs-val" id="l-cores">1536</div></div>
+          <div class="vs-row"><div class="vs-lbl">Boost</div><div class="vs-val" id="l-boost">1770 MHz</div></div>
+          <div class="vs-row"><div class="vs-lbl">Bus</div><div class="vs-val" id="l-bus">192-bit</div></div>
+          <div class="vs-row"><div class="vs-lbl">BW</div><div class="vs-val" id="l-bw">288 GB/s</div></div>
+          <div class="vs-row"><div class="vs-lbl">TDP</div><div class="vs-val" id="l-tdp">120W</div></div>
+        </div>
+        <div class="vs-perf"><div class="perf-lbl">Rendimiento</div><div class="perf-bar"><div class="perf-fill" id="l-perf" style="width:100%">100%</div></div></div>
+      </div>
+      <div class="vs-sep" id="vs-sep"><div class="vs-ico">⚔️</div><div class="vs-txt">VS</div></div>
+      <div class="vs-card vs-card-right">
+        <div class="vs-hdr" id="r-hdr">COMPARACIÓN</div>
+        <div class="vs-title" id="r-title">-</div>
+        <div class="vs-sub" id="r-sub">-</div>
+        <div class="vs-specs">
+          <div class="vs-row"><div class="vs-lbl">VRAM</div><div class="vs-val" id="r-vram">-</div></div>
+          <div class="vs-row"><div class="vs-lbl">CU/SP</div><div class="vs-val" id="r-cores">-</div></div>
+          <div class="vs-row"><div class="vs-lbl">Boost</div><div class="vs-val" id="r-boost">-</div></div>
+          <div class="vs-row"><div class="vs-lbl">Bus</div><div class="vs-val" id="r-bus">-</div></div>
+          <div class="vs-row"><div class="vs-lbl">BW</div><div class="vs-val" id="r-bw">-</div></div>
+          <div class="vs-row"><div class="vs-lbl">TDP</div><div class="vs-val" id="r-tdp">-</div></div>
+        </div>
+        <div class="vs-perf"><div class="perf-lbl">Rendimiento</div><div class="perf-bar"><div class="perf-fill" id="r-perf" style="width:0%">0%</div></div></div>
+      </div>
+    </div>
+    <div class="cmp-winner" id="cmp-winner"></div>
+  </div>
+</div>
+
+<div class="outlet-box">
+  <div class="outlet-title">🔖 PRODUCTO OUTLET</div>
+  <div class="outlet-desc">Producto en excelente estado, revisado y verificado por nuestro equipo técnico. Puede presentar signos mínimos de uso externo.</div>
+  <div class="outlet-benefits">
+    <div class="ob"><div class="ob-icon">🔄</div><div class="ob-val">30 DÍAS</div><div class="ob-lbl">DE PRUEBA</div></div>
+    <div class="ob"><div class="ob-icon">✅</div><div class="ob-val">1 AÑO</div><div class="ob-lbl">DE GARANTÍA</div></div>
+  </div>
+</div>
+
+<div class="location-box">
+  <div class="location-title">📍 Producto en Local</div>
+  <div class="loc-content">
+    <div class="loc-icon">🏪</div>
+    <div class="loc-status">RETIRO INMEDIATO</div>
+    <div class="loc-desc">El producto se encuentra en nuestro local.<br>Podés retirarlo en el día al concretar tu compra.</div>
+  </div>
+</div>
+
+<div class="note">* Watts recomendados basados en sistema completo bajo carga total. &nbsp;|&nbsp; ** Boost Clock 1770 MHz — GDDR6 a 12 Gbps, bus 192-bit, 288 GB/s de ancho de banda.</div>
+
+</div>
+<script>
+window.addEventListener('load',()=>setTimeout(()=>{
+  document.getElementById('bc').style.width='76.3%';
+  document.getElementById('boc').style.width='100%';
+},500));
+
+function switchTab(i){
+  document.querySelectorAll('.tool-tab').forEach((t,j)=>t.classList.toggle('active',i===j));
+  document.querySelectorAll('.tool-content').forEach((c,j)=>c.classList.toggle('active',i===j));
+}
+
+const PSU_MIN=500,GPU_TDP=120;
+let cert='sin',watts=500;
+const cNames={sin:'sin certificación',bronze:'80 Plus Bronze',silver:'80 Plus Silver',gold:'80 Plus Gold',plat:'80 Plus Platinum'};
+const cWarn={
+  sin:'⚠️ <strong>Sin 80 Plus:</strong> Eficiencia &lt;70%. Para 120W TDP, <strong>recomendamos Silver o mejor</strong>.',
+  bronze:'⚠️ <strong>80 Plus Bronze:</strong> Eficiencia 85-89%. Considerá <strong>Silver o Gold</strong> para mejor margen.',
+  silver:'✅ <strong>80 Plus Silver:</strong> Buena eficiencia para esta GPU. Recomendado.',
+  gold:'',plat:''
+};
+function setCert(c){
+  cert=c;
+  ['sin','bronze','silver','gold','plat'].forEach(x=>{
+    document.getElementById('cert-'+x).className='pcb'+(x===c?' a-'+c:'');
+  });
+  evalPSU();
+}
+function evalPSU(){
+  const w=watts,box=document.getElementById('psu-result'),
+    ico=document.getElementById('psu-icon'),sta=document.getElementById('psu-status'),dsc=document.getElementById('psu-desc');
+  box.className='psu-result';
+  const wb=cWarn[cert]?`<div class="cert-warn">${cWarn[cert]}</div>`:'';
+  if(w<400){box.classList.add('psu-danger');ico.textContent='🚨';sta.textContent='¡Cambiar urgente! — Riesgo de daño';dsc.innerHTML=`${w}W insuficiente para GPU+CPU. Riesgo de apagones.${wb}`;}
+  else if(w<450){box.classList.add('psu-danger');ico.textContent='🚨';sta.textContent='¡Cambiar urgente! — No alcanza';dsc.innerHTML=`${w}W demasiado justo. La GPU sola consume hasta ${GPU_TDP}W.${wb}`;}
+  else if(w<PSU_MIN){box.classList.add('psu-warn');ico.textContent='⚠️';sta.textContent='Funciona, pero cambiala pronto';dsc.innerHTML=`Con ${w}W estás al límite. Recomendamos mínimo ${PSU_MIN}W.${wb}`;}
+  else if(w<=900){box.classList.add('psu-ok');ico.textContent='✅';sta.textContent='Perfecto — fuente suficiente';dsc.innerHTML=`${w}W${cert!=='sin'?' con '+cNames[cert]:''} es suficiente para GPU+CPU.${wb||(' Certificación '+cNames[cert]+' brinda estabilidad.')}`;}
+  else{box.classList.add('psu-great');ico.textContent='💚';sta.textContent='De sobra — aguanta el próximo upgrade';dsc.innerHTML=`${w}W con ${cNames[cert]} es más que suficiente. Trabajás al 10–20% de carga máxima.${wb}`;}
+}
+document.getElementById('psu-slider').addEventListener('input',function(){
+  watts=parseInt(this.value);
+  document.getElementById('psu-out').textContent=watts+' W';
+  evalPSU();
+});
+evalPSU();
+
+const db={
+  base:{name:'MSI GTX 1660 Ti Ventus XS 6GB',mfr:'MSI',model:'GTX 1660 Ti',status:'OUTLET',vram:'6GB GDDR6',cores:1536,boost:1770,bus:'192-bit',bw:288,tdp:120,perf:100},
+  rtx3060:{name:'RTX 3060',mfr:'NVIDIA',model:'RTX 3060',status:'OUTLET',vram:'12GB GDDR6',cores:3584,boost:1777,bus:'192-bit',bw:360,tdp:170,perf:110},
+  rtx3060ti:{name:'RTX 3060 Ti',mfr:'NVIDIA',model:'RTX 3060 Ti',status:'OUTLET',vram:'8GB GDDR6',cores:4864,boost:1680,bus:'256-bit',bw:360,tdp:200,perf:140},
+  rtx2060super:{name:'RTX 2060 Super',mfr:'NVIDIA',model:'RTX 2060 Super',status:'OUTLET',vram:'8GB GDDR6',cores:3456,boost:1665,bus:'256-bit',bw:432,tdp:175,perf:95},
+  gtx1080:{name:'GTX 1080',mfr:'NVIDIA',model:'GTX 1080',status:'OUTLET',vram:'8GB GDDR5X',cores:2560,boost:1733,bus:'256-bit',bw:320,tdp:180,perf:130},
+  gtx1070ti:{name:'GTX 1070 Ti',mfr:'NVIDIA',model:'GTX 1070 Ti',status:'OUTLET',vram:'8GB GDDR5',cores:2432,boost:1683,bus:'256-bit',bw:256,tdp:180,perf:115},
+  gtx1660super:{name:'GTX 1660 Super',mfr:'NVIDIA',model:'GTX 1660 Super',status:'OUTLET',vram:'6GB GDDR6',cores:1408,boost:1815,bus:'192-bit',bw:288,tdp:125,perf:105},
+  gtx1650super:{name:'GTX 1650 Super',mfr:'NVIDIA',model:'GTX 1650 Super',status:'OUTLET',vram:'4GB GDDR6',cores:1280,boost:1725,bus:'128-bit',bw:192,tdp:100,perf:80},
+  gtx1650:{name:'GTX 1650',mfr:'NVIDIA',model:'GTX 1650',status:'OUTLET',vram:'4GB GDDR6',cores:896,boost:1665,bus:'128-bit',bw:192,tdp:75,perf:65},
+  rx6700xt:{name:'RX 6700 XT',mfr:'AMD',model:'RX 6700 XT',status:'OUTLET',vram:'12GB GDDR6',cores:2560,boost:2581,bus:'192-bit',bw:384,tdp:230,perf:125},
+  rx6600xt:{name:'RX 6600 XT',mfr:'AMD',model:'RX 6600 XT',status:'OUTLET',vram:'16GB GDDR6',cores:2048,boost:2655,bus:'128-bit',bw:256,tdp:160,perf:105},
+  rx5700xt:{name:'RX 5700 XT',mfr:'AMD',model:'RX 5700 XT',status:'OUTLET',vram:'8GB GDDR6',cores:2560,boost:1980,bus:'256-bit',bw:448,tdp:225,perf:120},
+  rx5600xt:{name:'RX 5600 XT',mfr:'AMD',model:'RX 5600 XT',status:'OUTLET',vram:'6GB GDDR6',cores:2304,boost:1750,bus:'192-bit',bw:336,tdp:150,perf:100},
+  rtx4070super:{name:'RTX 4070 Super',mfr:'NVIDIA',model:'RTX 4070 Super',status:'NUEVA',vram:'12GB GDDR6X',cores:5888,boost:2475,bus:'192-bit',bw:432,tdp:220,perf:185},
+  rtx4070:{name:'RTX 4070',mfr:'NVIDIA',model:'RTX 4070',status:'NUEVA',vram:'12GB GDDR6X',cores:5888,boost:2475,bus:'192-bit',bw:432,tdp:200,perf:175}
+};
+
+function setVal(id,txt){document.getElementById(id).innerHTML=txt}
+function arrow(v,win){return`<span class="arr ${win?'arr-u':'arr-d'}">${win?'↑':'↓'}</span> ${v}`}
+function cmpVal(lId,rId,lv,rv,ld,rd,inv){
+  const le=document.getElementById(lId),re=document.getElementById(rId);
+  le.className='vs-val';re.className='vs-val';
+  const lw=inv?(lv<rv):(lv>rv),rw=inv?(rv<lv):(rv>lv);
+  if(lw){le.className='vs-val win';re.className='vs-val lose';le.innerHTML=arrow(ld,true);re.innerHTML=arrow(rd,false);}
+  else if(rw){le.className='vs-val lose';re.className='vs-val win';le.innerHTML=arrow(ld,false);re.innerHTML=arrow(rd,true);}
+  else{le.innerHTML=ld;re.innerHTML=rd;}
+}
+function updateCmp(){
+  const sel=document.getElementById('gpu-select').value,vs=document.getElementById('cmp-vs'),wd=document.getElementById('cmp-winner');
+  if(!sel){vs.style.display='none';return;}
+  const b=db.base,c=db[sel];if(!c)return;
+  const lc=document.querySelector('.vs-card-left'),rc=document.querySelector('.vs-card-right'),sp=document.getElementById('vs-sep');
+  lc.classList.remove('aL');rc.classList.remove('aR');sp.classList.remove('aS');wd.classList.remove('aw');
+  vs.style.display='block';
+  setTimeout(()=>{lc.classList.add('aL');rc.classList.add('aR');sp.classList.add('aS');},100);
+  setVal('r-hdr',c.status);setVal('r-title',c.name);setVal('r-sub',c.mfr);
+  cmpVal('l-vram','r-vram',parseInt(b.vram),parseInt(c.vram),b.vram,c.vram,false);
+  cmpVal('l-cores','r-cores',b.cores,c.cores,b.cores.toLocaleString(),c.cores.toLocaleString(),false);
+  cmpVal('l-boost','r-boost',b.boost,c.boost,b.boost+' MHz',c.boost+' MHz',false);
+  cmpVal('l-bw','r-bw',b.bw,c.bw,b.bw+' GB/s',c.bw+' GB/s',false);
+  cmpVal('l-tdp','r-tdp',b.tdp,c.tdp,b.tdp+'W',c.tdp+'W',true);
+  setVal('r-bus',c.bus);
+  const pct=Math.min((c.perf/b.perf)*100,100);
+  document.getElementById('r-perf').style.width=pct+'%';
+  document.getElementById('r-perf').textContent=c.perf+'%';
+  let txt='';
+  if(c.perf>b.perf+5){const d=Math.round(((c.perf-b.perf)/b.perf)*100);txt=`La <strong>${c.model}</strong> es aproximadamente <strong>${d}% más potente</strong> que la GTX 1660 Ti.`;}
+  else if(c.perf<b.perf-5){const d=Math.round(((b.perf-c.perf)/b.perf)*100);txt=`La <strong>GTX 1660 Ti</strong> es aproximadamente <strong>${d}% más potente</strong> que la ${c.model}. Con 6GB GDDR6, 1536 CUDA Cores y Ventus Cooling compacto.`;}
+  else{txt=`Ambas GPUs ofrecen <strong>rendimiento muy similar</strong>. La elección depende del precio y características como DLSS o FSR.`;}
+  wd.innerHTML=`<div class="win-title">🏆 Conclusión</div><div class="win-text">${txt}</div>`;
+  setTimeout(()=>wd.classList.add('aw'),500);
+}
+
+const btn=document.getElementById('back-top');
+window.addEventListener('scroll',()=>{btn.style.display=window.scrollY>300?'flex':'none'});
+
+const obs=new MutationObserver(()=>{window.parent.postMessage({type:'iframe-height',height:document.documentElement.scrollHeight},'*')});
+obs.observe(document.body,{childList:true,subtree:true,attributes:true});
+window.parent.postMessage({type:'iframe-height',height:document.documentElement.scrollHeight},'*');
+</script>
+</body>
+</html>
