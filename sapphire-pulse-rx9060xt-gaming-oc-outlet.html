@@ -1,0 +1,281 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sapphire Pulse RX 9060 XT - Quantum Hardstore</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Verdana,Geneva,sans-serif;background:#f5f5f5}
+.container{max-width:860px;margin:0 auto;padding:24px 16px}
+.header{text-align:center;padding:28px 10px 22px;border-bottom:2px solid #ff007f;animation:fadeIn .8s ease-in}
+.header-brand{font-size:11px;letter-spacing:6px;color:#ff007f;text-transform:uppercase;margin-bottom:10px}
+.header-manufacturer{font-size:12px;letter-spacing:5px;color:#999;text-transform:uppercase;margin-bottom:6px}
+.header-title{font-size:36px;font-weight:bold;color:#1c1c1c;letter-spacing:2px;animation:slideDown 1s ease-out}
+.header-subtitle{font-size:12px;letter-spacing:3px;color:#999;margin-top:10px}
+.badges{display:flex;justify-content:center;gap:10px;margin:14px 0 6px;flex-wrap:wrap}
+.badge{padding:6px 14px;border:1px solid #ff007f;border-radius:20px;font-size:10px;font-weight:bold;letter-spacing:2px;color:#ff007f;background:#fff5f9;text-transform:uppercase}
+.hl{text-align:center;margin:24px 0 10px;animation:scaleIn 1s ease-out}
+.hl-box{display:inline-block;padding:16px 30px;border:2px solid #ff007f;border-radius:8px;background:#fff;transition:transform .3s,box-shadow .3s}
+.hl-box:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(255,0,127,.3)}
+.hl-label{font-size:10px;letter-spacing:5px;color:#ff007f;text-transform:uppercase}
+.hl-value{font-size:40px;font-weight:bold;color:#1c1c1c;margin:4px 0 2px}
+.hl-desc{font-size:11px;color:#aaa;letter-spacing:3px}
+.card{background:#fff;border:1px solid #e0e0e0;border-top:3px solid #ff007f;border-radius:10px;padding:18px;text-align:center;margin:10px 0;transition:all .3s;animation:fadeInUp .6s ease-out}
+.card:hover{transform:translateY(-3px);box-shadow:0 5px 20px rgba(0,0,0,.1)}
+.card-label{font-size:10px;letter-spacing:4px;color:#ff007f;text-transform:uppercase}
+.card-value{font-size:34px;font-weight:bold;color:#1c1c1c;margin:6px 0 2px}
+.card-desc{font-size:12px;color:#999}
+.engine{background:#1c1c1c;border-radius:10px;padding:20px;margin:12px 0}
+.engine-title{font-size:10px;letter-spacing:4px;color:#999;text-transform:uppercase;margin-bottom:14px}
+.clock-item{margin-bottom:14px}
+.clock-label{font-size:11px;font-weight:bold;color:#ff007f;text-transform:uppercase;letter-spacing:2px;margin-bottom:6px}
+.bar-bg{background:#2a2a2a;border-radius:6px;height:30px;overflow:hidden}
+.bar{height:30px;border-radius:6px;text-align:right;padding-right:12px;line-height:30px;font-size:14px;font-weight:bold;color:#fff;transition:width 1.5s ease-out}
+.bar-base{background:linear-gradient(90deg,#c0005e,#e0007a)}
+.bar-boost{background:linear-gradient(90deg,#ff007f,#ff4da6)}
+.cooling{background:#1c1c1c;border-radius:10px;padding:22px 20px;margin:12px 0;border-top:3px solid #ff007f}
+.cooling-title{font-size:20px;font-weight:bold;letter-spacing:5px;color:#ff007f;text-align:center;margin-bottom:6px}
+.cooling-sub{font-size:11px;color:#ccc;letter-spacing:3px;text-align:center;margin-bottom:18px}
+.cooling-features{display:flex;gap:10px;flex-wrap:wrap}
+.cf{flex:1;min-width:120px;background:#2a2a2a;border:1px solid #ff007f;border-radius:8px;padding:14px 10px;text-align:center;transition:all .3s}
+.cf:hover{background:#ff007f;transform:translateY(-3px)}
+.cf:hover .cf-name,.cf:hover .cf-label{color:#fff}
+.cf-icon{font-size:24px;margin-bottom:6px}
+.cf-name{font-size:11px;font-weight:bold;color:#ff007f;letter-spacing:1px;margin-bottom:4px;transition:color .3s}
+.cf-label{font-size:10px;color:#aaa;transition:color .3s}
+.section-title{margin:28px 0 14px;padding-bottom:8px;border-bottom:1px solid #e0e0e0}
+.section-title span{font-size:12px;font-weight:bold;letter-spacing:5px;color:#ff007f;text-transform:uppercase}
+.spec-table{background:#fff;border:1px solid #e0e0e0;border-radius:10px;overflow:hidden;margin:8px 0}
+.spec-table div{display:flex;justify-content:space-between;align-items:center;padding:9px 14px;border-bottom:1px solid #f0f0f0;gap:10px;transition:all .2s}
+.spec-table div:last-child{border-bottom:none}
+.spec-table div:hover{background:#fff5f9;border-left:3px solid #ff007f;padding-left:11px}
+.spec-table span{font-size:9px;color:#999;text-transform:uppercase;letter-spacing:2px;white-space:nowrap}
+.spec-table .label{font-weight:bold;color:#1c1c1c}
+.tabs{display:flex;justify-content:center;gap:10px;margin:20px 0;flex-wrap:wrap}
+.tab-btn{padding:8px 18px;border:1px solid #ff007f;background:#fff;color:#ff007f;border-radius:6px;cursor:pointer;font-size:10px;font-weight:bold;letter-spacing:2px;text-transform:uppercase;transition:all .3s}
+.tab-btn.active{background:#ff007f;color:#fff}
+.tab-btn:hover{transform:translateY(-2px);box-shadow:0 5px 15px rgba(255,0,127,.3)}
+.tab-content{display:none;animation:fadeIn .4s ease-in}
+.tab-content.active{display:block}
+.cpu-grid{display:grid;grid-template-columns:1fr;gap:12px;margin:14px 0}
+.cpu-card{background:#fff;border:1px solid #e0e0e0;border-left:4px solid #ff007f;padding:14px;border-radius:8px;transition:all .3s}
+.cpu-card:hover{transform:translateY(-3px);box-shadow:0 5px 15px rgba(0,0,0,.1)}
+.cpu-rank{display:inline-block;padding:4px 10px;border-radius:12px;font-size:9px;font-weight:bold;letter-spacing:1px;margin-bottom:8px;text-transform:uppercase}
+.cpu-rank.gold{background:#ffd700;color:#1c1c1c}
+.cpu-rank.silver{background:#c0c0c0;color:#1c1c1c}
+.cpu-rank.bronze{background:#cd7f32;color:#fff}
+.cpu-name{font-size:13px;font-weight:bold;color:#1c1c1c;margin-bottom:6px}
+.cpu-specs{font-size:9px;color:#999;line-height:1.6}
+.cmp-section{background:#fff;border:1px solid #e0e0e0;border-radius:10px;padding:16px;margin:12px 0}
+.cmp-select{width:100%;padding:10px;border:1px solid #ff007f;border-radius:6px;margin:10px 0;font-size:11px;background:#fff;color:#1c1c1c}
+.vs-container{display:flex;gap:16px;margin:16px 0}
+.vs-col{flex:1;background:#1c1c1c;border-radius:8px;padding:14px;border:1px solid #ff007f}
+.vs-title{font-size:12px;font-weight:bold;color:#ff007f;text-align:center;margin-bottom:12px;letter-spacing:2px;text-transform:uppercase}
+.vs-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #2a2a2a;font-size:9px}
+.vs-row:last-child{border-bottom:none}
+.vs-lbl{color:#999;text-transform:uppercase;letter-spacing:1px}
+.vs-val{color:#ff007f;font-weight:bold}
+.vs-result{background:#ff007f;color:#fff;padding:10px;border-radius:6px;margin-top:12px;font-size:10px;text-align:center;line-height:1.6}
+.psu-section{background:#fff;border:1px solid #e0e0e0;border-radius:10px;padding:16px;margin:12px 0}
+.psu-label{font-size:10px;letter-spacing:3px;color:#ff007f;text-transform:uppercase;margin-bottom:10px;font-weight:bold}
+.psu-slider{width:100%;margin:14px 0;cursor:pointer;height:6px;border-radius:3px;background:linear-gradient(90deg,#ff007f,#c0005e);outline:none}
+.psu-slider::-webkit-slider-thumb{appearance:none;width:18px;height:18px;border-radius:50%;background:#ff007f;cursor:pointer;box-shadow:0 2px 8px rgba(255,0,127,.5)}
+.psu-slider::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:#ff007f;cursor:pointer;box-shadow:0 2px 8px rgba(255,0,127,.5);border:none}
+.psu-value{font-size:24px;font-weight:bold;color:#1c1c1c;text-align:center;margin:10px 0}
+.psu-certs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
+.psu-cert{padding:8px 10px;border:1px solid #e0e0e0;border-radius:6px;text-align:center;cursor:pointer;font-size:9px;font-weight:bold;transition:all .3s;background:#f9f9f9}
+.psu-cert:hover,.psu-cert.active{background:#ff007f;color:#fff;border-color:#ff007f}
+.psu-result{background:#1c1c1c;color:#ff007f;padding:12px;border-radius:6px;margin-top:10px;font-size:10px;text-align:center;font-weight:bold;letter-spacing:1px}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes scaleIn{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@media (max-width:768px){
+.vs-container{flex-direction:column}
+.header-title{font-size:28px}
+.hl-value{font-size:32px}
+.card-value{font-size:26px}
+.psu-certs{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<div class="header-brand">Quantum Hardstore</div>
+<div class="header-manufacturer">Sapphire</div>
+<div class="header-title">RX 9060 XT</div>
+<div class="header-subtitle">16GB GDDR6 &nbsp;/&nbsp; PCI-E 4.0 &nbsp;/&nbsp; DUAL FAN &nbsp;/&nbsp; OUTLET</div>
+<div class="badges"><span class="badge">RDNA 4</span><span class="badge">256-bit</span><span class="badge">3456 SPs</span></div>
+</div>
+<div class="hl">
+<div class="hl-box">
+<div class="hl-label">Poder de Procesamiento</div>
+<div class="hl-value">~25 TFLOPs</div>
+<div class="hl-desc">Arquitectura RDNA 4 — Última Generación</div>
+</div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0">
+<div class="card"><div class="card-label">Memoria VRAM</div><div class="card-value">16GB</div><div class="card-desc">GDDR6 — 18 Gbps</div></div>
+<div class="card"><div class="card-label">Ancho de Banda</div><div class="card-value">576</div><div class="card-desc">GB/s — 256-bit</div></div>
+<div class="card"><div class="card-label">Boost Clock</div><div class="card-value">2755</div><div class="card-desc">MHz — Overclocked</div></div>
+<div class="card"><div class="card-label">Consumo TDP</div><div class="card-value">190</div><div class="card-desc">Watts — Eficiente</div></card>
+</div>
+<div class="engine">
+<div class="engine-title">Especificaciones Técnicas</div>
+<div class="clock-item">
+<div class="clock-label">GPU Processors (Stream Processors)</div>
+<div class="bar-bg"><div class="bar bar-base" style="width:100%">3456</div></div>
+</div>
+<div class="clock-item">
+<div class="clock-label">Boost Clock (Gaming)</div>
+<div class="bar-bg"><div class="bar bar-boost" style="width:100%">2755 MHz</div></div>
+</div>
+</div>
+<div class="cooling">
+<div class="cooling-title">Sapphire Pulse Cooling</div>
+<div class="cooling-sub">Sistema Dual Fan Optimizado</div>
+<div class="cooling-features">
+<div class="cf"><div class="cf-icon">❄️</div><div class="cf-name">Dual Fan</div><div class="cf-label">Ventilación Mejorada</div></div>
+<div class="cf"><div class="cf-icon">🌬️</div><div class="cf-name">Zero RPM</div><div class="cf-label">Modo Silencioso</div></div>
+<div class="cf"><div class="cf-icon">⚡</div><div class="cf-name">Power Efficient</div><div class="cf-label">190W TDP</div></div>
+</div>
+</div>
+<div class="section-title"><span>especificaciones completas</span></div>
+<div class="spec-table">
+<div><span class="label">Arquitectura</span><span>RDNA 4</span></div>
+<div><span class="label">Memoria</span><span>16GB GDDR6</span></div>
+<div><span class="label">Stream Processors</span><span>3456</span></div>
+<div><span class="label">Bus de Memoria</span><span>256-bit</span></div>
+<div><span class="label">Ancho de Banda</span><span>576 GB/s</span></div>
+<div><span class="label">Clock Base</span><span>~2400 MHz</span></div>
+<div><span class="label">Boost Clock</span><span>2755 MHz</span></div>
+<div><span class="label">TDP</span><span>190W</span></div>
+<div><span class="label">Conector PCIe</span><span>1x 8-pin</span></div>
+<div><span class="label">Interfaz</span><span>PCIe 4.0 x16</span></div>
+<div><span class="label">Refrigeración</span><span>Sapphire Pulse Dual Fan</span></div>
+<div><span class="label">Ray Tracing</span><span>RDNA 4 Hardware Acelerado</span></div>
+</div>
+<div class="tabs">
+<button class="tab-btn active" onclick="switchTab(event,'cpus')">Top 3 Procesadores Recomendados</button>
+<button class="tab-btn" onclick="switchTab(event,'cmp')">Comparador de GPUs</button>
+<button class="tab-btn" onclick="switchTab(event,'psu')">Calculadora PSU</button>
+</div>
+<div id="cpus" class="tab-content active">
+<div class="section-title"><span>Top 3 CPUs Recomendados — AMD</span></div>
+<div class="cpu-grid">
+<div class="cpu-card">
+<span class="cpu-rank gold">🥇 Recomendado</span>
+<div class="cpu-name">AMD Ryzen 7 7700X</div>
+<div class="cpu-specs">8 Cores / 16 Threads<br>4.5-5.4 GHz • 105W TDP<br>Arquitectura Zen 4<br>Compatibilidad PCIe 5.0</div>
+</div>
+<div class="cpu-card">
+<span class="cpu-rank silver">🥈 Alternativa</span>
+<div class="cpu-name">AMD Ryzen 7 5800X3D</div>
+<div class="cpu-specs">8 Cores / 16 Threads<br>3.4-4.5 GHz • 105W TDP<br>Arquitectura Zen 3 + 3D V-Cache<br>Rendimiento Gaming Excepcional</div>
+</div>
+<div class="cpu-card">
+<span class="cpu-rank bronze">🥉 Entrada</span>
+<div class="cpu-name">AMD Ryzen 5 7600X</div>
+<div class="cpu-specs">6 Cores / 12 Threads<br>4.7-5.6 GHz • 105W TDP<br>Arquitectura Zen 4<br>Excelente Relación Precio-Rendimiento</div>
+</div>
+</div>
+<div class="section-title"><span>Top 3 CPUs Recomendados — Intel</span></div>
+<div class="cpu-grid">
+<div class="cpu-card">
+<span class="cpu-rank gold">🥇 Recomendado</span>
+<div class="cpu-name">Intel Core i7-13700K</div>
+<div class="cpu-specs">16 Cores (8P+8E) / 24 Threads<br>3.4-5.4 GHz • 125W TDP<br>Arquitectura Raptor Lake<br>Rendimiento Híbrido Superior</div>
+</div>
+<div class="cpu-card">
+<span class="cpu-rank silver">🥈 Alternativa</span>
+<div class="cpu-name">Intel Core i5-13600K</div>
+<div class="cpu-specs">14 Cores (6P+8E) / 20 Threads<br>3.5-5.1 GHz • 125W TDP<br>Arquitectura Raptor Lake<br>Rendimiento Sólido Balanceado</div>
+</div>
+<div class="cpu-card">
+<span class="cpu-rank bronze">🥉 Entrada</span>
+<div class="cpu-name">Intel Core i7-12700K</div>
+<div class="cpu-specs">12 Cores (8P+4E) / 20 Threads<br>3.6-5.0 GHz • 125W TDP<br>Arquitectura Alder Lake<br>Excelente Gaming Performance</div>
+</div>
+</div>
+</div>
+<div id="cmp" class="tab-content">
+<div class="section-title"><span>Comparador de GPUs</span></div>
+<div class="cmp-section">
+<label for="cmp-select" style="font-size:10px;font-weight:bold;color:#ff007f;letter-spacing:2px;text-transform:uppercase">Selecciona una GPU para comparar:</label>
+<select id="cmp-select" class="cmp-select" onchange="updateCmp(this.value)">
+<option value="">-- Selecciona una GPU --</option>
+<option value="rx9070xt">RX 9070 XT 16GB (OUTLET)</option>
+<option value="rx9070">RX 9070 12GB (OUTLET)</option>
+<option value="rx9060">RX 9060 12GB (OUTLET)</option>
+<option value="rx7900xtx">RX 7900 XTX 24GB (OUTLET)</option>
+<option value="rx7900xt">RX 7900 XT 20GB (OUTLET)</option>
+<option value="rx7800xt">RX 7800 XT 16GB (OUTLET)</option>
+<option value="rx7700xt">RX 7700 XT 12GB (OUTLET)</option>
+<option value="rtx4090">RTX 4090 24GB (OUTLET)</option>
+<option value="rtx4080">RTX 4080 16GB (OUTLET)</option>
+<option value="rtx4070ti">RTX 4070 Ti 12GB (OUTLET)</option>
+<option value="rtx4070">RTX 4070 12GB (OUTLET)</option>
+<option value="rtx4060ti">RTX 4060 Ti 8GB (OUTLET)</option>
+</select>
+<div class="vs-container">
+<div class="vs-col">
+<div class="vs-title">Sapphire RX 9060 XT 16GB</div>
+<div class="vs-row"><div class="vs-lbl">VRAM</div><div class="vs-val" id="l-vram">16GB GDDR6</div></div>
+<div class="vs-row"><div class="vs-lbl">Stream Processors</div><div class="vs-val" id="l-cores">3456</div></div>
+<div class="vs-row"><div class="vs-lbl">Boost Clock</div><div class="vs-val" id="l-boost">2755 MHz</div></div>
+<div class="vs-row"><div class="vs-lbl">Ancho de Banda</div><div class="vs-val" id="l-bw">576 GB/s</div></div>
+<div class="vs-row"><div class="vs-lbl">TDP</div><div class="vs-val" id="l-tdp">190W</div></div>
+<div class="vs-row"><div class="vs-lbl">Arquitectura</div><div class="vs-val" id="l-arch">RDNA 4</div></div>
+<div class="vs-result" id="cmp-result" style="display:none"></div>
+</div>
+<div class="vs-col">
+<div class="vs-title" id="r-name">-</div>
+<div class="vs-row"><div class="vs-lbl">VRAM</div><div class="vs-val" id="r-vram">-</div></div>
+<div class="vs-row"><div class="vs-lbl">Stream Processors</div><div class="vs-val" id="r-cores">-</div></div>
+<div class="vs-row"><div class="vs-lbl">Boost Clock</div><div class="vs-val" id="r-boost">-</div></div>
+<div class="vs-row"><div class="vs-lbl">Ancho de Banda</div><div class="vs-val" id="r-bw">-</div></div>
+<div class="vs-row"><div class="vs-lbl">TDP</div><div class="vs-val" id="r-tdp">-</div></div>
+<div class="vs-row"><div class="vs-lbl">Arquitectura</div><div class="vs-val" id="r-arch">-</div></div>
+</div>
+</div>
+</div>
+</div>
+<div id="psu" class="tab-content">
+<div class="section-title"><span>Calculadora de Fuente de Poder (PSU)</span></div>
+<div class="psu-section">
+<div class="psu-label">Selecciona tu Wattaje Requerido</div>
+<input type="range" class="psu-slider" id="psu-slider" min="350" max="1200" step="50" value="650" oninput="evalPSU(this.value)">
+<div class="psu-value" id="psu-watts">650W</div>
+<div class="psu-label" style="margin-top:16px">Certificación 80 Plus</div>
+<div class="psu-certs">
+<div class="psu-cert" onclick="selectCert('bronze',this)">Bronze (80%)</div>
+<div class="psu-cert active" onclick="selectCert('gold',this)">Gold (90%)</div>
+<div class="psu-cert" onclick="selectCert('platinum',this)">Platinum (92%)</div>
+<div class="psu-cert" onclick="selectCert('titanium',this)">Titanium (94%)</div>
+</div>
+<div class="psu-result" id="psu-result">PSU Mínima Recomendada: 650W con certificación Gold 80 Plus</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+<script>
+function switchTab(e,t){document.querySelectorAll('.tab-content').forEach(a=>a.classList.remove('active')),document.querySelectorAll('.tab-btn').forEach(a=>a.classList.remove('active')),document.getElementById(t).classList.add('active'),e.target.classList.add('active')}
+function selectCert(e,t){document.querySelectorAll('.psu-cert').forEach(a=>a.classList.remove('active')),t.classList.add('active'),evalPSU(document.getElementById('psu-slider').value)}
+function evalPSU(e){document.getElementById('psu-watts').textContent=e+'W';const t=['bronze','gold','platinum','titanium'].indexOf(document.querySelector('.psu-cert.active').textContent.split('(')[0].trim().toLowerCase()),a=['80','90','92','94'][t];document.getElementById('psu-result').textContent=`PSU Recomendada: ${e}W con certificación ${['Bronze','Gold','Platinum','Titanium'][t]} 80 Plus (${a}% eficiencia) — TDP: 190W`}
+const gpus={base:{name:'Sapphire RX 9060 XT 16GB',mfr:'Sapphire',model:'RX 9060 XT',status:'OUTLET',vram:'16GB GDDR6',cores:3456,boost:2755,bus:'256-bit',bw:576,tdp:190,perf:100},
+rx9070xt:{name:'RX 9070 XT',mfr:'AMD',model:'RX 9070 XT',status:'OUTLET',vram:'16GB GDDR6',cores:5888,boost:2755,bus:'384-bit',bw:864,tdp:355,perf:175},
+rx9070:{name:'RX 9070',mfr:'AMD',model:'RX 9070',status:'OUTLET',vram:'12GB GDDR6',cores:5120,boost:2755,bus:'320-bit',bw:640,tdp:280,perf:155},
+rx9060:{name:'RX 9060',mfr:'AMD',model:'RX 9060',status:'OUTLET',vram:'12GB GDDR6',cores:2560,boost:2755,bus:'192-bit',bw:384,tdp:150,perf:75},
+rx7900xtx:{name:'RX 7900 XTX',mfr:'AMD',model:'RX 7900 XTX',status:'OUTLET',vram:'24GB GDDR6',cores:5376,boost:2705,bus:'384-bit',bw:576,tdp:420,perf:165},
+rx7900xt:{name:'RX 7900 XT',mfr:'AMD',model:'RX 7900 XT',status:'OUTLET',vram:'20GB GDDR6',cores:5120,boost:2705,bus:'320-bit',bw:576,tdp:420,perf:155},
+rx7800xt:{name:'RX 7800 XT',mfr:'AMD',model:'RX 7800 XT',status:'OUTLET',vram:'16GB GDDR6',cores:3840,boost:2430,bus:'256-bit',bw:576,tdp:320,perf:120},
+rx7700xt:{name:'RX 7700 XT',mfr:'AMD',model:'RX 7700 XT',status:'OUTLET',vram:'12GB GDDR6',cores:2560,boost:2544,bus:'192-bit',bw:432,tdp:250,perf:90},
+rtx4090:{name:'RTX 4090',mfr:'NVIDIA',model:'RTX 4090',status:'OUTLET',vram:'24GB GDDR6X',cores:16384,boost:2505,bus:'384-bit',bw:1008,tdp:450,perf:210},
+rtx4080:{name:'RTX 4080',mfr:'NVIDIA',model:'RTX 4080',status:'OUTLET',vram:'16GB GDDR6X',cores:9728,boost:2505,bus:'256-bit',bw:576,tdp:320,perf:180},
+rtx4070ti:{name:'RTX 4070 Ti',mfr:'NVIDIA',model:'RTX 4070 Ti',status:'OUTLET',vram:'12GB GDDR6X',cores:7680,boost:2610,bus:'192-bit',bw:432,tdp:285,perf:150},
+rtx4070:{name:'RTX 4070',mfr:'NVIDIA',model:'RTX 4070',status:'OUTLET',vram:'12GB GDDR6X',cores:5888,boost:2610,bus:'192-bit',bw:432,tdp:200,perf:120},
+rtx4060ti:{name:'RTX 4060 Ti',mfr:'NVIDIA',model:'RTX 4060 Ti',status:'OUTLET',vram:'8GB GDDR6',cores:4352,boost:2535,bus:'128-bit',bw:288,tdp:160,perf:80}};
+function updateCmp(e){if(!e||!gpus[e]){document.getElementById('cmp-result').style.display='none';return}const t=gpus.base,a=gpus[e];document.getElementById('r-name').textContent=a.name,document.getElementById('r-vram').textContent=a.vram,document.getElementById('r-cores').textContent=a.cores,document.getElementById('r-boost').textContent=a.boost+' MHz',document.getElementById('r-bw').textContent=a.bw+' GB/s',document.getElementById('r-tdp').textContent=a.tdp+'W',document.getElementById('r-arch').textContent=a.model;let r='';if(a.perf>t.perf+5){const d=Math.round(((a.perf-t.perf)/a.perf)*100);r=`La <strong>${a.model}</strong> es aproximadamente <strong>${d}% más potente</strong> que la RX 9060 XT. Con ${a.vram}, ${a.cores} Stream Processors y arquitectura ${a.name.includes('RTX')?'Ada':'RDNA'}. Rendimiento general muy superior.`}else if(a.perf<t.perf-5){const d=Math.round(((t.perf-a.perf)/t.perf)*100);r=`La <strong>RX 9060 XT</strong> es aproximadamente <strong>${d}% más potente</strong> que la ${a.model}. Con 16GB GDDR6, 3456 Stream Processors y arquitectura RDNA 4.`}else r=`Ambas GPUs tienen un rendimiento similar. La <strong>RX 9060 XT</strong> y la <strong>${a.model}</strong> son opciones comparables con características técnicas próximas.`;document.getElementById('cmp-result').textContent=r,document.getElementById('cmp-result').style.display='block'}
+const observer=new MutationObserver(()=>{const e=document.documentElement.scrollHeight;window.parent.postMessage({type:'setHeight',value:e},'*')});observer.observe(document.body,{childList:true,subtree:true,attributes:true});window.parent.postMessage({type:'setHeight',value:document.documentElement.scrollHeight},'*');
+</script>
+</html>
