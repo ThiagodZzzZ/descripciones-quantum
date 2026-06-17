@@ -45,6 +45,27 @@ body:after{content:"";position:fixed;inset:0;background:linear-gradient(90deg,rg
 .match-score{position:relative;display:flex;gap:8px;align-items:center;justify-content:center}
 .score-chip{min-width:44px;padding:9px 10px;border-radius:10px;background:var(--qh-dark);color:#fff;text-align:center;font-size:10px;font-weight:bold;letter-spacing:1px;box-shadow:0 6px 18px rgba(6,27,43,.2);animation:scorePop 2.4s ease-in-out infinite}
 .score-chip:nth-child(2){background:var(--qh-accent);color:#5a3d00;animation-delay:.35s}
+.match-meter{position:relative;margin-top:12px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.meter-card{position:relative;min-height:70px;padding:12px 10px;border-radius:12px;background:linear-gradient(145deg,#061b2b,#0b2b43);color:#fff;overflow:hidden;box-shadow:0 8px 22px rgba(6,27,43,.14);animation:popIn .65s ease-out both}
+.meter-card:nth-child(2){animation-delay:.12s}.meter-card:nth-child(3){animation-delay:.24s}
+.meter-card:after{content:"";position:absolute;right:-18px;top:-18px;width:56px;height:56px;border-radius:50%;background:rgba(246,195,67,.18)}
+.meter-label{font-size:8px;font-weight:bold;letter-spacing:2px;text-transform:uppercase;color:#9bdcf7;margin-bottom:5px}
+.meter-value{font-size:20px;font-weight:bold;line-height:1.05;color:#fff}
+.meter-note{font-size:10px;color:#cceefa;line-height:1.4;margin-top:4px}
+.play-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:12px;margin:14px 0}
+.play-card{position:relative;background:linear-gradient(135deg,rgba(255,255,255,.96),rgba(235,250,255,.96));border:1px solid var(--qh-border);border-radius:14px;padding:16px;box-shadow:0 12px 28px rgba(8,117,170,.12);overflow:hidden;animation:fadeInUp .7s ease-out}
+.play-card:before{content:"";position:absolute;inset:auto -40px -60px auto;width:150px;height:150px;border-radius:50%;background:radial-gradient(circle,rgba(246,195,67,.28),transparent 68%)}
+.play-kicker{font-size:9px;font-weight:bold;letter-spacing:3px;color:var(--qh-primary-dark);text-transform:uppercase;margin-bottom:6px}
+.play-title{font-size:18px;font-weight:bold;color:var(--qh-text);line-height:1.25;margin-bottom:8px}
+.play-copy{font-size:12px;color:#496b7d;line-height:1.65}
+.play-pills{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.play-pill{padding:6px 9px;border-radius:999px;background:#061b2b;color:#fff;font-size:9px;font-weight:bold;letter-spacing:1px;text-transform:uppercase}
+.mini-pitch{background:linear-gradient(145deg,#061b2b,#0d3855);border-radius:14px;padding:16px;border:1px solid rgba(22,168,232,.42);position:relative;min-height:174px;overflow:hidden;box-shadow:0 14px 34px rgba(6,27,43,.2)}
+.mini-pitch:before{content:"";position:absolute;inset:16px;border:1px solid rgba(255,255,255,.16);border-radius:10px}
+.mini-pitch:after{content:"";position:absolute;left:50%;top:50%;width:72px;height:72px;border:1px solid rgba(255,255,255,.16);border-radius:50%;transform:translate(-50%,-50%)}
+.pitch-dot{position:absolute;width:12px;height:12px;border-radius:50%;background:var(--qh-accent);box-shadow:0 0 18px rgba(246,195,67,.8);animation:pitchMove 5s ease-in-out infinite}
+.pitch-dot.d1{left:22%;top:28%}.pitch-dot.d2{left:58%;top:48%;animation-delay:.7s}.pitch-dot.d3{left:78%;top:68%;animation-delay:1.2s}
+.pitch-label{position:relative;z-index:2;color:#fff;font-size:10px;font-weight:bold;letter-spacing:2px;text-transform:uppercase;line-height:1.7}
 .badges{display:flex;justify-content:center;gap:10px;margin:14px 0 6px;flex-wrap:wrap}
 .badge{padding:6px 14px;border:1px solid var(--qh-primary);border-radius:20px;font-size:10px;font-weight:bold;letter-spacing:2px;color:var(--qh-primary-dark);background:linear-gradient(135deg,#fff,var(--qh-primary-soft));text-transform:uppercase;box-shadow:0 5px 14px rgba(22,168,232,.12);animation:badgeFloat 4s ease-in-out infinite}
 .badge:nth-child(2n){animation-delay:.45s}.badge:nth-child(3n){animation-delay:.9s}
@@ -62,6 +83,7 @@ body:after{content:"";position:fixed;inset:0;background:linear-gradient(90deg,rg
 .card-label{font-size:10px;letter-spacing:4px;color:var(--qh-primary);text-transform:uppercase;line-height:1.4}
 .card-value{font-size:32px;font-weight:bold;color:var(--qh-text);margin:6px 0 2px;line-height:1.1}
 .card-desc{font-size:12px;color:var(--qh-muted);line-height:1.5}
+.card:nth-child(1){animation-delay:.05s}.card:nth-child(2){animation-delay:.15s}.card:nth-child(3){animation-delay:.25s}
 .engine{background:var(--qh-dark);border-radius:var(--qh-radius);padding:20px;margin:12px 0}
 .engine-title{font-size:10px;letter-spacing:4px;color:var(--qh-muted);text-transform:uppercase;margin-bottom:14px}
 .clock-item{margin-bottom:14px}
@@ -71,6 +93,9 @@ body:after{content:"";position:fixed;inset:0;background:linear-gradient(90deg,rg
 .bar{height:30px;border-radius:6px;text-align:right;padding-right:12px;line-height:30px;font-size:14px;font-weight:bold;color:#fff;transition:width 1.5s ease-out}
 .bar-base{background:linear-gradient(90deg,var(--qh-primary-dark),var(--qh-primary))}
 .bar-boost{background:linear-gradient(90deg,var(--qh-primary),var(--qh-accent))}
+.engine{position:relative;overflow:hidden;border:1px solid rgba(22,168,232,.24)}
+.engine:before{content:"";position:absolute;right:-60px;top:-70px;width:190px;height:190px;border-radius:50%;background:radial-gradient(circle,rgba(22,168,232,.28),transparent 70%);animation:sunPulse 6s ease-in-out infinite}
+.engine>*{position:relative}
 .cooling,.outlet-box,.location-box,.psu-box{background:var(--qh-dark);border-radius:var(--qh-radius);padding:22px 20px;margin:12px 0;border-top:3px solid var(--qh-primary)}
 .cooling-title,.outlet-title,.location-title,.psu-title{font-size:18px;font-weight:bold;letter-spacing:4px;color:var(--qh-primary);text-align:center;margin-bottom:6px;text-transform:uppercase;line-height:1.4}
 .cooling-sub,.psu-sub{font-size:11px;color:#ccc;letter-spacing:2px;text-align:center;margin-bottom:18px;line-height:1.6}
@@ -88,6 +113,12 @@ body:after{content:"";position:fixed;inset:0;background:linear-gradient(90deg,rg
 .spec-table div:hover{background:linear-gradient(90deg,var(--qh-primary-soft),#fff);border-left:3px solid var(--qh-accent);padding-left:11px}
 .spec-table span{font-size:9px;color:var(--qh-muted);text-transform:uppercase;letter-spacing:2px;white-space:nowrap}
 .spec-table strong{font-size:13px;color:var(--qh-text);text-align:right;line-height:1.45}
+.spec-focus{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:8px 0 14px}
+.focus-tile{background:linear-gradient(135deg,#061b2b,#0b2b43);border:1px solid rgba(22,168,232,.35);border-radius:12px;padding:12px 8px;text-align:center;color:#fff;box-shadow:0 8px 20px rgba(6,27,43,.12);animation:popIn .55s ease-out both}
+.focus-tile:nth-child(2){animation-delay:.08s}.focus-tile:nth-child(3){animation-delay:.16s}.focus-tile:nth-child(4){animation-delay:.24s}
+.focus-tile span{display:block;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:#9bdcf7;margin-bottom:5px}
+.focus-tile strong{display:block;font-size:16px;line-height:1.15;color:#fff}
+.focus-tile small{display:block;font-size:10px;color:#cceefa;margin-top:4px;line-height:1.35}
 .conn-table div{display:flex;align-items:center;padding:12px 14px;border-bottom:1px solid #f0f0f0;gap:12px;transition:all .2s}
 .conn-table div:last-child{border-bottom:none}
 .conn-table div:hover{background:#f9f9f9;transform:translateX(4px)}
@@ -172,6 +203,8 @@ body:after{content:"";position:fixed;inset:0;background:linear-gradient(90deg,rg
 @keyframes ribbonPulse{0%,100%{transform:translateY(0);box-shadow:0 10px 24px rgba(22,168,232,.22)}50%{transform:translateY(-2px);box-shadow:0 14px 32px rgba(246,195,67,.28)}}
 @keyframes badgeFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
 @keyframes scorePop{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+@keyframes popIn{from{opacity:0;transform:translateY(14px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes pitchMove{0%,100%{transform:translate(0,0) scale(1)}35%{transform:translate(16px,-8px) scale(1.12)}70%{transform:translate(-10px,12px) scale(.96)}}
 @media(max-width:768px){
   .header-title{font-size:26px}
   .hl-value{font-size:32px}
@@ -184,6 +217,9 @@ body:after{content:"";position:fixed;inset:0;background:linear-gradient(90deg,rg
   .psu-lbl{min-width:100%;font-size:10px}
   .match-strip{grid-template-columns:1fr}
   .match-score{justify-content:flex-start}
+  .match-meter,.spec-focus{grid-template-columns:1fr}
+  .play-grid{grid-template-columns:1fr}
+  .mini-pitch{min-height:150px}
 }
 @media(max-width:480px){
   .container{padding:18px 10px}
@@ -232,10 +268,35 @@ body:after{content:"";position:fixed;inset:0;background:linear-gradient(90deg,rg
     <div class="match-kicker">Mundial · Placas de video</div>
     <div class="match-title">La RTX 3070 para que el partido se vea <span>fluido, nitido y fuerte.</span></div>
     <div class="match-note">Producto OUTLET en local: specs oficiales, retiro inmediato y campaña Mundial 2026.</div>
+    <div class="match-meter">
+      <div class="meter-card"><div class="meter-label">Arquitectura</div><div class="meter-value">Ampere</div><div class="meter-note">RTX + DLSS</div></div>
+      <div class="meter-card"><div class="meter-label">Memoria</div><div class="meter-value">8GB</div><div class="meter-note">GDDR6 14 Gbps</div></div>
+      <div class="meter-card"><div class="meter-label">Retiro</div><div class="meter-value">Local</div><div class="meter-note">OUTLET inmediato</div></div>
+    </div>
   </div>
   <div class="match-score">
     <div class="score-chip">RTX<br>ON</div>
     <div class="score-chip">OUTLET<br>YA</div>
+  </div>
+</div>
+
+<div class="play-grid">
+  <div class="play-card">
+    <div class="play-kicker">Jugada clave</div>
+    <div class="play-title">Rendimiento serio sin vueltas: 5888 CUDA Cores, 8GB GDDR6 y triple fan.</div>
+    <div class="play-copy">Una placa pensada para gaming exigente, monitores de alta resolucion y juegos con tecnologias NVIDIA como Ray Tracing, DLSS y Reflex. La informacion tecnica se mantiene basada en ficha oficial MSI.</div>
+    <div class="play-pills">
+      <span class="play-pill">RTX 3070</span>
+      <span class="play-pill">PCIe Gen 4</span>
+      <span class="play-pill">2 x 8-pin</span>
+      <span class="play-pill">650W PSU</span>
+    </div>
+  </div>
+  <div class="mini-pitch">
+    <div class="pitch-label">Linea ofensiva<br>RTX + DLSS<br>VENTUS 3X</div>
+    <span class="pitch-dot d1"></span>
+    <span class="pitch-dot d2"></span>
+    <span class="pitch-dot d3"></span>
   </div>
 </div>
 
@@ -271,6 +332,12 @@ body:after{content:"";position:fixed;inset:0;background:linear-gradient(90deg,rg
 </div>
 
 <div class="section-title"><span>Especificaciones oficiales</span></div>
+<div class="spec-focus">
+  <div class="focus-tile"><span>GPU</span><strong>RTX 3070</strong><small>NVIDIA GeForce</small></div>
+  <div class="focus-tile"><span>CUDA</span><strong>5888</strong><small>unidades</small></div>
+  <div class="focus-tile"><span>Clock</span><strong>1725 MHz</strong><small>oficial MSI</small></div>
+  <div class="focus-tile"><span>Consumo</span><strong>220 W</strong><small>GPU TDP</small></div>
+</div>
 <div class="spec-table">
   <div><span>Modelo</span><strong>MSI GeForce RTX 3070 VENTUS 3X</strong></div>
   <div><span>GPU</span><strong>NVIDIA GeForce RTX 3070</strong></div>
