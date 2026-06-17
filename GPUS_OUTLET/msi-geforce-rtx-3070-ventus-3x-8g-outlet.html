@@ -107,18 +107,23 @@ body:after{content:"";position:fixed;inset:0;background:linear-gradient(90deg,rg
 .cf-label{font-size:10px;color:#aaa;line-height:1.5;transition:color .3s}
 .section-title{margin:28px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--qh-border)}
 .section-title span{font-size:12px;font-weight:bold;letter-spacing:5px;color:var(--qh-primary);text-transform:uppercase}
-.spec-table,.conn-table{background:var(--qh-panel);border:1px solid var(--qh-border);border-radius:var(--qh-radius);overflow:hidden;margin:8px 0}
-.spec-table div{display:flex;justify-content:space-between;align-items:center;padding:9px 14px;border-bottom:1px solid #f0f0f0;gap:10px;transition:all .2s}
-.spec-table div:last-child{border-bottom:none}
-.spec-table div:hover{background:linear-gradient(90deg,var(--qh-primary-soft),#fff);border-left:3px solid var(--qh-accent);padding-left:11px}
-.spec-table span{font-size:9px;color:var(--qh-muted);text-transform:uppercase;letter-spacing:2px;white-space:nowrap}
-.spec-table strong{font-size:13px;color:var(--qh-text);text-align:right;line-height:1.45}
-.spec-focus{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:8px 0 14px}
-.focus-tile{background:linear-gradient(135deg,#061b2b,#0b2b43);border:1px solid rgba(22,168,232,.35);border-radius:12px;padding:12px 8px;text-align:center;color:#fff;box-shadow:0 8px 20px rgba(6,27,43,.12);animation:popIn .55s ease-out both}
-.focus-tile:nth-child(2){animation-delay:.08s}.focus-tile:nth-child(3){animation-delay:.16s}.focus-tile:nth-child(4){animation-delay:.24s}
-.focus-tile span{display:block;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:#9bdcf7;margin-bottom:5px}
-.focus-tile strong{display:block;font-size:16px;line-height:1.15;color:#fff}
-.focus-tile small{display:block;font-size:10px;color:#cceefa;margin-top:4px;line-height:1.35}
+.conn-table{background:var(--qh-panel);border:1px solid var(--qh-border);border-radius:var(--qh-radius);overflow:hidden;margin:8px 0}
+.spec-board{display:grid;grid-template-columns:1.1fr .9fr;gap:12px;margin:8px 0 6px}
+.spec-hero{position:relative;min-height:210px;border-radius:14px;padding:18px;background:linear-gradient(145deg,#061b2b,#0b2b43);color:#fff;overflow:hidden;box-shadow:0 14px 34px rgba(6,27,43,.18)}
+.spec-hero:before{content:"";position:absolute;right:-70px;top:-70px;width:190px;height:190px;border-radius:50%;background:radial-gradient(circle,rgba(246,195,67,.34),transparent 68%);animation:sunPulse 5s ease-in-out infinite}
+.spec-hero>*{position:relative}
+.spec-tag{display:inline-block;padding:5px 10px;border-radius:999px;background:rgba(22,168,232,.2);border:1px solid rgba(22,168,232,.45);font-size:9px;font-weight:bold;letter-spacing:2px;color:#9bdcf7;text-transform:uppercase;margin-bottom:12px}
+.spec-gpu{font-size:34px;font-weight:bold;line-height:1;color:#fff;margin-bottom:6px}
+.spec-model{font-size:12px;color:#cceefa;line-height:1.5;margin-bottom:14px}
+.spec-mini{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.spec-mini div{border-radius:10px;background:rgba(255,255,255,.08);padding:10px;text-align:center}
+.spec-mini span{display:block;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:#9bdcf7;margin-bottom:4px}
+.spec-mini strong{display:block;font-size:16px;color:#fff}
+.spec-list{display:grid;grid-template-columns:1fr;gap:8px}
+.spec-item{display:flex;align-items:center;justify-content:space-between;gap:10px;border:1px solid var(--qh-border);border-radius:10px;background:linear-gradient(135deg,#fff,rgba(234,248,255,.88));padding:10px 12px;transition:transform .2s,box-shadow .2s}
+.spec-item:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(8,117,170,.12)}
+.spec-item span{font-size:9px;color:var(--qh-muted);letter-spacing:2px;text-transform:uppercase;white-space:nowrap}
+.spec-item strong{font-size:13px;color:var(--qh-text);text-align:right;line-height:1.35}
 .conn-table div{display:flex;align-items:center;padding:12px 14px;border-bottom:1px solid #f0f0f0;gap:12px;transition:all .2s}
 .conn-table div:last-child{border-bottom:none}
 .conn-table div:hover{background:#f9f9f9;transform:translateX(4px)}
@@ -217,7 +222,8 @@ body:after{content:"";position:fixed;inset:0;background:linear-gradient(90deg,rg
   .psu-lbl{min-width:100%;font-size:10px}
   .match-strip{grid-template-columns:1fr}
   .match-score{justify-content:flex-start}
-  .match-meter,.spec-focus{grid-template-columns:1fr}
+  .match-meter{grid-template-columns:1fr}
+  .spec-board{grid-template-columns:1fr}
   .play-grid{grid-template-columns:1fr}
   .mini-pitch{min-height:150px}
 }
@@ -225,8 +231,11 @@ body:after{content:"";position:fixed;inset:0;background:linear-gradient(90deg,rg
   .container{padding:18px 10px}
   .header-title{font-size:20px;letter-spacing:1px}
   .header-subtitle{font-size:10px;letter-spacing:1px}
-  .spec-table div{align-items:flex-start;flex-direction:column}
-  .spec-table strong{text-align:left}
+  .spec-hero{min-height:auto;padding:16px}
+  .spec-gpu{font-size:28px}
+  .spec-mini{grid-template-columns:1fr 1fr}
+  .spec-item{align-items:flex-start;flex-direction:column}
+  .spec-item strong{text-align:left}
   .dim-box{gap:8px}
   .dim-box .d b{font-size:18px}
   .conn-table div{align-items:flex-start}
@@ -332,30 +341,26 @@ body:after{content:"";position:fixed;inset:0;background:linear-gradient(90deg,rg
 </div>
 
 <div class="section-title"><span>Especificaciones oficiales</span></div>
-<div class="spec-focus">
-  <div class="focus-tile"><span>GPU</span><strong>RTX 3070</strong><small>NVIDIA GeForce</small></div>
-  <div class="focus-tile"><span>CUDA</span><strong>5888</strong><small>unidades</small></div>
-  <div class="focus-tile"><span>Clock</span><strong>1725 MHz</strong><small>oficial MSI</small></div>
-  <div class="focus-tile"><span>Consumo</span><strong>220 W</strong><small>GPU TDP</small></div>
-</div>
-<div class="spec-table">
-  <div><span>Modelo</span><strong>MSI GeForce RTX 3070 VENTUS 3X</strong></div>
-  <div><span>GPU</span><strong>NVIDIA GeForce RTX 3070</strong></div>
-  <div><span>Arquitectura</span><strong>NVIDIA Ampere, 2nd Gen RT Cores y 3rd Gen Tensor Cores</strong></div>
-  <div><span>Interfaz</span><strong>PCI Express Gen 4</strong></div>
-  <div><span>Core Clock</span><strong>1725 MHz</strong></div>
-  <div><span>CUDA Cores</span><strong>5888 unidades</strong></div>
-  <div><span>Memoria</span><strong>8GB GDDR6</strong></div>
-  <div><span>Velocidad memoria</span><strong>14 Gbps</strong></div>
-  <div><span>Bus memoria</span><strong>256-bit</strong></div>
-  <div><span>Consumo</span><strong>220 W</strong></div>
-  <div><span>Conectores energia</span><strong>2 x 8-pin</strong></div>
-  <div><span>Fuente recomendada</span><strong>650 W</strong></div>
-  <div><span>Resolucion maxima</span><strong>7680 x 4320</strong></div>
-  <div><span>Pantallas max.</span><strong>4 simultaneas</strong></div>
-  <div><span>API</span><strong>DirectX 12 API / OpenGL 4.6</strong></div>
-  <div><span>HDCP / VR / G-SYNC</span><strong>Si / Si / Si</strong></div>
-  <div><span>Peso</span><strong>991.6 g placa / 1586.6 g paquete</strong></div>
+<div class="spec-board">
+  <div class="spec-hero">
+    <span class="spec-tag">Ficha MSI verificada</span>
+    <div class="spec-gpu">RTX 3070</div>
+    <div class="spec-model">MSI GeForce RTX 3070 VENTUS 3X · NVIDIA Ampere · PCI Express Gen 4</div>
+    <div class="spec-mini">
+      <div><span>CUDA</span><strong>5888</strong></div>
+      <div><span>Clock</span><strong>1725 MHz</strong></div>
+      <div><span>VRAM</span><strong>8GB GDDR6</strong></div>
+      <div><span>Consumo</span><strong>220 W</strong></div>
+    </div>
+  </div>
+  <div class="spec-list">
+    <div class="spec-item"><span>Memoria</span><strong>14 Gbps · Bus 256-bit</strong></div>
+    <div class="spec-item"><span>Energia</span><strong>2 x 8-pin · PSU 650 W</strong></div>
+    <div class="spec-item"><span>Resolucion</span><strong>7680 x 4320 · 4 pantallas</strong></div>
+    <div class="spec-item"><span>API</span><strong>DirectX 12 · OpenGL 4.6</strong></div>
+    <div class="spec-item"><span>Soporte</span><strong>HDCP · VR Ready · G-SYNC</strong></div>
+    <div class="spec-item"><span>Peso</span><strong>991.6 g placa · 1586.6 g paquete</strong></div>
+  </div>
 </div>
 
 <div class="section-title"><span>Conectividad</span></div>
