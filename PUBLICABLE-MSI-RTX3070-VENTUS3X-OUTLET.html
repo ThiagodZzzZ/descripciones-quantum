@@ -60,12 +60,15 @@ body:after{content:"";position:fixed;inset:0;background:linear-gradient(90deg,rg
 .play-copy{font-size:12px;color:#496b7d;line-height:1.65}
 .play-pills{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
 .play-pill{padding:6px 9px;border-radius:999px;background:#061b2b;color:#fff;font-size:9px;font-weight:bold;letter-spacing:1px;text-transform:uppercase}
-.mini-pitch{background:linear-gradient(145deg,#061b2b,#0d3855);border-radius:14px;padding:16px;border:1px solid rgba(22,168,232,.42);position:relative;min-height:174px;overflow:hidden;box-shadow:0 14px 34px rgba(6,27,43,.2)}
-.mini-pitch:before{content:"";position:absolute;inset:16px;border:1px solid rgba(255,255,255,.16);border-radius:10px}
-.mini-pitch:after{content:"";position:absolute;left:50%;top:50%;width:72px;height:72px;border:1px solid rgba(255,255,255,.16);border-radius:50%;transform:translate(-50%,-50%)}
-.pitch-dot{position:absolute;width:12px;height:12px;border-radius:50%;background:var(--qh-accent);box-shadow:0 0 18px rgba(246,195,67,.8);animation:pitchMove 5s ease-in-out infinite}
-.pitch-dot.d1{left:22%;top:28%}.pitch-dot.d2{left:58%;top:48%;animation-delay:.7s}.pitch-dot.d3{left:78%;top:68%;animation-delay:1.2s}
-.pitch-label{position:relative;z-index:2;color:#fff;font-size:10px;font-weight:bold;letter-spacing:2px;text-transform:uppercase;line-height:1.7}
+.benefit-panel{background:linear-gradient(145deg,#061b2b,#0d3855);border-radius:14px;padding:14px;border:1px solid rgba(22,168,232,.42);position:relative;min-height:174px;overflow:hidden;box-shadow:0 14px 34px rgba(6,27,43,.2)}
+.benefit-panel:before{content:"";position:absolute;right:-34px;top:-34px;width:110px;height:110px;border-radius:50%;background:radial-gradient(circle,rgba(246,195,67,.35),transparent 68%);animation:sunPulse 3.2s ease-in-out infinite}
+.benefit-panel:after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 34%,rgba(255,255,255,.1) 48%,transparent 62%);transform:translateX(-100%);animation:shine 5s ease-in-out infinite}
+.benefit-list{position:relative;z-index:2;display:grid;gap:8px}
+.benefit-item{display:flex;align-items:center;gap:10px;padding:10px;border-radius:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);transition:transform .25s,background .25s}
+.benefit-item:hover{transform:translateX(4px);background:rgba(255,255,255,.13)}
+.benefit-ico{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#fff;color:#0875aa;font-size:18px;box-shadow:0 0 16px rgba(117,205,244,.35);flex:0 0 34px}
+.benefit-txt b{display:block;color:#fff;font-size:12px;letter-spacing:.6px;text-transform:uppercase;margin-bottom:2px}
+.benefit-txt span{display:block;color:#bfeeff;font-size:10px;line-height:1.35}
 .badges{display:flex;justify-content:center;gap:10px;margin:14px 0 6px;flex-wrap:wrap}
 .badge{padding:6px 14px;border:1px solid var(--qh-primary);border-radius:20px;font-size:10px;font-weight:bold;letter-spacing:2px;color:var(--qh-primary-dark);background:linear-gradient(135deg,#fff,var(--qh-primary-soft));text-transform:uppercase;box-shadow:0 5px 14px rgba(22,168,232,.12);animation:badgeFloat 4s ease-in-out infinite}
 .badge:nth-child(2n){animation-delay:.45s}.badge:nth-child(3n){animation-delay:.9s}
@@ -301,11 +304,13 @@ body:after{content:"";position:fixed;inset:0;background:linear-gradient(90deg,rg
       <span class="play-pill">650W PSU</span>
     </div>
   </div>
-  <div class="mini-pitch">
-    <div class="pitch-label">Linea ofensiva<br>RTX + DLSS<br>VENTUS 3X</div>
-    <span class="pitch-dot d1"></span>
-    <span class="pitch-dot d2"></span>
-    <span class="pitch-dot d3"></span>
+  <div class="benefit-panel">
+    <div class="benefit-list">
+      <div class="benefit-item"><div class="benefit-ico">🎮</div><div class="benefit-txt"><b>Juegos fluidos</b><span>Potencia real para 1080p y 1440p.</span></div></div>
+      <div class="benefit-item"><div class="benefit-ico">🖥️</div><div class="benefit-txt"><b>Imagen nitida</b><span>Lista para monitores exigentes.</span></div></div>
+      <div class="benefit-item"><div class="benefit-ico">🌬️</div><div class="benefit-txt"><b>Triple fan</b><span>Refrigeracion MSI VENTUS 3X.</span></div></div>
+      <div class="benefit-item"><div class="benefit-ico">⚡</div><div class="benefit-txt"><b>Lista para retirar</b><span>Producto OUTLET en el local.</span></div></div>
+    </div>
   </div>
 </div>
 
