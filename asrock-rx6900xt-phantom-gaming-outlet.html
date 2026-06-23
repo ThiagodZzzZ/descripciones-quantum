@@ -54,6 +54,7 @@ body:after{content:"";position:fixed;inset:0;background:linear-gradient(90deg,rg
 .match-score{position:relative;display:flex;gap:8px;align-items:center;justify-content:center}
 .score-chip{min-width:46px;padding:9px 10px;border-radius:10px;background:var(--qh-dark);color:#fff;text-align:center;font-size:10px;font-weight:bold;letter-spacing:1px;box-shadow:0 6px 18px rgba(6,27,43,.2);animation:scorePop 2.4s ease-in-out infinite}
 .score-chip:nth-child(2){background:var(--qh-accent);color:#5a3d00;animation-delay:.35s}
+.play-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:12px;margin:14px 0}
 .product-stage{display:grid;grid-template-columns:1fr .95fr;gap:12px;margin:14px 0}
 .product-visual{position:relative;min-height:265px;border-radius:14px;background:linear-gradient(145deg,#061b2b,#0b2b43);border:1px solid rgba(22,168,232,.42);box-shadow:0 14px 34px rgba(6,27,43,.2);overflow:hidden;display:flex;align-items:center;justify-content:center;padding:18px}
 .product-visual:before{content:"";position:absolute;right:-70px;top:-70px;width:210px;height:210px;border-radius:50%;background:radial-gradient(circle,rgba(246,195,67,.34),transparent 68%);animation:sunPulse 5s ease-in-out infinite}
@@ -76,7 +77,7 @@ body:after{content:"";position:fixed;inset:0;background:linear-gradient(90deg,rg
 .play-copy{font-size:12px;color:#496b7d;line-height:1.65}
 .play-pills{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
 .play-pill{padding:6px 9px;border-radius:999px;background:#061b2b;color:#fff;font-size:9px;font-weight:bold;letter-spacing:1px;text-transform:uppercase}
-.benefit-panel{margin-top:12px;background:linear-gradient(145deg,#061b2b,#0d3855);border-radius:14px;padding:14px;border:1px solid rgba(22,168,232,.42);position:relative;overflow:hidden;box-shadow:0 14px 34px rgba(6,27,43,.2)}
+.benefit-panel{background:linear-gradient(145deg,#061b2b,#0d3855);border-radius:14px;padding:14px;border:1px solid rgba(22,168,232,.42);position:relative;overflow:hidden;box-shadow:0 14px 34px rgba(6,27,43,.2)}
 .benefit-panel:before{content:"";position:absolute;right:-34px;top:-34px;width:110px;height:110px;border-radius:50%;background:radial-gradient(circle,rgba(246,195,67,.35),transparent 68%);animation:sunPulse 3.2s ease-in-out infinite}
 .benefit-list{position:relative;z-index:2;display:grid;gap:8px}
 .benefit-item{display:flex;align-items:center;gap:10px;padding:10px;border-radius:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);transition:transform .25s,background .25s}
@@ -300,49 +301,26 @@ body:after{content:"";position:fixed;inset:0;background:linear-gradient(90deg,rg
   </div>
 </div>
 
-<div class="product-stage">
-  <div class="product-visual">
-    <div class="gpu-visual" role="img" aria-label="Visual de placa grafica triple fan estilo Phantom Gaming">
-      <div class="gpu-fans"><span class="gpu-fan"></span><span class="gpu-fan"></span><span class="gpu-fan"></span></div>
-      <div class="gpu-strip"></div>
-      <div class="gpu-power"><span></span><span></span><span></span></div>
+<div class="play-grid">
+  <div class="play-card">
+    <div class="play-kicker">Jugada clave</div>
+    <div class="play-title">Potencia alta sin vueltas: 5120 stream processors, 80 compute units y 16GB GDDR6.</div>
+    <div class="play-copy">Una placa pensada para equipos gamer exigentes, monitores de alta resolucion y juegos pesados. La informacion tecnica se mantiene basada en ficha oficial ASRock para la variante Phantom Gaming D 16G OC y ficha AMD Radeon RX 6900 XT.</div>
+    <div class="play-pills">
+      <span class="play-pill">RX 6900 XT</span>
+      <span class="play-pill">PCIe Gen 4</span>
+      <span class="play-pill">3 x 8-pin</span>
+      <span class="play-pill">900W PSU</span>
     </div>
   </div>
-  <div>
-    <div class="play-card">
-      <div class="play-kicker">Jugada clave</div>
-      <div class="play-title">Potencia alta sin vueltas: 5120 stream processors, 80 compute units y 16GB GDDR6.</div>
-      <div class="play-copy">Una placa pensada para equipos gamer exigentes, monitores de alta resolucion y juegos pesados. La informacion tecnica se mantiene basada en ficha oficial ASRock para la variante Phantom Gaming D 16G OC y ficha AMD Radeon RX 6900 XT.</div>
-      <div class="play-pills">
-        <span class="play-pill">RX 6900 XT</span>
-        <span class="play-pill">PCIe Gen 4</span>
-        <span class="play-pill">3 x 8-pin</span>
-        <span class="play-pill">900W PSU</span>
-      </div>
-    </div>
-    <div class="benefit-panel">
-      <div class="benefit-list">
-        <div class="benefit-item"><div class="benefit-ico">1</div><div class="benefit-txt"><b>Gaming fuerte</b><span>Gran margen para 1440p y 4K.</span></div></div>
-        <div class="benefit-item"><div class="benefit-ico">2</div><div class="benefit-txt"><b>Imagen nitida</b><span>Hasta 7680 x 4320 digital.</span></div></div>
-        <div class="benefit-item"><div class="benefit-ico">3</div><div class="benefit-txt"><b>Triple fan</b><span>Phantom Gaming 3X Cooling.</span></div></div>
-        <div class="benefit-item"><div class="benefit-ico">OK</div><div class="benefit-txt"><b>Unidad revisada</b><span>Producto OUTLET verificado.</span></div></div>
-      </div>
+  <div class="benefit-panel">
+    <div class="benefit-list">
+      <div class="benefit-item"><div class="benefit-ico">1</div><div class="benefit-txt"><b>Gaming fuerte</b><span>Gran margen para 1440p y 4K.</span></div></div>
+      <div class="benefit-item"><div class="benefit-ico">2</div><div class="benefit-txt"><b>Imagen nitida</b><span>Hasta 7680 x 4320 digital.</span></div></div>
+      <div class="benefit-item"><div class="benefit-ico">3</div><div class="benefit-txt"><b>Triple fan</b><span>Phantom Gaming 3X Cooling.</span></div></div>
+      <div class="benefit-item"><div class="benefit-ico">OK</div><div class="benefit-txt"><b>Unidad revisada</b><span>Producto OUTLET verificado.</span></div></div>
     </div>
   </div>
-</div>
-
-<div class="hl">
-  <div class="hl-box">
-    <div class="hl-label">Lista para jugar</div>
-    <div class="hl-value">OUTLET</div>
-    <div class="hl-desc">Revisada por Quantum Hardstore</div>
-  </div>
-</div>
-
-<div class="card-grid">
-  <div class="card"><div class="card-label">Estado</div><div class="card-value">OUTLET</div><div class="card-desc">Stock sujeto a confirmacion</div></div>
-  <div class="card"><div class="card-label">Chequeo</div><div class="card-value">OK</div><div class="card-desc">Probada por servicio tecnico</div></div>
-  <div class="card"><div class="card-label">Uso ideal</div><div class="card-value">GAMING</div><div class="card-desc">1440p fuerte y 4K</div></div>
 </div>
 
 <div class="engine">
