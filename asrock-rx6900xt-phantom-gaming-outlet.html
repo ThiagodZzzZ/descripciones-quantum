@@ -222,6 +222,12 @@ body:after{content:"";position:fixed;inset:0;background:linear-gradient(90deg,rg
   .header-title{font-size:25px}
   .hl-value{font-size:32px}
   .card-grid{grid-template-columns:1fr}
+  .play-grid{grid-template-columns:1fr}
+  .play-card,.benefit-panel{min-width:0}
+  .play-pills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .play-pill{text-align:center;white-space:nowrap;padding:7px 6px}
+  .benefit-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .benefit-item{align-items:flex-start}
   .cpu-columns{grid-template-columns:1fr}
   .outlet-benefits{flex-direction:column}
   .cooling-features{flex-direction:column}
@@ -241,6 +247,15 @@ body:after{content:"";position:fixed;inset:0;background:linear-gradient(90deg,rg
   .header-subtitle{font-size:10px;letter-spacing:1px}
   .header-brand{letter-spacing:3px}
   .world-cup-ribbon{font-size:9px;letter-spacing:1px}
+  .badges{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .badge{display:flex;align-items:center;justify-content:center;min-height:34px;padding:7px 6px;font-size:9px;letter-spacing:1px;text-align:center;line-height:1.25}
+  .match-score{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .score-chip{width:100%;min-width:0}
+  .benefit-panel{padding:12px}
+  .benefit-list{gap:8px}
+  .benefit-item{display:grid;grid-template-columns:34px 1fr;gap:8px;padding:9px 7px}
+  .benefit-txt b{font-size:10px;letter-spacing:.4px}
+  .benefit-txt span{font-size:9px;line-height:1.35}
   .spec-hero{min-height:auto;padding:16px}
   .spec-gpu{font-size:28px}
   .spec-mini{grid-template-columns:1fr 1fr}
