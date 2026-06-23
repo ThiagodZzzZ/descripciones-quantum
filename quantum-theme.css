@@ -1,0 +1,19 @@
+/* Quantum Hardstore global theme.
+   Para cambiar la campania mensual, editar solo este archivo y volver a subirlo. */
+:root{
+  --qh-primary:#16a8e8;
+  --qh-primary-soft:#eaf8ff;
+  --qh-primary-dark:#0875aa;
+  --qh-accent:#f6c343;
+  --qh-bg:#e9f8ff;
+  --qh-panel:rgba(255,255,255,.95);
+  --qh-dark:#061b2b;
+  --qh-dark-2:#0b2b43;
+  --qh-text:#062033;
+  --qh-muted:#5c7485;
+  --qh-border:#bfe8fb;
+  --qh-shadow:rgba(22,168,232,.28);
+}
+body{background:linear-gradient(180deg,#9fe4ff 0,#fff 34%,#dff6ff 68%,#fff 100%)}
+.header:after{content:"ARGENTINA 2026"}
+.world-cup-ribbon{background:linear-gradient(90deg,#75cdf4,#fff,#75cdf4);color:#06486b}
