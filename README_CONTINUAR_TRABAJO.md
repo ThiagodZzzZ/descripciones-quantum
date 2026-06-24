@@ -56,6 +56,12 @@ Queda disponible un monitor local en PowerShell:
 
 El monitor guarda estado en `.monitor\gpu_category_seen.json`, log en `.monitor\gpu-monitor.log` y alertas en `.monitor\alerts`. Si detecta una GPU nueva, genera un TXT con titulo exacto y URL del producto. En Windows intenta mostrar una notificacion del sistema, pero la alerta persistente es el archivo TXT.
 
+En esta PC tambien quedo creado el lanzador de inicio:
+
+`C:\Users\PC\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\QuantumGpuMonitor.cmd`
+
+Eso arranca el monitor al iniciar sesion en Windows. La tarea programada de Windows no se uso porque `Register-ScheduledTask` devolvio acceso denegado sin permisos elevados.
+
 ## Diseno global posterior al Mundial
 
 Todas las paginas GPU deben seguir conectadas globalmente a `quantum-theme.css`. No duplicar estilos visuales de campania dentro de cada HTML salvo casos puntuales inevitables. Cuando termine la campania Mundial/Argentina, el cambio de estilo debe resolverse principalmente editando `quantum-theme.css` y publicando ese archivo.
