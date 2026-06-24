@@ -30,6 +30,36 @@ Cuando Quantum publique una placa nueva:
 
 No usar datos genericos para conectividad o dimensiones. Si la ficha oficial no confirma el modelo exacto, no publicar medidas ni puertos inventados.
 
+## Seguimiento de GPUs nuevas
+
+La categoria a controlar es:
+
+`https://quantumhardstore.com/componentes/placas-de-video/`
+
+Cada vez que se detecte una GPU nueva en esa categoria, compararla contra `generated_gpu_manifest.json` y `alias_cortos_manifest.json`. Si no existe descripcion publicada:
+
+1. Avisar el titulo exacto detectado.
+2. Confirmar modelo exacto y specs desde fuentes oficiales.
+3. Generar la descripcion con la plantilla completa.
+4. Publicar el HTML en GitHub Pages con alias corto.
+5. Entregar el titulo exacto y el iframe final para Tiendanube.
+
+Importante: Codex no puede avisar de forma proactiva si no esta corriendo en una sesion activa. Cuando se pida revisar la categoria, hacer el chequeo y avanzar con las nuevas GPUs encontradas.
+
+### Monitor automatico local
+
+Queda disponible un monitor local en PowerShell:
+
+- Chequeo manual: `scripts\check_gpu_category.ps1`
+- Iniciar monitor: `scripts\start_gpu_monitor.ps1 -IntervalMinutes 10`
+- Detener monitor: `scripts\stop_gpu_monitor.ps1`
+
+El monitor guarda estado en `.monitor\gpu_category_seen.json`, log en `.monitor\gpu-monitor.log` y alertas en `.monitor\alerts`. Si detecta una GPU nueva, genera un TXT con titulo exacto y URL del producto. En Windows intenta mostrar una notificacion del sistema, pero la alerta persistente es el archivo TXT.
+
+## Diseno global posterior al Mundial
+
+Todas las paginas GPU deben seguir conectadas globalmente a `quantum-theme.css`. No duplicar estilos visuales de campania dentro de cada HTML salvo casos puntuales inevitables. Cuando termine la campania Mundial/Argentina, el cambio de estilo debe resolverse principalmente editando `quantum-theme.css` y publicando ese archivo.
+
 ## Archivos clave
 
 - `iframes_alias_cortos_publicados.txt`: titulos exactos + iframe final.

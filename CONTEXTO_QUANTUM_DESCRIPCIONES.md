@@ -37,6 +37,24 @@ Las paginas generadas cargan:
 
 Ese archivo permite cambiar colores/base visual mensual sin editar cada descripcion. Para una nueva campania, cambiar variables CSS en ese archivo y volver a subirlo a GitHub.
 
+Regla permanente desde 2026-06-24: mantener las GPUs conectadas globalmente a `quantum-theme.css`. Cuando termine el Mundial y se cambie la estetica, el cambio debe hacerse principalmente desde ese CSS global, no reescribiendo una por una las descripciones.
+
+## Seguimiento de nuevas GPUs
+
+Categoria a revisar:
+
+`https://quantumhardstore.com/componentes/placas-de-video/`
+
+Cuando se pida revisar novedades, comparar los productos actuales de esa categoria contra `generated_gpu_manifest.json` y `alias_cortos_manifest.json`. Si aparece una GPU nueva:
+
+- avisar el titulo exacto detectado;
+- buscar specs solo en fuentes oficiales;
+- generar la descripcion con plantilla completa;
+- publicar HTML + alias corto en GitHub Pages;
+- entregar titulo exacto e iframe final.
+
+Limitacion operativa: Codex no puede avisar solo si no hay una sesion activa corriendo. El chequeo se realiza cuando el usuario pida revisar o cuando se este trabajando en el proyecto.
+
 ## Archivos principales
 
 - `quantum_gpu_products_current.json`: productos actuales scrapeados desde la categoria de placas.
