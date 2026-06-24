@@ -1,5 +1,7 @@
-/* Quantum Hardstore global theme.
-   Para cambiar la campania mensual, editar solo este archivo y volver a subirlo. */
+/* Quantum Hardstore global GPU theme.
+   Este archivo es el control global de diseno para las descripciones GPU.
+   Cambiar colores, radios, espaciados o layout aca impacta en todas las paginas
+   que cargan quantum-theme.css, sin editar cada HTML individual. */
 :root{
   --qh-primary:#16a8e8;
   --qh-primary-soft:#eaf8ff;
@@ -13,7 +15,45 @@
   --qh-muted:#5c7485;
   --qh-border:#bfe8fb;
   --qh-shadow:rgba(22,168,232,.28);
+  --qh-radius:10px;
+  --qh-container-max:860px;
+  --qh-page-pad-x:16px;
+  --qh-section-gap:12px;
+  --qh-card-pad:14px;
 }
+
 body{background:linear-gradient(180deg,#9fe4ff 0,#fff 34%,#dff6ff 68%,#fff 100%)}
+.container{max-width:var(--qh-container-max);padding-left:var(--qh-page-pad-x);padding-right:var(--qh-page-pad-x)}
 .header:after{content:"ARGENTINA 2026"}
 .world-cup-ribbon{background:linear-gradient(90deg,#75cdf4,#fff,#75cdf4);color:#06486b}
+
+/* Bloques tecnicos globales */
+.conn-table{display:grid;gap:0;background:var(--qh-panel);border-color:var(--qh-border);border-radius:var(--qh-radius)}
+.conn-table .conn-row{display:flex;align-items:center;padding:12px 14px;border-bottom:1px solid #edf5f9;gap:12px;transition:all .2s}
+.conn-table .conn-row:last-child{border-bottom:none}
+.conn-table .conn-row:hover{background:#f9fdff;transform:translateX(4px)}
+.conn-table .conn-info{display:block!important;flex:1;padding:0!important;border-bottom:0!important;background:transparent!important;transform:none!important;min-width:0}
+.conn-table .conn-info b{display:block;font-size:13px;line-height:1.25;color:var(--qh-text)}
+.conn-table .conn-info small{display:block;font-size:10px;line-height:1.35;color:#526e80;margin-top:2px}
+.conn-table .conn-count{min-width:42px;text-align:right}
+
+.dim-box{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;justify-content:stretch;border-color:var(--qh-border);border-radius:var(--qh-radius)}
+.dim-box .d{border-right:1px solid #e8eef2;text-align:center}
+.dim-box .d:last-child{border-right:0}
+.dim-box .sep{display:none}
+.dim-box .d b{font-size:20px;line-height:1.15}
+.dim-box .d small{display:block;min-height:28px}
+
+.cpu-columns{align-items:stretch}
+.cpu-family{display:flex;flex-direction:column;height:100%}
+.cpu-card{display:flex;flex-direction:column;flex:1;min-height:126px}
+.cpu-specs{margin-top:auto}
+.cpu-fit{min-height:34px}
+
+@media(max-width:700px){
+  :root{--qh-page-pad-x:10px}
+  .conn-table .conn-row{align-items:flex-start}
+  .dim-box{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .dim-box .d:nth-child(2){border-right:0}
+  .dim-box .d b{font-size:18px}
+}
