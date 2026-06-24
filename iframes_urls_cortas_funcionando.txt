@@ -148,3 +148,8 @@ VGA Sapphire Radeon RX 9070 XT PURE 16GB GDDR6 (5896)
 VGA Gigabyte Radeon RX 9070 GAMING OC 16G (5531)
 <iframe src="https://is.gd/NHHGUV" style="width:100%;height:4600px;border:0;" loading="lazy"></iframe>
 
+
+3090 ASUS TUF GAMING
+<iframe src="https://thiagodzzzz.github.io/descripciones-quantum/asus-rtx3090-tuf-gaming.html" style="width:100%;height:6200px;border:0;" loading="lazy"></iframe>
+
+
